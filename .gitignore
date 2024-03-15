@@ -31,5 +31,8 @@
 *.out
 *.app
 
-.vs
-temp/
+.vs/
+Builds/
+[Bb]in/*
+[Tt]emp/
+[Ll]ib/
