@@ -3,9 +3,16 @@
 
 #include <iostream>
 
-int main()
+
+extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
 {
-    std::cout << "Hello World!\n";
+    // Declaración de la función que deseas exportar
+    __declspec(dllexport) bool start()
+    {
+        std::cout << "PEPA";
+        return true;
+    }
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
