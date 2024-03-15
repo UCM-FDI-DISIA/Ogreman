@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Components\MovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Components\MovementComponent.h" />
+    <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -46,7 +55,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -71,7 +80,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)</OutDir>
+    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,15 +146,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="OgremanSolucion.cpp" />
-    <ClCompile Include="OgremanSolucion\src\MovementComponent.cpp" />
-    <ClCompile Include="OgremanSolucion\src\PlayerInputComponent.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="OgremanSolucion\src\MovementComponent.h" />
-    <ClInclude Include="OgremanSolucion\src\PlayerInputComponent.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
