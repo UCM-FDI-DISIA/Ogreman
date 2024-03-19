@@ -122,11 +122,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>AudioLeon_d.lib;TonInput_d.lib;RomeRender_d.lib;GuilleElArquitecto_d.lib;PedroBullet_d.lib;LuaLuebgo_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,13 +139,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src;$(SolutionDir)VeryReal\VeryRealSolucion\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>AudioLeon.lib;TonInput.lib;RomeRender.lib;GuilleElArquitecto.lib;PedroBullet.lib;LuaLuebgo.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
