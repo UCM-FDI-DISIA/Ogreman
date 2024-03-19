@@ -10,8 +10,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         std::cout << "PEPA";
         return true;
     }
-
 }
+
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración

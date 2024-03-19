@@ -127,7 +127,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>AudioLeon_d.lib;TonInput_d.lib;RomeRender_d.lib;GuilleElArquitecto_d.lib;PedroBullet_d.lib;LuaLuebgo_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>AudioLeon_d.lib;TonInput_d.lib;RomeRender_d.lib;GuilleElArquitecto_d.lib;PedroBullet_d.lib;LuaLuengo_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -147,7 +147,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>AudioLeon.lib;TonInput.lib;RomeRender.lib;GuilleElArquitecto.lib;PedroBullet.lib;LuaLuebgo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>AudioLeon.lib;TonInput.lib;RomeRender.lib;GuilleElArquitecto.lib;PedroBullet.lib;LuaLuengo.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
