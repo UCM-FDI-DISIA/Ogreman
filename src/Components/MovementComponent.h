@@ -1,9 +1,9 @@
 //#pragma once
 //#ifndef MOVEMENTCOMPONENT
 //#define MOVEMENTCOMPONENT
-//#include "GuilleElArquitecto/Component.h"
-//#include "GuilleElArquitecto/Vector3.h"
-//#include "GuilleElArquitecto/CreatorComponent.h"
+//#include <Component.h>
+//#include <Vector3.h>
+//#include <CreatorComponent.h>
 //
 //namespace VeryReal {
 //	class TransformComponent;

@@ -1,6 +1,6 @@
 //#include "MovementComponent.h"
-//#include "GuilleElArquitecto/TransformComponent.h"
-//#include "GuilleElArquitecto/Entity.h"
+//#include <TransformComponent.h>
+//#include <Entity.h>
 //
 //void VeryReal::MovementComponent::InitComponent(){
 //

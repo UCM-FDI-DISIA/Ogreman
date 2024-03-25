@@ -1,8 +1,8 @@
 //#include "PlayerInputComponent.h"
 //#include "MovementComponent.h"
-//#include "GuilleElArquitecto/Entity.h"
-//#include "GuilleElArquitecto/Manager.h"
-//#include "TonInput/InputManager.h"
+//#include <Entity.h>
+//#include <Manager.h>
+//#include <InputManager.h>
 //
 //void VeryReal::PlayerInputComponent::InitComponent() {
 //	my_movement_component = this->GetEntity()->GetComponent<MovementComponent>("MovementComponent");
