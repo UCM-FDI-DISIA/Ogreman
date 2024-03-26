@@ -6,14 +6,19 @@
 #include "CameraComponent.h"
 #include "AudioLeon.h"
 
-void VeryReal::PlayerInputComponent::InitComponent() {
+bool VeryReal::PlayerInputComponent::InitComponent() {
 	my_movement_component = this->GetEntity()->GetComponent<MovementComponent>("MovementComponent");
 	my_camera_component = this->GetEntity()->GetComponent<CameraComponent>("CameraComponent");
+
+	if (this->my_movement_component != nullptr && this->my_camera_component != nullptr)
+		return true;
+	else
+		return false;
 }
 
 void VeryReal::PlayerInputComponent::Update(const double& dt){
-	// Movimiento Mando
-	if (InputManager::Instance()->IsGameControllerConnected()) {
+	if (!InputManager::Instance()->IsGameControllerConnected()) {
+		// Movimiento Teclado
 		int sprint = 0.5;
 		if (InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
 			sprint = 1;
@@ -30,24 +35,34 @@ void VeryReal::PlayerInputComponent::Update(const double& dt){
 		else if (InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
 			my_movement_component->SetMoventDirectionZ(-sprint);
 		}
+
+		// Camara con teclado y raton 
+		std::pair<int32_t, int32_t> mouse_pos = InputManager::Instance()->GetMousePos();
+
+		double yaw = (mouse_pos.first - prev_mouse_pos.first) * sensitivity;
+		double roll = (mouse_pos.second - prev_mouse_pos.second) * sensitivity;
+		my_camera_component->yaw(yaw);
+		my_camera_component->roll(roll);
+
+		prev_mouse_pos = mouse_pos;
 	}
-	// Movimiento Teclado
 	else {
+		// Movimiento Mando
 		my_movement_component->SetMoventDirectionX(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
 		my_movement_component->SetMoventDirectionZ(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
-	}
 	
-
-	// Camara
-	if (InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX) != 0) {
-		my_camera_component->yaw(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
-	}
-	if (InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0){
-		my_camera_component->roll(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+		// Camara Mando
+		if (InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX) != 0) {
+			my_camera_component->yaw(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
+		}
+		if (InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0) {
+			my_camera_component->roll(InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+		}
 	}
 
 	// Linterna
-	if (InputManager::Instance()->GetMouseButtonState(TI_MOUSE_LEFT)) {
+	if (InputManager::Instance()->GetMouseButtonState(TI_MOUSE_LEFT) ||
+		InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_TRIGGERRIGHT) > 0) {
 		flashlight = true;
 	}
 	else {
@@ -55,5 +70,5 @@ void VeryReal::PlayerInputComponent::Update(const double& dt){
 	}
 
 	// AUDIO
-	audio_intensity = Audio_Leon::InputSoundIntensity();
+	audio_intensity = AudioLeon::Instance()->InputSoundIntensity();
 }

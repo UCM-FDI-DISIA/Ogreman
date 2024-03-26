@@ -2,9 +2,12 @@
 #include "TransformComponent.h"
 #include "Entity.h"
 
-void VeryReal::MovementComponent::InitComponent(){
-
+bool VeryReal::MovementComponent::InitComponent(){
 	my_transform = this->GetEntity()->GetComponent<TransformComponent>("TransformComponent");
+	if (this->my_transform != nullptr)
+		return true;
+	else 
+		return false;
 }
 
 void VeryReal::MovementComponent::LateUpdate(const double& dt) {

@@ -12,7 +12,7 @@ namespace VeryReal {
 namespace VeryReal {
 	class MovementComponent : public Component {
 	public:
-		virtual void InitComponent();
+		virtual bool InitComponent();
 		virtual void LateUpdate(const double& dt);
 
 		inline bool IsMoving() { return movementDirection != Vector3(0, 0, 0); }

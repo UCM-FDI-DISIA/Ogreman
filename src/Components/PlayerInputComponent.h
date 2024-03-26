@@ -14,12 +14,15 @@ namespace VeryReal {
 namespace VeryReal {
 	class PlayerInputComponent : public Component {
 	public:
-		virtual void InitComponent();
+		virtual bool InitComponent();
 		virtual void Update(const double& dt);
 
 		inline bool IsFlashLightPressed() { return flashlight; }
 
 	private:
+		double sensitivity = 0.1;
+		std::pair<int32_t, int32_t> prev_mouse_pos;
+
 		float audio_intensity;
 		bool flashlight;
 
