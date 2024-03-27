@@ -24,12 +24,14 @@
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
+    <ClCompile Include="PathingComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="PathingComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
