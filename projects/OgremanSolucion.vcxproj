@@ -93,6 +93,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -131,6 +132,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,6 +151,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

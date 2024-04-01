@@ -4,6 +4,7 @@
 #include "Component.h"
 #include "Vector3.h"
 #include "CreatorComponent.h"
+#include <variant>
 namespace OgreMan {
 	class PathingComponent : public VeryReal::Component
 	{
@@ -13,9 +14,6 @@ namespace OgreMan {
 		virtual void Update(const double& dt);
 
 	protected:
-
-
-
 	};
 }
 
