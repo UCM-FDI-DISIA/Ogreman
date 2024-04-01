@@ -36,7 +36,10 @@
     <ClCompile Include="AudioEmitterComponent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="OgremanAttackComponent.cpp">
+    <ClCompile Include="..\src\Components\CreatorOgremanAttackComponent.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Components\OgremanAttackComponent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,7 +62,10 @@
     <ClInclude Include="AudioEmitterComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="OgremanAttackComponent.h">
+    <ClInclude Include="..\src\Components\CreatorOgremanAttackComponent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\OgremanAttackComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
