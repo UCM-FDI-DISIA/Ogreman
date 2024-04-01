@@ -25,6 +25,7 @@
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
     <ClCompile Include="AudioEmitterComponent.cpp" />
+    <ClCompile Include="OgremanAttackComponent.cpp" />
     <ClCompile Include="PathingComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="..\src\Components\MovementComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="AudioEmitterComponent.h" />
+    <ClInclude Include="OgremanAttackComponent.h" />
     <ClInclude Include="PathingComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
