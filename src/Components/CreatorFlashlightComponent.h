@@ -2,11 +2,11 @@
 #include <CreatorComponent.h>
 
 namespace Ogreman {
-	class CreatorMovementComponent : public VeryReal::CreatorComponent {
+	class CreatorFlashlightComponent : public VeryReal::CreatorComponent {
 	private:
 	public:
-		CreatorMovementComponent() {}
-		virtual ~CreatorMovementComponent() {}
+		CreatorFlashlightComponent() {}
+		virtual ~CreatorFlashlightComponent() {}
 		VeryReal::Component* CreatorSpecificComponent() override;
 	};
 }

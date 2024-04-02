@@ -1,12 +1,12 @@
 #pragma once
 #include <CreatorComponent.h>
 
-namespace VeryReal {
-	class CreatorPlayerInputComponent : public CreatorComponent {
+namespace Ogreman {
+	class CreatorPlayerInputComponent : public VeryReal::CreatorComponent {
 	private:
 	public:
 		CreatorPlayerInputComponent() {}
 		virtual ~CreatorPlayerInputComponent() {}
-		Component* CreatorSpecificComponent() override;
+		VeryReal::Component* CreatorSpecificComponent() override;
 	};
 };

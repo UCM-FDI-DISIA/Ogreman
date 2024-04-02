@@ -40,3 +40,4 @@ Builds/
 *.tlog
 *.pdb
 *.idb
+*.exp

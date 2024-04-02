@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #ifndef INPUTCOMPONENT
 #define INPUTCOMPONENT
 #include "Component.h"
@@ -7,12 +6,15 @@
 #include "CreatorComponent.h"
 
 namespace VeryReal {
-	class MovementComponent;
 	class CameraComponent;
 }
 
-namespace VeryReal {
-	class PlayerInputComponent : public Component {
+namespace Ogreman {
+	class MovementComponent;
+}
+
+namespace Ogreman {
+	class PlayerInputComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
@@ -26,8 +28,8 @@ namespace VeryReal {
 		float audio_intensity;
 		bool flashlight;
 
-		MovementComponent* my_movement_component;
-		CameraComponent* my_camera_component;
+		Ogreman::MovementComponent* my_movement_component;
+		VeryReal::CameraComponent* my_camera_component;
 	};
 }
 #endif
