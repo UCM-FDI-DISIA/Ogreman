@@ -7,11 +7,11 @@ using namespace Ogreman;
 void GameManager::Start() {
 	//aquí añadiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
 	//añadir lo de la activacion JULVEZ
-	scene_manager->AddScene("Menu");
+	/*scene_manager->AddScene("Menu");
 	scene_manager->AddScene("Play");
 	scene_manager->AddScene("Pause");
 	scene_manager->AddScene("Win");
-	scene_manager->AddScene("Loose");
+	scene_manager->AddScene("Loose");*/
 	
 }
 void GameManager::Update(const double& dt) {
