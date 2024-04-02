@@ -19,11 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Components\CellComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorCellComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNoteComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorOgremanAttackComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPickUpComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\NoteComponent.cpp" />
     <ClCompile Include="..\src\Components\OgremanAttackComponent.cpp" />
     <ClCompile Include="..\src\Components\PickUpComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
@@ -33,11 +37,15 @@
     <ClCompile Include="PathingComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Components\CellComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorCellComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorNoteComponent.h" />
     <ClInclude Include="..\src\Components\CreatorOgremanAttackComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPickUpComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
+    <ClInclude Include="..\src\Components\NoteComponent.h" />
     <ClInclude Include="..\src\Components\OgremanAttackComponent.h" />
     <ClInclude Include="..\src\Components\PickUpComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />

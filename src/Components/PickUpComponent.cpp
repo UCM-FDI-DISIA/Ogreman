@@ -11,5 +11,5 @@ bool VeryReal::PickUpComponent::InitComponent() {
 }
 
 void VeryReal::PickUpComponent::Update(const double& dt) {
-	//auto lista_de_colisionados = PhysicsManager::Make
+	bool lista_de_colisionados = PhysicsManager::MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + Vector3(1000,0,0));
 }

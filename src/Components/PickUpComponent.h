@@ -3,7 +3,6 @@
 #define PICKUPCOMPONENT
 #include "Component.h"
 #include "Vector3.h"
-#include "CreatorComponent.h"
 
 namespace VeryReal {
 	class TransformComponent;

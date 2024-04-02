@@ -2,10 +2,10 @@
 #include "PickUpComponent.h"
 
 VeryReal::Component* VeryReal::CreatorPickUpComponent::CreatorSpecificComponent() {
-    PickUpComponent* mc = new PickUpComponent();
+    PickUpComponent* pick_comp = new PickUpComponent();
 
-    if (!mc->InitComponent())
+    if (!pick_comp->InitComponent())
         return nullptr;
     else
-        return mc;
+        return pick_comp;
 }
