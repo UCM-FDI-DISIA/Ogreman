@@ -4,7 +4,7 @@
 VeryReal::Component* VeryReal::CreatorNoteComponent::CreatorSpecificComponent() {
     NoteComponent* note_comp = new NoteComponent();
 
-    if (!note_comp->InitComponent())
+    if (!note_comp->InitComponent(" "))
         return nullptr;
     else
         return note_comp;

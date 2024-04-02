@@ -36,3 +36,7 @@ Builds/
 [Bb]in/*
 [Tt]emp/
 [Ll]ib/
+*.log
+*.tlog
+*.pdb
+*.idb
