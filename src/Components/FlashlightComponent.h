@@ -21,6 +21,7 @@ namespace Ogreman {
 
 	protected:
 		double max_energy = 100.0f;
+		double MAX_ENERGY = 5;
 		double energy_remaining = MAX_ENERGY;
 		double energy_consume_rate = 1.0f;
 

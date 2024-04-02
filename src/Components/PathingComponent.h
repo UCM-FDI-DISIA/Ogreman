@@ -1,11 +1,12 @@
 #pragma once
-#ifndef PATHNODE
-#define PATHNODE
+#ifndef PATHINGCOMPONENT
+#define PATHINGCOMPONENT
 #include "Component.h"
 #include "Vector3.h"
 #include "CreatorComponent.h"
+#include <variant>
 namespace OgreMan {
-	class PathNode : public VeryReal::Component
+	class PathingComponent : public VeryReal::Component
 	{
 
 	public:
@@ -15,9 +16,10 @@ namespace OgreMan {
 	protected:
 
 
-
 	};
 }
 
 
 #endif // PATHINGCOMPONENT
+
+

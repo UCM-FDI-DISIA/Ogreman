@@ -4,14 +4,14 @@
 #include "Singleton.h"
 #include "SceneManager.h"
 
-
+#include "../src/Components/NodeComponent.h"
 //comentario aclaratorio: contamos con un game manager que llama al SceneManager que tiene una lista de Escenas
 namespace Ogreman {
 	class GameManager:public VeryReal::Singleton<GameManager>
 	{
 	private:
 		VeryReal::SceneManager* scene_manager;
-		
+		std::list<NodeComponent*> pathNodes;
 	public:
 		
 		virtual ~GameManager();
@@ -23,6 +23,14 @@ namespace Ogreman {
 		void Play();
 		void Pause();
 
+		inline std::list<NodeComponent*> GetPathNode() {
+			return pathNodes;
+		}
+		void RegisterPathNode(NodeComponent* node) {
+			pathNodes.push_back(node);
+
+		}
+	
 	};
 }
 
