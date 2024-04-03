@@ -21,6 +21,9 @@
     <ClCompile Include="..\src\Components\GridComponent.cpp" />
     <ClCompile Include="..\src\Components\NodeComponent.cpp" />
     <ClCompile Include="..\src\Components\PathingComponent.cpp" />
+    <ClCompile Include="MerodeoMovementComponent.cpp" />
+    <ClCompile Include="CreatorPlayerInteractionComponent.cpp" />
+    <ClCompile Include="PlayerInteractionComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -42,5 +45,8 @@
     <ClInclude Include="..\src\Components\GridComponent.h" />
     <ClInclude Include="..\src\Components\NodeComponent.h" />
     <ClInclude Include="..\src\Components\PathingComponent.h" />
+    <ClInclude Include="MerodeoMovementComponent.h" />
+    <ClInclude Include="CreatorPlayerInteractionComponent.h" />
+    <ClInclude Include="PlayerInteractionComponent.h" />
   </ItemGroup>
 </Project>
