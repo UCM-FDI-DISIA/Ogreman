@@ -3,7 +3,7 @@
 #include "NoteComponent.h"
 
 bool VeryReal::PlayerInteractionComponent::InitComponent() {
-	my_flashlight_component = this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>("FlashlightComponent");
+	/*my_flashlight_component = this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>("FlashlightComponent");*/
 	return true;
 }
 
@@ -14,6 +14,6 @@ void VeryReal::PlayerInteractionComponent::GetCell()
 
 void VeryReal::PlayerInteractionComponent::GetNote(NoteComponent* note)
 {
-	string myText = 
+	/*string myText = */
 	//hacer aparecer el texto en pantalla
 }

@@ -36,12 +36,12 @@
     <ClCompile Include="..\src\Components\PathingComponent.cpp" />
     <ClCompile Include="..\src\Components\PickUpComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
     <ClCompile Include="AudioEmitterComponent.cpp" />
     <ClCompile Include="CreatorPlayerInteractionComponent.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="MerodeoMovementComponent.cpp" />
-    <ClCompile Include="PlayerInteractionComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -61,11 +61,11 @@
     <ClInclude Include="..\src\Components\PathingComponent.h" />
     <ClInclude Include="..\src\Components\PickUpComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
     <ClInclude Include="AudioEmitterComponent.h" />
     <ClInclude Include="CreatorPlayerInteractionComponent.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="MerodeoMovementComponent.h" />
-    <ClInclude Include="PlayerInteractionComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -4,9 +4,7 @@
 #include "Component.h"
 #include "Vector3.h"
 #include "CreatorComponent.h"
-#include <variant>s
-
-
+#include <variant>
 	class NodeComponent : public VeryReal::Component
 	{
 	public:
