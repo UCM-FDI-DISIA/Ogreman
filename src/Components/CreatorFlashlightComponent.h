@@ -8,5 +8,6 @@ namespace Ogreman {
 		CreatorFlashlightComponent() {}
 		virtual ~CreatorFlashlightComponent() {}
 		VeryReal::Component* CreatorSpecificComponent() override;
+		void SpecificInitComponent(VeryReal::Component* c) override;
 	};
 }

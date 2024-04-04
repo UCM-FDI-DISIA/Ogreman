@@ -2,10 +2,14 @@
 #include "PlayerInputComponent.h"
 
 VeryReal::Component* Ogreman::CreatorPlayerInputComponent::CreatorSpecificComponent() {
-    Ogreman::PlayerInputComponent* pi = new Ogreman::PlayerInputComponent();
+    return new PlayerInputComponent();
+}
 
-    if (!pi->InitComponent())
-        return nullptr;
-    else
-        return pi;
+void Ogreman::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::PlayerInputComponent* pi = static_cast<Ogreman::PlayerInputComponent*>(c);
+
+    if (!pi->InitComponent()) {
+        // Gestion de error
+    }
+      
 }

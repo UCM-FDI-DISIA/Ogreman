@@ -8,5 +8,6 @@ namespace Ogreman {
 		CreatorPlayerInputComponent() {}
 		virtual ~CreatorPlayerInputComponent() {}
 		VeryReal::Component* CreatorSpecificComponent() override;
+		void SpecificInitComponent(VeryReal::Component* c) override;
 	};
 };

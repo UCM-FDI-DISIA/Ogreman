@@ -27,6 +27,7 @@
     <ClCompile Include="..\src\Components\CreatorOgremanAttackComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPickUpComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\FlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\GridComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
@@ -39,7 +40,6 @@
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
     <ClCompile Include="AudioEmitterComponent.cpp" />
-    <ClCompile Include="CreatorPlayerInteractionComponent.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="MerodeoMovementComponent.cpp" />
   </ItemGroup>
@@ -52,6 +52,7 @@
     <ClInclude Include="..\src\Components\CreatorOgremanAttackComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPickUpComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
     <ClInclude Include="..\src\Components\FlashlightComponent.h" />
     <ClInclude Include="..\src\Components\GridComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
@@ -63,7 +64,6 @@
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
     <ClInclude Include="AudioEmitterComponent.h" />
-    <ClInclude Include="CreatorPlayerInteractionComponent.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="MerodeoMovementComponent.h" />
   </ItemGroup>

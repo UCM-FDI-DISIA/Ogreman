@@ -1,12 +1,13 @@
 #pragma once
 #include <CreatorComponent.h>
 
-namespace VeryReal {
-	class CreatorOgremanAttackComponent : public CreatorComponent {
+namespace Ogreman {
+	class CreatorOgremanAttackComponent : public VeryReal::CreatorComponent {
 	private:
 	public:
 		CreatorOgremanAttackComponent() {}
 		virtual ~CreatorOgremanAttackComponent() {}
-		Component* CreatorSpecificComponent() override;
+		VeryReal::Component* CreatorSpecificComponent() override;
+		void SpecificInitComponent(VeryReal::Component* c) override;
 	};
 };

@@ -4,8 +4,8 @@
 #include "Component.h"
 #include <string>
 
-namespace VeryReal {
-	class CellComponent : public Component {
+namespace Ogreman {
+	class CellComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 

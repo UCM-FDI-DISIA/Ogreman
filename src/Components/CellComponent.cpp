@@ -1,5 +1,5 @@
 #include "CellComponent.h"
-bool VeryReal::CellComponent::InitComponent() {
+bool Ogreman::CellComponent::InitComponent() {
 	pickedUp = false;
 	return true;
 }

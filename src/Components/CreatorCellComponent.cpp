@@ -1,11 +1,14 @@
 #include "CreatorCellComponent.h"
 #include "CellComponent.h"
 
-VeryReal::Component* VeryReal::CreatorCellComponent::CreatorSpecificComponent() {
-    CellComponent* cell_comp = new CellComponent();
+VeryReal::Component* Ogreman::CreatorCellComponent::CreatorSpecificComponent() {
+    return new Ogreman::CellComponent();
+}
 
-    if (!cell_comp->InitComponent())
-        return nullptr;
-    else
-        return cell_comp;
+void Ogreman::CreatorCellComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::CellComponent* cell_comp = static_cast<Ogreman::CellComponent*>(c);
+
+    if (!cell_comp->InitComponent()) {
+        // Gestion de errror
+    }    
 }

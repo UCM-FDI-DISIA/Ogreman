@@ -8,14 +8,14 @@ namespace VeryReal {
 	class TransformComponent;
 }
 
-namespace VeryReal {
-	class PickUpComponent : public Component {
+namespace Ogreman {
+	class PickUpComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
 
 	private:
-		TransformComponent* player_transform;
+		VeryReal::TransformComponent* player_transform;
 	};
 }
 #endif

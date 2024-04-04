@@ -1,11 +1,14 @@
 #include "CreatorNoteComponent.h"
 #include "NoteComponent.h"
 
-VeryReal::Component* VeryReal::CreatorNoteComponent::CreatorSpecificComponent() {
-    NoteComponent* note_comp = new NoteComponent();
+VeryReal::Component* Ogreman::CreatorNoteComponent::CreatorSpecificComponent() {
+    return new NoteComponent();
+}
 
-    if (!note_comp->InitComponent(" "))
-        return nullptr;
-    else
-        return note_comp;
+void Ogreman::CreatorNoteComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::NoteComponent* note_comp = static_cast<Ogreman::NoteComponent*>(c);
+
+    if (!note_comp->InitComponent(" ")) {
+        // Gestion de error
+    }
 }

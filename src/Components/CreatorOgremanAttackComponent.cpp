@@ -1,10 +1,14 @@
 #include "CreatorOgremanAttackComponent.h"
 #include "OgremanAttackComponent.h"
-VeryReal::Component* VeryReal::CreatorOgremanAttackComponent::CreatorSpecificComponent() {
-    OgremanAttackComponent* oa = new OgremanAttackComponent();
+VeryReal::Component* Ogreman::CreatorOgremanAttackComponent::CreatorSpecificComponent() {
+    return new OgremanAttackComponent();
+}
 
-    if (!oa->InitComponent())
-        return nullptr;
-    else
-        return oa;
+void Ogreman::CreatorOgremanAttackComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::OgremanAttackComponent* oa = static_cast<Ogreman::OgremanAttackComponent*>(c);
+
+    if (!oa->InitComponent()) {
+        // Gestion de error
+    }
+       
 }

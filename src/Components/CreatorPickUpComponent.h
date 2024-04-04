@@ -1,12 +1,13 @@
 #pragma once
 #include <CreatorComponent.h>
-namespace VeryReal {
-	class CreatorPickUpComponent : public CreatorComponent {
+namespace Ogreman {
+	class CreatorPickUpComponent : public VeryReal::CreatorComponent {
 	private:
 	public:
 		CreatorPickUpComponent() {}
 		virtual ~CreatorPickUpComponent() {}
-		Component* CreatorSpecificComponent() override;
+		VeryReal::Component* CreatorSpecificComponent() override;
+		void SpecificInitComponent(VeryReal::Component* c) override;
 	};
 }
 

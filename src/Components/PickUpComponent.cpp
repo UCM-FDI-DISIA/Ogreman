@@ -5,11 +5,11 @@
 #include <Scene.h>
 #include <PhysicsManager.h>
 
-bool VeryReal::PickUpComponent::InitComponent() {
-	player_transform = SceneManager::Instance()->GetScene("Play")->GetEntity("player")->GetComponent<TransformComponent>("TransformComponent");
+bool Ogreman::PickUpComponent::InitComponent() {
+	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>("TransformComponent");
 	return true;
 }
 
-void VeryReal::PickUpComponent::Update(const double& dt) {
-	bool lista_de_colisionados = PhysicsManager::MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + Vector3(1000,0,0));
+void Ogreman::PickUpComponent::Update(const double& dt) {
+	//bool lista_de_colisionados = PhysicsManager::MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + Vector3(1000,0,0));
 }

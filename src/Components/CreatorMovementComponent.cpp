@@ -2,10 +2,13 @@
 #include "MovementComponent.h"
 
 VeryReal::Component* Ogreman::CreatorMovementComponent::CreatorSpecificComponent() {
-    Ogreman::MovementComponent* mc = new Ogreman::MovementComponent();
+    return new Ogreman::MovementComponent();
+}
 
-    if (!mc->InitComponent())
-        return nullptr;
-    else 
-        return mc;
+void Ogreman::CreatorMovementComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::MovementComponent* mc = static_cast<Ogreman::MovementComponent*>(c);
+
+    if (!mc->InitComponent()) {
+        // Gestion de error
+    }
 }

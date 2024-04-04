@@ -2,10 +2,13 @@
 #include "FlashlightComponent.h"
 
 VeryReal::Component* Ogreman::CreatorFlashlightComponent::CreatorSpecificComponent() {
-    Ogreman::FlashlightComponent* fl = new Ogreman::FlashlightComponent();
+    return new Ogreman::FlashlightComponent();
+}
 
-    if (!fl->InitComponent())
-        return nullptr;
-    else
-        return fl;
+void Ogreman::CreatorFlashlightComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::FlashlightComponent* fl = static_cast<Ogreman::FlashlightComponent*>(c);
+
+    if (!fl->InitComponent()) {
+        // Gestion de error
+    }
 }

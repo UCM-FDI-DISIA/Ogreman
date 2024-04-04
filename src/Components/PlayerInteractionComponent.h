@@ -6,20 +6,18 @@
 
 namespace Ogreman {
 	class FlashlightComponent;
-}
-namespace Ogreman {
 	class NoteComponent;
 }
 
-namespace VeryReal {
-	class PlayerInteractionComponent : public Component {
+namespace Ogreman {
+	class PlayerInteractionComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		void GetCell();
 		void GetNote(NoteComponent* note);
 	private:
-		Ogreman::FlashlightComponent* my_flashlight_component;
-		Ogreman::NoteComponent* my_note_component;
+		FlashlightComponent* my_flashlight_component;
+		NoteComponent* my_note_component;
 
 	};
 }

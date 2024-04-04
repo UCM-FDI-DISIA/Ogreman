@@ -1,11 +1,15 @@
 #include "CreatorPickUpComponent.h"
 #include "PickUpComponent.h"
 
-VeryReal::Component* VeryReal::CreatorPickUpComponent::CreatorSpecificComponent() {
-    PickUpComponent* pick_comp = new PickUpComponent();
+VeryReal::Component* Ogreman::CreatorPickUpComponent::CreatorSpecificComponent() {
+    return new PickUpComponent();
+}
 
-    if (!pick_comp->InitComponent())
-        return nullptr;
-    else
-        return pick_comp;
+void Ogreman::CreatorPickUpComponent::SpecificInitComponent(VeryReal::Component* c) {
+    Ogreman::PickUpComponent* pick_comp = static_cast<Ogreman::PickUpComponent*>(c);
+
+    if (!pick_comp->InitComponent()) {
+        //Gestion de error
+    }
+        
 }
