@@ -5,6 +5,7 @@
 #include "InputManager.h"
 #include "CameraComponent.h"
 #include "AudioLeon.h"
+#include "PickUpComponent.h"
 
 bool Ogreman::PlayerInputComponent::InitComponent() {
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>("MovementComponent");
@@ -34,6 +35,13 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		}
 		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
 			my_movement_component->SetMoventDirectionZ(-sprint);
+		}
+
+		if (canPickUp) {
+			// Anadir UI de PULSA E
+			if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_E)) {
+				my_pickup_component->GetElement();
+			}
 		}
 
 		// Camara con teclado y raton 

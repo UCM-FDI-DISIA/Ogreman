@@ -6,7 +6,6 @@
 
 namespace Ogreman {
 	class FlashlightComponent;
-	class NoteComponent;
 }
 
 namespace Ogreman {
@@ -14,10 +13,10 @@ namespace Ogreman {
 	public:
 		virtual bool InitComponent();
 		void GetCell();
-		void GetNote(NoteComponent* note);
+		void GetNote(std::string note);
 	private:
 		FlashlightComponent* my_flashlight_component;
-		NoteComponent* my_note_component;
+		std::string my_text;
 
 	};
 }

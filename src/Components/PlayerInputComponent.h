@@ -11,6 +11,7 @@ namespace VeryReal {
 
 namespace Ogreman {
 	class MovementComponent;
+	class PickUpComponent;
 }
 
 namespace Ogreman {
@@ -26,9 +27,10 @@ namespace Ogreman {
 		std::pair<int32_t, int32_t> prev_mouse_pos;
 
 		float audio_intensity;
-		bool flashlight;
+		bool flashlight, canPickUp = false;
 
 		Ogreman::MovementComponent* my_movement_component;
+		Ogreman::PickUpComponent* my_pickup_component;
 		VeryReal::CameraComponent* my_camera_component;
 	};
 }
