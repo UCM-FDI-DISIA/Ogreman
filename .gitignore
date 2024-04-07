@@ -41,3 +41,6 @@ Builds/
 *.pdb
 *.idb
 *.exp
+
+# Ignore
+![Bb]in/[Aa]ssets/
