@@ -10,7 +10,7 @@
 	public:
 		NodeComponent();
 		~NodeComponent();
-		virtual bool InitComponent(float cost, float hcost, int iswalkable,int id);
+		virtual bool InitComponent(bool ispatrol,float cost, float hcost, int iswalkable,int id);
 		std::list<NodeComponent*> GetNeighbours();
 		void AddNeighbors(NodeComponent* node);
 		void DeleteNeighbors(NodeComponent* node);
@@ -20,6 +20,7 @@
 		bool iswalkable = false;
 		std::list<NodeComponent*> neighbours;
 		int id;
+		bool ispatrol;
 	};
 
 

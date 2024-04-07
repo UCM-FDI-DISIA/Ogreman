@@ -3,13 +3,16 @@
 NodeComponent::NodeComponent():cost(0),hcost(0),iswalkable(false) {
 
 }
-bool NodeComponent::InitComponent(float cost, float hcost, int iswalkable,int id) {
+bool NodeComponent::InitComponent(bool ispatrol,float cost, float hcost, int iswalkable,int id) {
+	this->ispatrol = ispatrol;
 	this->cost = cost;
 	this->hcost = hcost;
 	this->estimated_cost = cost + hcost;
 	this->iswalkable = iswalkable;
 	this->id = id;
+
 	Ogreman::GameManager::Instance()->RegisterPathNode(this);
+	if (ispatrol)Ogreman::GameManager::Instance()->RegisterPatrolNode(this);
 	return true;
  }
 NodeComponent::~NodeComponent() {

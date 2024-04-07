@@ -18,12 +18,11 @@
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
     <ClCompile Include="AudioEmitterComponent.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="..\src\Components\GridComponent.cpp" />
     <ClCompile Include="..\src\Components\NodeComponent.cpp" />
-    <ClCompile Include="..\src\Components\PathingComponent.cpp" />
     <ClCompile Include="MerodeoMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
+    <ClCompile Include="..\src\Components\GridComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -42,11 +41,11 @@
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="AudioEmitterComponent.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="..\src\Components\GridComponent.h" />
     <ClInclude Include="..\src\Components\NodeComponent.h" />
-    <ClInclude Include="..\src\Components\PathingComponent.h" />
     <ClInclude Include="MerodeoMovementComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\DigrafoValorado.h" />
+    <ClInclude Include="..\src\Components\GridComponent.h" />
   </ItemGroup>
 </Project>
