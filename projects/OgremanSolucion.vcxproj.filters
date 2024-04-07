@@ -23,6 +23,8 @@
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\GridComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorGridComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -47,5 +49,8 @@
     <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
     <ClInclude Include="..\src\Components\DigrafoValorado.h" />
     <ClInclude Include="..\src\Components\GridComponent.h" />
+    <ClInclude Include="CreatorNodeComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorGridComponent.h" />
   </ItemGroup>
 </Project>
