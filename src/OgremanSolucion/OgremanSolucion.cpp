@@ -18,7 +18,7 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "CreatorCameraComponent.h"
 #include "TransformComponent.h"
-
+#include "CameraComponent.h"
 #include "../Components/CreatorCellComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
 #include "../Components/CreatorGridComponent.h"
@@ -91,7 +91,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
-        Component* mov = e->AddComponent("MovementComponent");
+
         Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
        // Component* cam = camara->AddComponent("Camera");
@@ -99,8 +99,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* luzcom = luz->AddComponent("Light");
         Component* transform = e->AddComponent("transform");
         Component* meshrenderer = e->AddComponent("MeshRender");
-
+        Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
+       
+        static_cast<CameraComponent*>(cam2)->SetTarget(e);
         Component* inpur = e->AddComponent("InputComponent");
 
 

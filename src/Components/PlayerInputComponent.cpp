@@ -20,7 +20,7 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 void Ogreman::PlayerInputComponent::Update(const double& dt){
 	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) {
 		// Movimiento Teclado
-		int sprint = 0.5;
+		float sprint = 0.5;
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
 			sprint = 1;
 		}

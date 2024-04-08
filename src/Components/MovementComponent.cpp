@@ -3,16 +3,27 @@
 #include "Entity.h"
 
 bool Ogreman::MovementComponent::InitComponent(){
-	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
-	if (this->my_transform != nullptr)
+	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("transform");
+	if (this->my_transform != NULL)
 		return true;
 	else 
 		return false;
 }
 
-void Ogreman::MovementComponent::Update(const double& dt) {
+void Ogreman::MovementComponent::Update(const double& dt) 
+{
+
 	if (IsMoving()) {
-		my_transform->Translate(movementDirection * speed * dt);
-		//std::cout << "Hola" << std::endl;
+		
+		std::cout << movementDirection.GetX();
+		std::cout << movementDirection.GetY();
+		std::cout << movementDirection.GetZ();
+		my_transform->Translate(movementDirection * speed);
+
 	}
+}
+
+bool Ogreman::MovementComponent::IsMoving()
+{
+	return movementDirection != VeryReal::Vector3(0, 0, 0);
 }

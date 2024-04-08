@@ -7,6 +7,7 @@
 
 namespace VeryReal {
 	class TransformComponent;
+	class Vector3;
 }
 
 namespace Ogreman {
@@ -15,14 +16,14 @@ namespace Ogreman {
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
 
-		inline bool IsMoving() { return movementDirection != VeryReal::Vector3(0, 0, 0); }
+		bool IsMoving();
 		inline void SetMoventDirection(VeryReal::Vector3 newDirection) { movementDirection = newDirection; }
 		inline void SetMoventDirectionX(float X) { movementDirection.SetX(X); }
 		inline void SetMoventDirectionY(float Y) { movementDirection.SetY(Y); }
 		inline void SetMoventDirectionZ(float Z) { movementDirection.SetZ(Z); }
 
 	private:
-		float speed = 100;
+		float speed = 1;
 		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1,0,0);
 
 		VeryReal::TransformComponent* my_transform = nullptr;
