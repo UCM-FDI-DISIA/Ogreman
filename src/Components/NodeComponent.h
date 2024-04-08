@@ -18,6 +18,7 @@ namespace Ogreman
 		void AddNeighbors(NodeComponent* node);
 		void DeleteNeighbors(NodeComponent* node);
 		int GetID();
+		inline void setID(int const& i) { this->id = i; }
 	protected:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;
