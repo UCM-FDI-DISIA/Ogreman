@@ -52,17 +52,17 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) int main() {
         VeryReal::RenderManager::Instance()->InitManager("app");
-        VeryReal::Creator::Instance()->AddCreator("transform", new VeryReal::CreatorTransformComponent());
-        Creator::Instance()->GetCreator("transform")->AddParameter("a", 0);
-        Creator::Instance()->GetCreator("transform")->AddParameter("position", Vector3{ 0, 0, 20 });
-        Creator::Instance()->GetCreator("transform")->AddParameter("rotation", Vector3{ 0, 0, 0 });
-        Creator::Instance()->GetCreator("transform")->AddParameter("scale", Vector3{ 1, 1, 1 });
+        VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
+        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
+        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0, 20 });
+        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("rotation", Vector3{ 0, 0, 0 });
+        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("scale", Vector3{ 1, 1, 1 });
 
-        VeryReal::Creator::Instance()->AddCreator("MeshRender", new VeryReal::CreatorMeshRenderComponent());
-        Creator::Instance()->GetCreator("MeshRender")->AddParameter("isstatic", true);
-        Creator::Instance()->GetCreator("MeshRender")->AddParameter("modelname", std::string("Sinbad.mesh"));
-        Creator::Instance()->GetCreator("MeshRender")->AddParameter("entityname", std::string("sinbad"));
-        Creator::Instance()->GetCreator("MeshRender")->AddParameter("materialname", std::string(""));
+        VeryReal::Creator::Instance()->AddCreator("MeshRenderComponent", new VeryReal::CreatorMeshRenderComponent());
+        Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("isstatic", true);
+        Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("modelname", std::string("Sinbad.mesh"));
+        Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("entityname", std::string("sinbad"));
+        Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("materialname", std::string(""));
 #pragma region camara
         VeryReal::Creator::Instance()->AddCreator("CameraComponent", new VeryReal::CreatorCameraComponent());
         Creator::Instance()->GetCreator("CameraComponent")->AddParameter("name", std::string("anim"));
@@ -95,10 +95,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
        // Component* cam = camara->AddComponent("Camera");
-        Component* trans = luz->AddComponent("transform");
+        Component* trans = luz->AddComponent("TransformComponent");
         Component* luzcom = luz->AddComponent("Light");
-        Component* transform = e->AddComponent("transform");
-        Component* meshrenderer = e->AddComponent("MeshRender");
+        Component* transform = e->AddComponent("TransformComponent");
+        Component* meshrenderer = e->AddComponent("MeshRenderComponent");
         Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
        
@@ -107,8 +107,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
 
         Entity* ogrite = s->AddEntity("VAMOS");
-       Component* transfoerm= ogrite->AddComponent("transform");
-        ogrite->AddComponent("MeshRender");
+       Component* transfoerm= ogrite->AddComponent("TransformComponent");
+        ogrite->AddComponent("MeshRenderComponent");
         static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,25));
         return 0;
     }

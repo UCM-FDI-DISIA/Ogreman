@@ -3,7 +3,7 @@
 #include "Entity.h"
 
 bool Ogreman::MovementComponent::InitComponent(){
-	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("transform");
+	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
 	if (this->my_transform != NULL)
 		return true;
 	else 
