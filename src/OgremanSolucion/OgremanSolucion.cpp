@@ -9,6 +9,8 @@
 #include "Entity.h"
 #include "Component.h"
 #include "CreatorCameraComponent.h"
+#include "ComponentesAudio/CreatorAudioListenerComponent.h"
+#include "ComponentesAudio/CreatorAudioSourceComponent.h"
 #include "Vector3.h"
 #include "CreatorLightComponent.h"
 #include "CreatorMeshRenderComponent.h"
@@ -81,6 +83,23 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("Light")->AddParameter("shdws", true);
 #pragma endregion 
 
+#pragma region audiosource
+        VeryReal::Creator::Instance()->AddCreator("AudioSourceComponent", new VeryReal::CreatorAudioSourceComponent());
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("name", std::string("sonido"));
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("path", std::string("sonido_jefe_merodeando2.mp3"));
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("groupchannel", std::string("sonido"));
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("onstart", true);
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("loop", true);
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("threed", true);
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("volume", 1000.f);
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("mindistance", 0.0f);
+        Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("maxdistance", 100000.0f);
+#pragma endregion
+
+#pragma region audiolistener
+        VeryReal::Creator::Instance()->AddCreator("AudioListenerComponent", new VeryReal::CreatorAudioListenerComponent());
+#pragma endregion
+
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("InputComponent", new Ogreman::CreatorPlayerInputComponent());
        
@@ -91,6 +110,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
+        Component* audioSource = e->AddComponent("AudioSourceComponent");
+        Component* audioListener = e->AddComponent("AudioListenerComponent");
 
         Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
