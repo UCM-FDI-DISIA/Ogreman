@@ -19,10 +19,7 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "CreatorCameraComponent.h"
 #include "TransformComponent.h"
-#include "../Components/CellComponent.h"
-#include "../Components/CellComponent.h"
-#include "../Components/CellComponent.h"
-#include "../Components/CellComponent.h"
+
 #include "../Components/CreatorCellComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
 #include "../Components/CreatorGridComponent.h"
@@ -41,6 +38,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) bool start()
     {
+        std::cout << "Si" << std::endl;
         VeryReal::Creator::Instance()->AddCreator("cell", new Ogreman::CreatorCellComponent());
         VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("grid", new Ogreman::CreatorGridComponent());
