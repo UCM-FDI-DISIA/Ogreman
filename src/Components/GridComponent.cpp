@@ -1,5 +1,5 @@
 #include "GridComponent.h"
-#include "../../projects/GameManager.h"
+#include "GameManager.h"
 #include "PhysicsManager.h"
 #include "TransformComponent.h"
 #include "Entity.h"

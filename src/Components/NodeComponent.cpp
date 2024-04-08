@@ -1,5 +1,5 @@
 #include "NodeComponent.h"
-#include "../../projects/GameManager.h"
+#include "GameManager.h"
 using namespace Ogreman;
 NodeComponent::NodeComponent():cost(0),hcost(0),iswalkable(false) {
 

@@ -3,8 +3,8 @@
 #define GAMEMANAGER_OGREMAN
 #include "Singleton.h"
 #include "SceneManager.h"
+#include "NodeComponent.h"
 
-#include "../src/Components/NodeComponent.h"
 //comentario aclaratorio: contamos con un game manager que llama al SceneManager que tiene una lista de Escenas
 namespace Ogreman {
 	class GameManager:public VeryReal::Singleton<GameManager>
