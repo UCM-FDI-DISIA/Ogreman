@@ -30,11 +30,17 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_D)) {
 			my_movement_component->SetMoventDirectionX(sprint);
 		}
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_W)) {
+		else {
+			my_movement_component->SetMoventDirectionX(0);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
 			my_movement_component->SetMoventDirectionZ(sprint);
 		}
-		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
+		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_W)) {
 			my_movement_component->SetMoventDirectionZ(-sprint);
+		}
+		else {
+			my_movement_component->SetMoventDirectionZ(0);
 		}
 
 		if (canPickUp) {
