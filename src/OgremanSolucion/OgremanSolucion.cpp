@@ -14,7 +14,11 @@
 #include "CreatorLightComponent.h"
 #include "CreatorMeshRenderComponent.h"
 #include "UI/UISpriteRenderComponent.h" 
-
+#include "SceneManager.h"
+#include "../Components/CreatorMovementComponent.h"
+#include "../Components/CreatorPlayerInputComponent.h"
+#include "CreatorCameraComponent.h"
+#include "TransformComponent.h"
 using namespace VeryReal;
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
 {
@@ -39,10 +43,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("MeshRender")->AddParameter("entityname", std::string("sinbad"));
         Creator::Instance()->GetCreator("MeshRender")->AddParameter("materialname", std::string(""));
 #pragma region camara
-        VeryReal::Creator::Instance()->AddCreator("Camera", new VeryReal::CreatorCameraComponent());
-        Creator::Instance()->GetCreator("Camera")->AddParameter("name", std::string("anim"));
-        Creator::Instance()->GetCreator("Camera")->AddParameter("color", Vector3(0.8f, 0.3f, 1));
-        Creator::Instance()->GetCreator("Camera")->AddParameter("offset", Vector3{ 100, 100, 100 });
+        VeryReal::Creator::Instance()->AddCreator("CameraComponent", new VeryReal::CreatorCameraComponent());
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("name", std::string("anim"));
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("color", Vector3(0.8f, 0.3f, 1));
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("offset", Vector3{ 100, 100, 100 });
 #pragma endregion
 #pragma region luz
         VeryReal::Creator::Instance()->AddCreator("Light", new VeryReal::CreatorLightComponent());
@@ -56,23 +60,32 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("Light")->AddParameter("shdws", true);
 #pragma endregion 
 
+        VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
+        VeryReal::Creator::Instance()->AddCreator("InputComponent", new Ogreman::CreatorPlayerInputComponent());
+       
+
+
+
+
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
 
         Entity* luz = s->AddEntity("Luz");
-        Entity* camara = s->AddEntity("Cam");
-        Component* cam = camara->AddComponent("Camera");
+        //Entity* camara = s->AddEntity("Cam");
+       // Component* cam = camara->AddComponent("Camera");
         Component* trans = luz->AddComponent("transform");
         Component* luzcom = luz->AddComponent("Light");
         Component* transform = e->AddComponent("transform");
         Component* meshrenderer = e->AddComponent("MeshRender");
+        Component* mov = e->AddComponent("MovementComponent");
+        Component* cam2 = e->AddComponent("CameraComponent");
+        Component* inpur = e->AddComponent("InputComponent");
 
-        while (true) {
-            VeryReal::RenderManager::Instance()->Update(0.2);
-            s->Update(0.1);
-
-        }
+        Entity* ogrite = s->AddEntity("VAMOS");
+       Component* transfoerm= ogrite->AddComponent("transform");
+        ogrite->AddComponent("MeshRender");
+        static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,25));
         return 0;
     }
 }

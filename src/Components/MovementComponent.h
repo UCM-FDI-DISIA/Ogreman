@@ -23,7 +23,7 @@ namespace Ogreman {
 
 	private:
 		float speed = 10;
-		VeryReal::Vector3 movementDirection = VeryReal::Vector3(0,0,0);
+		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1,0,0);
 
 		VeryReal::TransformComponent* my_transform = nullptr;
 	};

@@ -34,7 +34,7 @@ void MerodeoMovementComponent::Update(const double& dt){
 		Vector3 targetOrientation = targetcosa + transfrormcomponent->GetRotation();
 		targetcosa = transfrormcomponent->GetPosition() + transfrormcomponent->GetRotation();
 		targetcosa += targetOrientation;
-
+			
 		Vector3 lineal = Vector3(targetcosa.GetX() * aceleration, 0, targetcosa.GetZ() * aceleration);
 
 		rigidbodycomponent->SetVelocityLinear(lineal);
