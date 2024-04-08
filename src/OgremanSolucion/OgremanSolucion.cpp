@@ -110,8 +110,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
-        Component* audioSource = e->AddComponent("AudioSourceComponent");
-        Component* audioListener = e->AddComponent("AudioListenerComponent");
 
         Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
@@ -119,6 +117,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* trans = luz->AddComponent("TransformComponent");
         Component* luzcom = luz->AddComponent("Light");
         Component* transform = e->AddComponent("TransformComponent");
+        Component* audioSource = e->AddComponent("AudioSourceComponent");
+        Component* audioListener = e->AddComponent("AudioListenerComponent");
         Component* meshrenderer = e->AddComponent("MeshRenderComponent");
         Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
