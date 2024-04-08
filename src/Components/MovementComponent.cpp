@@ -10,7 +10,9 @@ bool Ogreman::MovementComponent::InitComponent(){
 		return false;
 }
 
-void Ogreman::MovementComponent::LateUpdate(const double& dt) {
-	if (IsMoving())
+void Ogreman::MovementComponent::Update(const double& dt) {
+	if (IsMoving()) {
 		my_transform->Translate(movementDirection * speed * dt);
+		//std::cout << "Hola" << std::endl;
+	}
 }

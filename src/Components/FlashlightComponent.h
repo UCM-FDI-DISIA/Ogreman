@@ -15,7 +15,7 @@ namespace Ogreman {
 	class FlashlightComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
-		virtual void LateUpdate(const double& dt);
+		virtual void Update(const double& dt);
 
 		bool ChargeBatery(double energy_charge);
 

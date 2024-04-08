@@ -15,7 +15,7 @@ bool Ogreman::FlashlightComponent::InitComponent() {
 		return false;
 }
 
-void Ogreman::FlashlightComponent::LateUpdate(const double& dt) {
+void Ogreman::FlashlightComponent::Update(const double& dt) {
 	if (my_input->IsFlashLightPressed() && energy_remaining > 0.0f) {
 		energy_remaining = std::max(energy_remaining - energy_consume_rate * dt, 0.0);
 		// Activar linterna (setActive del nodo de ogre)

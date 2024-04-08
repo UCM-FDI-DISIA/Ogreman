@@ -1,5 +1,4 @@
 // OgremanSolucion.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
 #include <iostream>
 #include <RenderManager.h>
 #include "CreatorAnimatorComponent.h"
@@ -32,33 +31,26 @@
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
 using namespace VeryReal;
+
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
 {
     // Declaración de la función que deseas exportar
 
-    __declspec(dllexport) bool start()
-    {
-        std::cout << "Si" << std::endl;
+    __declspec(dllexport) bool start() {
         VeryReal::Creator::Instance()->AddCreator("cell", new Ogreman::CreatorCellComponent());
         VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("grid", new Ogreman::CreatorGridComponent());
-        VeryReal::Creator::Instance()->AddCreator("movement", new Ogreman::CreatorMovementComponent());
+        VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("node", new Ogreman::CreatorNodeComponent());
         VeryReal::Creator::Instance()->AddCreator("note", new Ogreman::CreatorNoteComponent());
         VeryReal::Creator::Instance()->AddCreator("pickup", new Ogreman::CreatorPickUpComponent());
         VeryReal::Creator::Instance()->AddCreator("input", new Ogreman::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("playerinteraction", new Ogreman::CreatorPlayerInteractionComponent());
         VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
-
-
-
-
-
-
         return true;
     }
-    __declspec(dllexport) int main()
-    {
+
+    __declspec(dllexport) int main() {
         VeryReal::RenderManager::Instance()->InitManager("app");
         VeryReal::Creator::Instance()->AddCreator("transform", new VeryReal::CreatorTransformComponent());
         Creator::Instance()->GetCreator("transform")->AddParameter("a", 0);
@@ -99,7 +91,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
-
+        Component* mov = e->AddComponent("MovementComponent");
         Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
        // Component* cam = camara->AddComponent("Camera");
@@ -107,9 +99,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* luzcom = luz->AddComponent("Light");
         Component* transform = e->AddComponent("transform");
         Component* meshrenderer = e->AddComponent("MeshRender");
-        Component* mov = e->AddComponent("MovementComponent");
+
         Component* cam2 = e->AddComponent("CameraComponent");
         Component* inpur = e->AddComponent("InputComponent");
+
 
         Entity* ogrite = s->AddEntity("VAMOS");
        Component* transfoerm= ogrite->AddComponent("transform");
@@ -118,10 +111,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         return 0;
     }
 }
-
-
-
-
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
