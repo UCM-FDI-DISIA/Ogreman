@@ -3,6 +3,8 @@
 #include "TransformComponent.h"
 #include "Entity.h"
 #include <cstdlib>
+
+using namespace Ogreman;
 MerodeoMovementComponent::MerodeoMovementComponent() {
 	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
 	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>("RigidBodyComponent");

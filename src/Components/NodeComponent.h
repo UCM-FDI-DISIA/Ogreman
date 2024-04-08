@@ -5,12 +5,15 @@
 #include "Vector3.h"
 #include "CreatorComponent.h"
 #include <variant>
+namespace Ogreman
+{
+
 	class NodeComponent : public VeryReal::Component
 	{
 	public:
 		NodeComponent();
 		~NodeComponent();
-		virtual bool InitComponent(bool ispatrol,float cost, float hcost, int iswalkable,int id);
+		virtual bool InitComponent(bool ispatrol, float cost, float hcost, int iswalkable, int id);
 		std::list<NodeComponent*> GetNeighbours();
 		void AddNeighbors(NodeComponent* node);
 		void DeleteNeighbors(NodeComponent* node);
@@ -22,8 +25,7 @@
 		int id;
 		bool ispatrol;
 	};
-
-
+}
 
 #endif // !NodeComponent
 

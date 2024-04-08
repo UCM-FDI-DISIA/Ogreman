@@ -5,6 +5,7 @@
 #include "Entity.h"
 
 using namespace VeryReal;
+using namespace Ogreman;
 
 AudioEmitterComponent::AudioEmitterComponent() : loop(false), volume(1.0f), playOnStart(false), isPlaying(false), is3D(true), transform(nullptr), rigidBody(nullptr), audioSource(nullptr) {
 }

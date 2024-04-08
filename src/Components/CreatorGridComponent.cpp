@@ -1,10 +1,10 @@
 #include "CreatorGridComponent.h"
 #include "GridComponent.h"
 VeryReal::Component* CreatorSpecificComponent() {
-	return new GridComponent();
+	return new Ogreman::GridComponent();
 }
 void SpecificInitComponent(VeryReal::Component* c)  {
-	GridComponent* grid = static_cast<GridComponent*>(c);
+	Ogreman::GridComponent* grid = static_cast<Ogreman::GridComponent*>(c);
 	bool b=grid->InitComponent();
 	if (!b) {
 

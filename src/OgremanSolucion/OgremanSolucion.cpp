@@ -23,9 +23,11 @@ using namespace VeryReal;
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
 {
     // Declaración de la función que deseas exportar
+    
     __declspec(dllexport) bool start()
     {
-        std::cout << "PEPA";
+        VeryReal::Creator::Instance()->AddCreator("transform", new VeryReal::CreatorTransformComponent());
+
         return true;
     }
     __declspec(dllexport) int main()

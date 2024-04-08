@@ -3,6 +3,8 @@
 #include "PhysicsManager.h"
 #include "TransformComponent.h"
 #include "Entity.h"
+
+using namespace Ogreman;
 GridComponent::GridComponent():grid(0) {
 
 }

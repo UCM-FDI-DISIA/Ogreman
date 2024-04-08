@@ -50,7 +50,6 @@
     <ClInclude Include="..\src\Components\DigrafoValorado.h" />
     <ClInclude Include="..\src\Components\GridComponent.h" />
     <ClInclude Include="CreatorNodeComponent.h" />
-    <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
     <ClInclude Include="..\src\Components\CreatorGridComponent.h" />
   </ItemGroup>
 </Project>

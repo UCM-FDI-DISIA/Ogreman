@@ -8,10 +8,10 @@
 #include <string>
 #include "Vector3.h"
 
-namespace VeryReal {
+namespace Ogreman {
     // AudioEmitterComponent actúa como un emisor de sonido dentro del entorno de juego,
     // permitiendo una gestión detallada de cómo se emiten y perciben los sonidos.
-    class AudioEmitterComponent : public Component {
+    class AudioEmitterComponent : public VeryReal::Component {
     public:
         AudioEmitterComponent();
         virtual ~AudioEmitterComponent();
@@ -34,13 +34,13 @@ namespace VeryReal {
         bool isPlaying;
         bool is3D; // Indica si el sonido se manejará como 3D.
 
-        TransformComponent* transform;
-        RigidBodyComponent* rigidBody;
+        VeryReal::TransformComponent* transform;
+        VeryReal::RigidBodyComponent* rigidBody;
         AudioSourceComponent* audioSource;
 
         // Métodos específicos de emisión de sonido.
         void Set3DSoundAttributes();
         void ApplyEnvironmentalEffects(); // Aplica efectos ambientales al sonido, como la reverberación.
-        std::string DetermineEnvironment(const Vector3& position);
+        std::string DetermineEnvironment(const VeryReal::Vector3& position);
     };
 }
