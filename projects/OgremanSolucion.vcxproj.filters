@@ -25,6 +25,8 @@
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
+    <ClCompile Include="..\src\Components\OgremanControllerComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorOgremanControllerComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\AudioEmitterComponent.h" />
@@ -51,5 +53,7 @@
     <ClInclude Include="..\src\Components\PickUpComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\OgremanControllerComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorOgremanControllerComponent.h" />
   </ItemGroup>
 </Project>

@@ -11,8 +11,8 @@ namespace Ogreman {
 	{
 	private:
 		VeryReal::SceneManager* scene_manager;
-		std::list<NodeComponent*> pathNodes;
-		std::list<NodeComponent*> patrolNodes;
+		std::vector<NodeComponent*> pathNodes;
+		std::vector<NodeComponent*> patrolNodes;
 	public:
 		
 		virtual ~GameManager();
@@ -24,14 +24,14 @@ namespace Ogreman {
 		void Play();
 		void Pause();
 
-		inline std::list<NodeComponent*> GetPathNode() {
+		inline std::vector<NodeComponent*> GetPathNode() {
 			return pathNodes;
 		}
 		void RegisterPathNode(NodeComponent* node) {
 			pathNodes.push_back(node);
 
 		}
-		inline std::list<NodeComponent*> GetPatrolNode() {
+		inline std::vector<NodeComponent*> GetPatrolNode() {
 			return pathNodes;
 		}
 		void RegisterPatrolNode(NodeComponent* node) {

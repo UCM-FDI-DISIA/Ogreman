@@ -32,6 +32,9 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
+
+#include "../Components/CreatorNodeComponent.h"
+#include "MeshRenderComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -56,7 +59,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::RenderManager::Instance()->InitManager("app");
         VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
-        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0, 20 });
+        Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("rotation", Vector3{ 0, 0, 0 });
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("scale", Vector3{ 1, 1, 1 });
 
@@ -103,24 +106,27 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("InputComponent", new Ogreman::CreatorPlayerInputComponent());
        
-
-
-
+        VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
+        //bool ispatrol,float cost, float hcost, int iswalkable,int i
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("id", int(1));
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("ispatrol", true);
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("iswalkable", true);
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("hcost", float(10));
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("cost", 1000.f);
 
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
         Entity* e = s->AddEntity("Player");
 
         Entity* luz = s->AddEntity("Luz");
-        //Entity* camara = s->AddEntity("Cam");
-       // Component* cam = camara->AddComponent("Camera");
         Component* trans = luz->AddComponent("TransformComponent");
         Component* luzcom = luz->AddComponent("Light");
+
         Component* transform = e->AddComponent("TransformComponent");
         Component* audioSource = e->AddComponent("AudioSourceComponent");
         Component* audioListener = e->AddComponent("AudioListenerComponent");
         Component* meshrenderer = e->AddComponent("MeshRenderComponent");
-        Component* mov = e->AddComponent("MovementComponent");
+       Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
        
         static_cast<CameraComponent*>(cam2)->SetTarget(e);
@@ -128,9 +134,31 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
 
         Entity* ogrite = s->AddEntity("VAMOS");
-       Component* transfoerm= ogrite->AddComponent("TransformComponent");
+        Component* transfoerm= ogrite->AddComponent("TransformComponent");
         ogrite->AddComponent("MeshRenderComponent");
-        static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,25));
+        static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,205));
+
+
+
+        #pragma region NODES
+
+        Entity* n1 = s->AddEntity("nodo1");
+        Component* trans_n = n1->AddComponent("TransformComponent");
+        static_cast<TransformComponent*>(trans_n)->SetPosition(VeryReal::Vector3(0, 10, 205));
+        static_cast<TransformComponent*>(trans_n)->Rotate(VeryReal::Vector3(0, 10, 25));
+        Component* meshr_n1 = n1->AddComponent("MeshRenderComponent");
+        //static_cast<MeshRenderComponent*>(meshr_n1)->changeMaterial("Ogre/ring");
+        Component* node_n1 = n1->AddComponent("NodeComponent");
+
+        #pragma endregion
+
+
+
+
+        std::cout << s->GetEntities().size() << "\n";
+
+
+
         return 0;
     }
 }

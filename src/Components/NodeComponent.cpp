@@ -4,7 +4,7 @@ using namespace Ogreman;
 NodeComponent::NodeComponent():cost(0),hcost(0),iswalkable(false) {
 
 }
-bool NodeComponent::InitComponent(bool ispatrol,float cost, float hcost, int iswalkable,int id) {
+bool NodeComponent::InitComponent(bool ispatrol,float cost, float hcost, bool iswalkable,int id) {
 	this->ispatrol = ispatrol;
 	this->cost = cost;
 	this->hcost = hcost;

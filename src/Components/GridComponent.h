@@ -15,7 +15,7 @@ namespace Ogreman
         virtual bool InitComponent();
     protected:
         DigrafoValorado<Ogreman::NodeComponent*> grid;
-        std::list<Ogreman::NodeComponent*>scenes_nodes;
+        std::vector<Ogreman::NodeComponent*>scenes_nodes;
     };
 }
 

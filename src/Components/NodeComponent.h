@@ -13,7 +13,7 @@ namespace Ogreman
 	public:
 		NodeComponent();
 		~NodeComponent();
-		virtual bool InitComponent(bool ispatrol, float cost, float hcost, int iswalkable, int id);
+		virtual bool InitComponent(bool ispatrol, float cost, float hcost, bool iswalkable, int id);
 		std::list<NodeComponent*> GetNeighbours();
 		void AddNeighbors(NodeComponent* node);
 		void DeleteNeighbors(NodeComponent* node);
