@@ -10,16 +10,11 @@ bool Ogreman::MovementComponent::InitComponent(){
 		return false;
 }
 
-void Ogreman::MovementComponent::Update(const double& dt) 
-{
-	std::cout << my_transform->GetPosition().GetX() << " " << my_transform->GetPosition().GetY() << " " << my_transform->GetPosition().GetZ();
+void Ogreman::MovementComponent::Update(const double& dt) {
+	std::cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ();
 
 	if (IsMoving()) {
 		my_transform->Translate(movementDirection * speed);
-	}
-	else {
-		std::cout << "NO" << std::endl;
-		my_transform->Translate(movementDirection);
 	}
 }
 

@@ -50,15 +50,27 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 			}
 		}
 
-		// Camara con teclado y raton 
-		std::pair<int32_t, int32_t> mouse_pos = VeryReal::InputManager::Instance()->GetMousePos();
+		//Camara con teclado y raton 
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) {
+			my_camera_component->yaw(1);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) {
+			my_camera_component->yaw(-1);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
+			my_camera_component->pitch(1);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
+			my_camera_component->pitch(-1);
+		}
+		/*std::pair<int32_t, int32_t> mouse_pos = VeryReal::InputManager::Instance()->GetMousePos();
 
 		double yaw = (mouse_pos.first - prev_mouse_pos.first) * sensitivity;
 		double roll = (mouse_pos.second - prev_mouse_pos.second) * sensitivity;
 		my_camera_component->yaw(yaw);
 		my_camera_component->roll(roll);
 
-		prev_mouse_pos = mouse_pos;
+		prev_mouse_pos = mouse_pos;*/
 	}
 	else {
 		// Movimiento Mando
