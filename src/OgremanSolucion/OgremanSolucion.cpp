@@ -16,6 +16,7 @@
 #include "CreatorMeshRenderComponent.h"
 #include "UI/UISpriteRenderComponent.h" 
 #include "SceneManager.h"
+#include "ScriptManager.h"
 #include "../Components/CreatorMovementComponent.h"
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "CreatorCameraComponent.h"
@@ -35,6 +36,7 @@
 
 #include "../Components/CreatorNodeComponent.h"
 #include "MeshRenderComponent.h"
+
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -116,6 +118,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
         VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");
+
+        /*ScriptManager::Instance()->Init("HouseScene");
+        ScriptManager::Instance()->ReadScene("HouseScene");*/
+
         Entity* e = s->AddEntity("Player");
 
         Entity* luz = s->AddEntity("Luz");
