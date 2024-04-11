@@ -6,10 +6,13 @@
 #include  "../Export.h"
 namespace VeryReal {
 	class TransformComponent;
+	class Entity;
 }
 
 namespace Ogreman {
 	class PlayerInteractionComponent;
+	class NoteComponent;
+	class CellComponent;
 }
 
 namespace Ogreman {

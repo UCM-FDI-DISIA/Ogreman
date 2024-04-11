@@ -36,7 +36,7 @@
 
 #include "../Components/CreatorNodeComponent.h"
 #include "MeshRenderComponent.h"
-
+#include "PhysicsManager.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -44,6 +44,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     // Declaración de la función que deseas exportar
 
     __declspec(dllexport) bool start() {
+        
         VeryReal::Creator::Instance()->AddCreator("cell", new Ogreman::CreatorCellComponent());
         VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("grid", new Ogreman::CreatorGridComponent());
@@ -59,7 +60,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) int main() {
         VeryReal::RenderManager::Instance()->InitManager("app");
-        VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
+        /*VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("rotation", Vector3{ 0, 0, 0 });
@@ -122,7 +123,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         /*ScriptManager::Instance()->Init("HouseScene");
         ScriptManager::Instance()->ReadScene("HouseScene");*/
 
-        Entity* e = s->AddEntity("Player");
+        /*Entity* e = s->AddEntity("Player");
 
         Entity* luz = s->AddEntity("Luz");
         Component* trans = luz->AddComponent("TransformComponent");
@@ -154,13 +155,18 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         static_cast<TransformComponent*>(trans_n)->Rotate(VeryReal::Vector3(0, 10, 25));
         Component* meshr_n1 = n1->AddComponent("MeshRenderComponent");
         //static_cast<MeshRenderComponent*>(meshr_n1)->changeMaterial("Ogre/ring");
-        Component* node_n1 = n1->AddComponent("NodeComponent");
+        Component* node_n1 = n1->AddComponent("NodeComponent");*/
 
         #pragma endregion
 
-
-
-
+        std::cout << "Hola buenas tardes";
+        VeryReal::PhysicsManager::Instance()->Initialize();
+        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+        VeryReal::Creator::Instance()->AddCreator("pickup", new Ogreman::CreatorPickUpComponent());
+        //VeryReal::PhysicsManager::Instance()->Depurar();
+        Entity* ejemplo = s->AddEntity("player");
+        Component* tr_ejemplo = ejemplo->AddComponent("TransformComponent");
+        Component* pickup_comp = ejemplo->AddComponent("pickup");
 
        /* std::cout << s->GetEntities().size() << "\n";*/
         return 0;
