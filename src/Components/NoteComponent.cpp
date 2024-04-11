@@ -4,3 +4,7 @@ bool Ogreman::NoteComponent::InitComponent(std::string text_) {
 	pickedUp = false;
 	return true;
 }
+
+std::string Ogreman::NoteComponent::getText() {
+	return text;
+}

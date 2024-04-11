@@ -119,7 +119,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("InputComponent", new Ogreman::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
-        VeryReal::Creator::Instance()->AddCreator("collider", new VeryReal::CreatorColliderComponent());
+        VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
         VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
         //int shapeType, float mass, float friction, float restitution, int movementType, bool trigger
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("shapeType", 1);
@@ -137,8 +137,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("NodeComponent")->AddParameter("hcost", float(10));
         Creator::Instance()->GetCreator("NodeComponent")->AddParameter("cost", 1000.f);
 
-        VeryReal::Creator::Instance()->AddCreator("animator", new VeryReal::CreatorAnimatorComponent());
-        Creator::Instance()->GetCreator("animator")->AddParameter("name", "skeleton.mesh");
+        VeryReal::Creator::Instance()->AddCreator("AnimatorComponent", new VeryReal::CreatorAnimatorComponent());
+        Creator::Instance()->GetCreator("AnimatorComponent")->AddParameter("name", "skeleton.mesh");
        
         VeryReal::Creator::Instance()->AddCreator("GridComponent", new Ogreman::CreatorGridComponent());
 
@@ -182,7 +182,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* meshr_n1 = n1->AddComponent("MeshRenderComponent");
         static_cast<MeshRenderComponent*>(meshr_n1)->changeMaterial("Ogre/ring");
         Component* node_n1 = n1->AddComponent("NodeComponent");
-        Component* node_collider = n1->AddComponent("collider");
+        Component* node_collider = n1->AddComponent("ColliderComponent");
         Component* rbn1 = n1->AddComponent("RigidBodyComponent");
 
         Entity* n2 = s->AddEntity("nodo2");
@@ -193,7 +193,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         static_cast<MeshRenderComponent*>(meshr_n2)->changeMaterial("Ogre/ring");
         Component* node_n2 = n2->AddComponent("NodeComponent");
         static_cast<Ogreman::NodeComponent*>(node_n2)->setID(1);
-        Component* node_collider2 = n2->AddComponent("collider");
+        Component* node_collider2 = n2->AddComponent("ColliderComponent");
         Component* rbn2 = n2->AddComponent("RigidBodyComponent");
 
         #pragma endregion
@@ -202,8 +202,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* trans_ogreman = ogroman->AddComponent("TransformComponent");
         static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(20, 0, -25));
         Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
-        Component* rb4 = ogroman->AddComponent("animator");
-        Component* ogro_collider = ogroman->AddComponent("collider");
+        Component* rb4 = ogroman->AddComponent("AnimatorComponent");
+        Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
 
 
         

@@ -21,12 +21,13 @@ namespace Ogreman {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
-		void GetElement();
+		void GetElement(NoteComponent* note, CellComponent* cell);
 
 	private:
 		VeryReal::TransformComponent* player_transform;
 		Ogreman::PlayerInteractionComponent* my_player_interaction_comp;
 		Ogreman::PlayerInputComponent* my_player_input_comp;
+		bool control_update = false;
 	};
 }
 #endif

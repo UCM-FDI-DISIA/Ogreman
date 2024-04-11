@@ -12,6 +12,8 @@ namespace VeryReal {
 namespace Ogreman {
 	class MovementComponent;
 	class PickUpComponent;
+	class CellComponent;
+	class NoteComponent;
 }
 
 namespace Ogreman {
@@ -22,6 +24,8 @@ namespace Ogreman {
 
 		inline bool IsFlashLightPressed() { return flashlight; }
 		void setCanPickUp(bool newValue);
+		void setCellToGet(CellComponent* newCell);
+		void setNoteToGet(NoteComponent* newNote);
 
 	private:
 		double sensitivity = 0.1;
@@ -31,8 +35,10 @@ namespace Ogreman {
 		bool flashlight, canPickUp = false;
 
 		Ogreman::MovementComponent* my_movement_component;
-		Ogreman::PickUpComponent* my_pickup_component;
 		VeryReal::CameraComponent* my_camera_component;
+		Ogreman::PickUpComponent* my_pickup_component;
+		Ogreman::CellComponent* cell_to_get = nullptr;
+		Ogreman::NoteComponent* note_to_get = nullptr;
 	};
 }
 #endif

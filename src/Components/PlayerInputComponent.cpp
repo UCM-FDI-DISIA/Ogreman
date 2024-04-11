@@ -46,7 +46,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		if (canPickUp) {
 			// Anadir UI de PULSA E
 			if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_E)) {
-				my_pickup_component->GetElement();
+				my_pickup_component->GetElement(note_to_get, cell_to_get);
 			}
 		}
 
@@ -106,4 +106,11 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 
 void Ogreman::PlayerInputComponent::setCanPickUp(bool newValue) {
 	canPickUp = newValue;
+}
+
+void Ogreman::PlayerInputComponent::setCellToGet(CellComponent* newCell) {
+	cell_to_get = newCell;
+}
+void Ogreman::PlayerInputComponent::setNoteToGet(NoteComponent* newNote) {
+	note_to_get = newNote;
 }
