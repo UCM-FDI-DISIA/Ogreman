@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Components\AudioEmitterComponent.cpp" />
     <ClCompile Include="..\src\Components\CellComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorCellComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp" />
@@ -47,7 +46,6 @@
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Components\AudioEmitterComponent.h" />
     <ClInclude Include="..\src\Components\CellComponent.h" />
     <ClInclude Include="..\src\Components\CreatorCellComponent.h" />
     <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h" />
@@ -73,6 +71,7 @@
     <ClInclude Include="..\src\Components\PickUpComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Export.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -170,7 +169,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;OGREMAN_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -189,7 +188,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;OGREMAN_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>

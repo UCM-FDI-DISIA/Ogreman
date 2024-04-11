@@ -1,9 +1,8 @@
 #pragma once
-
 #include <CreatorComponent.h>
-
+#include "../Export.h"
 namespace Ogreman {
-	class CreatorGridComponent: public VeryReal::CreatorComponent
+	class OGREMAN_API CreatorGridComponent: public VeryReal::CreatorComponent
 	{
 	public:
 		CreatorGridComponent() {}

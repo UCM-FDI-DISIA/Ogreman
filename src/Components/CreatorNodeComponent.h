@@ -1,8 +1,8 @@
 #pragma once
 #include <CreatorComponent.h>
-
+#include "../Export.h"
 namespace Ogreman {
-	class CreatorNodeComponent : public VeryReal::CreatorComponent
+	class OGREMAN_API CreatorNodeComponent : public VeryReal::CreatorComponent
 	{
 	public:
 		CreatorNodeComponent() {}

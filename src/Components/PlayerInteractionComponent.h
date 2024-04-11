@@ -3,13 +3,13 @@
 #define PLAYERINTERACTIONCOMPONENT
 #include "Component.h"
 #include <string>
-
+#include "../Export.h"
 namespace Ogreman {
 	class FlashlightComponent;
 }
 
 namespace Ogreman {
-	class PlayerInteractionComponent : public VeryReal::Component {
+	class OGREMAN_API PlayerInteractionComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		void GetCell();

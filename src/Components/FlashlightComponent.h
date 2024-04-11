@@ -2,7 +2,7 @@
 #ifndef FLASHLIGHTCOMPONENT
 #define FLASHLIGHTCOMPONENT
 #include <Component.h>
-
+#include "../Export.h"
 namespace VeryReal {
 	class Light;
 }
@@ -12,7 +12,7 @@ namespace Ogreman {
 }
 
 namespace Ogreman {
-	class FlashlightComponent : public VeryReal::Component {
+	class OGREMAN_API FlashlightComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);

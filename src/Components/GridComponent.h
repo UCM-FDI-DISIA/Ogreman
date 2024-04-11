@@ -4,9 +4,10 @@
 #include <Component.h>
 #include "DigrafoValorado.h"
 #include "NodeComponent.h"
+#include "../Export.h"
 namespace Ogreman
 {
-    class GridComponent :
+    class OGREMAN_API GridComponent :
         public VeryReal::Component
     {
     public:

@@ -4,14 +4,14 @@
 #include "Component.h"
 #include "Vector3.h"
 #include "CreatorComponent.h"
-
+#include "../Export.h"
 namespace VeryReal {
 	class TransformComponent;
 	class Vector3;
 }
 
 namespace Ogreman {
-	class MovementComponent : public VeryReal::Component {
+	class OGREMAN_API MovementComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);

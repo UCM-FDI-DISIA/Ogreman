@@ -1,12 +1,14 @@
 #pragma once
 #include <CreatorComponent.h>
-
-class CreatorOgremanControllerComponent: public VeryReal::CreatorComponent
+#include "../Export.h"
+namespace Ogreman
 {
-public:
-	CreatorOgremanControllerComponent() { };
-	virtual ~CreatorOgremanControllerComponent() {};
-	VeryReal::Component* CreatorSpecificComponent() override;
-	void SpecificInitComponent(VeryReal::Component* c) override;
-};
-
+	class OGREMAN_API CreatorOgremanControllerComponent : public VeryReal::CreatorComponent
+	{
+	public:
+		CreatorOgremanControllerComponent() { };
+		virtual ~CreatorOgremanControllerComponent() {};
+		VeryReal::Component* CreatorSpecificComponent() override;
+		void SpecificInitComponent(VeryReal::Component* c) override;
+	};
+}

@@ -5,10 +5,11 @@
 #include "Vector3.h"
 #include "CreatorComponent.h"
 #include <variant>
+#include "../Export.h"
 namespace Ogreman
 {
 
-	class NodeComponent : public VeryReal::Component
+	class OGREMAN_API NodeComponent : public VeryReal::Component
 	{
 	public:
 		NodeComponent();

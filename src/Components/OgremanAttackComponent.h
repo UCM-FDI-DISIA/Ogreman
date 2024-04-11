@@ -4,7 +4,7 @@
 
 #include "Component.h"
 #include "Vector3.h"
-#include "CreatorComponent.h"
+#include "../Export.h"
 namespace VeryReal {
 	class TransformComponent;
 }
@@ -12,7 +12,7 @@ namespace VeryReal {
 namespace Ogreman 
 {
 	
-	class OgremanAttackComponent : public VeryReal::Component
+	class OGREMAN_API OgremanAttackComponent : public VeryReal::Component
 	{
 	public:
 		virtual bool InitComponent();

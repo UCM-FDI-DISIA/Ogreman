@@ -2,10 +2,9 @@
 #ifndef CELLCOMPONENT
 #define CELLCOMPONENT
 #include "Component.h"
-#include <string>
-
+#include "../Export.h"
 namespace Ogreman {
-	class CellComponent : public VeryReal::Component {
+	class OGREMAN_API CellComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 

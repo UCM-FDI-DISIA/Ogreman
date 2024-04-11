@@ -4,7 +4,7 @@
 #include "Component.h"
 #include "Vector3.h"
 #include "CreatorComponent.h"
-
+#include "../Export.h"
 namespace VeryReal {
 	class CameraComponent;
 }
@@ -15,7 +15,7 @@ namespace Ogreman {
 }
 
 namespace Ogreman {
-	class PlayerInputComponent : public VeryReal::Component {
+	class OGREMAN_API PlayerInputComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);

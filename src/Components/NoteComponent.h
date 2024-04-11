@@ -3,9 +3,9 @@
 #define NOTECOMPONENT
 #include "Component.h"
 #include <string>
-
+#include "../Export.h"
 namespace Ogreman {
-	class NoteComponent : public VeryReal::Component {
+	class OGREMAN_API NoteComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent(std::string text_);
 

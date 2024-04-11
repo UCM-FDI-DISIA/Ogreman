@@ -5,9 +5,9 @@
 #include "NodeComponent.h"
 #include "TransformComponent.h"
 #include "AnimatorComponent.h"
-
+#include "../Export.h"
 namespace Ogreman {
-	class OgremanControllerComponent :
+	class OGREMAN_API OgremanControllerComponent :
 		public VeryReal::Component
 	{
 	public:
