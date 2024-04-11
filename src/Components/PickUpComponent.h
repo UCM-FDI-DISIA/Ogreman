@@ -11,6 +11,7 @@ namespace VeryReal {
 
 namespace Ogreman {
 	class PlayerInteractionComponent;
+	class PlayerInputComponent;
 	class NoteComponent;
 	class CellComponent;
 }
@@ -25,6 +26,7 @@ namespace Ogreman {
 	private:
 		VeryReal::TransformComponent* player_transform;
 		Ogreman::PlayerInteractionComponent* my_player_interaction_comp;
+		Ogreman::PlayerInputComponent* my_player_input_comp;
 	};
 }
 #endif

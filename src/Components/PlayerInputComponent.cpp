@@ -103,3 +103,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 	// AUDIO
 	audio_intensity = VeryReal::AudioLeon::Instance()->InputSoundIntensity();
 }
+
+void Ogreman::PlayerInputComponent::setCanPickUp(bool newValue) {
+	canPickUp = newValue;
+}

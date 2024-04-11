@@ -53,16 +53,16 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) bool start() {
         
-        VeryReal::Creator::Instance()->AddCreator("cell", new Ogreman::CreatorCellComponent());
-        VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
-        VeryReal::Creator::Instance()->AddCreator("grid", new Ogreman::CreatorGridComponent());
+        VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());
+        VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
+        VeryReal::Creator::Instance()->AddCreator("GridComponent", new Ogreman::CreatorGridComponent());
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
-        VeryReal::Creator::Instance()->AddCreator("node", new Ogreman::CreatorNodeComponent());
-        VeryReal::Creator::Instance()->AddCreator("note", new Ogreman::CreatorNoteComponent());
-        VeryReal::Creator::Instance()->AddCreator("pickup", new Ogreman::CreatorPickUpComponent());
-        VeryReal::Creator::Instance()->AddCreator("input", new Ogreman::CreatorPlayerInputComponent());
-        VeryReal::Creator::Instance()->AddCreator("playerinteraction", new Ogreman::CreatorPlayerInteractionComponent());
-        VeryReal::Creator::Instance()->AddCreator("flashlight", new Ogreman::CreatorFlashlightComponent());
+        VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
+        VeryReal::Creator::Instance()->AddCreator("NoteComponent", new Ogreman::CreatorNoteComponent());
+        VeryReal::Creator::Instance()->AddCreator("PickUpComponent", new Ogreman::CreatorPickUpComponent());
+        VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new Ogreman::CreatorPlayerInputComponent());
+        VeryReal::Creator::Instance()->AddCreator("PlayerInteractionComponent", new Ogreman::CreatorPlayerInteractionComponent());
+        VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         return true;
     }
 
@@ -204,6 +204,17 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
         Component* rb4 = ogroman->AddComponent("animator");
         Component* ogro_collider = ogroman->AddComponent("collider");
+
+
+        
+        std::cout << "Hola buenas tardes";
+        VeryReal::PhysicsManager::Instance()->Initialize();
+        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+        VeryReal::Creator::Instance()->AddCreator("PickUpComponent", new Ogreman::CreatorPickUpComponent());
+        //VeryReal::PhysicsManager::Instance().de
+        Entity* ejemplo = s->AddEntity("Player");
+        Component* tr_ejemplo = ejemplo->AddComponent("TransformComponent");
+        //Component* pickup_comp = ejemplo->AddComponent("PickUpComponent");
 
         Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
         Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");

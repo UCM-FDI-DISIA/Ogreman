@@ -21,6 +21,7 @@ namespace Ogreman {
 		virtual void Update(const double& dt);
 
 		inline bool IsFlashLightPressed() { return flashlight; }
+		void setCanPickUp(bool newValue);
 
 	private:
 		double sensitivity = 0.1;
