@@ -11,6 +11,33 @@ GridComponent::GridComponent():grid(0) {
  void GridComponent::Update(const double& dt) {
 
 }
+ std::vector<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
+
+	 std::vector<Ogreman::NodeComponent*> path;
+	 NodeComponent* src = Vector2Node(InitPos);
+	 NodeComponent* dest = Vector2Node(EndPosition);
+
+
+
+	 return path;
+
+ }
+ NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
+	 float minimun(INT16_MAX);
+	 NodeComponent* node = nullptr;
+	 for (auto c : scenes_nodes) {
+		 VeryReal::Vector3 dif,res;
+		 res = vec;
+		 float difd = (res - c->GetEntity()->GetComponent<VeryReal::TransformComponent>()->GetPosition()).Magnitude();
+		// res.SetVector(VeryReal::Vector3(abs(res.GetX()), abs(res.GetY()), abs(res.GetX())));
+		 if (difd < minimun) {
+			 node = c;
+		 }
+
+
+	 }
+	 return node;
+ }
  bool GridComponent::InitComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	 grid = DigrafoValorado<NodeComponent*>(scenes_nodes.size());

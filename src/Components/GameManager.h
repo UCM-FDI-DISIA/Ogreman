@@ -32,10 +32,10 @@ namespace Ogreman {
 
 		}
 		inline std::vector<NodeComponent*> GetPatrolNode() {
-			return pathNodes;
+			return patrolNodes;
 		}
 		void RegisterPatrolNode(NodeComponent* node) {
-			pathNodes.push_back(node);
+			patrolNodes.push_back(node);
 
 		}
 	
