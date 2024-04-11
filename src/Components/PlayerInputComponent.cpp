@@ -70,7 +70,12 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		my_camera_component->yaw(yaw);
 		my_camera_component->roll(roll);
 
+
 		prev_mouse_pos = mouse_pos;*/
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) 
+		{
+			VeryReal::InputManager::Instance()->Quit();
+		}
 	}
 	else {
 		// Movimiento Mando

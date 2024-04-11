@@ -155,10 +155,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
 
 
-        std::cout << s->GetEntities().size() << "\n";
 
-
-
+       /* std::cout << s->GetEntities().size() << "\n";*/
         return 0;
     }
 }

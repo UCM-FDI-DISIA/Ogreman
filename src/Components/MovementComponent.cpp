@@ -11,8 +11,7 @@ bool Ogreman::MovementComponent::InitComponent(){
 }
 
 void Ogreman::MovementComponent::Update(const double& dt) {
-	std::cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ();
-
+	/*std::cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ();*/
 	if (IsMoving()) {
 		my_transform->Translate(movementDirection * speed);
 	}
