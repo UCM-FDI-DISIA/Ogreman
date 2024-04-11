@@ -15,7 +15,7 @@ namespace Ogreman
         GridComponent();
         virtual void Update(const double& dt);
         virtual bool InitComponent();
-        std::vector<Ogreman::NodeComponent*> getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
+        std::list<Ogreman::NodeComponent*> getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
         NodeComponent* Vector2Node(VeryReal::Vector3 const& vec);
     protected:
         DigrafoValorado<Ogreman::NodeComponent*> grid;

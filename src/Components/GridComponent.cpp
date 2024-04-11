@@ -11,10 +11,19 @@ GridComponent::GridComponent():grid(0) {
  void GridComponent::Update(const double& dt) {
 
 }
+ NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node) {
 
- std::vector<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
+	 for (auto c : list) {
+		 if (c == node) {
+			 return c;
+		 }
+	 }
+	 return nullptr;
+ }
 
-	 std::vector<Ogreman::NodeComponent*> path;
+ std::list<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
+
+	 std::list<Ogreman::NodeComponent*> path;
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
@@ -22,24 +31,71 @@ GridComponent::GridComponent():grid(0) {
 	 std::list<NodeComponent*>closed;
 	 open.push_back(src);
 	 NodeComponent* current = src;
-	 float current_cost = 0;
+	 float stimated = 0;
 
 	 while (open.size() > 0) {
 
-		 std::sort(open.begin(), open.end());
-
+		// std::sort(open.begin(), open.end());
+		 //no me acuerdo como se escribe
 		 if (current == dest) {
 			 break;
 		 }
-
+		 float hendNode = 0;
 		 auto conections = current->GetNeighbours();
+		 
 		 for (auto d : conections) {
-			 current_cost += d->GetCost();
+			 stimated = current->Gethcost() + current->GetCost();
 
+			 NodeComponent* endNode = isInList(closed, current);
+			 
+			 NodeComponent* endNode2 = isInList(open, current);
+			 if (endNode!=nullptr) {
+
+				 if (endNode->Gethcost() <= stimated)continue;
+				 else {
+					 hendNode = endNode->Gethcost() + endNode->GetCost();
+
+					 closed.remove(endNode);
+				 }
+			}
+			 else if (endNode2 != nullptr) {
+
+				 if (endNode2->Gethcost() <= stimated)continue;
+				 else {
+					 hendNode = endNode2->GetCost() + endNode2->GetCost();
+
+				 }
+			 }
+			 else {
+				 //no se que va aqui ...
+				 endNode->SetConection(current);
+			 }
 			
+			 endNode->sethCost(stimated);
+			 endNode->setStimated(stimated + hendNode);
+
 
 		 }
-		 
+		 open.remove(current);
+		 closed.push_back(current);
+
+
+
+
+	 }
+	 if (current->GetID() != dest->GetID()) {
+
+		 return path;//algo va mal
+	 }
+	 else {
+		 path.clear();
+
+		 while (current->GetID() != dest->GetID()) 
+		 {
+			 path.push_front(current);
+			 current = current->GetConection();
+		 }
+		 path.push_front(src);
 	 }
 
 	 return path;

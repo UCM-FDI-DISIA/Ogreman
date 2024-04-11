@@ -20,6 +20,13 @@ namespace Ogreman
 		void DeleteNeighbors(NodeComponent* node);
 		int GetID();
 		inline void setID(int const& i) { this->id = i; }
+		inline float Gethcost() { return hcost; }
+		inline void sethCost(float h) { hcost = h; }
+		inline void setStimated(float c) { estimated_cost =c;}
+		inline float GetStimatedCost() { return estimated_cost; }
+		inline NodeComponent* GetConection() { return conection; };
+		inline void SetConection(NodeComponent* d) { conection = d; }
+		
 		bool operator<(const NodeComponent& other) const {
 			// Compara los costos de los nodos
 			return cost < other.cost;
@@ -31,6 +38,7 @@ namespace Ogreman
 		std::list<NodeComponent*> neighbours;
 		int id;
 		bool ispatrol;
+		NodeComponent* conection=nullptr;
 	};
 }
 
