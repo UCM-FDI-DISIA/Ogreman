@@ -5,7 +5,7 @@
 #include "PlayerInputComponent.h"
 
 bool Ogreman::FlashlightComponent::InitComponent() {
-	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>("PlayerInputComponent");
+	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();
 	// GetComponent o InitComponent de la linterna
 	// my_light_spot = this->GetEntity()->GetComponent<VeryReal::Light>("Light");
 	

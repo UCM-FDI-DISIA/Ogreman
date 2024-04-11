@@ -9,7 +9,7 @@ Ogreman::OgremanControllerComponent::~OgremanControllerComponent() {
 }
 bool Ogreman::OgremanControllerComponent::InitComponent() {
 
-	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
 		#ifdef DEBUG
 		std : .cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene TransformComponent\n";
@@ -17,7 +17,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 
 		return false;
 	}
-	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>("AnimatorComponent");
+	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>();
 	if (animation == nullptr) {
 		#ifdef DEBUG
 				std : .cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene AnimatorComponent\n";
@@ -32,7 +32,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 		return false;
 	}
 	current_node = patrol_nodes[current_index];
-	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (current_node_trans == nullptr) {
 	#ifdef DEBUG
 			std : .cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene TransformComponent "<<patrol_nodes[current_index]->GetID()<<"\n";
@@ -70,10 +70,10 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 
  }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	if (other != nullptr && other->GetComponent<NodeComponent>("NodeComponent") != nullptr) {
+	if (other != nullptr && other->GetComponent<NodeComponent>() != nullptr) {
 		current_index = (current_index + 1) % patrol_nodes.size();
 		current_node = patrol_nodes[current_index];
-		current_node_trans= current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+		current_node_trans= current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 
 	}
 

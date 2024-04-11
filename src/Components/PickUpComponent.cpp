@@ -8,7 +8,7 @@
 
 
 bool Ogreman::PickUpComponent::InitComponent() {
-	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>();
 	return true;
 }
 

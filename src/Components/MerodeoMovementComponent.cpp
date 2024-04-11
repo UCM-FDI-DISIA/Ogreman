@@ -6,8 +6,8 @@
 
 using namespace Ogreman;
 MerodeoMovementComponent::MerodeoMovementComponent() {
-	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
-	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>("RigidBodyComponent");
+	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 }
 MerodeoMovementComponent::~MerodeoMovementComponent() {
 

@@ -17,7 +17,7 @@ GridComponent::GridComponent():grid(0) {
 	 for (auto c : scenes_nodes) {
 		 std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
 
-		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>();
 		 if (trans == nullptr) {
 
 			 std::cerr << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
@@ -28,7 +28,7 @@ GridComponent::GridComponent():grid(0) {
 			 for (auto d : scenes_nodes) {
 
 				 if (c != d) {//compruebpo que no soy yo mismo
-					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 					 if (other == nullptr) {
 						 std::cerr << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
 						 return false;
@@ -37,7 +37,7 @@ GridComponent::GridComponent():grid(0) {
 					 VeryReal::Entity* ent = colision.back();
 					 if (!colision.empty() && ent->HasComponent("NodeComponent")) {
 
-						 NodeComponent* OtherNode = ent->GetComponent<NodeComponent>("NodeComponent");
+						 NodeComponent* OtherNode = ent->GetComponent<NodeComponent>();
 
 						 int id1, id2, cost;
 						 id1 = c->GetID();

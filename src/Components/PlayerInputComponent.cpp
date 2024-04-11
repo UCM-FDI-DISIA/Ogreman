@@ -8,8 +8,8 @@
 #include "PickUpComponent.h"
 
 bool Ogreman::PlayerInputComponent::InitComponent() {
-	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>("MovementComponent");
-	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>("CameraComponent");
+	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
+	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
 
 	if (this->my_movement_component != nullptr && this->my_camera_component != nullptr)
 		return true;

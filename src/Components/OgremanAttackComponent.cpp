@@ -4,8 +4,8 @@
 #include <SceneManager.h>
 #include <Scene.h>
 bool Ogreman::OgremanAttackComponent::InitComponent() {
-	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>("TransformComponent");
-	player_transform = VeryReal::SceneManager::Instance()->GetScene("a")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>("TransformComponent");
+	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	player_transform = VeryReal::SceneManager::Instance()->GetScene("a")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>();
 	if (this->my_transform != nullptr)
 		return true;
 	else
