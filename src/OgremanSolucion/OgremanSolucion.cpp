@@ -207,14 +207,14 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
 
         
-        std::cout << "Hola buenas tardes";
-        VeryReal::PhysicsManager::Instance()->Initialize();
-        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
-        VeryReal::Creator::Instance()->AddCreator("PickUpComponent", new Ogreman::CreatorPickUpComponent());
-        //VeryReal::PhysicsManager::Instance().de
-        Entity* ejemplo = s->AddEntity("Player");
-        Component* tr_ejemplo = ejemplo->AddComponent("TransformComponent");
-        //Component* pickup_comp = ejemplo->AddComponent("PickUpComponent");
+        //std::cout << "Hola buenas tardes";
+        //VeryReal::PhysicsManager::Instance()->Initialize();
+        //VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+        //VeryReal::Creator::Instance()->AddCreator("PickUpComponent", new Ogreman::CreatorPickUpComponent());
+        ////VeryReal::PhysicsManager::Instance().de
+        //Entity* ejemplo = s->AddEntity("Player");
+        //Component* tr_ejemplo = ejemplo->AddComponent("TransformComponent");
+        ////Component* pickup_comp = ejemplo->AddComponent("PickUpComponent");
 
         Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
         Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
