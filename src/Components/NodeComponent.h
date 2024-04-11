@@ -20,6 +20,11 @@ namespace Ogreman
 		void DeleteNeighbors(NodeComponent* node);
 		int GetID();
 		inline void setID(int const& i) { this->id = i; }
+		bool operator<(const NodeComponent& other) const {
+			// Compara los costos de los nodos
+			return cost < other.cost;
+		}
+		inline float GetCost() { return cost; }
 	protected:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;

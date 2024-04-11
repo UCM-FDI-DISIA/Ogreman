@@ -3,7 +3,7 @@
 #include "PhysicsManager.h"
 #include "TransformComponent.h"
 #include "Entity.h"
-
+#include "algorithm"
 using namespace Ogreman;
 GridComponent::GridComponent():grid(0) {
 
@@ -11,13 +11,36 @@ GridComponent::GridComponent():grid(0) {
  void GridComponent::Update(const double& dt) {
 
 }
+
  std::vector<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 
 	 std::vector<Ogreman::NodeComponent*> path;
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
+		std::list<NodeComponent*>open;
+	 std::list<NodeComponent*>closed;
+	 open.push_back(src);
+	 NodeComponent* current = src;
+	 float current_cost = 0;
 
+	 while (open.size() > 0) {
+
+		 std::sort(open.begin(), open.end());
+
+		 if (current == dest) {
+			 break;
+		 }
+
+		 auto conections = current->GetNeighbours();
+		 for (auto d : conections) {
+			 current_cost += d->GetCost();
+
+			
+
+		 }
+		 
+	 }
 
 	 return path;
 
@@ -40,7 +63,7 @@ GridComponent::GridComponent():grid(0) {
  }
  bool GridComponent::InitComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	 grid = DigrafoValorado<NodeComponent*>(scenes_nodes.size());
+	
 	 for (auto c : scenes_nodes) {
 		 std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
 
@@ -64,15 +87,8 @@ GridComponent::GridComponent():grid(0) {
 					 VeryReal::Entity* ent = colision.back();
 					 if (!colision.empty() && ent->HasComponent("NodeComponent")) {
 
-						 NodeComponent* OtherNode = ent->GetComponent<NodeComponent>();
+						 c->AddNeighbors(d);
 
-						 int id1, id2, cost;
-						 id1 = c->GetID();
-						 id2 = OtherNode->GetID();
-						 cost = 5;
-						 AristaDirigida<NodeComponent*> ar(id1, id2, c);//no se que valor darle supongo que lo de sumando la raiz al cuadrado
-
-						 grid.ponArista(ar);
 					 }
 
 
