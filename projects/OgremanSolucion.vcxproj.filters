@@ -26,6 +26,10 @@
     <ClCompile Include="..\src\Components\OgremanControllerComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorOgremanControllerComponent.cpp" />
     <ClCompile Include="..\src\Components\CellComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -54,5 +58,9 @@
     <ClInclude Include="..\src\Components\OgremanControllerComponent.h" />
     <ClInclude Include="..\src\Components\CreatorOgremanControllerComponent.h" />
     <ClInclude Include="..\src\Export.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
+    <ClInclude Include="..\src\Components\PlayButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
+    <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
   </ItemGroup>
 </Project>
