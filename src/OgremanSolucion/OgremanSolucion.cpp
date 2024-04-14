@@ -33,6 +33,8 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
+#include "../Components/CreatorExitButtonComponent.h"
+#include "../Components//CreatorPlayButtonComponent.h"
 
 #include "../Components/CreatorNodeComponent.h"
 #include "MeshRenderComponent.h"
@@ -45,6 +47,8 @@
 #include "AnimatorComponent.h"
 #include "../Components/CreatorGridComponent.h"
 #include "PhysicsManager.h"
+#include "../Components/PlayButtonComponent.h"
+#include "../Components/ExitButtonComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -52,9 +56,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     // Declaración de la función que deseas exportar
 
     __declspec(dllexport) bool start() {
-        
+        VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new Ogreman::CreatorPlayButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new Ogreman::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());
-        VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("GridComponent", new Ogreman::CreatorGridComponent());
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
