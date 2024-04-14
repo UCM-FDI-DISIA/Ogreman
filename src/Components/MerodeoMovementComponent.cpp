@@ -30,7 +30,7 @@ void MerodeoMovementComponent::Update(const double& dt){
 		Vector3 wanderDirection = bdirection.Normalize()* 3;
 
 		Vector3 targetcosa = transfrormcomponent->GetPosition() + wanderDirection;
-		Vector3 randomvec = Vector3(random360(), 0, random360());
+		Vector3 randomvec = Vector3((float)random360(), 0, (float)random360());
 		targetcosa += randomvec * wanderRange;
 		
 		Vector3 targetOrientation = targetcosa + transfrormcomponent->GetRotation();

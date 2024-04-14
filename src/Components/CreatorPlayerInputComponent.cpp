@@ -11,5 +11,4 @@ void Ogreman::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Compo
     if (!pi->InitComponent()) {
         // Gestion de error
     }
-      
 }

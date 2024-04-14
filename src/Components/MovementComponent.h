@@ -23,10 +23,12 @@ namespace Ogreman {
 		inline void SetMoventDirectionZ(float Z) { movementDirection.SetZ(Z); }
 
 	private:
-		float speed = 1;
+		float speed = 15;
 		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1,0,0);
 
 		VeryReal::TransformComponent* my_transform = nullptr;
 	};
 }
 #endif
+
+

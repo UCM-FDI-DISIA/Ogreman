@@ -2,7 +2,7 @@
 #include "FlashlightComponent.h"
 
 VeryReal::Component* Ogreman::CreatorFlashlightComponent::CreatorSpecificComponent() {
-    return new Ogreman::FlashlightComponent();
+    return new FlashlightComponent();
 }
 
 void Ogreman::CreatorFlashlightComponent::SpecificInitComponent(VeryReal::Component* c) {

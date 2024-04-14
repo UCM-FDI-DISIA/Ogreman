@@ -15,7 +15,7 @@ namespace Ogreman
 		//cada cuanto cambia de direccion
 		int timertochange;
 		//cuanto tiempo llevo desde el cambio
-		int actualtimer;
+		double actualtimer;
 		//radio maximo entre el que puede cambiar
 		float wanderRange;
 		float aceleration;

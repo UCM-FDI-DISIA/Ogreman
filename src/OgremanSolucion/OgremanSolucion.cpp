@@ -33,7 +33,6 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorFlashlightComponent.h"
-
 #include "../Components/CreatorNodeComponent.h"
 #include "MeshRenderComponent.h"
 #include "../Components/CreatorGridComponent.h"
@@ -116,7 +115,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         #pragma endregion
 
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
-        VeryReal::Creator::Instance()->AddCreator("InputComponent", new Ogreman::CreatorPlayerInputComponent());
+        VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new Ogreman::CreatorPlayerInputComponent());
+        VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
         VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
@@ -128,7 +128,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("restitution", float(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("movementType", int(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("trigger", true);
-
 
         //bool ispatrol,float cost, float hcost, int iswalkable,int i
         Creator::Instance()->GetCreator("NodeComponent")->AddParameter("id", int(1));
@@ -150,24 +149,27 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         /*ScriptManager::Instance()->Init("HouseScene");
         ScriptManager::Instance()->ReadScene("HouseScene");*/
 
-        /*Entity* e = s->AddEntity("Player");
+        Entity* e = s->AddEntity("Player");
 
-        Entity* luz = s->AddEntity("Luz");
-        Component* trans = luz->AddComponent("TransformComponent");
-        Component* luzcom = luz->AddComponent("Light");
-
-      //  Component* transform = e->AddComponent("TransformComponent");
-      //  Component* audioSource = e->AddComponent("AudioSourceComponent");
-      //  Component* audioListener = e->AddComponent("AudioListenerComponent");
-      ////  Component* meshrenderer = e->AddComponent("MeshRenderComponent");
-      // Component* mov = e->AddComponent("MovementComponent");
+       // Entity* luz = s->AddEntity("Luz");
+        //Entity* camara = s->AddEntity("Cam");
+       // Component* cam = camara->AddComponent("Camera");
+       /* Component* trans = luz->AddComponent("TransformComponent");
+        Component* luzcom = luz->AddComponent("Light");*/
+        Component* transform = e->AddComponent("TransformComponent");
+        Component* audioSource = e->AddComponent("AudioSourceComponent");
+        Component* audioListener = e->AddComponent("AudioListenerComponent");
+        //Component* meshrenderer = e->AddComponent("MeshRenderComponent");
+        Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
-      // 
-      //  static_cast<CameraComponent*>(cam2)->SetTarget(e);
-      //  Component* inpur = e->AddComponent("InputComponent");
+        Component* foco = e->AddComponent("Light");
 
+        static_cast<CameraComponent*>(cam2)->SetTarget(e);
+        Component* inpur = e->AddComponent("PlayerInputComponent");
 
-       /* Entity* ogrite = s->AddEntity("VAMOS");
+        Component* linterna = e->AddComponent("FlashlightComponent");
+
+        /*Entity* ogrite = s->AddEntity("VAMOS");
         Component* transfoerm= ogrite->AddComponent("TransformComponent");
         ogrite->AddComponent("MeshRenderComponent");
         static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,205));*/
@@ -206,7 +208,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
 
 
-        
         //std::cout << "Hola buenas tardes";
         //VeryReal::PhysicsManager::Instance()->Initialize();
         //VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);

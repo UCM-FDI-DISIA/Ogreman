@@ -5,9 +5,8 @@
 #include "PlayerInputComponent.h"
 
 bool Ogreman::FlashlightComponent::InitComponent() {
-	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();
-	// GetComponent o InitComponent de la linterna
-	// my_light_spot = this->GetEntity()->GetComponent<VeryReal::Light>("Light");
+	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();	
+	my_light_spot = this->GetEntity()->GetComponent<VeryReal::Light>();
 	
 	if (this->my_input != nullptr && this->my_light_spot != nullptr)
 		return true;
@@ -18,11 +17,12 @@ bool Ogreman::FlashlightComponent::InitComponent() {
 void Ogreman::FlashlightComponent::Update(const double& dt) {
 	if (my_input->IsFlashLightPressed() && energy_remaining > 0.0f) {
 		energy_remaining = std::max(energy_remaining - energy_consume_rate * dt, 0.0);
-		// Activar linterna (setActive del nodo de ogre)
+		my_light_spot->setVisible(true);
 	}
 	else {
-		// Desactivar linterna (setActive del nodo de ogre)
+		my_light_spot->setVisible(false);
 	}
+	std::cout << energy_remaining << std::endl;
 }
 
 bool Ogreman::FlashlightComponent::ChargeBatery(double energy_charge) {

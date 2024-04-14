@@ -1,20 +1,21 @@
 #include "MovementComponent.h"
 #include "TransformComponent.h"
 #include "Entity.h"
+#include "Vector3.h"
+
+using namespace std;
 
 bool Ogreman::MovementComponent::InitComponent(){
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	if (this->my_transform != NULL)
+	if (this->my_transform != nullptr)
 		return true;
 	else 
 		return false;
 }
 
 void Ogreman::MovementComponent::Update(const double& dt) {
-	std::cout << dt<<std::endl;
-	/*std::cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ();*/
 	if (IsMoving()) {
-		my_transform->Translate(movementDirection * speed * dt);
+        my_transform->Translate(movementDirection * speed * dt);
 	}
 }
 
