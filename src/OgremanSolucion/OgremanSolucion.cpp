@@ -46,6 +46,8 @@
 #include "PhysicsManager.h"
 #include "../Components/PlayButtonComponent.h"
 #include "../Components/ExitButtonComponent.h"
+#include "../Components/CreatorExitButtonComponent.h"
+#include "../Components/CreatorPlayButtonComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
