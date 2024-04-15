@@ -4,7 +4,7 @@
 #include "Singleton.h"
 #include "SceneManager.h"
 #include "NodeComponent.h"
-
+#include "GridComponent.h"
 //comentario aclaratorio: contamos con un game manager que llama al SceneManager que tiene una lista de Escenas
 namespace Ogreman {
 	class GameManager:public VeryReal::Singleton<GameManager>
@@ -13,6 +13,7 @@ namespace Ogreman {
 		VeryReal::SceneManager* scene_manager = nullptr;
 		std::vector<NodeComponent*> pathNodes;
 		std::vector<NodeComponent*> patrolNodes;
+		GridComponent* grid;
 	public:
 		
 		virtual ~GameManager();
@@ -24,6 +25,10 @@ namespace Ogreman {
 		void Play();
 		void Pause();
 
+		inline void RegisterGridComponent(GridComponent* g) {
+			grid = g;
+		}
+		inline GridComponent* GetGris() { return grid; }
 		inline std::vector<NodeComponent*> GetPathNode() {
 			return pathNodes;
 		}

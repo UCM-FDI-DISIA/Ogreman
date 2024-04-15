@@ -68,6 +68,9 @@ GridComponent::GridComponent():grid(0) {
 			 }
 			 else {
 				 //no se que va aqui ...
+
+
+
 				 endNode->SetConection(current);
 			 }
 			
@@ -132,19 +135,21 @@ GridComponent::GridComponent():grid(0) {
 		 else {
 
 			 for (auto d : scenes_nodes) {
-
+				 std::cout << "HOLA"  << "\n";
 				 if (c != d) {//compruebpo que no soy yo mismo
+					 c->AddNeighbors(d);
+					 std::cout << "ADIOS" << "\n";
 					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 					 if (other == nullptr) {
-						 std::cerr << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
+						 std::cout << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
 						 return false;
 					 }
 					 std::list<VeryReal::Entity*> colision = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
-					 VeryReal::Entity* ent = colision.back();
-					 if (!colision.empty() && ent->HasComponent("NodeComponent")) {
+					 std::cout << "tamaño lista" << colision.size()<<"\n";
+					 if (!colision.empty() && colision.back()->HasComponent("NodeComponent")) {
 
 						 c->AddNeighbors(d);
-
+						 std::cout << " AÑADO ARISTE\N";
 					 }
 
 
@@ -155,8 +160,10 @@ GridComponent::GridComponent():grid(0) {
 
 
 		 }
-
-		 return true;
+		
+		
 	 }
+	 GameManager::Instance()->RegisterGridComponent(this);
+	 return true;
 
  }

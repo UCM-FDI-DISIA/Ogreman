@@ -104,7 +104,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         #pragma endregion 
 
         #pragma region audiosource
-                VeryReal::Creator::Instance()->AddCreator("AudioSourceComponent", new VeryReal::CreatorAudioSourceComponent());
+               /* VeryReal::Creator::Instance()->AddCreator("AudioSourceComponent", new VeryReal::CreatorAudioSourceComponent());
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("name", std::string("sonido"));
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("path", std::string("sonido_jefe_merodeando2.mp3"));
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("groupchannel", std::string("sonido"));
@@ -113,7 +113,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("threed", true);
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("volume", 1000.f);
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("mindistance", 0.0f);
-                Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("maxdistance", 100000.0f);
+                Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("maxdistance", 100000.0f);*/
         #pragma endregion
 
         #pragma region audiolistener
@@ -126,17 +126,17 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
         VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
-        VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
-        VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
+       // VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
+       // VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
 
 
         //int shapeType, float mass, float friction, float restitution, int movementType, bool trigger
-        Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("shapeType", 1);
+        /*Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("shapeType", 1);
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("mass", float(1));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("friction", float(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("restitution", float(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("movementType", int(0));
-        Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("trigger", true);
+        Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("trigger", true);*/
 
         //bool ispatrol,float cost, float hcost, int iswalkable,int i
         Creator::Instance()->GetCreator("NodeComponent")->AddParameter("id", int(1));
@@ -194,18 +194,18 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         static_cast<MeshRenderComponent*>(meshr_n1)->changeMaterial("Ogre/ring");
         Component* node_n1 = n1->AddComponent("NodeComponent");
         Component* node_collider = n1->AddComponent("ColliderComponent");
-        Component* rbn1 = n1->AddComponent("RigidBodyComponent");
+       // Component* rbn1 = n1->AddComponent("RigidBodyComponent");
 
         Entity* n2 = s->AddEntity("nodo2");
         Component* trans_n2 = n2->AddComponent("TransformComponent");
-        static_cast<TransformComponent*>(trans_n2)->SetPosition(VeryReal::Vector3(0, 10, -25));
+        static_cast<TransformComponent*>(trans_n2)->SetPosition(VeryReal::Vector3(10, 0, -25));
         static_cast<TransformComponent*>(trans_n2)->Rotate(VeryReal::Vector3(0, 10, 180));
         Component* meshr_n2 = n2->AddComponent("MeshRenderComponent");
         static_cast<MeshRenderComponent*>(meshr_n2)->changeMaterial("Ogre/ring");
         Component* node_n2 = n2->AddComponent("NodeComponent");
         static_cast<Ogreman::NodeComponent*>(node_n2)->setID(1);
         Component* node_collider2 = n2->AddComponent("ColliderComponent");
-        Component* rbn2 = n2->AddComponent("RigidBodyComponent");
+        //Component* rbn2 = n2->AddComponent("RigidBodyComponent");
 
         #pragma endregion
 
@@ -215,12 +215,13 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
      
         Component* collider = ogroman->AddComponent("ColliderComponent");
-        Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
-        
+     //   Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
         Component* anim = ogroman->AddComponent("AnimatorComponent");
+        Component* ogro_cont = ogroman->AddComponent("OgremanMovementComponent");
+       
 
-        Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
-      //  Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
+     //   Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
+       Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
 
 
         //std::cout << "Hola buenas tardes";
@@ -234,9 +235,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
      
      //   Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
-        Entity* grid = s->AddEntity("grid");
-        //Component* grid_c = grid->AddComponent("GridComponent");
-    
+      /* Entity* grid = s->AddEntity("grid");
+        Component* grid_c = grid->AddComponent("GridComponent");
+    */
 
         //std::cout << s->GetEntities().size() << "\n";
         return 0;
