@@ -16,10 +16,13 @@ bool Ogreman::MovementComponent::InitComponent(){
 void Ogreman::MovementComponent::Update(const double& dt) {
 	if (IsMoving()) {
         my_transform->Translate(movementDirection * speed * dt);
+		std::cout << "Rotación: "
+			<< movementDirection.GetX() << " "
+			<< movementDirection.GetY() << " "
+			<< movementDirection.GetZ() << std::endl;
 	}
 }
 
-bool Ogreman::MovementComponent::IsMoving()
-{
+bool Ogreman::MovementComponent::IsMoving() {
 	return movementDirection != VeryReal::Vector3(0, 0, 0);
 }

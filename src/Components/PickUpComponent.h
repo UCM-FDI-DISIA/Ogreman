@@ -24,9 +24,9 @@ namespace Ogreman {
 		void GetElement(NoteComponent* note, CellComponent* cell);
 
 	private:
-		VeryReal::TransformComponent* player_transform;
-		Ogreman::PlayerInteractionComponent* my_player_interaction_comp;
-		Ogreman::PlayerInputComponent* my_player_input_comp;
+		VeryReal::TransformComponent* player_transform = nullptr;
+		Ogreman::PlayerInteractionComponent* my_player_interaction_comp = nullptr;
+		Ogreman::PlayerInputComponent* my_player_input_comp = nullptr;
 		bool control_update = false;
 	};
 }

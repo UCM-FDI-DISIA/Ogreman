@@ -161,8 +161,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
        /* Component* trans = luz->AddComponent("TransformComponent");
         Component* luzcom = luz->AddComponent("Light");*/
         Component* transform = e->AddComponent("TransformComponent");
-        Component* audioSource = e->AddComponent("AudioSourceComponent");
-        Component* audioListener = e->AddComponent("AudioListenerComponent");
+        //Component* audioSource = e->AddComponent("AudioSourceComponent");
+        //Component* audioListener = e->AddComponent("AudioListenerComponent");
         //Component* meshrenderer = e->AddComponent("MeshRenderComponent");
         Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
@@ -224,10 +224,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
         Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
         Entity* grid = s->AddEntity("grid");
-       // Component* grid_c = grid->AddComponent("GridComponent");
+        //Component* grid_c = grid->AddComponent("GridComponent");
     
 
-       std::cout << s->GetEntities().size() << "\n";
+        //std::cout << s->GetEntities().size() << "\n";
         return 0;
     }
 }

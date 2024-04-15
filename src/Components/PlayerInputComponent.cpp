@@ -19,24 +19,6 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 		return false;
 }
 
-VeryReal::Vector3 Ogreman::PlayerInputComponent::getFacingDirection(const VeryReal::Vector3& rotation) {
-	float radX = rotation.GetX() * 3.14159f / 180.0f;
-	float radY = rotation.GetY() * 3.14159f / 180.0f;
-	float radZ = rotation.GetZ() * 3.14159f / 180.0f;
-
-	// Definir la direcci�n por defecto
-	VeryReal::Vector3 defaultDirection(0, 0, -1);
-
-	// Aplicar rotaciones en orden Z, X, Y
-	VeryReal::Vector3 facingDirection(
-		defaultDirection.GetX() * (cos(radY) * cos(radZ)) + defaultDirection.GetX() * (cos(radY) * sin(radZ)) + defaultDirection.GetZ() * (-sin(radY)),
-		defaultDirection.GetY() * (sin(radX) * sin(radY) * cos(radZ) - cos(radX) * sin(radZ)) + defaultDirection.GetY() * (sin(radX) * sin(radY) * sin(radZ) + cos(radX) * cos(radZ)) + defaultDirection.GetZ() * (sin(radX) * cos(radY)),
-		defaultDirection.GetZ() * (cos(radX) * sin(radY) * cos(radZ) + sin(radX) * sin(radZ)) + defaultDirection.GetY() * (cos(radX) * sin(radY) * sin(radZ) - sin(radX) * cos(radZ)) + defaultDirection.GetZ() * (cos(radX) * cos(radY))
-	);
-
-	return facingDirection.Normalize();
-}
-
 void Ogreman::PlayerInputComponent::Update(const double& dt){
 	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) {
 		// Movimiento Teclado
@@ -44,27 +26,14 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
 			sprint = 2;
 		}
-		/*if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_A)) {
-			my_movement_component->SetMoventDirectionX(-sprint);
-		}
-		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_D)) {
-			my_movement_component->SetMoventDirectionX(sprint);
-		}
-		else {
-			my_movement_component->SetMoventDirectionX(0);
-		}
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
-			my_movement_component->SetMoventDirectionZ(sprint);
-		}
-		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_W)) {
-			my_movement_component->SetMoventDirectionZ(-sprint);
-		}
-		else {
-			my_movement_component->SetMoventDirectionZ(0);
-		}*/
 
-		VeryReal::Vector3 forwardDirection = getFacingDirection(my_transform->GetRotation()).Normalize();
+		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
+
+		std::cout << "Forward: "
+			<< forwardDirection.GetX() << " "
+			<< forwardDirection.GetY() << " "
+			<< forwardDirection.GetZ() << std::endl;
 
 		float moveX = 0.0f;
 		float moveZ = 0.0f;
@@ -86,8 +55,8 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 			moveZ += rightDirection.GetZ();
 		}
 
-		my_movement_component->SetMoventDirectionX(moveX);
-		my_movement_component->SetMoventDirectionZ(moveZ);
+		my_movement_component->SetMoventDirectionX(moveX * sprint);
+		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
 
 		if (canPickUp) { // Anadir UI de PULSA E
 			if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_E)) {
@@ -96,32 +65,33 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		}
 
 		//Camara con teclado y raton 
+		VeryReal::Vector4 initialOrientation = my_camera_component->getOrientation();
+
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) {
+			// Rotar la cámara hacia la izquierda
+			my_camera_component->yawRelativeToGlobal(-1);
 			my_transform->Rotate(VeryReal::Vector3(0, -1, 0));
-			my_camera_component->yaw(1);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) {
+			// Rotar la cámara hacia la derecha
+			my_camera_component->yawRelativeToGlobal(1);
 			my_transform->Rotate(VeryReal::Vector3(0, 1, 0));
-			my_camera_component->yaw(-1);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
-			my_camera_component->pitch(1);
+			// Rotar la cámara hacia arriba
+			my_camera_component->pitchRelativeToGlobal(1);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
-			my_camera_component->pitch(-1);
+			// Rotar la cámara hacia abajo
+			my_camera_component->pitchRelativeToGlobal(-1);
 		}
-	
-		/*std::pair<int32_t, int32_t> mouse_pos = VeryReal::InputManager::Instance()->GetMousePos();
 
-		double yaw = (mouse_pos.first - prev_mouse_pos.first) * sensitivity;
-		double roll = (mouse_pos.second - prev_mouse_pos.second) * sensitivity;
-		my_camera_component->yaw(yaw);
-		my_camera_component->roll(roll);
+		std::cout << "RotaciOn: "
+			<< my_transform->GetRotation().GetX() << " "
+			<< my_transform->GetRotation().GetY() << " "
+			<< my_transform->GetRotation().GetZ() << std::endl;
 
-
-		prev_mouse_pos = mouse_pos;*/
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) 
-		{
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			//VeryReal::InputManager::Instance()->Quit();
 		}
 	}

@@ -22,7 +22,7 @@ void Ogreman::FlashlightComponent::Update(const double& dt) {
 	else {
 		my_light_spot->setVisible(false);
 	}
-	std::cout << energy_remaining << std::endl;
+	//std::cout << energy_remaining << std::endl;
 }
 
 bool Ogreman::FlashlightComponent::ChargeBatery(double energy_charge) {

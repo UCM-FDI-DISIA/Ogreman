@@ -6,11 +6,12 @@
 #include "CreatorComponent.h"
 #include <variant>
 #include "../Export.h"
-namespace Ogreman
-{
 
-	class OGREMAN_API NodeComponent : public VeryReal::Component
-	{
+namespace Ogreman {
+
+#pragma warning(disable : 4251)
+	
+	class OGREMAN_API NodeComponent : public VeryReal::Component {
 	public:
 		NodeComponent();
 		~NodeComponent();
@@ -40,6 +41,8 @@ namespace Ogreman
 		bool ispatrol;
 		NodeComponent* conection=nullptr;
 	};
+
+	#pragma warning(default : 4251)
 }
 
 #endif // !NodeComponent

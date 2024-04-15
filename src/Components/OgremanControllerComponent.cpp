@@ -75,7 +75,7 @@ VeryReal::Vector3 Ogreman::OgremanControllerComponent::calculateRotationVector( 
 	float rotationAngleRadians = std::acos(cosTheta);
 
 	// Convierte el ángulo a grados
-	float rotationAngleDegrees = rotationAngleRadians * (180.0f / 3.1415);
+	float rotationAngleDegrees = rotationAngleRadians * (180.0f / 3.1415f);
 
 	// Normaliza el vector de rotación
 	if (rotationAngleRadians != 0) {
@@ -99,7 +99,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 0.01;
+		dif *= 0.01f;
 		trans->SetPosition(trans->GetPosition() + dif);
 		
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Q)) {
@@ -135,7 +135,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
  }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	if (other != nullptr && other->GetComponent<NodeComponent>() != nullptr) {
-		std::cout << "\nHAY COLISION\N";
+		std::cout << "\nHAY COLISION\n";
 		current_index = (current_index + 1) % patrol_nodes.size();
 		current_node = patrol_nodes[current_index];
 		current_node_trans= current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();

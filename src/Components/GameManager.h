@@ -10,7 +10,7 @@ namespace Ogreman {
 	class GameManager:public VeryReal::Singleton<GameManager>
 	{
 	private:
-		VeryReal::SceneManager* scene_manager;
+		VeryReal::SceneManager* scene_manager = nullptr;
 		std::vector<NodeComponent*> pathNodes;
 		std::vector<NodeComponent*> patrolNodes;
 	public:

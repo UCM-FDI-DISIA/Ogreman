@@ -7,6 +7,8 @@
 #include "AnimatorComponent.h"
 #include "ColliderComponent.h"
 #include "../Export.h"
+
+
 namespace Ogreman {
 	class OGREMAN_API OgremanControllerComponent :
 		public VeryReal::Component
@@ -24,7 +26,7 @@ namespace Ogreman {
 		VeryReal::AnimatorComponent* animation=nullptr;
 		VeryReal::TransformComponent* trans=nullptr;
 		VeryReal::TransformComponent* current_node_trans = nullptr;
-		NodeComponent* current_node;
+		NodeComponent* current_node = nullptr;
 		std::vector<NodeComponent*> patrol_nodes;
 		std::vector<NodeComponent*> all_nodes;
 		VeryReal::ColliderComponent* collider = nullptr;
