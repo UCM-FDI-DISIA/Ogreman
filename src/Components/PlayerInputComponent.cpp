@@ -30,10 +30,10 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
 
-		//std::cout << "Forward: "
-		//	<< forwardDirection.GetX() << " "
-		//	<< forwardDirection.GetY() << " "
-		//	<< forwardDirection.GetZ() << std::endl;
+		std::cout << "Forward: "
+			<< forwardDirection.GetX() << " "
+			<< forwardDirection.GetY() << " "
+			<< forwardDirection.GetZ() << std::endl;
 
 		float moveX = 0.0f;
 		float moveZ = 0.0f;
@@ -69,27 +69,27 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) {
 			// Rotar la cámara hacia la izquierda
-			my_camera_component->yaw(1);
+			my_camera_component->yawRelativeToGlobal(-1);
 			my_transform->Rotate(VeryReal::Vector3(0, -1, 0));
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) {
 			// Rotar la cámara hacia la derecha
-			my_camera_component->yaw(-1);
+			my_camera_component->yawRelativeToGlobal(1);
 			my_transform->Rotate(VeryReal::Vector3(0, 1, 0));
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
 			// Rotar la cámara hacia arriba
-			my_camera_component->pitch(1);
+			my_camera_component->pitchRelativeToGlobal(1);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
 			// Rotar la cámara hacia abajo
-			my_camera_component->pitch(-1);
+			my_camera_component->pitchRelativeToGlobal(-1);
 		}
 
-		//std::cout << "Rotacion: "
-		//	<< my_transform->GetRotation().GetX() << " "
-		//	<< my_transform->GetRotation().GetY() << " "
-		//	<< my_transform->GetRotation().GetZ() << std::endl;
+		std::cout << "RotaciOn: "
+			<< my_transform->GetRotation().GetX() << " "
+			<< my_transform->GetRotation().GetY() << " "
+			<< my_transform->GetRotation().GetZ() << std::endl;
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			//VeryReal::InputManager::Instance()->Quit();
