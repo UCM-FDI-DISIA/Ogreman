@@ -24,6 +24,7 @@
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorGridComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorNoteComponent.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h" />
     <ClInclude Include="..\src\Components\CreatorGridComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNoteComponent.h" />

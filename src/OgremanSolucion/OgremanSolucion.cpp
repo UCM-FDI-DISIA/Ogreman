@@ -48,6 +48,7 @@
 #include "../Components/ExitButtonComponent.h"
 #include "../Components/CreatorExitButtonComponent.h"
 #include "../Components/CreatorPlayButtonComponent.h"
+#include "../Components/CreatorMerodeoComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -66,6 +67,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new Ogreman::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerInteractionComponent", new Ogreman::CreatorPlayerInteractionComponent());
         VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
+        VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
         return true;
     }
 
@@ -125,6 +127,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
         VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
         VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
+        VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
+
+
         //int shapeType, float mass, float friction, float restitution, int movementType, bool trigger
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("shapeType", 1);
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("mass", float(1));
@@ -208,8 +213,14 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* trans_ogreman = ogroman->AddComponent("TransformComponent");
         static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(20, 0, -25));
         Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
-        Component* rb4 = ogroman->AddComponent("AnimatorComponent");
-        Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
+     
+        Component* collider = ogroman->AddComponent("ColliderComponent");
+        Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
+        
+        Component* anim = ogroman->AddComponent("AnimatorComponent");
+
+        Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
+      //  Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
 
 
         //std::cout << "Hola buenas tardes";
@@ -221,8 +232,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         //Component* tr_ejemplo = ejemplo->AddComponent("TransformComponent");
         ////Component* pickup_comp = ejemplo->AddComponent("PickUpComponent");
 
-        Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
-        Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
+     
+     //   Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
         Entity* grid = s->AddEntity("grid");
         //Component* grid_c = grid->AddComponent("GridComponent");
     

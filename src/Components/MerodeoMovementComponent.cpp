@@ -6,11 +6,17 @@
 
 using namespace Ogreman;
 MerodeoMovementComponent::MerodeoMovementComponent() {
-	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
+	
 }
 MerodeoMovementComponent::~MerodeoMovementComponent() {
 
+}
+bool MerodeoMovementComponent::InitComponent() {
+	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
+	aceleration = 100;
+	timertochange = 3;
+	return true;
 }
 int MerodeoMovementComponent::random360() {
 	int random = rand() % 361;
@@ -40,6 +46,7 @@ void MerodeoMovementComponent::Update(const double& dt){
 		Vector3 lineal = Vector3(targetcosa.GetX() * aceleration, 0, targetcosa.GetZ() * aceleration);
 
 		rigidbodycomponent->SetVelocityLinear(lineal);
+		actualtimer = 0;
 	}
 	else actualtimer += dt;
 	

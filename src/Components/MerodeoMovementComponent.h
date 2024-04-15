@@ -26,6 +26,7 @@ namespace Ogreman
 
 	public:
 		MerodeoMovementComponent();
+		bool InitComponent();
 		virtual ~MerodeoMovementComponent();
 		void Update(const double& dt) override;
 
