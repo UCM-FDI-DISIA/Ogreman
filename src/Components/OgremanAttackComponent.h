@@ -18,8 +18,8 @@ namespace Ogreman
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
 	private:
-		VeryReal::TransformComponent* my_transform;
-		VeryReal::TransformComponent* player_transform;
+		VeryReal::TransformComponent* my_transform = nullptr;
+		VeryReal::TransformComponent* player_transform = nullptr;
 	};
 }
 
