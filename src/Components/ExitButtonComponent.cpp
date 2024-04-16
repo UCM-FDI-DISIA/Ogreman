@@ -1,4 +1,5 @@
 #include "ExitButtonComponent.h"
+#include "InputManager.h"
 
 bool Ogreman::ExitButtonComponent::InitComponent()
 {
@@ -7,5 +8,5 @@ bool Ogreman::ExitButtonComponent::InitComponent()
 
 void Ogreman::ExitButtonComponent::accion()
 {
-	// Salir de la app
+	VeryReal::InputManager::Instance()->Quit(); // Salir de la app
 }
