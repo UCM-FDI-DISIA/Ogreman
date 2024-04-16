@@ -13,7 +13,7 @@ namespace Ogreman {
 		VeryReal::SceneManager* scene_manager = nullptr;
 		std::vector<NodeComponent*> pathNodes;
 		std::vector<NodeComponent*> patrolNodes;
-		GridComponent* grid;
+		GridComponent* grid = nullptr;
 	public:
 		
 		virtual ~GameManager();

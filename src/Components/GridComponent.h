@@ -6,6 +6,9 @@
 #include "NodeComponent.h"
 #include "../Export.h"
 #include "Vector3.h"
+
+#pragma warning(disable : 4251)
+
 namespace Ogreman
 {
     class OGREMAN_API GridComponent :
@@ -22,6 +25,8 @@ namespace Ogreman
         std::vector<Ogreman::NodeComponent*>scenes_nodes;
     };
 }
+
+#pragma warning(default : 4251)
 
 #endif // !GRIDCOMPONENT 
 

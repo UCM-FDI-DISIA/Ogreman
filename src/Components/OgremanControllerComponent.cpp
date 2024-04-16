@@ -83,7 +83,7 @@ VeryReal::Vector3 Ogreman::OgremanControllerComponent::CalculateRotationVector(V
 	float rotationAngleRadians = std::atan2(direction.GetX(), direction.GetZ());
 
 	// Convierte el ángulo de rotación a grados
-	int rotationAngleDegrees = static_cast<int>(rotationAngleRadians * (180.0f / 3.1415));
+	float rotationAngleDegrees = (float)(static_cast<int>(rotationAngleRadians * (180.0f / 3.1415)));
 
 	// Crea un vector de rotación en el eje Y
 	VeryReal::Vector3 rotationVector(0, rotationAngleDegrees, 0);

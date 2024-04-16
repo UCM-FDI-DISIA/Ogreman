@@ -149,7 +149,7 @@ GridComponent::GridComponent():grid(0) {
 					 if (!colision.empty() && colision.back()->HasComponent("NodeComponent")) {
 
 						 c->AddNeighbors(d);
-						 std::cout << " AÑADO ARISTE\N";
+						 std::cout << " AÑADO ARISTE\n";
 					 }
 
 

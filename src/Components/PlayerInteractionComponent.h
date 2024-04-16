@@ -8,6 +8,8 @@ namespace Ogreman {
 	class FlashlightComponent;
 }
 
+#pragma warning(disable : 4251)
+
 namespace Ogreman {
 	class OGREMAN_API PlayerInteractionComponent : public VeryReal::Component {
 	public:
@@ -15,10 +17,11 @@ namespace Ogreman {
 		void GetCell();
 		void GetNote(std::string note);
 	private:
-		FlashlightComponent* my_flashlight_component;
-		std::string my_text;
-
+		FlashlightComponent* my_flashlight_component = nullptr;
+		std::string my_text = "";
 	};
 }
-#endif
 
+#pragma warning(default : 4251)
+
+#endif

@@ -136,8 +136,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin</OutDir>
-    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin\</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

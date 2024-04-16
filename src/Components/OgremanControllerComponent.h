@@ -9,11 +9,10 @@
 #include "ColliderComponent.h"
 #include "../Export.h"
 
+#pragma warning(disable : 4251)
 
 namespace Ogreman {
-	class OGREMAN_API OgremanControllerComponent :
-		public VeryReal::Component
-	{
+	class OGREMAN_API OgremanControllerComponent : public VeryReal::Component {
 	public:
 		OgremanControllerComponent();
 		virtual ~OgremanControllerComponent();
@@ -31,7 +30,7 @@ namespace Ogreman {
 		VeryReal::TransformComponent* trans=nullptr;
 		VeryReal::TransformComponent* current_node_trans = nullptr;
 		VeryReal::TransformComponent* player_trns = nullptr;
-		GridComponent* grid;
+		GridComponent* grid = nullptr;
 		NodeComponent* current_node = nullptr;
 		std::list<NodeComponent*> Astar_nodes;
 		std::vector<NodeComponent*> patrol_nodes;
@@ -42,9 +41,8 @@ namespace Ogreman {
 		float t = 0;
 		bool once = false;
 	};
-
 }
 
+#pragma warning(default : 4251)
+
 #endif // !OGREMANCONTROLLERCOMPONENT
-
-

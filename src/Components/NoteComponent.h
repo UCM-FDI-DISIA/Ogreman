@@ -4,15 +4,20 @@
 #include "Component.h"
 #include <string>
 #include "../Export.h"
+
+#pragma warning(disable : 4251)
+
 namespace Ogreman {
 	class OGREMAN_API NoteComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent(std::string text_);
 		std::string getText();
 	private:
-		bool pickedUp;
-		std::string text;
+		bool pickedUp = false;
+		std::string text = "";
 	};
 }
-#endif
 
+#pragma warning(default : 4251)
+
+#endif
