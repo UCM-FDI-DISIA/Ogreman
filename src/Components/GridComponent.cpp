@@ -5,7 +5,7 @@
 #include "Entity.h"
 #include "algorithm"
 using namespace Ogreman;
-GridComponent::GridComponent():grid(0) {
+GridComponent::GridComponent() {
 
 }
  void GridComponent::Update(const double& dt) {
@@ -106,12 +106,12 @@ GridComponent::GridComponent():grid(0) {
  }
  NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
 	 float minimun(INT16_MAX);
+	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	 NodeComponent* node = nullptr;
 	 for (auto c : scenes_nodes) {
 		 VeryReal::Vector3 dif,res;
 		 res = vec;
 		 float difd = (res - c->GetEntity()->GetComponent<VeryReal::TransformComponent>()->GetPosition()).Magnitude();
-		// res.SetVector(VeryReal::Vector3(abs(res.GetX()), abs(res.GetY()), abs(res.GetX())));
 		 if (difd < minimun) {
 			 node = c;
 		 }
@@ -122,7 +122,7 @@ GridComponent::GridComponent():grid(0) {
  }
  bool GridComponent::InitComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	
+	 std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
 	 for (auto c : scenes_nodes) {
 		 std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
 
@@ -136,7 +136,7 @@ GridComponent::GridComponent():grid(0) {
 
 			 for (auto d : scenes_nodes) {
 				 std::cout << "HOLA"  << "\n";
-				 if (c != d) {//compruebpo que no soy yo mismo
+				 if (c->GetID() != d->GetID()) {//compruebpo que no soy yo mismo
 					 c->AddNeighbors(d);
 					 std::cout << "ADIOS" << "\n";
 					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -163,6 +163,7 @@ GridComponent::GridComponent():grid(0) {
 		
 		
 	 }
+	 
 	 GameManager::Instance()->RegisterGridComponent(this);
 	 return true;
 

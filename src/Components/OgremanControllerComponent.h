@@ -19,7 +19,7 @@ namespace Ogreman {
 		virtual void Update(const double& dt);
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 		 bool InitComponent();
-		 VeryReal::Vector3 CalculateRotationVector(VeryReal::Vector3& from, VeryReal::Vector3& to);
+		float  CalculateRotationVector(VeryReal::Vector3& from, VeryReal::Vector3& to);
 		 void setPlayerTransform(VeryReal::TransformComponent* t);
 		 void SetState(int state);
 		 int  GetState();

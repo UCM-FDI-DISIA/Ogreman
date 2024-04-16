@@ -188,39 +188,39 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
         Entity* n1 = s->AddEntity("nodo1");
         Component* trans_n = n1->AddComponent("TransformComponent");
-        static_cast<TransformComponent*>(trans_n)->SetPosition(VeryReal::Vector3(-10, 0, -25));
-        static_cast<TransformComponent*>(trans_n)->Rotate(VeryReal::Vector3(0, 10, 180));
+        static_cast<TransformComponent*>(trans_n)->SetPosition(VeryReal::Vector3(20, 0, -25));
+        static_cast<TransformComponent*>(trans_n)->Rotate(VeryReal::Vector3(0, 0, 0));
         Component* meshr_n1 = n1->AddComponent("MeshRenderComponent");
         static_cast<MeshRenderComponent*>(meshr_n1)->changeMaterial("Ogre/ring");
         Component* node_n1 = n1->AddComponent("NodeComponent");
         Component* node_collider = n1->AddComponent("ColliderComponent");
-       // Component* rbn1 = n1->AddComponent("RigidBodyComponent");
+       Component* rbn1 = n1->AddComponent("RigidBodyComponent");
 
         Entity* n2 = s->AddEntity("nodo2");
         Component* trans_n2 = n2->AddComponent("TransformComponent");
-        static_cast<TransformComponent*>(trans_n2)->SetPosition(VeryReal::Vector3(10, 0, -25));
-        static_cast<TransformComponent*>(trans_n2)->Rotate(VeryReal::Vector3(0, 10, 180));
+        static_cast<TransformComponent*>(trans_n2)->SetPosition(VeryReal::Vector3(20, 0, -25));
+        static_cast<TransformComponent*>(trans_n2)->Rotate(VeryReal::Vector3(0, 0, 0));
         Component* meshr_n2 = n2->AddComponent("MeshRenderComponent");
         static_cast<MeshRenderComponent*>(meshr_n2)->changeMaterial("Ogre/ring");
         Component* node_n2 = n2->AddComponent("NodeComponent");
         static_cast<Ogreman::NodeComponent*>(node_n2)->setID(1);
         Component* node_collider2 = n2->AddComponent("ColliderComponent");
-        //Component* rbn2 = n2->AddComponent("RigidBodyComponent");
+        Component* rbn2 = n2->AddComponent("RigidBodyComponent");
 
         #pragma endregion
 
         Entity* ogroman = s->AddEntity("ogreman");
         Component* trans_ogreman = ogroman->AddComponent("TransformComponent");
-        static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(20, 0, -25));
+        static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(-10, 0, -25));
         Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
      
         Component* collider = ogroman->AddComponent("ColliderComponent");
-     //   Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
+       Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
         Component* anim = ogroman->AddComponent("AnimatorComponent");
         Component* ogro_cont = ogroman->AddComponent("OgremanMovementComponent");
        
 
-     //   Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
+     // Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
        Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
 
 
@@ -234,10 +234,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         ////Component* pickup_comp = ejemplo->AddComponent("PickUpComponent");
 
      
-     //   Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
-      /* Entity* grid = s->AddEntity("grid");
+     //Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
+       Entity* grid = s->AddEntity("grid");
         Component* grid_c = grid->AddComponent("GridComponent");
-    */
+    
 
         //std::cout << s->GetEntities().size() << "\n";
         return 0;
