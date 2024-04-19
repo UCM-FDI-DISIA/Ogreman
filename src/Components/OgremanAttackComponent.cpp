@@ -3,9 +3,14 @@
 #include "Entity.h"
 #include <SceneManager.h>
 #include <Scene.h>
+#include "UI/UISpriteRenderComponent.h"
+#include "UI/UITransformComponent.h"
+#include "GameManager.h"
 bool Ogreman::OgremanAttackComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	player_transform = VeryReal::SceneManager::Instance()->GetScene("a")->GetEntity("player")->GetComponent<VeryReal::TransformComponent>();
+	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
+	player_UI = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
+	sprite_renderer_player = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::UiSpriteRenderer>();
 	if (this->my_transform != nullptr)
 		return true;
 	else
@@ -14,8 +19,27 @@ bool Ogreman::OgremanAttackComponent::InitComponent() {
 
 void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 {
-	if(my_transform->GetPosition().Magnitude() - player_transform->GetPosition().Magnitude() < 10)
-	{
-		std::cout << "SUSTO";
+	if (!attacking) {
+		if (my_transform->GetPosition().Distance(player_transform->GetPosition()) < range)
+		{
+			if (nAttacks < maxAttacks) {
+				attacking = true;
+				player_UI->showElement();
+				nAttacks++;
+			}
+			else {
+				GameManager::Instance()->Loose();
+			}
+		}
+	}
+	else {
+		if (delay > delay_scream) {
+			player_UI->hideElement();
+			delay = 0;
+			attacking = false;
+		}
+		else {
+			delay += dt;
+		}
 	}
 }
