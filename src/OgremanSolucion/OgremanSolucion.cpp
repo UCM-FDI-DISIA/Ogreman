@@ -73,7 +73,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) int main() {
         VeryReal::RenderManager::Instance()->InitManager("app");
-        VeryReal::PhysicsManager::Instance()->Initialize();
+        VeryReal::PhysicsManager::Instance()->InitManager();
         VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });

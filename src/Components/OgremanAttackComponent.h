@@ -7,6 +7,8 @@
 #include "../Export.h"
 namespace VeryReal {
 	class TransformComponent;
+	class UITransformComponent;
+	class UiSpriteRenderer;
 }
 
 namespace Ogreman 
@@ -20,6 +22,11 @@ namespace Ogreman
 	private:
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::TransformComponent* player_transform = nullptr;
+		VeryReal::UITransformComponent* player_UI = nullptr;
+		VeryReal::UiSpriteRenderer* sprite_renderer_player;
+		int nAttacks = 0, maxAttacks = 1;
+		bool attacking = false;
+		float range = 20, delay_scream = 0.5, delay = 0;
 	};
 }
 
