@@ -11,6 +11,6 @@ void Ogreman::PlayButtonComponent::accion()
 {
 	VeryReal::SceneManager::Instance()->RemoveScene("MainMenu"); // RemoveScene
 	VeryReal::SceneManager::Instance()->AddScene("HouseScene", true); // AddScene
-	VeryReal::ScriptManager::Instance()->InitManager("HouseScene");
+	VeryReal::ScriptManager::Instance()->NewScene("HouseScene");
 	VeryReal::ScriptManager::Instance()->ReadScene("HouseScene"); // ReadScene
 }
