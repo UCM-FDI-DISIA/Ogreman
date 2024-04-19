@@ -141,11 +141,15 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("movementType", int(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("trigger", true);*/
 
-      /*  VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+       /* VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         s = SceneManager::Instance()->GetScene("Play");*/
 
-        ScriptManager::Instance()->Init("HouseScene");
-        ScriptManager::Instance()->ReadScene("HouseScene");
+       /* ScriptManager::Instance()->Init("HouseScene");
+        ScriptManager::Instance()->ReadScene("HouseScene");*/
+       // RenderManager::Instance()->GetScene();
+       /* ScriptManager::Instance()->NewScene("HouseScene");
+        ScriptManager::Instance()->ReadScene("HouseScene");*/
+        
 
        /* Entity* e = s->AddEntity("Player");*/
 
