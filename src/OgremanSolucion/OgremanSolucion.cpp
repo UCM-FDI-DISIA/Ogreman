@@ -56,6 +56,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     // Declaración de la función que deseas exportar
 
     __declspec(dllexport) bool start() {
+        //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new Ogreman::CreatorPlayButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new Ogreman::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());
@@ -68,6 +69,11 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("PlayerInteractionComponent", new Ogreman::CreatorPlayerInteractionComponent());
         VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
+        VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
+        VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
+        VeryReal::Creator::Instance()->AddCreator("AnimatorComponent", new VeryReal::CreatorAnimatorComponent());
+        // VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
+
         return true;
     }
 
@@ -79,33 +85,37 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("rotation", Vector3{ 0, 0, 0 });
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("scale", Vector3{ 1, 1, 1 });
+        #pragma region Transform
 
-        VeryReal::Creator::Instance()->AddCreator("MeshRenderComponent", new VeryReal::CreatorMeshRenderComponent());
+                Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
+                Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });
+                Creator::Instance()->GetCreator("TransformComponent")->AddParameter("rotation", Vector3{ 0, 0, 0 });
+                Creator::Instance()->GetCreator("TransformComponent")->AddParameter("scale", Vector3{ 1, 1, 1 });
+        #pragma endregion
+        #pragma region Mesh
         Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("isstatic", false);
         Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("modelname", std::string("Sinbad.mesh"));
         Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("entityname", std::string("sinbad"));
         Creator::Instance()->GetCreator("MeshRenderComponent")->AddParameter("materialname", std::string(""));
+#pragma endregion
         #pragma region camara
-                VeryReal::Creator::Instance()->AddCreator("CameraComponent", new VeryReal::CreatorCameraComponent());
-                Creator::Instance()->GetCreator("CameraComponent")->AddParameter("name", std::string("anim"));
-                Creator::Instance()->GetCreator("CameraComponent")->AddParameter("color", Vector3(0.8f, 0.3f, 1));
-                Creator::Instance()->GetCreator("CameraComponent")->AddParameter("offset", Vector3{ 100, 100, 100 });
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("name", std::string("anim"));
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("color", Vector3(0.8f, 0.3f, 1));
+        Creator::Instance()->GetCreator("CameraComponent")->AddParameter("offset", Vector3{ 100, 100, 100 });
         #pragma endregion
         #pragma region luz
-                VeryReal::Creator::Instance()->AddCreator("Light", new VeryReal::CreatorLightComponent());
-                Creator::Instance()->GetCreator("Light")->AddParameter("type", 1);
-                Creator::Instance()->GetCreator("Light")->AddParameter("diffusecolour", Vector3{ 1, 1, 1 });
-                Creator::Instance()->GetCreator("Light")->AddParameter("shadowfardist", float(25.0));
-                Creator::Instance()->GetCreator("Light")->AddParameter("shadowdist", float(25.0));
-                Creator::Instance()->GetCreator("Light")->AddParameter("ineerangle", float(90.0));
-                Creator::Instance()->GetCreator("Light")->AddParameter("outerangle", float(180.0));
-                Creator::Instance()->GetCreator("Light")->AddParameter("nearclipdist", float(0.1));
-                Creator::Instance()->GetCreator("Light")->AddParameter("shdws", true);
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("type", 1);
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("diffusecolour", Vector3{ 1, 1, 1 });
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shadowfardist", float(25.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shadowdist", float(25.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("ineerangle", float(90.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("outerangle", float(180.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("nearclipdist", float(0.1));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shdws", true);
         #pragma endregion 
-
         #pragma region audiosource
                /* VeryReal::Creator::Instance()->AddCreator("AudioSourceComponent", new VeryReal::CreatorAudioSourceComponent());
-                Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("name", std::string("sonido"));
+                //Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("name", std::string("sonido"));
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("path", std::string("sonido_jefe_merodeando2.mp3"));
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("groupchannel", std::string("sonido"));
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("onstart", true);
@@ -115,20 +125,20 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("mindistance", 0.0f);
                 Creator::Instance()->GetCreator("AudioSourceComponent")->AddParameter("maxdistance", 100000.0f);*/
         #pragma endregion
-
         #pragma region audiolistener
-                VeryReal::Creator::Instance()->AddCreator("AudioListenerComponent", new VeryReal::CreatorAudioListenerComponent());
+               // VeryReal::Creator::Instance()->AddCreator("AudioListenerComponent", new VeryReal::CreatorAudioListenerComponent());
         #pragma endregion
-
-        VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
-        VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new Ogreman::CreatorPlayerInputComponent());
-        VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
-        VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
-        VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
-        VeryReal::Creator::Instance()->AddCreator("ColliderComponent", new VeryReal::CreatorColliderComponent());
-       // VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
-       // VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
-
+        #pragma region Node
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("id", int(1));
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("ispatrol", true);
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("iswalkable", true);
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("hcost", float(10));
+        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("cost", 1000.f);
+#pragma endregion
+        #pragma region Animator
+        Creator::Instance()->GetCreator("AnimatorComponent")->AddParameter("name", "skeleton.mesh");
+#pragma endregion
+     
 
         //int shapeType, float mass, float friction, float restitution, int movementType, bool trigger
         /*Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("shapeType", 1);
@@ -138,45 +148,31 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("movementType", int(0));
         Creator::Instance()->GetCreator("RigidBodyComponent")->AddParameter("trigger", true);*/
 
-        //bool ispatrol,float cost, float hcost, int iswalkable,int i
-        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("id", int(1));
-        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("ispatrol", true);
-        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("iswalkable", true);
-        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("hcost", float(10));
-        Creator::Instance()->GetCreator("NodeComponent")->AddParameter("cost", 1000.f);
+      /*  VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+        s = SceneManager::Instance()->GetScene("Play");*/
 
-        VeryReal::Creator::Instance()->AddCreator("AnimatorComponent", new VeryReal::CreatorAnimatorComponent());
-        Creator::Instance()->GetCreator("AnimatorComponent")->AddParameter("name", "skeleton.mesh");
-       
-        VeryReal::Creator::Instance()->AddCreator("GridComponent", new Ogreman::CreatorGridComponent());
+        ScriptManager::Instance()->Init("HouseScene");
+        ScriptManager::Instance()->ReadScene("HouseScene");
 
-
-
-        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
-        s = SceneManager::Instance()->GetScene("Play");
-
-        /*ScriptManager::Instance()->Init("HouseScene");
-        ScriptManager::Instance()->ReadScene("HouseScene");*/
-
-        Entity* e = s->AddEntity("Player");
+       /* Entity* e = s->AddEntity("Player");*/
 
        // Entity* luz = s->AddEntity("Luz");
         //Entity* camara = s->AddEntity("Cam");
        // Component* cam = camara->AddComponent("Camera");
        /* Component* trans = luz->AddComponent("TransformComponent");
         Component* luzcom = luz->AddComponent("Light");*/
-        Component* transform = e->AddComponent("TransformComponent");
-        //Component* audioSource = e->AddComponent("AudioSourceComponent");
-        //Component* audioListener = e->AddComponent("AudioListenerComponent");
-        //Component* meshrenderer = e->AddComponent("MeshRenderComponent");
-        Component* mov = e->AddComponent("MovementComponent");
-        Component* cam2 = e->AddComponent("CameraComponent");
-        Component* foco = e->AddComponent("Light");
+        //Component* transform = e->AddComponent("TransformComponent");
+        ////Component* audioSource = e->AddComponent("AudioSourceComponent");
+        ////Component* audioListener = e->AddComponent("AudioListenerComponent");
+        ////Component* meshrenderer = e->AddComponent("MeshRenderComponent");
+        //Component* mov = e->AddComponent("MovementComponent");
+        //Component* cam2 = e->AddComponent("CameraComponent");
+        //Component* foco = e->AddComponent("LightComponent");
 
-        static_cast<CameraComponent*>(cam2)->SetTarget(e);
-        Component* inpur = e->AddComponent("PlayerInputComponent");
+        //static_cast<CameraComponent*>(cam2)->SetTarget(e);
+        //Component* inpur = e->AddComponent("PlayerInputComponent");
 
-        Component* linterna = e->AddComponent("FlashlightComponent");
+        //Component* linterna = e->AddComponent("FlashlightComponent");
 
         /*Entity* ogrite = s->AddEntity("VAMOS");
         Component* transfoerm= ogrite->AddComponent("TransformComponent");
@@ -184,7 +180,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         static_cast<TransformComponent*>(transfoerm)->SetPosition(VeryReal::Vector3(0,0,205));*/
 
       
-        #pragma region NODES
+     /*   #pragma region NODES
 
         Entity* n1 = s->AddEntity("nodo1");
         Component* trans_n = n1->AddComponent("TransformComponent");
@@ -207,24 +203,24 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Component* node_collider2 = n2->AddComponent("ColliderComponent");
         Component* rbn2 = n2->AddComponent("RigidBodyComponent");
 
-        #pragma endregion
+        #pragma endregion*/
 
-        Entity* ogroman = s->AddEntity("ogreman");
-        Component* trans_ogreman = ogroman->AddComponent("TransformComponent");
-        static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(-10, 0, -25));
-        Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
-     
-        Component* collider = ogroman->AddComponent("ColliderComponent");
-       Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
-        Component* anim = ogroman->AddComponent("AnimatorComponent");
-        Component* ogro_cont = ogroman->AddComponent("OgremanMovementComponent");
+     //   Entity* ogroman = s->AddEntity("ogreman");
+     //   Component* trans_ogreman = ogroman->AddComponent("TransformComponent");
+     //   static_cast<TransformComponent*>(trans_ogreman)->SetPosition(VeryReal::Vector3(-10, 0, -25));
+     //   Component* meshr_ogreman = ogroman->AddComponent("MeshRenderComponent");
+     //
+     //   Component* collider = ogroman->AddComponent("ColliderComponent");
+     // // Component* rbn3 = ogroman->AddComponent("RigidBodyComponent");
+     //   Component* anim = ogroman->AddComponent("AnimatorComponent");
+     //  // //Component* ogro_cont = ogroman->AddComponent("OgremanMovementComponent");
+     //  
+
+     //// Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
+     //  Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
+
+
        
-
-     // Component* merodeo = ogroman->AddComponent("MerodeoMovementComponent");
-       Component* ogro_collider = ogroman->AddComponent("ColliderComponent");
-
-
-        //std::cout << "Hola buenas tardes";
         //VeryReal::PhysicsManager::Instance()->Initialize();
         //VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
         //VeryReal::Creator::Instance()->AddCreator("PickUpComponent", new Ogreman::CreatorPickUpComponent());
@@ -235,9 +231,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
      
      //Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
-       Entity* grid = s->AddEntity("grid");
-        Component* grid_c = grid->AddComponent("GridComponent");
-    
+      /* Entity* grid = s->AddEntity("grid");*/
+       // Component* grid_c = grid->AddComponent("GridComponent");
+     std::cout << "Hola buenas tardes";
 
         //std::cout << s->GetEntities().size() << "\n";
         return 0;
