@@ -10,7 +10,12 @@ namespace Ogreman {
 		RangosVisionComponent();
 		virtual ~RangosVisionComponent();
 		virtual bool InitComponent(float maxv , float minv, float maxt, float mint);
-
+		float GetmaxVision();
+		float GetminVision();
+		float GetmaxTam();
+		float GetminTam();
+		float GetTamDif();
+		float GetVisionDif();
 	private:
 		float maxvision, minvision;
 		float maxtam, mintam;

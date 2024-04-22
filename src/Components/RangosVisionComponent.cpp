@@ -21,3 +21,21 @@ bool Ogreman::RangosVisionComponent::InitComponent(float maxv, float minv, float
 	if (mintam < 0.1)mintam = 0.1;
 	return true;
 }
+float  Ogreman::RangosVisionComponent::GetmaxVision() {
+	return maxvision;
+}
+float  Ogreman::RangosVisionComponent::GetminVision() {
+	return minvision;
+}
+float  Ogreman::RangosVisionComponent::GetmaxTam() {
+	return maxtam;
+}
+float  Ogreman::RangosVisionComponent::GetminTam() {
+	return mintam;
+}
+float  Ogreman::RangosVisionComponent::GetTamDif() {
+	return (maxtam - mintam);
+}
+float  Ogreman::RangosVisionComponent::GetVisionDif() {
+	return (maxvision- minvision);
+}

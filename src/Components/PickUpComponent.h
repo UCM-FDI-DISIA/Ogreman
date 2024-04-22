@@ -25,7 +25,7 @@ namespace Ogreman {
 		void GetElement(NoteComponent* note, CellComponent* cell);
 
 	private:
-		void settam(VeryReal::TransformComponent* tobj);
+		void settam(VeryReal::Entity* obj);
 		VeryReal::TransformComponent* player_transform = nullptr;
 		Ogreman::PlayerInteractionComponent* my_player_interaction_comp = nullptr;
 		Ogreman::PlayerInputComponent* my_player_input_comp = nullptr;
