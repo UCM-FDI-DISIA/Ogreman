@@ -6,6 +6,7 @@
 #include  "../Export.h"
 namespace VeryReal {
 	class TransformComponent;
+	class CameraComponent;
 	class Entity;
 }
 
@@ -27,7 +28,9 @@ namespace Ogreman {
 		VeryReal::TransformComponent* player_transform = nullptr;
 		Ogreman::PlayerInteractionComponent* my_player_interaction_comp = nullptr;
 		Ogreman::PlayerInputComponent* my_player_input_comp = nullptr;
+		VeryReal::CameraComponent* my_player_cam = nullptr;
 		bool control_update = false;
+		float distance = 1000;
 	};
 }
 #endif

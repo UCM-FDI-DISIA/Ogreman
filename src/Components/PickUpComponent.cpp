@@ -8,15 +8,22 @@
 #include "PlayerInputComponent.h"
 #include "NoteComponent.h"
 #include "CellComponent.h"
+#include "CameraComponent.h"
 
 bool Ogreman::PickUpComponent::InitComponent() {
 	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	my_player_input_comp = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<Ogreman::PlayerInputComponent>();
+	my_player_cam = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::CameraComponent>();
 	return true;
 }
 
 void Ogreman::PickUpComponent::Update(const double& dt) {
-	auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + VeryReal::Vector3(1000,0,0));
+	VeryReal::Vector4 orientation = my_player_cam->getOrientation();
+	//std::cout << "Orientation: " << orientation.GetR() << " " << orientation.GetG() << " " << orientation.GetB() << " " << orientation.GetA() << "\n";
+	//std::cout << "Player: " << player_transform->GetPosition().GetX() << " " << player_transform->GetPosition().GetY() << " " << player_transform->GetPosition().GetZ() << " " << "\n";
+	//VeryReal::Vector3 h = player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance;
+	//std::cout << "Ray: " << h.GetX() << " " << h.GetY() << " " << h.GetZ() << " " << "\n\n\n";
+	auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance);
 	std::cout << "N colisionados: " << collided_list.size() << "\n";
 	int cont_notes = 0, cont_cells = 0;
 	for (auto elem_collided : collided_list) {

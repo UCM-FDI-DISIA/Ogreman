@@ -78,8 +78,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     }
 
     __declspec(dllexport) int main() {
-        VeryReal::RenderManager::Instance()->InitManager("app");
-        VeryReal::PhysicsManager::Instance()->InitManager();
         VeryReal::Creator::Instance()->AddCreator("TransformComponent", new VeryReal::CreatorTransformComponent());
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("a", 0);
         Creator::Instance()->GetCreator("TransformComponent")->AddParameter("position", Vector3{ 0, 0,20 });
@@ -237,9 +235,16 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
      //Component* ogro_movement = ogroman->AddComponent("OgremanMovementComponent");
       /* Entity* grid = s->AddEntity("grid");*/
        // Component* grid_c = grid->AddComponent("GridComponent");
-     std::cout << "Hola buenas tardes";
 
         //std::cout << s->GetEntities().size() << "\n";
+
+
+        // PRUEBA DIRECCION RAYCAST
+        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
+        Entity* e = s->AddEntity("Player");
+        e->AddComponent("TransformComponent");
+        e->AddComponent("CameraComponent");
+        e->AddComponent("PickUpComponent");
         return 0;
     }
 }
