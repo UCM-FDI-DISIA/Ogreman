@@ -9,7 +9,9 @@
 #include "NoteComponent.h"
 #include "CellComponent.h"
 #include "CameraComponent.h"
-
+#include <UI/UISpriteRenderComponent.h>
+#include <UI/UItransformComponent.h>
+#include <TransformComponent.h>
 bool Ogreman::PickUpComponent::InitComponent() {
 	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	my_player_input_comp = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<Ogreman::PlayerInputComponent>();
@@ -30,12 +32,21 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 		if (elem_collided->HasComponent("NoteComponent")) {
 			my_player_input_comp->setCanPickUp(true);
 			my_player_input_comp->setNoteToGet(elem_collided->GetComponent<NoteComponent>());
+			VeryReal::UITransformComponent* ui = elem_collided->GetComponent<VeryReal::UITransformComponent>();
+			if (ui != nullptr) {
+				//se pone unn cartel encima de objeto e
+				ui->SetActive(true);
+
+			}
 			cont_notes++;
 			control_update = true;
 		}
 		if (elem_collided->HasComponent("CellComponent")) {
 			my_player_input_comp->setCanPickUp(true);
 			my_player_input_comp->setCellToGet(elem_collided->GetComponent<CellComponent>());
+			if (elem_collided->HasComponent("UISpriteRender")) {
+				//se pone unn cartel encima de objeto e
+			}
 			cont_cells++;
 			control_update = true;
 		}
@@ -53,7 +64,11 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 		control_update = false;
 	}
 }
+void Ogreman::PickUpComponent::settam(VeryReal::TransformComponent* tobj) {
+	VeryReal::TransformComponent* tmine = GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	float dist = tmine->GetPosition().Distance(tobj->GetPosition());
 
+}
 void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* cell) {
 	std::cout << "COGER" << "\n";
 	if (note != nullptr) {

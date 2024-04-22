@@ -48,6 +48,7 @@
     <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
+    <ClCompile Include="..\src\Components\RangosVisionComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +82,7 @@
     <ClInclude Include="..\src\Components\PlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\RangosVisionComponent.h" />
     <ClInclude Include="..\src\Export.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
