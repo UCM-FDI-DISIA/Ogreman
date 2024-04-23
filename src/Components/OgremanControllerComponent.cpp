@@ -121,7 +121,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 				rota = CalculateRotationVector(myforward, dif);
 				std::cout << "Rotación:  YYYY" << rota * 180 / 3.14 << std::endl;
 				vec.SetX(trans->GetRotation().GetX());
-				vec.SetY(trans->GetRotation().GetY() - rota * 180 / 3.14);
+				vec.SetY(trans->GetRotation().GetY() - rota * 180.0f / 3.14f);
 				vec.SetZ(trans->GetRotation().GetZ());
 				trans->SetRotation(vec);
 

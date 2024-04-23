@@ -3,8 +3,10 @@
 #define FLASHLIGHTCOMPONENT
 #include <Component.h>
 #include "../Export.h"
+
 namespace VeryReal {
 	class Light;
+	class UIProgressBarComponent;
 }
 
 namespace Ogreman {
@@ -27,6 +29,7 @@ namespace Ogreman {
 
 		Ogreman::PlayerInputComponent* my_input;
 		VeryReal::Light* my_light_spot;
+		VeryReal::UIProgressBarComponent* my_progress_bar;
 	};
 }
 #endif

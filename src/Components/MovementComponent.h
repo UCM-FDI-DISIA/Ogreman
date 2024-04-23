@@ -3,8 +3,8 @@
 #define MOVEMENTCOMPONENT
 #include "Component.h"
 #include "Vector3.h"
-#include "CreatorComponent.h"
 #include "../Export.h"
+
 namespace VeryReal {
 	class TransformComponent;
 	class Vector3;
@@ -21,6 +21,7 @@ namespace Ogreman {
 		inline void SetMoventDirectionX(float X) { movementDirection.SetX(X); }
 		inline void SetMoventDirectionY(float Y) { movementDirection.SetY(Y); }
 		inline void SetMoventDirectionZ(float Z) { movementDirection.SetZ(Z); }
+		inline void SetSpeed(float Speed) { this->speed = Speed; }
 
 	private:
 		float speed = 15;

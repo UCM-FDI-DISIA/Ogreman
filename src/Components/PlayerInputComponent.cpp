@@ -79,11 +79,13 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
 			// Rotar la cámara hacia arriba
-			my_camera_component->pitch(1);
+			//my_camera_component->pitch(1);
+			my_camera_component->rotate(1, rightDirection);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
 			// Rotar la cámara hacia abajo
-			my_camera_component->pitch(-1);
+			//my_camera_component->pitch(-1);
+			my_camera_component->rotate(-1, rightDirection);
 		}
 
 		//std::cout << "Rotacion: "
@@ -96,16 +98,17 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		}
 	}
 	else {
+		float sprint = 2;
 		// Movimiento Mando
-		my_movement_component->SetMoventDirectionX(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
-		my_movement_component->SetMoventDirectionZ(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
+		my_movement_component->SetMoventDirectionX(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
+		my_movement_component->SetMoventDirectionZ(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
 	
 		// Camara Mando
 		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX) != 0) {
-			my_camera_component->yaw(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
+			my_camera_component->yaw(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
 		}
 		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0) {
-			my_camera_component->pitch(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
 		}
 	}
 
