@@ -24,6 +24,7 @@
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorGridComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp" />
@@ -38,6 +39,7 @@
     <ClCompile Include="..\src\Components\FlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\GameManager.cpp" />
     <ClCompile Include="..\src\Components\GridComponent.cpp" />
+    <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\MerodeoMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
     <ClCompile Include="..\src\Components\NodeComponent.cpp" />
@@ -57,6 +59,7 @@
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h" />
     <ClInclude Include="..\src\Components\CreatorGridComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
@@ -72,6 +75,7 @@
     <ClInclude Include="..\src\Components\FlashlightComponent.h" />
     <ClInclude Include="..\src\Components\GameManager.h" />
     <ClInclude Include="..\src\Components\GridComponent.h" />
+    <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\MerodeoMovementComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
     <ClInclude Include="..\src\Components\NodeComponent.h" />
