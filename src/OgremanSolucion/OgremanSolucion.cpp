@@ -103,14 +103,14 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         Creator::Instance()->GetCreator("CameraComponent")->AddParameter("offset", Vector3{ 100, 100, 100 });
 #pragma endregion
 #pragma region luz
-        Creator::Instance()->GetCreator("Light")->AddParameter("type", 1);
-        Creator::Instance()->GetCreator("Light")->AddParameter("diffusecolour", Vector3{ 1, 1, 1 });
-        Creator::Instance()->GetCreator("Light")->AddParameter("shadowfardist", float(25.0));
-        Creator::Instance()->GetCreator("Light")->AddParameter("shadowdist", float(25.0));
-        Creator::Instance()->GetCreator("Light")->AddParameter("ineerangle", float(90.0));
-        Creator::Instance()->GetCreator("Light")->AddParameter("outerangle", float(180.0));
-        Creator::Instance()->GetCreator("Light")->AddParameter("nearclipdist", float(0.1));
-        Creator::Instance()->GetCreator("Light")->AddParameter("shdws", true);
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("type", 1);
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("diffusecolour", Vector3{ 1, 1, 1 });
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shadowfardist", float(25.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shadowdist", float(25.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("ineerangle", float(90.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("outerangle", float(180.0));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("nearclipdist", float(0.1));
+        Creator::Instance()->GetCreator("LightComponent")->AddParameter("shdws", true);
 #pragma endregion 
 #pragma region audiosource
         /* VeryReal::Creator::Instance()->AddCreator("AudioSourceComponent", new VeryReal::CreatorAudioSourceComponent());
@@ -181,7 +181,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
         Component* mov = e->AddComponent("MovementComponent");
         Component* cam2 = e->AddComponent("CameraComponent");
-        Component* foco = e->AddComponent("Light");
+        Component* foco = e->AddComponent("LightComponent");
 
         static_cast<CameraComponent*>(cam2)->SetTarget(e);
         Component* inpur = e->AddComponent("PlayerInputComponent");
