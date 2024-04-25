@@ -259,6 +259,10 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         //std::cout << s->GetEntities().size() << "\n";
         return 0;
     }
+    __declspec(dllexport) void loop()
+    {
+        std::cout << "Pepa" << std::endl;
+    }
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
