@@ -1,13 +1,13 @@
 #include "FlashlightComponent.h"
 #include <algorithm>
 #include "Entity.h"
-#include "Light.h"
+#include <LightComponent.h>
 #include "PlayerInputComponent.h"
 #include "UI/UIProgressBarComponent.h"
 
 bool Ogreman::FlashlightComponent::InitComponent() {
 	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();	
-	my_light_spot = this->GetEntity()->GetComponent<VeryReal::Light>();
+	my_light_spot = this->GetEntity()->GetComponent<VeryReal::LightComponent>();
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
 	
 	if (this->my_input != nullptr && this->my_light_spot != nullptr)

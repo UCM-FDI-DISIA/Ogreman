@@ -5,7 +5,7 @@
 #include "../Export.h"
 
 namespace VeryReal {
-	class Light;
+	class LightComponent;
 	class UIProgressBarComponent;
 }
 
@@ -28,7 +28,7 @@ namespace Ogreman {
 		double energy_consume_rate = 1.0f;
 
 		Ogreman::PlayerInputComponent* my_input;
-		VeryReal::Light* my_light_spot;
+		VeryReal::LightComponent* my_light_spot;
 		VeryReal::UIProgressBarComponent* my_progress_bar;
 	};
 }
