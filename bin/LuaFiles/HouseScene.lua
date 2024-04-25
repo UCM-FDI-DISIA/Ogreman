@@ -32,7 +32,13 @@ Entities={
                     color = {0.8, 0.3, 1},
                     offset = {100, 100, 100}
                 }
-            },                           
+            },   
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            }                 
         }
     }, 
     {  

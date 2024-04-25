@@ -76,6 +76,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("AnimatorComponent", new VeryReal::CreatorAnimatorComponent());
         VeryReal::Creator::Instance()->AddCreator("RigidBodyComponent", new VeryReal::CreatorRigidBodyComponent());
 
+
+        ScriptManager::Instance()->ReadScene("HouseScene");
+        VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);
         return true;
     }
 
@@ -261,7 +264,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     }
     __declspec(dllexport) void loop()
     {
-        std::cout << "Pepa" << std::endl;
+      /*  std::cout << "Pepa" << std::endl;*/
     }
 }
 
