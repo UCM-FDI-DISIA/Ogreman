@@ -1,0 +1,7 @@
+font Mario
+{
+	type truetype
+	source Mario.ttf
+	size 100
+}
+
