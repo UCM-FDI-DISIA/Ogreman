@@ -92,6 +92,116 @@ Entities={
 	        }     
         }
     }, 
+   
+    {
+        name = "Ogreman2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {20, 0, 0},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                    materialname = "Sinbad/Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+           
+            {
+                name = "RigidbodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = true,
+                    mask = 1,
+                    group = 1
+                }
+            },
+             {
+                name="NodeComponent",
+                parameters={
+                    ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=0
+
+                }
+            }
+
+        }
+    },
+    {
+        name = "Ogreman3",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, 0, 0},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                    materialname = "Sinbad/Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidbodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = true,
+                    mask = 1,
+                    group = 1
+                }
+            },
+            {
+                name="NodeComponent",
+                parameters={
+                    ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=0
+
+                }
+
+            },
+        }
+    },
     {
         name = "Ogreman",
         components = {
@@ -122,7 +232,7 @@ Entities={
                 name = "RigidbodyComponent",
                 parameters = {
                     shapeType = 1,
-                    movementType = 1,
+                    movementType = 0,
                     size = {2, 2, 2},
                     mass = 1,
                     friction =1,
@@ -131,61 +241,23 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }   
+            },
+            {
+                name="AnimatorComponent",
+                parameters={
+                    name="skeleton.mesh"
+                }
+            },
+            {
+                name="OgremanMovementComponent",
+                parameters={
+
+                }
+            },
+            
+    
         }
     },
-    {  
-        name = "NODE1",
-        components = {
-	        {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {10, 0, 20},
-                    rotation = {0, 0, 0},
-                    scale = {0.5, 0.5, 0.5}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = true,
-                    modelname = "Sinbad.mesh",
-                    entityname= "NODE",
-                    materialname = ""
-                }
-	        },
-            {
-                    name="RigidBodyComponent",
-                    parameters={
-                        shapeType=0,
-                        mass=0,
-                        friction=0,
-                        restitution=0,
-                        movementType=1,
-                        trigger=true,
-                        size={2,2,2},
-                        mask=0,
-                        group=0
-
-
-                    }
-            },
-            {
-                    name="NodeComponent",
-                    parameters={
-                        ispatrol=true,
-                        cost=1.1,
-                        hcost=1.1,
-                        iswalkable=true,
-                        id=0
-
-                    }
-            }  
-
-        }
-    }, 
-
     {
         name = "Casa:)",
         components = {
@@ -199,14 +271,11 @@ Entities={
                 }
             },
             {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Casa.mesh",
-                    entityname= "sinbad2",
-                    materialname = ""
+                name="GridComponent",
+                parameters={
+
                 }
-            },
+            }
            
         }
     }

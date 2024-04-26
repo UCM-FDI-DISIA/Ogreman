@@ -16,7 +16,7 @@ Ogreman::OgremanControllerComponent::~OgremanControllerComponent() {
 bool Ogreman::OgremanControllerComponent::InitComponent() {
 	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
-		#ifdef DEBUG
+		#ifdef _DEBUG
 		std ::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene TransformComponent\n";
 		#endif // DEBUG
 
@@ -24,17 +24,25 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	}
 	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>();
 	if (animation == nullptr) {
-		#ifdef DEBUG
+		#ifdef _DEBUG
 				std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene AnimatorComponent\n";
 		#endif // DEBUG
 				return false;
 	}
 	animation->setAnimation("Dance",true,true);
+	my_rb= GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
+//	if (my_rb == nullptr) {
+//#ifdef _DEBUG
+//		std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene RigidBodyComponent\n";
+//#endif // DEBUG
+//		return false;
+//	}
+
 	all_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	patrol_nodes = Ogreman::GameManager::Instance()->GetPatrolNode();
 	
 	if (patrol_nodes.size() < 1) {
-	#ifdef DEBUG
+	#ifdef _DEBUG
 			std ::cout << "No hay nodos de patrulla regitrados\n";
 	#endif // DEBUG
 		return false;
@@ -42,7 +50,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (current_node_trans == nullptr) {
-	#ifdef DEBUG
+	#ifdef _DEBUG
 			std::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene TransformComponent "<<patrol_nodes[current_index]->GetID()<<"\n";
 	#endif // DEBUG
 
@@ -51,7 +59,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	collider= GetEntity()->GetComponent<VeryReal::ColliderComponent>();
 	if (collider == nullptr) {
 		if (current_node_trans == nullptr) {
-#ifdef DEBUG
+#ifdef _DEBUG
 			std ::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene ColliderComponent " << patrol_nodes[current_index]->GetID() << "\n";
 #endif // DEBUG
 
@@ -110,9 +118,11 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 0.01f;
+		dif *= 0.1;
 		trans->SetPosition(trans->GetPosition() + dif);
-	
+		std::cout << trans->GetPosition().GetX() + dif.GetX() << "\n";
+		std::cout << dif.GetX() << "\n";
+		//my_rb->SetVelocityLinear(trans->GetPosition() + dif);
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Q)) {
 			current_index = (current_index + 1) % patrol_nodes.size();
 			current_node = patrol_nodes[current_index];
