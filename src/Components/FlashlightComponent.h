@@ -27,9 +27,9 @@ namespace Ogreman {
 		double energy_remaining = MAX_ENERGY;
 		double energy_consume_rate = 1.0f;
 
-		Ogreman::PlayerInputComponent* my_input;
-		VeryReal::LightComponent* my_light_spot;
-		VeryReal::UIProgressBarComponent* my_progress_bar;
+		Ogreman::PlayerInputComponent* my_input = nullptr;
+		VeryReal::LightComponent* my_light_spot = nullptr;
+		VeryReal::UIProgressBarComponent* my_progress_bar = nullptr;
 	};
 }
 #endif

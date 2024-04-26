@@ -124,11 +124,10 @@ GridComponent::GridComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	 std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
 	 for (auto c : scenes_nodes) {
-		 std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
+		 //std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
 
 		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>();
 		 if (trans == nullptr) {
-
 			 std::cerr << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
 			 return false;
 		 }

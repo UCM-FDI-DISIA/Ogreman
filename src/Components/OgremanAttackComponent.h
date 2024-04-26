@@ -23,7 +23,7 @@ namespace Ogreman
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::TransformComponent* player_transform = nullptr;
 		VeryReal::UITransformComponent* player_UI = nullptr;
-		VeryReal::UiSpriteRenderer* sprite_renderer_player;
+		VeryReal::UiSpriteRenderer* sprite_renderer_player = nullptr;
 		int nAttacks = 0, maxAttacks = 1;
 		bool attacking = false;
 		float range = 20, delay_scream = 0.5, delay = 0;

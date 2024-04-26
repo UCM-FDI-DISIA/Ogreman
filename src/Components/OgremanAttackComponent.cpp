@@ -39,7 +39,7 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 			attacking = false;
 		}
 		else {
-			delay += dt;
+			delay += (float) dt;
 		}
 	}
 }

@@ -17,8 +17,8 @@ namespace Ogreman {
 		float GetTamDif();
 		float GetVisionDif();
 	private:
-		float maxvision, minvision;
-		float maxtam, mintam;
+		float maxvision = 0, minvision = 0;
+		float maxtam = 0, mintam = 0;
 		
 	};
 }

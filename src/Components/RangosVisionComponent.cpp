@@ -14,11 +14,11 @@ bool Ogreman::RangosVisionComponent::InitComponent(float maxv, float minv, float
 	maxvision = maxv;
 	if (maxtam > 1000)maxtam = 1000;
 	minvision = minv;
-	if (minvision < 0.1)minvision = 0.1;
+	if (minvision < 0.1)minvision = 0.1f;
 	maxtam = maxt;
 	if (maxtam > 1)maxtam = 1;
 	mintam = mint;
-	if (mintam < 0.1)mintam = 0.1;
+	if (mintam < 0.1)mintam = 0.1f;
 	return true;
 }
 float  Ogreman::RangosVisionComponent::GetmaxVision() {
