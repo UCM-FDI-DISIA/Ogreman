@@ -5,18 +5,9 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 20},
+                    position = {0, 0, 0},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = true,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                    materialname = ""
                 }
             },
             {
@@ -29,8 +20,9 @@ Entities={
                 name = "CameraComponent",
                 parameters = {                  
                     name = "anim",
-                    color = {0.8, 0.3, 1},
-                    offset = {100, 100, 100}
+                    color = {1, 0, 0},
+                    alfa = 0,
+                    offset = {0, 0, 0}
                 }
             },   
             {
@@ -38,7 +30,39 @@ Entities={
                 parameters = {                  
                     
                 }
-            }                 
+            },     
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25,
+                    shadowdist = 25,
+                    ineerangle = 90,
+                    outerangle = 180,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            -- {
+            --     name = "RigidbodyComponent",
+            --     parameters = {
+            --         shapeType = 1,
+            --         movementType = 0,
+            --         size = {1, 1, 1},
+            --         mass = 0,
+            --         friction = 0,
+            --         restitution = 0,
+            --         trigger = true,
+            --         mask = 1,
+            --         group = 2
+            --     }
+            -- }                   
         }
     }, 
     {  
@@ -48,7 +72,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 0, 20},
+                    position = {0, 0, 60},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -59,7 +83,7 @@ Entities={
                     type = 1,
                     diffusecolour = {1, 1, 1},
                     shadowfardist = 25,
-                    shadowdist = 25,
+                    shadowdist = 100,
                     ineerangle = 90,
                     outerangle = 180,
                     nearclipdist = 0.1,
@@ -75,7 +99,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 0, 20},
+                    position = {0, 0, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -83,12 +107,55 @@ Entities={
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
-                    isstatic = true,
+                    isstatic = false,
                     modelname = "Sinbad.mesh",
                     entityname= "sinbad",
                     materialname = ""
                 }
-            }     
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidbodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = true,
+                    mask = 1,
+                    group = 1
+                }
+            }   
+        }
+    },
+    {
+        name = "Casa:)",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {10, 0, 20},
+                    rotation = {0, 0, 0},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Casa.mesh",
+                    entityname= "sinbad2",
+                    materialname = ""
+                }
+            },
+           
         }
     }
     
