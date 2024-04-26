@@ -40,7 +40,7 @@
 #include "../Components/CreatorExitButtonComponent.h"
 #include "../Components/CreatorPlayButtonComponent.h"
 #include "../Components/CreatorMerodeoComponent.h"
-
+#include "../Components/GameManager.h"
 
 using namespace VeryReal;
 
@@ -50,6 +50,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
+        Ogreman::GameManager::Init();
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new Ogreman::CreatorPlayButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new Ogreman::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());

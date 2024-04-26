@@ -1,13 +1,14 @@
 #pragma once
 #ifndef GAMEMANAGER_OGREMAN
 #define GAMEMANAGER_OGREMAN
-#include "Singleton.h"
+#include "Manager.h"
 #include "SceneManager.h"
 #include "NodeComponent.h"
 #include "GridComponent.h"
+
 //comentario aclaratorio: contamos con un game manager que llama al SceneManager que tiene una lista de Escenas
 namespace Ogreman {
-	class GameManager:public VeryReal::Singleton<GameManager>
+	class  GameManager:public VeryReal::Manager<GameManager>
 	{
 	private:
 		VeryReal::SceneManager* scene_manager = nullptr;
@@ -24,7 +25,15 @@ namespace Ogreman {
 		void Menu();
 		void Play();
 		void Pause();
+		static bool Init() {
+			GameManager* a = new GameManager();
+			if (a != nullptr) {
+				instance_pointer.reset(a);
+				return true;
+			}
+			return false;
 
+		}
 		inline void RegisterGridComponent(GridComponent* g) {
 			grid = g;
 		}

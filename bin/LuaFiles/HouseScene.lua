@@ -134,6 +134,58 @@ Entities={
             }   
         }
     },
+    {  
+        name = "NODE1",
+        components = {
+	        {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {10, 0, 20},
+                    rotation = {0, 0, 0},
+                    scale = {0.5, 0.5, 0.5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = true,
+                    modelname = "Sinbad.mesh",
+                    entityname= "NODE",
+                    materialname = ""
+                }
+	        },
+            {
+                    name="RigidBodyComponent",
+                    parameters={
+                        shapeType=0,
+                        mass=0,
+                        friction=0,
+                        restitution=0,
+                        movementType=1,
+                        trigger=true,
+                        size={2,2,2},
+                        mask=0,
+                        group=0
+
+
+                    }
+            },
+            {
+                    name="NodeComponent",
+                    parameters={
+                        ispatrol=true,
+                        cost=1.1,
+                        hcost=1.1,
+                        iswalkable=true,
+                        id=0
+
+                    }
+            }  
+
+        }
+    }, 
+
     {
         name = "Casa:)",
         components = {
