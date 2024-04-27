@@ -31,12 +31,12 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	}
 	animation->setAnimation("Dance",true,true);
 	my_rb= GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
-//	if (my_rb == nullptr) {
-//#ifdef _DEBUG
-//		std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene RigidBodyComponent\n";
-//#endif // DEBUG
-//		return false;
-//	}
+	if (my_rb == nullptr) {
+#ifdef _DEBUG
+		std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene RigidBodyComponent\n";
+#endif // DEBUG
+		//return false;
+	}
 
 	all_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	patrol_nodes = Ogreman::GameManager::Instance()->GetPatrolNode();
@@ -119,10 +119,10 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
 		dif *= 0.1;
-		trans->SetPosition(trans->GetPosition() + dif);
+		/*trans->SetPosition(trans->GetPosition() + dif);
 		std::cout << trans->GetPosition().GetX() + dif.GetX() << "\n";
-		std::cout << dif.GetX() << "\n";
-		//my_rb->SetVelocityLinear(trans->GetPosition() + dif);
+		std::cout << dif.GetX() << "\n";*/
+		my_rb->SetVelocityLinear(trans->GetPosition() + dif);
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Q)) {
 			current_index = (current_index + 1) % patrol_nodes.size();
 			current_node = patrol_nodes[current_index];

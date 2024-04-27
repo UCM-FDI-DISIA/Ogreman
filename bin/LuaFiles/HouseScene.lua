@@ -50,7 +50,7 @@ Entities={
                 }
             },
             -- {
-            --     name = "RigidbodyComponent",
+            --     name = "RigidBodyComponent",
             --     parameters = {
             --         shapeType = 1,
             --         movementType = 0,
@@ -121,7 +121,7 @@ Entities={
             },
            
             {
-                name = "RigidbodyComponent",
+                name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
@@ -175,7 +175,7 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
+                name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
@@ -202,6 +202,28 @@ Entities={
             },
         }
     },
+  
+    {
+        name = "Casa:)",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {10, 0, 20},
+                    rotation = {0, 0, 0},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name="GridComponent",
+                parameters={
+
+                }
+            }
+           
+        }
+    }, 
     {
         name = "Ogreman",
         components = {
@@ -229,7 +251,7 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
+                name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
@@ -256,27 +278,6 @@ Entities={
             },
             
     
-        }
-    },
-    {
-        name = "Casa:)",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {10, 0, 20},
-                    rotation = {0, 0, 0},
-                    scale = {5, 5, 5}                   
-                }
-            },
-            {
-                name="GridComponent",
-                parameters={
-
-                }
-            }
-           
         }
     }
     
