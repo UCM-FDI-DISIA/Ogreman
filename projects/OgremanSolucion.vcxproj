@@ -75,6 +75,7 @@
     <ClInclude Include="..\src\Components\FlashlightComponent.h" />
     <ClInclude Include="..\src\Components\GameManager.h" />
     <ClInclude Include="..\src\Components\GridComponent.h" />
+    <ClInclude Include="..\src\Components\IndexPQ.h" />
     <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\MerodeoMovementComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />

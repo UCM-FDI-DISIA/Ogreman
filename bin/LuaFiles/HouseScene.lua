@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 0},
+                    position = {0, 0, 10},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -100,7 +100,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 0, 0},
+                    position = {10, 0, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -256,6 +256,61 @@ Entities={
             },
         }
     },
+    
+    {
+        name = "Ogreman5",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {10, 0, -10},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad5",
+                    materialname = "Sinbad/Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = true,
+                    mask = 1,
+                    group = 1
+                }
+            },
+            {
+                name="NodeComponent",
+                parameters={
+                    ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=3
+
+                }
+
+            },
+        }
+    },
     {
         name = "Casa:)",
         components = {
@@ -285,7 +340,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 0, 0},
+                    position = {-10, 0, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }

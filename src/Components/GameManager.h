@@ -15,6 +15,7 @@ namespace Ogreman {
 		std::vector<NodeComponent*> pathNodes;
 		std::vector<NodeComponent*> patrolNodes;
 		GridComponent* grid = nullptr;
+
 	public:
 		
 		virtual ~GameManager();

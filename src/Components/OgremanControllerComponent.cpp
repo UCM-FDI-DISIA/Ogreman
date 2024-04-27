@@ -68,7 +68,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	}
 	current_states = pathfinding;
 	std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
-
+	
 
 	///*VeryReal::Vector3 dif = current_node_trans->GetPosition() - trans->GetPosition();
 	//dif.SetY(0);
@@ -110,6 +110,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 vec(0,0,0), rot(0,0,0);
 	vec = current_node_trans->GetPosition();
 	float yaw=0, pitch=0,diff = 0,rota;
+	std::cout << current_states << "\n";
 	switch (current_states)
 	{
 
@@ -143,22 +144,34 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 				once = false;
 			}*/
 		}
-		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
-
-			current_states = pathfinding;
-		}
+		
 
 
 		break;
 	case Ogreman::OgremanControllerComponent::pathfinding:
 
 		if (Astar_nodes.size() <= 0) {
-			Astar_nodes = grid->getPathAStar(trans->GetPosition(), VeryReal::Vector3(60, 0, 0));
-
-
+			Astar_nodes = grid->GetPathDfs(trans->GetPosition(), VeryReal::Vector3(10, 0, -10));
+			if (Astar_nodes.size() <= 0)std::cout << "no hay nodos en el a estrella\n";
+			current_node = Astar_nodes.front();
+			Astar_nodes.pop_front();
+			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 		}
-
-
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
+			current_node = Astar_nodes.front();
+			Astar_nodes.pop_front();
+			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+		}
+		dif = dif.Normalize();
+		dif *= 5;
+		//my_rb->AddImpulse(dif);
+		myforward = trans->GetPosition();
+		myforward += dif;
+		trans->SetPosition(myforward);
+		//my_rb->SetVelocityLinear(dif);
+		std::cout << "dif " << dif.GetX()<<"\n";
+		std::cout << "pos " << trans->GetPosition().GetX() << "\n";
+		std::cout <<"suma " << myforward.GetX() << "\n";
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
 		dif_player = dif_player.Normalize();
@@ -186,13 +199,21 @@ int  Ogreman::OgremanControllerComponent::GetState() {
 }
 
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	if (other != nullptr && other->GetComponent<NodeComponent>() != nullptr && other->GetComponent<NodeComponent>()->GetID()!=current_node->GetID()) {
+	std::cout << "\nHAY COLISION\n";
+	if (current_states==patrol && other != nullptr && other->GetComponent<NodeComponent>() != nullptr && other->GetComponent<NodeComponent>()->GetID()!=current_node->GetID()) {
 		std::cout << "\nHAY COLISION\n";
 		current_index = (current_index + 1) % patrol_nodes.size();
 		current_node = patrol_nodes[current_index];
 		current_node_trans= current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 
 	}
+	else if (current_states == pathfinding && other->GetComponent<NodeComponent>() != nullptr && other->GetComponent<NodeComponent>()->GetID() != current_node->GetID()) {
+		
+		current_node = Astar_nodes.front();
+		Astar_nodes.pop_front();
+		current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 
+
+	}
 
  }
