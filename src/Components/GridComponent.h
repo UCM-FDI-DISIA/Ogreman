@@ -22,7 +22,7 @@ namespace Ogreman
         std::list<Ogreman::NodeComponent*> getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
         NodeComponent* Vector2Node(VeryReal::Vector3 const& vec);
        
-        std::list<NodeComponent*> GetPathDfs(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
+        std::list<NodeComponent*> GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
 
     protected:
         //DigrafoValorado<Ogreman::NodeComponent*> grid;

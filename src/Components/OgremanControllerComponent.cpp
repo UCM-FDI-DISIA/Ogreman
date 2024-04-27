@@ -151,7 +151,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	case Ogreman::OgremanControllerComponent::pathfinding:
 
 		if (Astar_nodes.size() <= 0) {
-			Astar_nodes = grid->GetPathDfs(trans->GetPosition(), VeryReal::Vector3(10, 0, -10));
+			Astar_nodes = grid->GetPathDikstra(trans->GetPosition(), VeryReal::Vector3(10, 0, -10));
 			if (Astar_nodes.size() <= 0)std::cout << "no hay nodos en el a estrella\n";
 			current_node = Astar_nodes.front();
 			Astar_nodes.pop_front();

@@ -23,7 +23,7 @@ GridComponent::GridComponent():nodes(0) {
  }
 
 	
- std::list<NodeComponent*> GridComponent::GetPathDfs(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
+ std::list<NodeComponent*> GridComponent::GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 	 std::list<Ogreman::NodeComponent*> path;
 	 std::cout << "busco\\n";
 	 NodeComponent* src = Vector2Node(InitPos);
