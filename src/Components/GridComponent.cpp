@@ -24,15 +24,18 @@ GridComponent::GridComponent() {
  std::list<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 
 	 std::list<Ogreman::NodeComponent*> path;
+	 std::cout << "busco\\n";
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
-		std::list<NodeComponent*>open;
+	 std::list<NodeComponent*>open;
 	 std::list<NodeComponent*>closed;
 	 open.push_back(src);
+	 src->sethCost(0);
+
 	 NodeComponent* current = src;
 	 float stimated = 0;
-
+	 std::cout << "hola estoro en while\\n";
 	 while (open.size() > 0) {
 
 		// std::sort(open.begin(), open.end());
@@ -46,9 +49,9 @@ GridComponent::GridComponent() {
 		 for (auto d : conections) {
 			 stimated = current->Gethcost() + current->GetCost();
 
-			 NodeComponent* endNode = isInList(closed, current);
+			 NodeComponent* endNode = isInList(closed, d);
 			 
-			 NodeComponent* endNode2 = isInList(open, current);
+			 NodeComponent* endNode2 = isInList(open, d);
 			 if (endNode!=nullptr) {
 
 				 if (endNode->Gethcost() <= stimated)continue;
@@ -69,14 +72,23 @@ GridComponent::GridComponent() {
 			 else {
 				 //no se que va aqui ...
 
-
-
-				 endNode->SetConection(current);
+				 
+		/*	
+				 tempNode.SetConection(d);
+				 tempNode.SetConection(current);
+				 tempNode.sethCost(stimated);
+				 tempNode.setStimated(stimated + hendNode);*/
+				 d->SetConection(current);
+				 d->sethCost(stimated);
+				 d->setStimated(stimated + hendNode);
+				 endNode = d;
+				// endNode->SetConection(current);
 			 }
-			
+
+			 endNode->SetConection(current);
 			 endNode->sethCost(stimated);
 			 endNode->setStimated(stimated + hendNode);
-
+			 current = endNode;
 
 		 }
 		 open.remove(current);
@@ -93,7 +105,7 @@ GridComponent::GridComponent() {
 	 else {
 		 path.clear();
 
-		 while (current->GetID() != dest->GetID()) 
+		 while (current->GetID() != src->GetID()) 
 		 {
 			 path.push_front(current);
 			 current = current->GetConection();
@@ -106,13 +118,14 @@ GridComponent::GridComponent() {
  }
  NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
 	 float minimun(INT16_MAX);
-	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
+
 	 NodeComponent* node = nullptr;
 	 for (auto c : scenes_nodes) {
 		 VeryReal::Vector3 dif,res;
 		 res = vec;
 		 float difd = (res - c->GetEntity()->GetComponent<VeryReal::TransformComponent>()->GetPosition()).Magnitude();
 		 if (difd < minimun) {
+			 minimun = difd;
 			 node = c;
 		 }
 
@@ -136,13 +149,17 @@ GridComponent::GridComponent() {
 			 for (auto d : scenes_nodes) {
 				 std::cout << "HOLA"  << "\n";
 				 if (c->GetID() != d->GetID()) {//compruebpo que no soy yo mismo
-					 c->AddNeighbors(d);
+				
 					 std::cout << "ADIOS" << "\n";
 					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 					 if (other == nullptr) {
 						 std::cout << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
 						 return false;
 					 }
+					 
+					 c->AddNeighbors(d);
+					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
+
 					 std::list<VeryReal::Entity*> colision = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
 					 std::cout << "tamaño lista" << colision.size()<<"\n";
 					 if (!colision.empty() && colision.back()->HasComponent("NodeComponent")) {

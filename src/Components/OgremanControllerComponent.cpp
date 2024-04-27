@@ -66,28 +66,28 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 			return false;
 		}
 	}
-	current_states = patrol;
+	current_states = pathfinding;
 	std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
 
 
-	VeryReal::Vector3 dif = current_node_trans->GetPosition() - trans->GetPosition();
-	dif.SetY(0);
-	VeryReal::Vector3 myforward = trans->getFacingDirection();
-	VeryReal::Vector3 vec(0, 0, 0), rot(0, 0, 0);
-	vec = current_node_trans->GetPosition();
-	float rota = CalculateRotationVector(myforward, dif);
-	std::cout << "Rotación:  YYYY" << rota * 180 / 3.14f << std::endl;
-	vec.SetX(trans->GetRotation().GetX());
-	vec.SetY(trans->GetRotation().GetY() - rota * 180 / 3.14f);
-	vec.SetZ(trans->GetRotation().GetZ());
-	trans->SetRotation(vec);
-	std::cout << trans->getFacingDirection().Dot(dif) << " " << rota << "\n";
-	if (trans->getFacingDirection().Dot(dif)!=0) {
-		std::cout << trans->getFacingDirection().Dot(dif) << " " << rota << "\n";
-		std::cout << "ENRA\n";
-		vec.SetY(trans->GetRotation().GetY() + 2 );
-		trans->SetRotation(vec);
-	}
+	///*VeryReal::Vector3 dif = current_node_trans->GetPosition() - trans->GetPosition();
+	//dif.SetY(0);
+	//VeryReal::Vector3 myforward = trans->getFacingDirection();
+	//VeryReal::Vector3 vec(0, 0, 0), rot(0, 0, 0);
+	//vec = current_node_trans->GetPosition();
+	//float rota = CalculateRotationVector(myforward, dif);
+	//std::cout << "Rotación:  YYYY" << rota * 180 / 3.14f << std::endl;
+	//vec.SetX(trans->GetRotation().GetX());
+	//vec.SetY(trans->GetRotation().GetY() - rota * 180 / 3.14f);
+	//vec.SetZ(trans->GetRotation().GetZ());
+	//trans->SetRotation(vec);
+	//std::cout << trans->getFacingDirection().Dot(dif) << " " << rota << "\n";
+	//if (trans->getFacingDirection().Dot(dif)!=0) {
+	//	std::cout << trans->getFacingDirection().Dot(dif) << " " << rota << "\n";
+	//	std::cout << "ENRA\n";
+	//	vec.SetY(trans->GetRotation().GetY() + 2 );
+	//	trans->SetRotation(vec);
+	//}*/
 
 	//std::cout << "Rotación resultante: " << trans.GetY() << std::endl;
 	grid = GameManager::Instance()->GetGris();
@@ -118,16 +118,15 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 0.1;
-		/*trans->SetPosition(trans->GetPosition() + dif);
-		std::cout << trans->GetPosition().GetX() + dif.GetX() << "\n";
-		std::cout << dif.GetX() << "\n";*/
-		my_rb->SetVelocityLinear(trans->GetPosition() + dif);
+		dif *= 0.9;
+		my_rb->SetVelocityLinear(dif);
+		//std::cout << dif.GetX() << " \n";
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Q)) {
 			current_index = (current_index + 1) % patrol_nodes.size();
 			current_node = patrol_nodes[current_index];
 			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-			if (once) {
+
+			/*	if (once) {
 				rota = CalculateRotationVector(myforward, dif);
 				std::cout << "Rotación:  YYYY" << rota * 180 / 3.14 << std::endl;
 				vec.SetX(trans->GetRotation().GetX());
@@ -142,16 +141,19 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 					trans->SetRotation(vec);
 				}
 				once = false;
-			}
+			}*/
 		}
-		
+		else if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
+
+			current_states = pathfinding;
+		}
 
 
 		break;
 	case Ogreman::OgremanControllerComponent::pathfinding:
 
 		if (Astar_nodes.size() <= 0) {
-			Astar_nodes = grid->getPathAStar(trans->GetPosition(), VeryReal::Vector3(10, 0, 10));
+			Astar_nodes = grid->getPathAStar(trans->GetPosition(), VeryReal::Vector3(60, 0, 0));
 
 
 		}
