@@ -37,7 +37,7 @@ namespace Ogreman {
 		std::vector<NodeComponent*> patrol_nodes;
 		std::vector<NodeComponent*> all_nodes;
 		VeryReal::ColliderComponent* collider = nullptr;
-		VeryReal::RigidBodyComponent* my_rb;
+		VeryReal::RigidBodyComponent* my_rb = nullptr;
 		int current_index;
 		float rotationSpeed = 0.1f;
 		float t = 0;

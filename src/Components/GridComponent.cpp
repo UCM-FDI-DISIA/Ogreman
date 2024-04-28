@@ -25,12 +25,12 @@ GridComponent::GridComponent():nodes(0) {
 	
  std::list<NodeComponent*> GridComponent::GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 	 std::list<Ogreman::NodeComponent*> path;
-	 std::cout << "busco\\n";
+	 //std::cout << "busco\\n";
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
 	
-	 int origen;
+	 int origen = 0;
 	 std::vector<float> dist(nodes.V(),INT_MAX);
 	 std::vector<AristaDirigida<float>> ulti(nodes.V());
 	 IndexPQ<float> pq(nodes.V());
@@ -55,8 +55,7 @@ GridComponent::GridComponent():nodes(0) {
 	 std::list<NodeComponent> cam;
 	 // recuperamos el camino retrocediendo
 	 AristaDirigida<float> a;
-	 for (a = ulti[dest->GetID()]; a.desde() != src->GetID(); a = ulti[a.desde()]) 
-	 {
+	 for (a = ulti[dest->GetID()]; a.desde() != src->GetID(); a = ulti[a.desde()]) {
 		 path.push_front(scenes_nodes[a.hasta()]);
 	 }
 	path.push_front(scenes_nodes[a.hasta()]);
@@ -68,10 +67,10 @@ GridComponent::GridComponent():nodes(0) {
 	
 	 return path;
  }
- std::list<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 
+ std::list<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 	 std::list<Ogreman::NodeComponent*> path;
-	 std::cout << "busco\\n";
+	 //std::cout << "busco\\n";
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
@@ -82,7 +81,7 @@ GridComponent::GridComponent():nodes(0) {
 
 	 NodeComponent* current = src;
 	 float stimated = 0;
-	 std::cout << "hola estoro en while\\n";
+	 //std::cout << "hola estoro en while\\n";
 	 while (open.size() > 0) {
 
 		
@@ -95,17 +94,15 @@ GridComponent::GridComponent():nodes(0) {
 	 else {
 		 path.clear();
 		// path.push_back(dest);
-		 while (current->GetID() != src->GetID())
-		 {
+		 while (current->GetID() != src->GetID()) {
 			 path.push_front(current);
 			 current = current->GetConection();
 		 }
 		 path.push_front(src);
 	 }
-
 	 return path;
-
  }
+
  NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
 	 float minimun(INT16_MAX);
 
@@ -123,6 +120,7 @@ GridComponent::GridComponent():nodes(0) {
 	 }
 	 return node;
  }
+
  bool GridComponent::InitComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	 std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
@@ -170,17 +168,9 @@ GridComponent::GridComponent():nodes(0) {
 
 
 				 }
-
-
 			 }
-
-
-		 }
-		
-		
+		 }	
 	 }
-	 
 	 GameManager::Instance()->RegisterGridComponent(this);
 	 return true;
-
  }

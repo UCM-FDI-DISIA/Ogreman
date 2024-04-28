@@ -93,6 +93,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	grid = GameManager::Instance()->GetGris();
 	return true;
 }
+
 // Calcular el vector de rotación entre dos vectores
 float Ogreman::OgremanControllerComponent::CalculateRotationVector(VeryReal::Vector3& miro, VeryReal::Vector3& voy) {
 	float d = (miro.Dot(voy) / (miro.Magnitude() * voy.Magnitude()));
@@ -110,16 +111,15 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 vec(0,0,0), rot(0,0,0);
 	vec = current_node_trans->GetPosition();
 	float yaw=0, pitch=0,diff = 0,rota;
-	std::cout << current_states << "\n";
-	switch (current_states)
-	{
+	//std::cout << current_states << "\n";
+	switch (current_states) {
 
 
 	case Ogreman::OgremanControllerComponent::stop:
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 0.9;
+		dif *= 0.9f;
 		my_rb->SetVelocityLinear(dif);
 		//std::cout << dif.GetX() << " \n";
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Q)) {
@@ -152,7 +152,8 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 
 		if (Astar_nodes.size() <= 0) {
 			Astar_nodes = grid->GetPathDikstra(trans->GetPosition(), VeryReal::Vector3(10, 0, -10));
-			if (Astar_nodes.size() <= 0)std::cout << "no hay nodos en el a estrella\n";
+			if (Astar_nodes.size() <= 0)
+				//std::cout << "no hay nodos en el a estrella\n";
 			current_node = Astar_nodes.front();
 			Astar_nodes.pop_front();
 			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -169,9 +170,9 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		myforward += dif;
 		trans->SetPosition(myforward);
 		//my_rb->SetVelocityLinear(dif);
-		std::cout << "dif " << dif.GetX()<<"\n";
+		/*std::cout << "dif " << dif.GetX()<<"\n";
 		std::cout << "pos " << trans->GetPosition().GetX() << "\n";
-		std::cout <<"suma " << myforward.GetX() << "\n";
+		std::cout <<"suma " << myforward.GetX() << "\n";*/
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
 		dif_player = dif_player.Normalize();
@@ -215,5 +216,4 @@ void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* oth
 
 
 	}
-
  }

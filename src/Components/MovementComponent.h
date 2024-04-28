@@ -24,12 +24,10 @@ namespace Ogreman {
 		inline void SetSpeed(float Speed) { this->speed = Speed; }
 
 	private:
-		float speed = 0.5;
+		float speed = 18;
 		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1,0,0);
-
 		VeryReal::TransformComponent* my_transform = nullptr;
 	};
 }
+
 #endif
-
-
