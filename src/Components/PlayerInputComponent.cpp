@@ -51,7 +51,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 			moveZ += rightDirection.GetZ();
 		}
 
-		cout << moveX << " " << moveZ << endl;
+		/*cout << moveX << " " << moveZ << endl;*/
 
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);

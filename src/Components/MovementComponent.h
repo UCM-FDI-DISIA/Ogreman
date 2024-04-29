@@ -8,6 +8,7 @@
 namespace VeryReal {
 	class TransformComponent;
 	class Vector3;
+	class RigidBodyComponent;
 }
 
 namespace Ogreman {
@@ -27,6 +28,8 @@ namespace Ogreman {
 		float speed = 18;
 		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1,0,0);
 		VeryReal::TransformComponent* my_transform = nullptr;
+
+		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
 	};
 }
 

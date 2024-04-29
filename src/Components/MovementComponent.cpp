@@ -2,20 +2,28 @@
 #include "TransformComponent.h"
 #include "Entity.h"
 #include "Vector3.h"
-
+#include "RigidBodyComponent.h"
 using namespace std;
 
 bool Ogreman::MovementComponent::InitComponent(){
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	if (this->my_transform != nullptr)
+	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
+	if (this->my_transform != nullptr && this->my_rigidbody != nullptr)
 		return true;
 	else 
 		return false;
 }
 
 void Ogreman::MovementComponent::Update(const double& dt) {
+
+	std::cout << dt<<std::endl;
 	if (IsMoving()) {
-        my_transform->Translate(movementDirection * (float)(speed * dt ));
+       my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed * dt));
+	}
+	else
+	{
+		std::cout << "dec";
+		my_rigidbody->Decelerate(1.2);
 	}
 }
 

@@ -123,7 +123,7 @@ GridComponent::GridComponent():nodes(0) {
 
  bool GridComponent::InitComponent() {
 	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	 std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
+	 //std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
 	//nodes(scenes_nodes.size());
 	nodes = DigrafoValorado<float >(scenes_nodes.size());
 	std::sort(scenes_nodes.begin(), scenes_nodes.end(),

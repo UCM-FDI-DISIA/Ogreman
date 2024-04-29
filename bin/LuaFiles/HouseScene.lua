@@ -10,12 +10,7 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            },
+           
             {
                 name = "CameraComponent",
                 parameters = {                  
@@ -25,12 +20,6 @@ Entities={
                     offset = {0, 0, 0}
                 }
             },   
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
-                    
-                }
-            },     
             {
                 name = "LightComponent",
                 parameters = {
@@ -49,20 +38,32 @@ Entities={
                 parameters = {
                 }
             },
-            -- {
-            --     name = "RigidBodyComponent",
-            --     parameters = {
-            --         shapeType = 1,
-            --         movementType = 0,
-            --         size = {1, 1, 1},
-            --         mass = 0,
-            --         friction = 0,
-            --         restitution = 0,
-            --         trigger = true,
-            --         mask = 1,
-            --         group = 2
-            --     }
-            -- }                   
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 0,
+                    size = {2, 2, 2},
+                    mass = 10000,
+                    friction = 0,
+                    restitution = 0,
+                    trigger = false,
+                    mask = 2,
+                    group = 1
+                }
+            },
+            {
+                name = "MovementComponent",
+                parameters = {                  
+                    
+                }
+            },
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            }              
         }
     }, 
     {  
@@ -129,9 +130,9 @@ Entities={
                     mass = 1,
                     friction =1,
                     restitution=1,
-                    trigger = true,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
             },
              {
@@ -183,9 +184,9 @@ Entities={
                     mass = 1,
                     friction =1,
                     restitution=1,
-                    trigger = true,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
             },
             {
@@ -237,9 +238,9 @@ Entities={
                     mass = 1,
                     friction =1,
                     restitution=1,
-                    trigger = true,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
             },
             {
@@ -292,9 +293,9 @@ Entities={
                     mass = 1,
                     friction =1,
                     restitution=1,
-                    trigger = true,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
             },
             {
@@ -368,9 +369,9 @@ Entities={
                     mass = 1,
                     friction =1,
                     restitution=1,
-                    trigger = true,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
             },
             {
