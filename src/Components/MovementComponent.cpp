@@ -15,15 +15,14 @@ bool Ogreman::MovementComponent::InitComponent(){
 }
 
 void Ogreman::MovementComponent::Update(const double& dt) {
-
-	std::cout << dt<<std::endl;
+	std::cout << my_rigidbody->GetVelocity().Magnitude() << std::endl;
 	if (IsMoving()) {
        my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed * dt));
 	}
+	/*else if(my_rigidbody->GetVelocity().Magnitude())*/
 	else
 	{
-		std::cout << "dec";
-		my_rigidbody->Decelerate(1.2);
+		my_rigidbody->Decelerate(4);
 	}
 }
 
