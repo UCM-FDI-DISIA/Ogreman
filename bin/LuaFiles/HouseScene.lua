@@ -364,7 +364,7 @@ Entities={
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
-                    movementType = 2,
+                    movementType = 0,
                     size = {2, 2, 2},
                     mass = 1,
                     friction =1,
@@ -385,7 +385,7 @@ Entities={
                 parameters={
 
                 }
-            },
+            }
             
     
         }

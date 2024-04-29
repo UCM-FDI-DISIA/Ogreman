@@ -192,12 +192,13 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			Astar_nodes.pop_front();
 			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 		}
+
 		dif = dif.Normalize();
 		dif *= 30;
 		my_rb->SetVelocityLinear(dif);
-		std::cout << "dif " << dif.GetX()<<"\n";
+	/*	std::cout << "dif " << dif.GetX()<<"\n";
 		std::cout << "pos " << trans->GetPosition().GetX() << "\n";
-		std::cout <<"suma " << myforward.GetX() << "\n";
+		std::cout <<"suma " << myforward.GetX() << "\n";*/
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
 		dif_player = dif_player.Normalize();
