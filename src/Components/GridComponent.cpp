@@ -12,7 +12,7 @@ GridComponent::GridComponent():nodes(0) {
  void GridComponent::Update(const double& dt) {
 
 }
- NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node) {
+ NodeComponent* GridComponent::isInList(std::list<NodeComponent*> list, NodeComponent* node) {
 
 	 for (auto c : list) {
 		 if (c == node) {

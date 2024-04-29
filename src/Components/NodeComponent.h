@@ -34,6 +34,7 @@ namespace Ogreman {
 			return cost < other.cost;
 		}
 		inline float GetCost() { return cost; }
+		inline bool GetPatrol() { return ispatrol; }
 	protected:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;

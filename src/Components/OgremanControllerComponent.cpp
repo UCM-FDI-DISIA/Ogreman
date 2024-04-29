@@ -91,9 +91,19 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 
 	//std::cout << "Rotación resultante: " << trans.GetY() << std::endl;
 	grid = GameManager::Instance()->GetGris();
+	VeryReal::Vector3 v(10, 0, -10);
+	GoToLocation(v);
 	return true;
 }
+void Ogreman::OgremanControllerComponent::GoToLocation(VeryReal::Vector3& to) {
 
+	current_states = pathfinding;
+	Astar_nodes = grid->GetPathDikstra(trans->GetPosition(),to);
+	if (Astar_nodes.size() <= 0)std::cout << "no hay nodos en el a estrella\n";
+	current_node = Astar_nodes.front();
+	Astar_nodes.pop_front();
+	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+}
 // Calcular el vector de rotación entre dos vectores
 float Ogreman::OgremanControllerComponent::CalculateRotationVector(VeryReal::Vector3& miro, VeryReal::Vector3& voy) {
 	float d = (miro.Dot(voy) / (miro.Magnitude() * voy.Magnitude()));
@@ -151,12 +161,31 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	case Ogreman::OgremanControllerComponent::pathfinding:
 
 		if (Astar_nodes.size() <= 0) {
-			Astar_nodes = grid->GetPathDikstra(trans->GetPosition(), VeryReal::Vector3(10, 0, -10));
-			if (Astar_nodes.size() <= 0)
-				//std::cout << "no hay nodos en el a estrella\n";
-			current_node = Astar_nodes.front();
-			Astar_nodes.pop_front();
-			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+			
+			NodeComponent* src = grid->Vector2Node(trans->GetPosition());//si nos hemos quedado sin nodos en el camino volvemos al modo patrol
+			//si el mas cercano es de patrul pues patrullamos desde ahi, si no hacemos  dikstra hasta un node patrol
+
+			if (src->GetPatrol()) {//si src ya es patrol
+				current_states = patrol;
+				current_index = src->GetID();
+				current_node = src;
+				current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+
+			}
+			else {//hago dikstra al primer nodo de patrulla
+				current_index = 0;
+				current_node = patrol_nodes[current_index];
+				current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+				Astar_nodes = grid->GetPathDikstra(trans->GetPosition(), current_node_trans->GetPosition());
+				if (Astar_nodes.size() <= 0)std::cout << "no hay nodos en el a estrella\n";
+				current_node = Astar_nodes.front();
+				Astar_nodes.pop_front();
+				current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+
+			}
+
+			
+
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
 			current_node = Astar_nodes.front();
@@ -164,15 +193,11 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 		}
 		dif = dif.Normalize();
-		dif *= 5;
-		//my_rb->AddImpulse(dif);
-		myforward = trans->GetPosition();
-		myforward += dif;
-		trans->SetPosition(myforward);
-		//my_rb->SetVelocityLinear(dif);
-		/*std::cout << "dif " << dif.GetX()<<"\n";
+		dif *= 30;
+		my_rb->SetVelocityLinear(dif);
+		std::cout << "dif " << dif.GetX()<<"\n";
 		std::cout << "pos " << trans->GetPosition().GetX() << "\n";
-		std::cout <<"suma " << myforward.GetX() << "\n";*/
+		std::cout <<"suma " << myforward.GetX() << "\n";
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
 		dif_player = dif_player.Normalize();
