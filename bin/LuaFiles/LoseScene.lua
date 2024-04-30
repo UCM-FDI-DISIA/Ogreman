@@ -1,6 +1,6 @@
 Entities={
     {
-        name = "PlayButton",
+        name = "MenuButton",
         components = {           
             {
                 name = "UITransformComponent",
@@ -13,16 +13,16 @@ Entities={
             {
                 name = "UITextComponent",
                 parameters = {                  
-                    name = "playbutton",
+                    name = "menubuttonlose",
                     font = "Ogreman",
-                    caption = "PLAY",
+                    caption = "MENU",
                     zOrder = 3,
                     charHeight = 0.1,
                     color = {1.0,1.0,1.0} 
                 }
             },
             {
-                name = "PlayButtonComponent",
+                name = "MenuButtonComponent",
                 parameters = {  
                                   
                 }
@@ -43,7 +43,7 @@ Entities={
             {
                 name = "UITextComponent",
                 parameters = {                  
-                    name = "exitbutton",
+                    name = "exitbuttonlose",
                     font = "Ogreman",
                     caption = "EXIT",
                     zOrder = 3,
@@ -74,7 +74,7 @@ Entities={
             {
                 name = "CameraComponent",
                 parameters = {
-                    name = "menu",
+                    name = "lose",
                     color = {0.0, 0.0, 0.0},
                     offset = {0.0, 0.0, 0.0}
                 }
