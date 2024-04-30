@@ -8,6 +8,8 @@
 #include "PickUpComponent.h"
 #include "TransformComponent.h"
 
+using namespace std;
+
 bool Ogreman::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
@@ -20,20 +22,14 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 }
 
 void Ogreman::PlayerInputComponent::Update(const double& dt){
-	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) {
-		// Movimiento Teclado
+	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) { // Movimiento Teclado
 		float sprint = 0.5;
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
-			sprint = 2;
+			sprint = 1;
 		}
 
 		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
-
-		//std::cout << "Forward: "
-		//	<< forwardDirection.GetX() << " "
-		//	<< forwardDirection.GetY() << " "
-		//	<< forwardDirection.GetZ() << std::endl;
 
 		float moveX = 0.0f;
 		float moveZ = 0.0f;
@@ -55,6 +51,8 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 			moveZ += rightDirection.GetZ();
 		}
 
+		/*cout << moveX << " " << moveZ << endl;*/
+
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
 
@@ -65,47 +63,38 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		}
 
 		//Camara con teclado y raton 
-		VeryReal::Vector4 initialOrientation = my_camera_component->getOrientation();
-
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) {
-			// Rotar la cámara hacia la izquierda
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) { // Rotar la cámara hacia la izquierda
 			my_camera_component->yaw(1);
 			my_transform->Rotate(VeryReal::Vector3(0, -1, 0));
 		}
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) {
-			// Rotar la cámara hacia la derecha
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) { // Rotar la cámara hacia la derecha
 			my_camera_component->yaw(-1);
 			my_transform->Rotate(VeryReal::Vector3(0, 1, 0));
 		}
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
-			// Rotar la cámara hacia arriba
-			my_camera_component->pitch(1);
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) { // Rotar la cámara hacia arriba
+			my_camera_component->rotate(1, rightDirection);
 		}
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
-			// Rotar la cámara hacia abajo
-			my_camera_component->pitch(-1);
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) { // Rotar la cámara hacia abajo
+			my_camera_component->rotate(-1, rightDirection);
 		}
 
-		//std::cout << "Rotacion: "
-		//	<< my_transform->GetRotation().GetX() << " "
-		//	<< my_transform->GetRotation().GetY() << " "
-		//	<< my_transform->GetRotation().GetZ() << std::endl;
-
+		
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			//VeryReal::InputManager::Instance()->Quit();
 		}
 	}
 	else {
+		float sprint = 2;
 		// Movimiento Mando
-		my_movement_component->SetMoventDirectionX(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
-		my_movement_component->SetMoventDirectionZ(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
+		my_movement_component->SetMoventDirectionX(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
+		my_movement_component->SetMoventDirectionZ(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
 	
 		// Camara Mando
 		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX) != 0) {
-			my_camera_component->yaw(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
+			my_camera_component->yaw(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
 		}
 		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0) {
-			my_camera_component->pitch(VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
 		}
 	}
 

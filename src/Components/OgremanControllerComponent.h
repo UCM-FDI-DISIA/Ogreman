@@ -8,6 +8,7 @@
 #include "GridComponent.h"
 #include "ColliderComponent.h"
 #include "../Export.h"
+#include "RigidBodyComponent.h"
 
 #pragma warning(disable : 4251)
 
@@ -18,6 +19,7 @@ namespace Ogreman {
 		virtual ~OgremanControllerComponent();
 		virtual void Update(const double& dt);
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
+		void GoToLocation(VeryReal::Vector3& to);
 		 bool InitComponent();
 		float  CalculateRotationVector(VeryReal::Vector3& from, VeryReal::Vector3& to);
 		 void setPlayerTransform(VeryReal::TransformComponent* t);
@@ -36,6 +38,7 @@ namespace Ogreman {
 		std::vector<NodeComponent*> patrol_nodes;
 		std::vector<NodeComponent*> all_nodes;
 		VeryReal::ColliderComponent* collider = nullptr;
+		VeryReal::RigidBodyComponent* my_rb = nullptr;
 		int current_index;
 		float rotationSpeed = 0.1f;
 		float t = 0;

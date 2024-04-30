@@ -27,18 +27,21 @@ namespace Ogreman {
 		inline float GetStimatedCost() { return estimated_cost; }
 		inline NodeComponent* GetConection() { return conection; };
 		inline void SetConection(NodeComponent* d) { conection = d; }
-		
+		inline float GetCostsoFar()const { return costsofar; }
+		inline void SetCostSoFar(float c) { costsofar = c; }
 		bool operator<(const NodeComponent& other) const {
 			// Compara los costos de los nodos
 			return cost < other.cost;
 		}
 		inline float GetCost() { return cost; }
+		inline bool GetPatrol() { return ispatrol; }
 	protected:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;
 		std::list<NodeComponent*> neighbours;
-		int id;
-		bool ispatrol;
+		int id=0;
+		bool ispatrol=0;
+		float costsofar;
 		NodeComponent* conection=nullptr;
 	};
 

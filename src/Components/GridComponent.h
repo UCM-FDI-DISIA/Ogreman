@@ -6,6 +6,7 @@
 #include "NodeComponent.h"
 #include "../Export.h"
 #include "Vector3.h"
+#include "IndexPQ.h"
 
 #pragma warning(disable : 4251)
 
@@ -18,11 +19,17 @@ namespace Ogreman
         GridComponent();
         virtual void Update(const double& dt);
         virtual bool InitComponent();
+        NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node);
+       
         std::list<Ogreman::NodeComponent*> getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
         NodeComponent* Vector2Node(VeryReal::Vector3 const& vec);
+       
+        std::list<NodeComponent*> GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
+
     protected:
         //DigrafoValorado<Ogreman::NodeComponent*> grid;
         std::vector<Ogreman::NodeComponent*>scenes_nodes;
+        DigrafoValorado<float> nodes;
     };
 }
 

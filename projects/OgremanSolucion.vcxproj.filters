@@ -32,6 +32,8 @@
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp" />
     <ClCompile Include="..\src\Components\RangosVisionComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -66,5 +68,8 @@
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h" />
     <ClInclude Include="..\src\Components\RangosVisionComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
+    <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
+    <ClInclude Include="..\src\Components\IndexPQ.h" />
   </ItemGroup>
 </Project>
