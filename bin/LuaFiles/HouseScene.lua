@@ -15,7 +15,7 @@ Entities={
                 name = "CameraComponent",
                 parameters = {                  
                     name = "anim",
-                    color = {1, 0, 0},
+                    color = {0, 0, 0},
                     alfa = 0,
                     offset = {0, 0, 0}
                 }
@@ -59,11 +59,38 @@ Entities={
                 }
             },
             {
+                name = "UITransformComponent",
+                parameters = {    
+                    position = { 0.0,0.0},   
+                    scale = { 0.11,0.1},   
+                    hidden = false   
+         
+                }
+            },
+            {
+                name = "UIProgressBarComponent",
+                parameters = {             
+                    maximo = 100.0,
+                    progres = 100.0,
+                    progressBarName = "p",
+                    frameMaterial = "Sinbad/Gold",
+                    contentMaterial = "Sinbad/Gold",
+                    zOrder = 1                   
+                }
+            },
+            
+            {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
                 }
-            }              
+            },   
+            {
+                name = "FlashlightComponent",
+                parameters = {                  
+                    
+                }
+            }          
         }
     }, 
     {  
@@ -319,9 +346,18 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {10, 0, 20},
+                    position = {10, 0, 70},
                     rotation = {0, 0, 0},
                     scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Casa.mesh",
+                    entityname= "Casa",
+                    materialname = ""
                 }
             },
             {

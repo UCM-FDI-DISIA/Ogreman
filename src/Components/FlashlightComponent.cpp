@@ -10,7 +10,7 @@ bool Ogreman::FlashlightComponent::InitComponent() {
 	my_light_spot = this->GetEntity()->GetComponent<VeryReal::LightComponent>();
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
 	
-	if (this->my_input != nullptr && this->my_light_spot != nullptr)
+	if (this->my_input != nullptr && this->my_light_spot != nullptr && this->my_progress_bar != nullptr)
 		return true;
 	else {
 		my_progress_bar->setMaximun(max_energy);

@@ -194,7 +194,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		}
 
 		dif = dif.Normalize();
-		dif *= 30;
+		dif *= 1;
 		my_rb->SetVelocityLinear(dif);
 	/*	std::cout << "dif " << dif.GetX()<<"\n";
 		std::cout << "pos " << trans->GetPosition().GetX() << "\n";

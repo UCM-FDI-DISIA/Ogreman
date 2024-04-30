@@ -26,7 +26,7 @@ namespace Ogreman {
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
 
-		inline bool IsFlashLightPressed() { return flashlight; }
+		bool IsFlashLightPressed();
 		void setCanPickUp(bool newValue);
 		void setCellToGet(CellComponent* newCell);
 		void setNoteToGet(NoteComponent* newNote);

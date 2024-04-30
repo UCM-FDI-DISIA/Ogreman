@@ -14,8 +14,8 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
-
-	if (this->my_movement_component != nullptr && this->my_camera_component != nullptr)
+	//
+	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
 		return true;
 	else
 		return false;
@@ -56,7 +56,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
 
-		if (canPickUp) { // Anadir UI de PULSA E
+		if (canPickUp) { 
 			if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_E)) {
 				my_pickup_component->GetElement(note_to_get, cell_to_get);
 			}
@@ -110,7 +110,9 @@ void Ogreman::PlayerInputComponent::Update(const double& dt){
 	// AUDIO
 	audio_intensity = VeryReal::AudioLeon::Instance()->InputSoundIntensity();
 }
-
+bool Ogreman::PlayerInputComponent::IsFlashLightPressed() {
+	return flashlight; 
+}
 void Ogreman::PlayerInputComponent::setCanPickUp(bool newValue) {
 	canPickUp = newValue;
 }
