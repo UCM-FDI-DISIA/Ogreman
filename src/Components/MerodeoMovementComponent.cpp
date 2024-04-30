@@ -39,9 +39,9 @@ void MerodeoMovementComponent::Update(const double& dt){
 		Vector3 randomvec = Vector3((float)random360(), 0, (float)random360());
 		targetcosa += randomvec * wanderRange;
 		
-		Vector3 targetOrientation = targetcosa + transfrormcomponent->GetRotation();
+		/*Vector3 targetOrientation = targetcosa + transfrormcomponent->GetRotation();
 		targetcosa = transfrormcomponent->GetPosition() + transfrormcomponent->GetRotation();
-		targetcosa += targetOrientation;
+		targetcosa += targetOrientation;*/
 			
 		Vector3 lineal = Vector3(targetcosa.GetX() * aceleration, 0, targetcosa.GetZ() * aceleration);
 

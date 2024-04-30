@@ -26,7 +26,8 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 	//std::cout << "Player: " << player_transform->GetPosition().GetX() << " " << player_transform->GetPosition().GetY() << " " << player_transform->GetPosition().GetZ() << " " << "\n";
 	//VeryReal::Vector3 h = player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance;
 	//std::cout << "Ray: " << h.GetX() << " " << h.GetY() << " " << h.GetZ() << " " << "\n\n\n";
-	auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance);
+	
+	/*auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(player_transform->GetPosition(), player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance);
 	std::cout << "N colisionados: " << collided_list.size() << "\n";
 	int cont_notes = 0, cont_cells = 0;
 	for (auto elem_collided : collided_list) {
@@ -44,8 +45,8 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 			cont_cells++;
 			control_update = true;
 		}
-	}
-	if (control_update) {
+	}*/
+	/*if (control_update) {
 		if (cont_cells == 0 && cont_notes == 0) {
 			my_player_input_comp->setCanPickUp(false);
 		}
@@ -56,7 +57,7 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 			my_player_input_comp->setNoteToGet(nullptr);
 		}
 		control_update = false;
-	}
+	}*/
 }
 void Ogreman::PickUpComponent::settam(VeryReal::Entity* obj) {
 	VeryReal::UITransformComponent* ui = obj->GetComponent<VeryReal::UITransformComponent>();

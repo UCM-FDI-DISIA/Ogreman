@@ -6,7 +6,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 4, 10},
-                    rotation ={0, 0, 0},
+                    rotation ={0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -101,7 +101,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 0, 60},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -129,7 +129,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {10, 0, 0},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -184,7 +184,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {40, 0, 0},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -238,7 +238,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {60, 0, 0},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -293,7 +293,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {10, 0, -10},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -347,7 +347,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {10, 0, 70},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {5, 5, 5}                   
                 }
             },
@@ -377,7 +377,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {-10, 0, 0},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -432,7 +432,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, -18, 0},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
