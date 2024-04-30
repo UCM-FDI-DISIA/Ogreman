@@ -7,7 +7,6 @@
 #include "AudioLeon.h"
 #include "PickUpComponent.h"
 #include "TransformComponent.h"
-#include "RigidBodyComponent.h"
 
 using namespace std;
 
@@ -15,7 +14,6 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
-	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 
 	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
 		return true;
@@ -67,11 +65,11 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		//Camara con teclado y raton 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) { // Rotar la cámara hacia la izquierda
 			my_camera_component->yaw(1);
-			my_rigidbody->Rotate(VeryReal::Vector3(0, 1, 0), -1);
+			my_transform->Rotate(VeryReal::Vector3(0, -1, 0));
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) { // Rotar la cámara hacia la derecha
 			my_camera_component->yaw(-1);
-			my_rigidbody->Rotate(VeryReal::Vector3(0, 1, 0), 1);
+			my_transform->Rotate(VeryReal::Vector3(0, 1, 0));
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) { // Rotar la cámara hacia arriba
 			my_camera_component->rotate(1, rightDirection);

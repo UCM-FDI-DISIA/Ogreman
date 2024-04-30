@@ -9,7 +9,6 @@
 namespace VeryReal {
 	class TransformComponent;
 	class CameraComponent;
-	class RigidBodyComponent;
 }
 
 namespace Ogreman {
@@ -45,7 +44,6 @@ namespace Ogreman {
 		Ogreman::PickUpComponent* my_pickup_component = nullptr;
 		Ogreman::CellComponent* cell_to_get = nullptr;
 		Ogreman::NoteComponent* note_to_get = nullptr;
-		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
 	};
 }
 
