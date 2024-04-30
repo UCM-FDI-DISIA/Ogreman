@@ -11,7 +11,6 @@ namespace Ogreman {
 	class  GameManager:public VeryReal::Manager<GameManager>
 	{
 	private:
-		VeryReal::SceneManager* scene_manager = nullptr;
 		std::vector<NodeComponent*> pathNodes;
 		std::vector<NodeComponent*> patrolNodes;
 		GridComponent* grid = nullptr;
