@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 4, 10},
+                    position = {20, 7, 50},
                     rotation ={0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -448,7 +448,7 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {200, 20, 200},
-                    mass = 1.0,
+                    mass = 100000.0,
                     friction =1.0,
                     restitution=0.0,
                     trigger = false,

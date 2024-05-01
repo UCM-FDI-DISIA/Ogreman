@@ -226,9 +226,9 @@ int  Ogreman::OgremanControllerComponent::GetState() {
 }
 
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	std::cout << "\nHAY COLISION\n";
+	//std::cout << "\nHAY COLISION\n";
 	if (current_states==patrol && other != nullptr && other->GetComponent<NodeComponent>() != nullptr && other->GetComponent<NodeComponent>()->GetID()!=current_node->GetID()) {
-		std::cout << "\nHAY COLISION\n";
+		//std::cout << "\nHAY COLISION\n";
 		current_index = (current_index + 1) % patrol_nodes.size();
 		current_node = patrol_nodes[current_index];
 		current_node_trans= current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();

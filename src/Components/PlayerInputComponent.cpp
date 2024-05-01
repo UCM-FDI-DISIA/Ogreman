@@ -54,8 +54,8 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		}
 
 		//cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ() << endl;
-		cout << forwardDirection.GetX() << " " << forwardDirection.GetY() << " " << forwardDirection.GetZ() << endl;
-		cout << rightDirection.GetX() << " " << rightDirection.GetY() << " " << rightDirection.GetZ() << endl;
+		//cout << forwardDirection.GetX() << " " << forwardDirection.GetY() << " " << forwardDirection.GetZ() << endl;
+		//cout << rightDirection.GetX() << " " << rightDirection.GetY() << " " << rightDirection.GetZ() << endl;
 
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
