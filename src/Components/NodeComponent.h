@@ -35,6 +35,7 @@ namespace Ogreman {
 		}
 		inline float GetCost() { return cost; }
 		inline bool GetPatrol() { return ispatrol; }
+		virtual void OnCollisionEnter(VeryReal::Entity* other);
 	protected:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;

@@ -21,7 +21,7 @@ namespace Ogreman
         virtual bool InitComponent();
         NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node);
        
-        std::list<Ogreman::NodeComponent*> getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
+        
         NodeComponent* Vector2Node(VeryReal::Vector3 const& vec);
        
         std::list<NodeComponent*> GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);

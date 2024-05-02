@@ -21,10 +21,13 @@ namespace Ogreman {
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 		void GoToLocation(VeryReal::Vector3& to);
 		 bool InitComponent();
-		float  CalculateRotationVector(VeryReal::Vector3& from, VeryReal::Vector3& to);
+		 float CalcularAnguloConEjeY(float punto1_x, float punto1_y, float punto2_x, float punto2_y);
 		 void setPlayerTransform(VeryReal::TransformComponent* t);
 		 void SetState(int state);
 		 int  GetState();
+		 void RestartPatrol();
+		 void NextNodePF();
+		 void NextNodePT();
 	protected:
 		enum states { stop, patrol, pathfinding, follow };
 		states current_states=stop;
@@ -39,10 +42,14 @@ namespace Ogreman {
 		std::vector<NodeComponent*> all_nodes;
 		VeryReal::ColliderComponent* collider = nullptr;
 		VeryReal::RigidBodyComponent* my_rb = nullptr;
+		VeryReal::Vector3 dif;
 		int current_index;
 		float rotationSpeed = 0.1f;
 		float t = 0;
-		bool once = false;
+		bool last_node = false;
+
+
+		float rotation_y = 0;
 	};
 }
 

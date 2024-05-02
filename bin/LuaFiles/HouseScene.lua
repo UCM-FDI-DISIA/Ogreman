@@ -79,18 +79,24 @@ Entities={
                 }
             },
             
+        
             {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
                 }
-            },   
+            }, 
+
+
+
+             
             {
                 name = "FlashlightComponent",
                 parameters = {                  
                     
                 }
-            }          
+            }   
+                  
         }
     }, 
     {  
@@ -157,7 +163,7 @@ Entities={
                     mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }
@@ -211,7 +217,7 @@ Entities={
                     mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }
@@ -265,7 +271,7 @@ Entities={
                     mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }
@@ -320,7 +326,7 @@ Entities={
                     mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }
@@ -328,7 +334,7 @@ Entities={
             {
                 name="NodeComponent",
                 parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
@@ -351,15 +357,7 @@ Entities={
                     scale = {5, 5, 5}                   
                 }
             },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Casa.mesh",
-                    entityname= "Casa",
-                    materialname = ""
-                }
-            },
+           
             {
                 name="GridComponent",
                 parameters={
@@ -405,8 +403,8 @@ Entities={
                     friction =1.0,
                     restitution=1.0,
                     trigger = false,
-                    mask = 1,
-                    group = 2
+                    mask = 2,
+                    group = 1
                 }
             },
             {
@@ -431,7 +429,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, -18, 0},
+                    position = {0, -30, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
