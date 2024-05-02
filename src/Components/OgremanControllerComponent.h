@@ -28,6 +28,10 @@ namespace Ogreman {
 		 void RestartPatrol();
 		 void NextNodePF();
 		 void NextNodePT();
+
+		 VeryReal::Vector3 align();
+		 VeryReal::Vector3 cohere();
+			 VeryReal::Vector3 separate();
 	protected:
 		enum states { stop, patrol, pathfinding, follow };
 		states current_states=stop;
@@ -50,6 +54,13 @@ namespace Ogreman {
 
 
 		float rotation_y = 0;
+
+
+		// Parámetros de Flocking
+		float alignmentWeight = 0.1f; // Peso de la alineación
+		float cohesionWeight = 0.1f; // Peso de la cohesión
+		float separationWeight = 0.1f; // Peso de la separación
+		float maxSpeed = 0.5f; // Velocidad máxima del ogro
 	};
 }
 

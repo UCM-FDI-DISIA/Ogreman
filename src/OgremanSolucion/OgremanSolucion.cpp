@@ -55,7 +55,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         /*Ogreman::GameManager::Instance()->Start();*/
        /* ScriptManager::Instance()->ReadScene("HouseScene");
         VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);*/
-        ScriptManager::Instance()->ReadScene("HouseScene");
+        ScriptManager::Instance()->ReadScene("HouseScene",true);
         VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);
       
         return true;
