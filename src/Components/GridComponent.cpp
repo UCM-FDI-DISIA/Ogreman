@@ -29,7 +29,10 @@ GridComponent::GridComponent():nodes(0) {
 	 NodeComponent* src = Vector2Node(InitPos);
 	 NodeComponent* dest = Vector2Node(EndPosition);
 
-	
+	 if (src->GetID() == dest->GetID()) {
+		 path.push_back(src);
+		 return path;
+	}
 	 int origen = 0;
 	 std::vector<float> dist(nodes.V(),INT_MAX);
 	 std::vector<AristaDirigida<float>> ulti(nodes.V());
@@ -55,7 +58,7 @@ GridComponent::GridComponent():nodes(0) {
 
 	 // recuperamos el camino retrocediendo
 	 AristaDirigida<float> a;
-
+	 
 	 for (a = ulti[dest->GetID()]; a.desde() != src->GetID(); a = ulti[a.desde()]) {
 		 path.push_front(scenes_nodes[a.hasta()]);
 	 }

@@ -298,7 +298,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {10, 0, -10},
+                    position = {10, 0, -30},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }

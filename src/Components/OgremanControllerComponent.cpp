@@ -190,7 +190,10 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			 last_node = false;
 			 Astar_nodes = grid->GetPathDikstra(trans->GetPosition(), patrol_nodes[0]->GetEntity()->GetComponent<VeryReal::TransformComponent>()->GetPosition());
 			 
-			 if (current_node->GetID() == Astar_nodes.front()->GetID())Astar_nodes.pop_front();
+			 if (current_node->GetID() == Astar_nodes.front()->GetID()) {
+				 Astar_nodes.pop_front();
+				 if (Astar_nodes.size() > 0)NextNodePF();
+			 }
 
 		 }
 		
@@ -233,7 +236,7 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	std::cout << "\nCHECK COLISION\n";
-	if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent")) {
+	if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
 		std::cout << "\nHAY COLISION\n";
 		NextNodePT();
 
