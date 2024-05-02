@@ -4,7 +4,7 @@
 #include "Manager.h"
 #include "InputManager.h"
 #include "CameraComponent.h"
-#include "AudioLeon.h"
+#include "AudioManager.h"
 #include "PickUpComponent.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
@@ -112,7 +112,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 	}
 
 	// AUDIO
-	audio_intensity = VeryReal::AudioLeon::Instance()->InputSoundIntensity();
+	audio_intensity = VeryReal::AudioManager::Instance()->InputSoundIntensity();
 }
 bool Ogreman::PlayerInputComponent::IsFlashLightPressed() {
 	return flashlight; 

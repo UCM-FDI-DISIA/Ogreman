@@ -34,6 +34,8 @@
     <ClCompile Include="..\src\Components\RangosVisionComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\OgremanHearingComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorOgremanHearingComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
@@ -71,5 +73,7 @@
     <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\IndexPQ.h" />
+    <ClInclude Include="..\src\Components\OgremanHearingComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorOgremanHearingComponent.h" />
   </ItemGroup>
 </Project>
