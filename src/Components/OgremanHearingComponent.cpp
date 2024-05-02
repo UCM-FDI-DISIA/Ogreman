@@ -1,4 +1,5 @@
 #include "OgremanHearingComponent.h"
+#include "OgremanControllerComponent.h"
 #include "OgremanAttackComponent.h"
 #include "TransformComponent.h"
 #include "PlayerInputComponent.h"
@@ -14,6 +15,7 @@
 bool Ogreman::OgremanHearingComponent::InitComponent()
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();
 	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_input = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
 	radius_growth_rate = 3;
@@ -37,6 +39,8 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 #endif
 	float dist_ogre_player = my_transform->GetPosition().Distance(player_transform->GetPosition());
 	if (hearing_radius >= dist_ogre_player) {
+		VeryReal::Vector3 player_position = player_transform->GetPosition();
+		my_controller->GoToLocation(player_position);
 		player_detected = true;
 	}
 	else {

@@ -24,6 +24,7 @@ namespace VeryReal {
 namespace Ogreman
 {
 	class PlayerInputComponent;
+	class OgremanControllerComponent;
 	class OGREMAN_API OgremanHearingComponent : public VeryReal::Component
 	{
 	public:
@@ -34,6 +35,7 @@ namespace Ogreman
 
 	private:
 		VeryReal::TransformComponent* my_transform = nullptr;
+		OgremanControllerComponent* my_controller = nullptr;
 		VeryReal::TransformComponent* player_transform = nullptr;
 		PlayerInputComponent* player_input = nullptr;
 		bool player_detected = false; 
