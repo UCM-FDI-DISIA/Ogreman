@@ -36,6 +36,7 @@
     <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorRangosVisionComponent.cpp" />
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\FlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\GameManager.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorRangosVisionComponent.h" />
     <ClInclude Include="..\src\Components\DigrafoValorado.h" />
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\FlashlightComponent.h" />
