@@ -10,7 +10,7 @@ bool Ogreman::OgremanAttackComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_UI = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
-	sprite_renderer_player = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::UiSpriteRenderer>();
+	sprite_renderer_player = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::UISpriteRenderer>();
 	if (this->my_transform != nullptr)
 		return true;
 	else

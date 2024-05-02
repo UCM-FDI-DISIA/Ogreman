@@ -21,7 +21,7 @@ bool Ogreman::PickUpComponent::InitComponent() {
 }
 
 void Ogreman::PickUpComponent::Update(const double& dt) {
-	VeryReal::Vector4 orientation = my_player_cam->getOrientation();
+	//VeryReal::Vector4 orientation = my_player_cam->getOrientation();
 	//std::cout << "Orientation: " << orientation.GetR() << " " << orientation.GetG() << " " << orientation.GetB() << " " << orientation.GetA() << "\n";
 	//std::cout << "Player: " << player_transform->GetPosition().GetX() << " " << player_transform->GetPosition().GetY() << " " << player_transform->GetPosition().GetZ() << " " << "\n";
 	//VeryReal::Vector3 h = player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance;
