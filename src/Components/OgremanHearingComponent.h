@@ -36,9 +36,17 @@ namespace Ogreman
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::TransformComponent* player_transform = nullptr;
 		PlayerInputComponent* player_input = nullptr;
+		bool player_detected = false; 
+		//Intgensidad del ruido emitido por el jugador.
+		float player_noise_intensity;
+		//Distancia máxima desde la que el ogro te escucha.
 		int ogre_sound_sensitivity;
-		bool player_detected = false;
-		float hearing_radius;
+		//Radio de la circunferencia alrededor del jugador
+		//que establece hasta donde se le oye
+		float hearing_radius = 0;
+		//Factor de crecimiento de la función exponencial que calcula la distancia
+		//a la que se escucha al jugador en una circunferencia alrededor del mismo
+		float radius_growth_rate;
 	};
 }
 
