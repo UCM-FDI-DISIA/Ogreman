@@ -16,7 +16,7 @@ bool Ogreman::MovementComponent::InitComponent(){
 
 void Ogreman::MovementComponent::Update(const double& dt) {
 
-	std::cout << my_rigidbody->GetVelocity().Magnitude()<<std::endl;
+	//std::cout << my_rigidbody->GetVelocity().Magnitude()<<std::endl;
 	if (IsMoving()) {
        my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed/**dt*/));
 		//my_rigidbody->SetVelocityLinear(VeryReal::Vector3(1000,0,0));
@@ -24,7 +24,7 @@ void Ogreman::MovementComponent::Update(const double& dt) {
 	/*else if(my_rigidbody->GetVelocity().Magnitude())*/
 	else
 	{
-		my_rigidbody->Decelerate(4);
+		my_rigidbody->Decelerate(40);
 	}
 }
 

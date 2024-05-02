@@ -159,7 +159,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 //
 //        VeryReal::Scene* s = SceneManager::Instance()->AddScene("Play", true);
 //        s = SceneManager::Instance()->GetScene("Play");
-//        std::cout << "pureba" << std::endl;
+//        std::
+// 
+//  << "pureba" << std::endl;
 //
 //        /* ScriptManager::Instance()->Init("HouseScene");
 //         ScriptManager::Instance()->ReadScene("HouseScene");*/

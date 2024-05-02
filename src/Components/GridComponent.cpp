@@ -52,9 +52,10 @@ GridComponent::GridComponent():nodes(0) {
 		 }
 	 }
 
-	 std::list<NodeComponent> cam;
+
 	 // recuperamos el camino retrocediendo
 	 AristaDirigida<float> a;
+
 	 for (a = ulti[dest->GetID()]; a.desde() != src->GetID(); a = ulti[a.desde()]) {
 		 path.push_front(scenes_nodes[a.hasta()]);
 	 }
@@ -68,40 +69,7 @@ GridComponent::GridComponent():nodes(0) {
 	 return path;
  }
 
- std::list<Ogreman::NodeComponent*> GridComponent::getPathAStar(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
-	 std::list<Ogreman::NodeComponent*> path;
-	 //std::cout << "busco\\n";
-	 NodeComponent* src = Vector2Node(InitPos);
-	 NodeComponent* dest = Vector2Node(EndPosition);
 
-	 std::list<NodeComponent*>open;
-	 std::list<NodeComponent*>closed;
-	 open.push_back(src);
-	 src->sethCost(0);
-
-	 NodeComponent* current = src;
-	 float stimated = 0;
-	 //std::cout << "hola estoro en while\\n";
-	 while (open.size() > 0) {
-
-		
-
-	 }
-	 if (current->GetID() != dest->GetID()) {
-
-		 return path;//algo va mal
-	 }
-	 else {
-		 path.clear();
-		// path.push_back(dest);
-		 while (current->GetID() != src->GetID()) {
-			 path.push_front(current);
-			 current = current->GetConection();
-		 }
-		 path.push_front(src);
-	 }
-	 return path;
- }
 
  NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
 	 float minimun(INT16_MAX);
@@ -149,14 +117,18 @@ GridComponent::GridComponent():nodes(0) {
 						 std::cout << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
 						 return false;
 					 }
-					 
-					 //c->AddNeighbors(d);
+					std::list<VeryReal::Entity*> ents= VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
+					std::cout << "TAMAÑE LISTE " << ents.size() << "\n";
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
+
+
 					 if ((c->GetID() == 1 && d->GetID() == 0) || (c->GetID() == 0 && d->GetID() == 2) || (c->GetID() == 1 && d->GetID() == 3)) {
 						 //AdysDirVal<NodeComponent*> arista;
 						 AristaDirigida<float> arista(c->GetID(),d->GetID(),coste);
+						 AristaDirigida<float> arista2(d->GetID(), c->GetID(), coste);
 						 nodes.ponArista(arista);
+						 nodes.ponArista(arista2);
 					 }
 					/* std::list<VeryReal::Entity*> colision = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
 					 std::cout << "tamaño lista" << colision.size()<<"\n";
