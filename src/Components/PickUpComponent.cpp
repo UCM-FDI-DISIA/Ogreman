@@ -65,7 +65,7 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 }
 void Ogreman::PickUpComponent::settam(VeryReal::Entity* obj) {
 	VeryReal::UITransformComponent* ui = obj->GetComponent<VeryReal::UITransformComponent>();
-	VeryReal::UISpriteRenderer* sp = obj->GetComponent<VeryReal::UISpriteRenderer>();
+	VeryReal::UISpriteRendererComponent* sp = obj->GetComponent<VeryReal::UISpriteRendererComponent>();
 	//rangos de vision lo tiene que tener el personaje
 	Ogreman::RangosVisionComponent* rv = GetEntity()->GetComponent<Ogreman::RangosVisionComponent>();
 
