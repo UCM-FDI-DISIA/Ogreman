@@ -1,11 +1,14 @@
 #include "GameManager.h"
 #include "Scene.h"
+#include "Entity.h"
+#include "TransformComponent.h"
+#include <iostream>
 using namespace Ogreman;
  GameManager::~GameManager() {
 
 }
 void GameManager::Start() {
-	//aquí añadiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
+	//aquï¿½ aï¿½adiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
 	VeryReal::SceneManager::Instance()->AddScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->AddScene("PlayScene", false);
 	VeryReal::SceneManager::Instance()->AddScene("PauseScene", false);
@@ -39,4 +42,17 @@ void GameManager::Win() {
 void GameManager::Loose() {
 	VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", true);
 	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
+}
+
+void GameManager::HolaLua() {
+	std::cout << "Hola Lua\n";
+}
+
+void GameManager::GenerateTree(int n) {
+	std::string name = "Pino" + std::to_string(n);
+	std::cout << name << std::endl;
+	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
+
+	// Falta asignar una posicion aleatoria
+	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0, 0, 0));
 }

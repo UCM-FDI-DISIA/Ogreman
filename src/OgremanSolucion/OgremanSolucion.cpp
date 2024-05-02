@@ -51,12 +51,13 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
         VeryReal::Creator::Instance()->AddCreator("RangosVisionComponent", new Ogreman::CreatorRangosVisionComponent());
 
-
-        /*Ogreman::GameManager::Instance()->Start();*/
-       /* ScriptManager::Instance()->ReadScene("HouseScene");
-        VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);*/
         ScriptManager::Instance()->ReadScene("HouseScene",true);
-        VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);
+        ScriptManager::Instance()->ReadPrefabs();
+
+        //ScriptManager::Instance()->ExposeFunctionsVoidToLua("HolaLua", Ogreman::GameManager::Instance()->HolaLua);
+        //ScriptManager::Instance()->ReadFunction("HolaLuaLua", 0);
+        ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", Ogreman::GameManager::Instance()->GenerateTree);
+        ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);
       
         return true;
     }

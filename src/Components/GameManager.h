@@ -52,7 +52,9 @@ namespace Ogreman {
 			patrolNodes.push_back(node);
 
 		}
-	
+
+		static void HolaLua();
+		static void GenerateTree(int n);
 	};
 }
 
