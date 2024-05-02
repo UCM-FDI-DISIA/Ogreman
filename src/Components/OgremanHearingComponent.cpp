@@ -18,6 +18,7 @@ bool Ogreman::OgremanHearingComponent::InitComponent()
 	player_input = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
 	radius_growth_rate = 3;
 	ogre_sound_sensitivity = 5;
+	lower_intensity_threshold = 0.4;
 	if(my_transform != nullptr ){
 		return true;
 	}
@@ -29,6 +30,7 @@ bool Ogreman::OgremanHearingComponent::InitComponent()
 void Ogreman::OgremanHearingComponent::Update(const double& dt)
 {
 	player_noise_intensity = VeryReal::AM().InputSoundIntensity();
+	if (player_noise_intensity < lower_intensity_threshold) player_noise_intensity = 0;
 	hearing_radius = CalculateRadius(player_noise_intensity);
 #ifdef _DEBUG
 	std::cout << "hearing_radius" << hearing_radius << "... \n";

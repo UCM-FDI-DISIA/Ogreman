@@ -47,6 +47,8 @@ namespace Ogreman
 		//Factor de crecimiento de la función exponencial que calcula la distancia
 		//a la que se escucha al jugador en una circunferencia alrededor del mismo
 		float radius_growth_rate;
+
+		float lower_intensity_threshold;
 	};
 }
 
