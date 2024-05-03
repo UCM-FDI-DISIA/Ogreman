@@ -4,4 +4,10 @@ font Mario
 	source Mario.ttf
 	size 100
 }
+font Ogreman
+{
+	type truetype
+	source Ogreman.ttf
+	size 100
+}
 

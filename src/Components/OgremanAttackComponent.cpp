@@ -28,7 +28,7 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 				nAttacks++;
 			}
 			else {
-				GameManager::Instance()->Loose();
+				GameManager::Instance()->Lose();
 			}
 		}
 	}
