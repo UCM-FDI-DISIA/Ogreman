@@ -28,7 +28,7 @@ namespace Ogreman
 	class OGREMAN_API OgremanHearingComponent : public VeryReal::Component
 	{
 	public:
-		virtual bool InitComponent();
+		virtual bool InitComponent(float rate, int sensitivity, float lowerThreshold, float upperThreshold);
 		virtual void Update(const double& dt);
 		float CalculateRadius(float intensity);
 		bool GetDetected();
