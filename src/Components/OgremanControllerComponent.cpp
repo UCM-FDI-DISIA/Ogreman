@@ -102,7 +102,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 			return false;
 		}
 	}
-	current_states = follow;
+	current_states = pathfinding;
 	std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
 	
 
@@ -116,7 +116,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 	VeryReal::Vector3 v(10, 0, -30);
 	player_trns = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	
-	//GoToLocation(v);
+	GoToLocation(v);
 	return true;
 }
 // Función para alinear al ogro con el grupo
@@ -178,8 +178,9 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 2;
+		dif *= maxSpeed;
 		my_rb->SetVelocityLinear(dif);
+		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		//std::cout << dif.GetX() << " \n";
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
 			NextNodePT();
@@ -195,12 +196,12 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 
 		}
 			dif = dif.Normalize();
-			dif *= 2;
+			dif *= maxSpeed;
 			my_rb->SetVelocityLinear(dif);
-
+			my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
-		alignment = align();
+		 alignment = align();
 		 cohesion = cohere();
 		 separation = separate();
 		 totalDirection = alignment * alignmentWeight + cohesion * cohesionWeight + separation * separationWeight;
@@ -210,8 +211,9 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			 totalDirection = totalDirection.Normalize() * maxSpeed;
 		 }
 
+		 my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, totalDirection));
 		 // Establecer la velocidad lineal del ogro hacia la posición del jugador
-		 my_rb->SetVelocityLinear(totalDirection*12);
+		 my_rb->SetVelocityLinear(totalDirection);
 	
 
 
@@ -259,9 +261,9 @@ void Ogreman::OgremanControllerComponent::NextNodePT() {
 	current_index = (current_index + 1) % patrol_nodes.size();
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	VeryReal::Vector3 facing = trans->getFacingDirection();
+	/*VeryReal::Vector3 facing = trans->getFacingDirection();
 	dif = trans->GetPosition() - current_node_trans->GetPosition();
-	my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(facing, dif));
+	my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(facing, dif));*/
 	
 }
 int  Ogreman::OgremanControllerComponent::GetState() {
@@ -272,14 +274,14 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 	Astar_nodes.pop_front();
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	VeryReal::Vector3 facing = trans->getFacingDirection();
-	dif= trans->GetPosition() - current_node_trans->GetPosition();
-	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));
+	/*dif= trans->GetPosition() - current_node_trans->GetPosition();
+	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));*/
 
 	facing = trans->getFacingDirection();
 	if (Astar_nodes.size() == 0)last_node = true;
 }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	std::cout << "\nCHECK COLISION\n";
+	
 	if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
 		std::cout << "\nHAY COLISION\n";
 		NextNodePT();
