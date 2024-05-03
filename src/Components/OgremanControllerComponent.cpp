@@ -178,7 +178,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
 		dif = dif.Normalize();
-		dif *= 2;
+		dif *= maxSpeed;
 		my_rb->SetVelocityLinear(dif);
 		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		//std::cout << dif.GetX() << " \n";
@@ -196,7 +196,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 
 		}
 			dif = dif.Normalize();
-			dif *= 2;
+			dif *= maxSpeed;
 			my_rb->SetVelocityLinear(dif);
 			my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		break;
@@ -261,9 +261,9 @@ void Ogreman::OgremanControllerComponent::NextNodePT() {
 	current_index = (current_index + 1) % patrol_nodes.size();
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	VeryReal::Vector3 facing = trans->getFacingDirection();
+	/*VeryReal::Vector3 facing = trans->getFacingDirection();
 	dif = trans->GetPosition() - current_node_trans->GetPosition();
-	my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(facing, dif));
+	my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(facing, dif));*/
 	
 }
 int  Ogreman::OgremanControllerComponent::GetState() {
@@ -274,8 +274,8 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 	Astar_nodes.pop_front();
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	VeryReal::Vector3 facing = trans->getFacingDirection();
-	dif= trans->GetPosition() - current_node_trans->GetPosition();
-	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));
+	/*dif= trans->GetPosition() - current_node_trans->GetPosition();
+	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));*/
 
 	facing = trans->getFacingDirection();
 	if (Astar_nodes.size() == 0)last_node = true;
