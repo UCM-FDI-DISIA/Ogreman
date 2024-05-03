@@ -102,7 +102,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 			return false;
 		}
 	}
-	current_states = follow;
+	current_states = pathfinding;
 	std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
 	
 
@@ -116,7 +116,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 	VeryReal::Vector3 v(10, 0, -30);
 	player_trns = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	
-	//GoToLocation(v);
+	GoToLocation(v);
 	return true;
 }
 // Función para alinear al ogro con el grupo
@@ -180,6 +180,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		dif = dif.Normalize();
 		dif *= 2;
 		my_rb->SetVelocityLinear(dif);
+		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		//std::cout << dif.GetX() << " \n";
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
 			NextNodePT();
@@ -197,7 +198,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			dif = dif.Normalize();
 			dif *= 2;
 			my_rb->SetVelocityLinear(dif);
-
+			my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
 		 alignment = align();
