@@ -200,7 +200,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
-		alignment = align();
+		 alignment = align();
 		 cohesion = cohere();
 		 separation = separate();
 		 totalDirection = alignment * alignmentWeight + cohesion * cohesionWeight + separation * separationWeight;
@@ -210,8 +210,9 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			 totalDirection = totalDirection.Normalize() * maxSpeed;
 		 }
 
+		 my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, totalDirection));
 		 // Establecer la velocidad lineal del ogro hacia la posición del jugador
-		 my_rb->SetVelocityLinear(totalDirection*12);
+		 my_rb->SetVelocityLinear(totalDirection);
 	
 
 
@@ -279,7 +280,7 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 	if (Astar_nodes.size() == 0)last_node = true;
 }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	std::cout << "\nCHECK COLISION\n";
+	
 	if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
 		std::cout << "\nHAY COLISION\n";
 		NextNodePT();
