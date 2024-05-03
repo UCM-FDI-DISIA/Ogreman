@@ -4,6 +4,7 @@
 #include "TransformComponent.h"
 #include "PlayerInputComponent.h"
 #include "TransformComponent.h"
+#include "InputManager.h"
 #include "Entity.h"
 #include <SceneManager.h>
 #include <AudioManager.h>
@@ -12,15 +13,17 @@
 #include <cmath> 
 #include <math.h>
 
-bool Ogreman::OgremanHearingComponent::InitComponent()
+bool Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity, float lowerThreshold, float upperThreshold)
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();
 	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_input = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
-	radius_growth_rate = 3;
-	ogre_sound_sensitivity = 5;
-	lower_intensity_threshold = 0.4;
+	radius_growth_rate = rate;
+	ogre_sound_sensitivity = sensitivity;
+	lower_intensity_threshold = lowerThreshold;
+	upper_intensity_threshold = upperThreshold;
+	player_noise_intensity = 0;
 	if(my_transform != nullptr ){
 		return true;
 	}
@@ -31,8 +34,18 @@ bool Ogreman::OgremanHearingComponent::InitComponent()
 
 void Ogreman::OgremanHearingComponent::Update(const double& dt)
 {
-	player_noise_intensity = VeryReal::AM().InputSoundIntensity();
+	//player_noise_intensity = VeryReal::AM().InputSoundIntensity();
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_KP_PLUS)) {
+		player_noise_intensity = 1;
+		std::cout << "Intensidad : 1" << std::endl;
+	}
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_KP_MINUS)) {
+		player_noise_intensity = 0;
+		std::cout << "Intensidad : 0" << std::endl;
+	}
 	if (player_noise_intensity < lower_intensity_threshold) player_noise_intensity = 0;
+	else if(player_noise_intensity >= upper_intensity_threshold) player_noise_intensity = upper_intensity_threshold;
+	std::cout << player_noise_intensity << std::endl;
 	hearing_radius = CalculateRadius(player_noise_intensity);
 #ifdef _DEBUG
 	std::cout << "hearing_radius" << hearing_radius << "... \n";

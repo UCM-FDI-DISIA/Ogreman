@@ -51,6 +51,7 @@ namespace Ogreman
 		float radius_growth_rate;
 
 		float lower_intensity_threshold;
+		float upper_intensity_threshold;
 	};
 }
 
