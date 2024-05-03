@@ -416,7 +416,11 @@ Entities={
             {
                 name="OgremanMovementComponent",
                 parameters={
-
+                    alignmentWeight=0.1,
+                    cohesionWeight=0.1,
+                    separationWeight=0.1,
+                    maxSpeed=6.0,
+                    separationDistance=2.0,
                 }
             }
         }

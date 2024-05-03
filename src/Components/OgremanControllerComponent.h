@@ -20,7 +20,7 @@ namespace Ogreman {
 		virtual void Update(const double& dt);
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 		void GoToLocation(VeryReal::Vector3& to);
-		 bool InitComponent();
+		 bool InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight ,float maxSpeed, float separationDistance);
 		 float CalcularAnguloConEjeY(float punto1_x, float punto1_y, float punto2_x, float punto2_y);
 		 void setPlayerTransform(VeryReal::TransformComponent* t);
 		 void SetState(int state);
@@ -61,6 +61,7 @@ namespace Ogreman {
 		float cohesionWeight = 0.1f; // Peso de la cohesión
 		float separationWeight = 0.1f; // Peso de la separación
 		float maxSpeed = 0.5f; // Velocidad máxima del ogro
+		float separationDistance = 2.0f;
 	};
 }
 

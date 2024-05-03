@@ -59,8 +59,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
         //ScriptManager::Instance()->ExposeFunctionsVoidToLua("HolaLua", Ogreman::GameManager::Instance()->HolaLua);
         //ScriptManager::Instance()->ReadFunction("HolaLuaLua", 0);
-        ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", Ogreman::GameManager::Instance()->GenerateTree);
-        ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);
+       /* ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", Ogreman::GameManager::Instance()->GenerateTree);
+        ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);*/
       
         return true;
     }

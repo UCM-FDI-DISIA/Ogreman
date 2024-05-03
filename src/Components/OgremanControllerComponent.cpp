@@ -21,15 +21,16 @@ float RotationYBetween(VeryReal::Vector3& vector1, VeryReal::Vector3& vector2) {
 	float angle = std::acos(dotProduct / (magnitude1 * magnitude2));
 
 	// Calcular el vector de rotación usando el producto cruz
-	VeryReal::Vector3 rotationAxis = vector1.Cross(vector2);
+	VeryReal::Vector3 rotationAxis = vector1.Cross(vector2).Normalize();
 
 	// Extraer la componente y del vector de rotación
 	float rotation_y = rotationAxis.GetY(); // Suponiendo que GetY() devuelve la componente y
 
-	int dir = -1;
-	if (rotation_y > 0) dir = 1;
+	// Determinar la dirección de rotación
+	int dir = (rotation_y > 0) ? -1 : 1;
 
-	return (angle *180 / 3.1415) *dir;
+	angle = (angle * 180 / 3.1415) * dir;
+	return angle;
 }
 float Ogreman::OgremanControllerComponent::CalcularAnguloConEjeY(float punto1_x, float punto1_y, float punto2_x, float punto2_y) {
 	// Calcular diferencias en coordenadas
@@ -41,7 +42,13 @@ float Ogreman::OgremanControllerComponent::CalcularAnguloConEjeY(float punto1_x,
 
 	return angulo;
 }
-bool Ogreman::OgremanControllerComponent::InitComponent() {
+bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight, float maxSpeed, float separationDistance) {
+	this->alignmentWeight = alignmentWeight;
+	this->cohesionWeight = cohesionWeight;
+	this->separationWeight = separationWeight;
+	this->maxSpeed = maxSpeed;
+	this->separationDistance = separationDistance;
+	
 	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
 		#ifdef _DEBUG
@@ -108,6 +115,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent() {
 	grid = GameManager::Instance()->GetGris();
 	VeryReal::Vector3 v(10, 0, -30);
 	player_trns = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
+	
 	//GoToLocation(v);
 	return true;
 }
@@ -127,7 +135,7 @@ VeryReal::Vector3 Ogreman::OgremanControllerComponent::cohere() {
 // Función para evitar que los ogros choquen entre sí
 VeryReal::Vector3 Ogreman::OgremanControllerComponent::separate() {
 	// En este caso, el ogro intenta mantener una distancia mínima del jugador
-	float separationDistance = 2.0f; // Distancia mínima entre el ogro y el jugador
+	// Distancia mínima entre el ogro y el jugador
 	VeryReal::Vector3 direction = player_trns->GetPosition() - trans->GetPosition();
 	float distance = direction.Magnitude();
 	if (distance < separationDistance) {
@@ -266,6 +274,7 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 	VeryReal::Vector3 facing = trans->getFacingDirection();
 	dif= trans->GetPosition() - current_node_trans->GetPosition();
 	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));
+
 	facing = trans->getFacingDirection();
 	if (Astar_nodes.size() == 0)last_node = true;
 }
