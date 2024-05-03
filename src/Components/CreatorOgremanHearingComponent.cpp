@@ -19,12 +19,12 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
             sensitivity = std::get<int>(parameters_map.at("sensitivity")->GetVariant());
         }
         else {
-            std::cout << "No se ha especificado ningun valor para material este sera seteado por defecto" << std::endl;
+            std::cout << "No se ha especificado ningun valor para sensitivity este sera seteado por defecto" << std::endl;
             sensitivity = 0;
         }
     }
     else {
-        std::cout << "No existe ningun parametro material este sera seteado por defecto" << std::endl;
+        std::cout << "No existe ningun parametro sensitivity este sera seteado por defecto" << std::endl;
         sensitivity = 0;
     }
 #pragma endregion
@@ -36,12 +36,12 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
             rate = std::get<float>(parameters_map.at("rate")->GetVariant());
         }
         else {
-            std::cout << "No se ha especificado ningun valor para name este sera seteado por defecto" << std::endl;
+            std::cout << "No se ha especificado ningun valor para rate este sera seteado por defecto" << std::endl;
             rate = 0.0f;
         }
     }
     else {
-        std::cout << "No existe ningun parametro name este sera seteado por defecto" << std::endl;
+        std::cout << "No existe ningun parametro rate este sera seteado por defecto" << std::endl;
         rate = 0.0f;
     }
 #pragma endregion
@@ -53,12 +53,12 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
             lowerThreshold = std::get<float>(parameters_map.at("lowerThreshold")->GetVariant());
         }
         else {
-            std::cout << "No se ha especificado ningun valor para zOrder este sera seteado por defecto" << std::endl;
+            std::cout << "No se ha especificado ningun valor para lowerThreshold este sera seteado por defecto" << std::endl;
             lowerThreshold = 0.0f;
         }
     }
     else {
-        std::cout << "No existe ningun parametro zOrder este sera seteado por defecto" << std::endl;
+        std::cout << "No existe ningun parametro lowerThreshold este sera seteado por defecto" << std::endl;
         lowerThreshold = 0.0f;
     }
 #pragma endregion
@@ -70,12 +70,12 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
             upperThreshold = std::get<float>(parameters_map.at("upperThreshold")->GetVariant());
         }
         else {
-            std::cout << "No se ha especificado ningun valor para zOrder este sera seteado por defecto" << std::endl;
+            std::cout << "No se ha especificado ningun valor para upperThreshold este sera seteado por defecto" << std::endl;
             upperThreshold = 0.0f;
         }
     }
     else {
-        std::cout << "No existe ningun parametro zOrder este sera seteado por defecto" << std::endl;
+        std::cout << "No existe ningun parametro upperThreshold este sera seteado por defecto" << std::endl;
         upperThreshold = 0.0f;
     }
 #pragma endregion
