@@ -24,6 +24,7 @@
 #include "../Components/CreatorPlayerInputComponent.h"
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorRangosVisionComponent.h"
+#include "../Components/CreatorOgremanHearingComponent.h"
 
 #include "../Components/GameManager.h"
 
@@ -49,7 +50,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("MerodeoMovementComponent", new Ogreman::CreatorMerodeoComponent());
         VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
+        VeryReal::Creator::Instance()->AddCreator("OgremanMovementComponent", new Ogreman::CreatorOgremanControllerComponent());
         VeryReal::Creator::Instance()->AddCreator("RangosVisionComponent", new Ogreman::CreatorRangosVisionComponent());
+        VeryReal::Creator::Instance()->AddCreator("OgremanHearingComponent", new Ogreman::CreatorOgremanHearingComponent());
 
         ScriptManager::Instance()->ReadScene("HouseScene",true);
         ScriptManager::Instance()->ReadPrefabs();
