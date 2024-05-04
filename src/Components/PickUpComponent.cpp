@@ -12,6 +12,7 @@
 #include <UI/UISpriteRenderComponent.h>
 #include <UI/UItransformComponent.h>
 #include <TransformComponent.h>
+#include "ShowImageComponent.h"
 #include "RangosVisionComponent.h"
 bool Ogreman::PickUpComponent::InitComponent() {
 	player_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -55,7 +56,7 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 		
 	}
 	if (control_update_cell || control_update_note) {
-		std::cout << cont_cells << " n cells " << control_update_cell << std::endl;
+	
 		if (cont_cells == 0 && cont_notes == 0) {
 			my_player_input_comp->setCanPickUp(false);
 		}
@@ -115,6 +116,11 @@ void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* ce
 		my_player_interaction_comp->GetNote(note->getText());
 		my_player_input_comp->setNoteToGet(nullptr);
 		note->SetActive(false);
+		std::string name = note->getText();
+		ShowImageComponent* s = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity(name)->GetComponent<ShowImageComponent>();
+		if (s != nullptr) {
+			s->activeTime();
+		}
 		note->GetEntity()->SetActive(false);
 		control_update_note = false;
 	}

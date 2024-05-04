@@ -219,6 +219,44 @@ Entities={
         }
     },
     {
+        name = "NotaPrueba",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notaPrueba", 
+                    material = "Sinbad/Gold", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
+            }
+            
+        }
+    },
+    {
         name = "Nota",
         components = {
             {
@@ -279,7 +317,7 @@ Entities={
             {
                 name = "NoteComponent",
                 parameters = {
-                  
+                    text = "NotaPrueba"
                 }
             }
             

@@ -14,7 +14,7 @@ namespace Ogreman {
 		std::string getText();
 	private:
 		bool pickedUp = false;
-		std::string text = "";
+		std::string textt = "";
 	};
 }
 
