@@ -3,16 +3,16 @@
 #include "Entity.h"
 #include <SceneManager.h>
 #include <Scene.h>
-#include "UI/UISpriteRenderComponent.h"
 #include "UI/UITransformComponent.h"
 #include "GameManager.h"
 #include "ShowImageComponent.h"
+#include "AudioSourceComponent.h"
 bool Ogreman::OgremanAttackComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	player_transform = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_UI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
-	sprite_renderer_player = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::UISpriteRendererComponent>();
 	screamer_image = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<Ogreman::ShowImageComponent>();
+	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<AudioSourceComponent>();
 	delay_scream = screamer_image->getTimeToShow();
 	if (this->my_transform != nullptr)
 		return true;
@@ -29,6 +29,7 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 				attacking = true;
 				player_UI->hideElement();
 				screamer_image->activeTime();
+				audio_detected->Play();
 				nAttacks++;
 			}
 			else {

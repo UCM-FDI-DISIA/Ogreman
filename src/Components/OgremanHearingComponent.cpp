@@ -49,7 +49,7 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 	//std::cout << player_noise_intensity << std::endl;
 	hearing_radius = CalculateRadius(player_noise_intensity);
 #ifdef _DEBUG
-	std::cout << "hearing_radius" << hearing_radius << "... \n";
+	/*std::cout << "hearing_radius" << hearing_radius << "... \n";*/
 #endif
 	float dist_ogre_player = (my_transform->GetPosition().Distance(player_transform->GetPosition())) / 10;
 	if (hearing_radius >= dist_ogre_player) {

@@ -277,6 +277,16 @@ Entities={
                 }
             },
             {
+                name ="AudioSourceComponent",
+                parameters ={
+                    name = "audioScreamer",
+                    path = "sonido_pillado_por_jefe",
+                    onstart = false,
+                    loop = false,
+                    volume = 0.3
+                }
+            },
+            {
                 
                 name = "UISpriteRendererComponent",
                 parameters = {
@@ -291,7 +301,6 @@ Entities={
                     ttoshow = 5.0
                 }
             }
-            
         }
     },
     {
