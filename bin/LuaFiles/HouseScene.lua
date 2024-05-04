@@ -281,7 +281,7 @@ Entities={
                 name = "UISpriteRendererComponent",
                 parameters = {
                     name = "screamer", 
-                    material = "Sinbad/Gold", 
+                    material = "UI/screamer", 
                     zOrder = 1
                 }
             },
