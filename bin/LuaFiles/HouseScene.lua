@@ -167,9 +167,9 @@ Entities={
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                    materialname = "RedMaterial"
+                    modelname = "Pila.mesh",
+                    entityname= "pila",
+                    materialname = "Pila.material"
                 }
             },
             {
