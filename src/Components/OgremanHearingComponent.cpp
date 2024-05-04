@@ -17,8 +17,8 @@ bool Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();
-	player_transform = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
-	player_input = VeryReal::SceneManager::Instance()->GetScene("Play")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
+	player_transform = VeryReal::SceneManager::Instance()->GetScene("HouseScene")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
+	player_input = VeryReal::SceneManager::Instance()->GetScene("HouseScene")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
 	radius_growth_rate = rate;
 	ogre_sound_sensitivity = sensitivity;
 	lower_intensity_threshold = lowerThreshold;
@@ -35,11 +35,11 @@ bool Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity
 void Ogreman::OgremanHearingComponent::Update(const double& dt)
 {
 	//player_noise_intensity = VeryReal::AM().InputSoundIntensity();
-	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_KP_PLUS)) {
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_I)) {
 		player_noise_intensity = 1;
 		std::cout << "Intensidad : 1" << std::endl;
 	}
-	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_KP_MINUS)) {
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_U)) {
 		player_noise_intensity = 0;
 		std::cout << "Intensidad : 0" << std::endl;
 	}
@@ -53,7 +53,8 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 	float dist_ogre_player = my_transform->GetPosition().Distance(player_transform->GetPosition());
 	if (hearing_radius >= dist_ogre_player) {
 		VeryReal::Vector3 player_position = player_transform->GetPosition();
-		my_controller->GoToLocation(player_position);
+		//my_controller->GoToLocation(player_position);
+		std::cout << "detectado" << std::endl;
 		player_detected = true;
 	}
 	else {

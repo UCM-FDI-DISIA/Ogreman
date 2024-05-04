@@ -572,13 +572,22 @@ Entities={
                 }
             },
             {
-                name="OgremanMovementComponent",
+                name="OgremanControllerComponent",
                 parameters={
                     alignmentWeight=0.1,
                     cohesionWeight=0.1,
                     separationWeight=0.1,
                     maxSpeed=6.0,
                     separationDistance=2.0,
+                }
+            },
+            {
+                name="OgremanHearingComponent",
+                parameters={
+                    sensitivity=5,
+                    rate=3.0,
+                    lowerThreshold=0.4,
+                    upperThreshold=1.0
                 }
             }
         }
