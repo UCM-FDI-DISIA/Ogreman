@@ -16,7 +16,7 @@ void Ogreman::ShowImageComponent::Update(const double& dt) {
 		uitr->showElement();
 		time_toshow -= dt;
 		if (time_toshow <= 0.0) {
-			this->GetEntity()->SetActive(false);
+			active = false;
 		}
 	}
 	else {
