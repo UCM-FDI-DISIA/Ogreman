@@ -257,6 +257,44 @@ Entities={
         }
     },
     {
+        name = "Screamer",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "screamer", 
+                    material = "Sinbad/Gold", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
+            }
+            
+        }
+    },
+    {
         name = "Nota",
         components = {
             {
@@ -626,6 +664,12 @@ Entities={
                     rate=3.0,
                     lowerThreshold=0.4,
                     upperThreshold=1.0
+                }
+            },
+            {
+                name = "OgremanAttackComponent",
+                parameters = {
+                    
                 }
             }
         }

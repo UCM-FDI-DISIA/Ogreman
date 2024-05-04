@@ -13,7 +13,7 @@ namespace VeryReal {
 
 namespace Ogreman 
 {
-	
+	class ShowImageComponent;
 	class OGREMAN_API OgremanAttackComponent : public VeryReal::Component
 	{
 	public:
@@ -24,6 +24,7 @@ namespace Ogreman
 		VeryReal::TransformComponent* player_transform = nullptr;
 		VeryReal::UITransformComponent* player_UI = nullptr;
 		VeryReal::UISpriteRendererComponent* sprite_renderer_player = nullptr;
+		Ogreman::ShowImageComponent* screamer_image = nullptr;
 		int nAttacks = 0, maxAttacks = 1;
 		bool attacking = false;
 		float range = 20, delay_scream = 0.5, delay = 0;

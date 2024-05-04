@@ -103,7 +103,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 		}
 	}
 	current_states = pathfinding;
-	std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
+	//std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
 	
 
 	VeryReal::Vector3 dif = current_node_trans->GetPosition() - trans->GetPosition();

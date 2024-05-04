@@ -15,6 +15,7 @@ namespace Ogreman {
 		virtual bool InitComponent(double ttoshow);
 		virtual void Update(const double& dt);
 		void activeTime();
+		inline float getTimeToShow() { return time_toshow; }
 	private:
 		bool active;
 		double time_toshow;
