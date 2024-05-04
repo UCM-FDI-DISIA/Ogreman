@@ -8,6 +8,8 @@
 #include "PickUpComponent.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
+#include "NoteComponent.h"
+#include "CellComponent.h"
 
 using namespace std;
 
@@ -16,13 +18,20 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
+	//my_pickup_component = this->GetEntity()->GetComponent<Ogreman::PickUpComponent>();
 
 	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
 		return true;
 	else
 		return false;
 }
+VeryReal::Entity* Ogreman::PlayerInputComponent::getCellToGet() {
+	return cell_to_get->GetEntity();
+}
+VeryReal::Entity* Ogreman::PlayerInputComponent::getNoteToGet() {
+	return note_to_get->GetEntity();
 
+}
 void Ogreman::PlayerInputComponent::Update(const double& dt) {
 	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) { // Movimiento Teclado
 		float sprint = 0.5;
@@ -62,7 +71,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 
 		if (canPickUp) { 
 			if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_E)) {
-				my_pickup_component->GetElement(note_to_get, cell_to_get);
+				this->GetEntity()->GetComponent<Ogreman::PickUpComponent>()->GetElement(note_to_get, cell_to_get);
 			}
 		}
 

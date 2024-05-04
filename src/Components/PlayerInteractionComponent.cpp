@@ -1,15 +1,16 @@
 #include "PlayerInteractionComponent.h"
 #include "FlashlightComponent.h"
 #include "NoteComponent.h"
+#include "Entity.h"
 
 bool Ogreman::PlayerInteractionComponent::InitComponent() {
-	/*my_flashlight_component = this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>("FlashlightComponent");*/
+	
 	return true;
 }
 
 void Ogreman::PlayerInteractionComponent::GetCell()
 {
-	my_flashlight_component->ChargeBatery(10); //la cantidad es temporal
+	this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>()->ChargeBatery(10); //la cantidad es temporal
 }
 
 void Ogreman::PlayerInteractionComponent::GetNote(std::string note)

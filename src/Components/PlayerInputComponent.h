@@ -31,7 +31,8 @@ namespace Ogreman {
 		void setCanPickUp(bool newValue);
 		void setCellToGet(CellComponent* newCell);
 		void setNoteToGet(NoteComponent* newNote);
-
+		VeryReal::Entity* getCellToGet();
+		VeryReal::Entity* getNoteToGet();
 	private:
 		double sensitivity = 0.1;
 		std::pair<int32_t, int32_t> prev_mouse_pos = {-1, -1};

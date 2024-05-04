@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {20, 7, 50},
+                    position = {20, 6, 50},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -44,7 +44,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {2, 2, 2},
+                    size = {2, 6, 2},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -58,7 +58,7 @@ Entities={
                 parameters = {                  
                     
                 }
-            },
+            },                
             {
                 name = "UITransformComponent",
                 parameters = {    
@@ -79,25 +79,49 @@ Entities={
                     zOrder = 1                   
                 }
             },
-            
-        
             {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
                 }
             }, 
-
-
-
-             
             {
                 name = "FlashlightComponent",
                 parameters = {                  
                     
                 }
-            }   
-                  
+            }, 
+            {
+                name = "DesactiveUIComponent",
+                parameters = {                  
+                    
+                }
+            },
+           
+            {
+                name = "PlayerInteractionComponent",
+                parameters = {                  
+                    
+                }
+            },
+       
+            {
+                name = "PickUpComponent",
+                parameters = {                  
+                    
+                }
+            },
+            
+            {
+                name = "RangosVisionComponent",
+                parameters = {                  
+                    maxv = 50.0, 
+                    minv = 0.1,
+                    maxt = 1.0, 
+                    mint = 0.2
+                }
+            },
+  
         }
     }, 
     {  
@@ -127,7 +151,73 @@ Entities={
 	        }     
         }
     }, 
-   
+    {
+        name = "Pila",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {20, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                    materialname = "RedMaterial"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+           
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nombree", 
+                    material = "Sinbad/Gold", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "CellComponent",
+                parameters = {
+                  
+                }
+            }
+            
+        }
+    },
     {
         name = "Ogreman2",
         components = {
@@ -461,7 +551,5 @@ Entities={
             },
         }
     }
-   
-  
     
 }
