@@ -14,3 +14,7 @@ void Ogreman::CreatorPlayButtonComponent::SpecificInitComponent(VeryReal::Compon
        
     }
 }
+void Ogreman::CreatorPlayButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}
+

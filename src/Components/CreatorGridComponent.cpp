@@ -9,7 +9,9 @@ void Ogreman::CreatorGridComponent::SpecificInitComponent(VeryReal::Component* c
 	bool b=grid->InitComponent();
 	if (!b) {
 
-
 	}
+}
+
+void Ogreman::CreatorGridComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

@@ -13,3 +13,7 @@ void Ogreman::CreatorPickUpComponent::SpecificInitComponent(VeryReal::Component*
     }
         
 }
+
+void Ogreman::CreatorPickUpComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

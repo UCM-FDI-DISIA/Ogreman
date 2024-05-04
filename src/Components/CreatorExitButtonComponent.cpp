@@ -14,3 +14,7 @@ void Ogreman::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Compon
 
     }
 }
+
+void Ogreman::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

@@ -14,3 +14,7 @@ void Ogreman::CreatorMenuButtonComponent::SpecificInitComponent(VeryReal::Compon
 
     }
 }
+
+void Ogreman::CreatorMenuButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

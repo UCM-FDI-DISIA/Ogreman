@@ -26,3 +26,7 @@ void Ogreman::CreatorRangosVisionComponent::SpecificInitComponent(VeryReal::Comp
 
 	}
 }
+
+void Ogreman::CreatorRangosVisionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

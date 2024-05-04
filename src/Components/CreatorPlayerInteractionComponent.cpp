@@ -11,3 +11,7 @@ void Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponent(VeryReal:
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

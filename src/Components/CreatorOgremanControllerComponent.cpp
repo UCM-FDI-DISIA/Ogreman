@@ -30,7 +30,8 @@ void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal:
 	if (!b) {
 
 	}
-	
+}
 
+void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

@@ -12,3 +12,7 @@ void Ogreman::CreatorOgremanAttackComponent::SpecificInitComponent(VeryReal::Com
     }
        
 }
+
+void Ogreman::CreatorOgremanAttackComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

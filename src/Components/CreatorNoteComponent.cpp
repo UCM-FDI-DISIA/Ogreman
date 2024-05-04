@@ -12,3 +12,7 @@ void Ogreman::CreatorNoteComponent::SpecificInitComponent(VeryReal::Component* c
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorNoteComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

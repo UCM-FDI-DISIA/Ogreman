@@ -29,3 +29,7 @@ void Ogreman::CreatorNodeComponent::SpecificInitComponent(VeryReal::Component* c
 
 	}
 }
+
+void Ogreman::CreatorNodeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

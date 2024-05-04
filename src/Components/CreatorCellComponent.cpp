@@ -12,3 +12,7 @@ void Ogreman::CreatorCellComponent::SpecificInitComponent(VeryReal::Component* c
         // Gestion de errror
     }    
 }
+
+void Ogreman::CreatorCellComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    
+}

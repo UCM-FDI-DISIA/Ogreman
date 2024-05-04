@@ -84,3 +84,7 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

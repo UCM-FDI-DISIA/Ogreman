@@ -12,3 +12,7 @@ void Ogreman::CreatorFlashlightComponent::SpecificInitComponent(VeryReal::Compon
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorFlashlightComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

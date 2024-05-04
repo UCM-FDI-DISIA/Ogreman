@@ -12,3 +12,7 @@ void Ogreman::CreatorMerodeoComponent::SpecificInitComponent(VeryReal::Component
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorMerodeoComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

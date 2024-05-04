@@ -9,5 +9,6 @@ namespace Ogreman {
 		virtual ~CreatorMovementComponent() {}
 		VeryReal::Component* CreatorSpecificComponent() override;
 		void SpecificInitComponent(VeryReal::Component* c) override;
+		void SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) override;
 	};
 }

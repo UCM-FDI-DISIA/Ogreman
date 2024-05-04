@@ -12,3 +12,7 @@ void Ogreman::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Compo
         // Gestion de error
     }
 }
+
+void Ogreman::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}
