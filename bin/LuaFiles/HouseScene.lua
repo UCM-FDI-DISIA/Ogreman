@@ -160,7 +160,7 @@ Entities={
                     a = 0,
                     position = {20, -5, 20},
                     rotation = {0, 0, 180},
-                    scale = {1, 1, 1}                   
+                    scale = {5, 5, 5}                   
                 }
             },
             {
@@ -169,7 +169,7 @@ Entities={
                     isstatic = false,
                     modelname = "Pila.mesh",
                     entityname= "pila",
-                    materialname = "Pila.material"
+                    materialname = ""
                 }
             },
             {
@@ -211,6 +211,73 @@ Entities={
             },
             {
                 name = "CellComponent",
+                parameters = {
+                  
+                }
+            }
+            
+        }
+    },
+    {
+        name = "Nota",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Pila.mesh",
+                    entityname= "nota",
+                    materialname = "Pila.material"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+           
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notac", 
+                    material = "Sinbad/Gold", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "NoteComponent",
                 parameters = {
                   
                 }
