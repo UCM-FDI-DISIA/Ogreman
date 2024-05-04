@@ -622,7 +622,7 @@ Entities={
             {
                 name="OgremanHearingComponent",
                 parameters={
-                    sensitivity=5,
+                    sensitivity=8,
                     rate=3.0,
                     lowerThreshold=0.4,
                     upperThreshold=1.0
