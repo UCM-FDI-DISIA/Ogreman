@@ -29,11 +29,11 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 				attacking = true;
 				player_UI->hideElement();
 				screamer_image->activeTime();
-				//audio_detected->Play();
+				audio_detected->Play();
 				nAttacks++;
 			}
 			else {
-				GameManager::Instance()->Lose();
+				//GameManager::Instance()->Lose();
 			}
 		}
 	}

@@ -280,10 +280,11 @@ Entities={
                 name ="AudioSourceComponent",
                 parameters ={
                     name = "audioScreamer",
-                    path = "sonido_pillado_por_jefe",
+                    path = "sonido_pillado_por_jefe.mp3",
                     onstart = false,
                     loop = false,
-                    volume = 0.3
+                    volume = 0.3,
+                    groupchannel = "effects"
                 }
             },
             {
