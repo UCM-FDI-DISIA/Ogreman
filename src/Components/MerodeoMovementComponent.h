@@ -19,6 +19,8 @@ namespace Ogreman
 		//radio maximo entre el que puede cambiar
 		float wanderRange;
 		float aceleration;
+
+		float velocityx, velocityz;
 		//rigidbody de la entidad
 		VeryReal::RigidBodyComponent* rigidbodycomponent;
 		VeryReal::TransformComponent* transfrormcomponent;

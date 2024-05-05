@@ -730,7 +730,7 @@ Entities={
                 parameters = {  
                     position = {20, 0, 0},
                     rotation ={0, 0, 0},
-                    scale = {100, 100, 100}                   
+                    scale = {10, 10, 10}                   
                 }
             },
            
