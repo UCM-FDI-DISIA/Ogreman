@@ -32,23 +32,15 @@ float RotationYBetween(VeryReal::Vector3& vector1, VeryReal::Vector3& vector2) {
 	angle = (angle * 180 / 3.1415) * dir;
 	return angle;
 }
-float Ogreman::OgremanControllerComponent::CalcularAnguloConEjeY(float punto1_x, float punto1_y, float punto2_x, float punto2_y) {
-	// Calcular diferencias en coordenadas
-	float diferencia_x = punto2_x - punto1_x;
-	float diferencia_y = punto2_y - punto1_y;
 
-	// Calcular ángulo usando arcotangente y convertir de radianes a grados
-	float angulo = std::atan2(diferencia_x, diferencia_y) * (180.0f / 3.1415);
-
-	return angulo;
-}
-bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight, float maxSpeed, float separationDistance) {
+bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight, float maxSpeed, float separationDistance, float min_dist_follow, float max_dist_follow) {
 	this->alignmentWeight = alignmentWeight;
 	this->cohesionWeight = cohesionWeight;
 	this->separationWeight = separationWeight;
 	this->maxSpeed = maxSpeed;
 	this->separationDistance = separationDistance;
-	
+	this->min_dist_follow = min_dist_follow;
+	this->max_dist_follow = max_dist_follow;
 	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
 		#ifdef _DEBUG
@@ -172,8 +164,8 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
 	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
 
-	if (dist_player < 50 && current_states != follow)current_states = follow;
-	else if (dist_player > 100 && current_states == follow)RestartPatrol();
+	if (dist_player < min_dist_follow && current_states != follow)current_states = follow;
+	else if (dist_player > max_dist_follow && current_states == follow)RestartPatrol();
 	//std::cout << dist_player << "\n";
 	switch (current_states) {
 

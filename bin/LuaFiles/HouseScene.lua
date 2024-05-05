@@ -665,6 +665,8 @@ Entities={
                     separationWeight=0.1,
                     maxSpeed=6.0,
                     separationDistance=2.0,
+                    max_dist_follow=100.0,
+                    min_dist_follow=50.0
                 }
             },
             {
