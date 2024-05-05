@@ -14,20 +14,16 @@ bool Ogreman::MovementComponent::InitComponent(){
 		return false;
 }
 
-void Ogreman::MovementComponent::Update(const double& dt) {
-
-	//std::cout << my_rigidbody->GetVelocity().Magnitude()<<std::endl;
-	if (IsMoving()) {
-       my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed/**dt*/));
-		//my_rigidbody->SetVelocityLinear(VeryReal::Vector3(1000,0,0));
-	}
-	/*else if(my_rigidbody->GetVelocity().Magnitude())*/
-	else
-	{
-		my_rigidbody->Decelerate(40);
+void Ogreman::MovementComponent::Update(const double& dt) 
+{
+	if (IsMoving() && IsGrounded()) {
+       my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed*dt));
 	}
 }
 
 bool Ogreman::MovementComponent::IsMoving() {
 	return movementDirection != VeryReal::Vector3(0, 0, 0);
+}
+bool Ogreman::MovementComponent::IsGrounded() {
+	return abs(my_rigidbody->GetVelocity().GetY()) < 0.01;
 }
