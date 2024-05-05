@@ -60,6 +60,27 @@ Entities={
         }
     },
     {
+        name = "Background",
+        components = {           
+            {
+                name = "UITransformComponent",
+                parameters = {                  
+                    position = {0.0, 0.0},
+                    scale = {1.0, 1.0},
+                    hidden = false     
+                }
+            },
+            {
+                name = "UISpriteRendererComponent",
+                parameters = {                  
+                    name = "background", 
+                    material = "UI/fondoMenu", 
+                    zOrder = 1
+                }
+            }
+        }
+    },
+    {
         name = "Camera",
         components = {
             {

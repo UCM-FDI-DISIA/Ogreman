@@ -9,7 +9,7 @@ using namespace Ogreman;
 
 }
 void GameManager::Start() {
-	//VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 void GameManager::Update(const double& dt) {
 	VeryReal::SceneManager::Instance()->Update(dt);

@@ -67,6 +67,21 @@ material UI/screamer
 		}
 	}
 }
+
+material UI/fondoMenu
+{
+	technique
+	{
+		pass
+		{					
+			texture_unit 
+			{
+				texture fondoMenu.png			
+			}
+		}
+	}
+}
+
 material FlashLigt
 {
 	technique
@@ -84,6 +99,7 @@ material FlashLigt
 		}
 	}
 }
+
 material FlashLigtContent
 {
 	technique
