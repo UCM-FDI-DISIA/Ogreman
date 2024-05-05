@@ -74,8 +74,8 @@ Entities={
                     maximo = 100.0,
                     progres = 100.0,
                     progressBarName = "p",
-                    frameMaterial = "Sinbad/Gold",
-                    contentMaterial = "Sinbad/Gold",
+                    frameMaterial = "FlashLigt",
+                    contentMaterial = "FlashLigtContent",
                     zOrder = 1                   
                 }
             },
