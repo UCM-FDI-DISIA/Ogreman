@@ -9,9 +9,9 @@ namespace VeryReal {
 	class TransformComponent;
 	class UITransformComponent;
 	class UISpriteRendererComponent;
+	class AudioSourceComponent;
 }
 
-class AudioSourceComponent;
 namespace Ogreman 
 {
 	class ShowImageComponent;
@@ -24,7 +24,7 @@ namespace Ogreman
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::TransformComponent* player_transform = nullptr;
 		VeryReal::UITransformComponent* player_UI = nullptr;
-		AudioSourceComponent* audio_detected= nullptr;
+		VeryReal::AudioSourceComponent* audio_detected= nullptr;
 		Ogreman::ShowImageComponent* screamer_image = nullptr;
 		int nAttacks = 0, maxAttacks = 1;
 		bool attacking = false;

@@ -12,7 +12,7 @@ bool Ogreman::OgremanAttackComponent::InitComponent() {
 	player_transform = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_UI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
 	screamer_image = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<Ogreman::ShowImageComponent>();
-	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<AudioSourceComponent>();
+	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<VeryReal::AudioSourceComponent>();
 	delay_scream = screamer_image->getTimeToShow();
 	if (this->my_transform != nullptr)
 		return true;
