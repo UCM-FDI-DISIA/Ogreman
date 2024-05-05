@@ -165,12 +165,16 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 dif_player;
 	if(player_trns!=nullptr) dif_player = player_trns->GetPosition() - trans->GetPosition();
 	VeryReal::Vector3 myforward = trans->getFacingDirection();
+	float dist_player = sqrt(player_trns->GetPosition().GetX() * player_trns->GetPosition().GetX() + player_trns->GetPosition().GetY() * player_trns->GetPosition().GetY() + player_trns->GetPosition().GetZ() * player_trns->GetPosition().GetZ());
 	VeryReal::Vector3 vec(0,0,0), rot(0,0,0); 
 	vec = current_node_trans->GetPosition();
 	// Calcular vectores de dirección para los comportamientos de Flocking
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
 	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
 
+	if (dist_player < 50 && current_states != follow)current_states = follow;
+	else if (dist_player > 100 && current_states == follow)RestartPatrol();
+	//std::cout << dist_player << "\n";
 	switch (current_states) {
 
 
