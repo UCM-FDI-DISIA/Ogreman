@@ -67,3 +67,37 @@ material UI/screamer
 		}
 	}
 }
+material FlashLigt
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture Flashlight.png
+				colour_op replace
+			}
+		}
+	}
+}
+material FlashLigtContent
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture FlashlightContent.png
+				colour_op replace
+			}
+		}
+	}
+}
