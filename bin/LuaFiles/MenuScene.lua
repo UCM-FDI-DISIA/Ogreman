@@ -5,8 +5,8 @@ Entities={
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.5, 0.4},
-                    scale = {0.1, 0.1},
+                    position = {0.4, 0.4},
+                    scale = {0.2, 0.1},
                     hidden = false     
                 }
             },
@@ -35,8 +35,8 @@ Entities={
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.5, 0.6},
-                    scale = {0.1, 0.1},
+                    position = {0.4, 0.6},
+                    scale = {0.2, 0.1},
                     hidden = false     
                 }
             },
