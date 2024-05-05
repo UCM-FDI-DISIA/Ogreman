@@ -14,7 +14,7 @@ MerodeoMovementComponent::~MerodeoMovementComponent() {
 bool MerodeoMovementComponent::InitComponent() {
 	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
-	aceleration = 100;
+	aceleration = 1;
 	timertochange = 3;
 	return true;
 }
@@ -27,17 +27,18 @@ int MerodeoMovementComponent::random360() {
 	else return -random;
 }
 void MerodeoMovementComponent::Update(const double& dt){
+	std::cout << "PEPA" << std::endl;
 	if (timertochange < actualtimer) {
 		//si mi tiempo actual es mayor que cuando deberia cambiar entonces actualizo direcciones
 		
 		
-		Vector3 fDirection = transfrormcomponent->GetPosition();
-		Vector3 bdirection = Vector3(-fDirection.GetX(), -fDirection.GetY(), -fDirection.GetZ());
-		Vector3 wanderDirection = bdirection.Normalize()* 3;
+		Vector3 pos = transfrormcomponent->GetPosition();
+		Vector3 dir = Vector3(-pos.GetX(), -pos.GetY(), -pos.GetZ());
+		Vector3 wanderDirection = dir.Normalize()* 3;
 
-		Vector3 targetcosa = transfrormcomponent->GetPosition() + wanderDirection;
+		Vector3 targetcosa = pos + wanderDirection;
 		Vector3 randomvec = Vector3((float)random360(), 0, (float)random360());
-		targetcosa += randomvec * wanderRange;
+		targetcosa += randomvec;
 		
 		/*Vector3 targetOrientation = targetcosa + transfrormcomponent->GetRotation();
 		targetcosa = transfrormcomponent->GetPosition() + transfrormcomponent->GetRotation();
@@ -47,6 +48,7 @@ void MerodeoMovementComponent::Update(const double& dt){
 
 		rigidbodycomponent->SetVelocityLinear(lineal);
 		actualtimer = 0;
+		
 	}
 	else actualtimer += dt;
 	

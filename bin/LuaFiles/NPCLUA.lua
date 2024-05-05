@@ -5,11 +5,12 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {20, 7, 50},
+                    position = {20, 6, 500},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
+           
             {
                 name = "CameraComponent",
                 parameters = {                  
@@ -43,7 +44,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {2, 2, 2},
+                    size = {2, 6, 2},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -57,7 +58,7 @@ Entities={
                 parameters = {                  
                     
                 }
-            },
+            },                
             {
                 name = "UITransformComponent",
                 parameters = {    
@@ -73,8 +74,8 @@ Entities={
                     maximo = 100.0,
                     progres = 100.0,
                     progressBarName = "p",
-                    frameMaterial = "Sinbad/Gold",
-                    contentMaterial = "Sinbad/Gold",
+                    frameMaterial = "FlashLigt",
+                    contentMaterial = "FlashLigtContent",
                     zOrder = 1                   
                 }
             },
@@ -83,17 +84,48 @@ Entities={
                 parameters = {                  
                     
                 }
-            },  
+            }, 
             {
                 name = "FlashlightComponent",
                 parameters = {                  
                     
                 }
-            }                
+            }, 
+            {
+                name = "DesactiveUIComponent",
+                parameters = {                  
+                    
+                }
+            },
+           
+            {
+                name = "PlayerInteractionComponent",
+                parameters = {                  
+                    
+                }
+            },
+       
+            {
+                name = "PickUpComponent",
+                parameters = {                  
+                    
+                }
+            },
+            
+            {
+                name = "RangosVisionComponent",
+                parameters = {                  
+                    maxv = 50.0, 
+                    minv = 0.1,
+                    maxt = 1.0, 
+                    mint = 0.2
+                }
+            },
+  
         }
-    },
+    }, 
 
-    {  
+     {  
         name = "Light",
         components = {
 	        {
@@ -119,7 +151,7 @@ Entities={
                 }
 	        }     
         }
-    }, 
+    },
     
     {
         name = "Casa:)",
@@ -128,7 +160,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {10, 0, 200},
+                    position = {10, 0, 70},
                     rotation = {0, 0, 0},
                     scale = {5, 5, 5}                   
                 }
@@ -140,7 +172,6 @@ Entities={
 
                 }
             },
-
             {
                 name = "MeshRenderComponent",
                 parameters = {                  

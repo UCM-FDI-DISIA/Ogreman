@@ -1,3 +1,18 @@
+material lagartijaMaterial {
+    receive_shadows on
+    technique {
+        pass {
+            diffuse 0.076581 0.038032 0.024158 1.0
+            specular 0.261905 0.0 0 0 0
+            rtshader_system {
+                lighting_stage metal_roughness
+                texturing_stage late_add_blend
+            }
+
+        }
+    }
+}
+
 material Sinbad/Body
 {
 	receive_shadows on

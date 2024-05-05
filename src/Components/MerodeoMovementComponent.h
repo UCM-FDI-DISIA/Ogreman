@@ -3,14 +3,14 @@
 #define MERODEOMOVEMENTCOMPONENT
 #include "Component.h"
 #include "../Export.h"
-using namespace VeryReal;
+
 namespace VeryReal {
 	class TransformComponent;
 	class RigidBodyComponent;
 }
 namespace Ogreman
 {
-	class OGREMAN_API MerodeoMovementComponent : public Component {
+	class OGREMAN_API MerodeoMovementComponent : public VeryReal::Component {
 	private:
 		//cada cuanto cambia de direccion
 		int timertochange;
@@ -20,8 +20,8 @@ namespace Ogreman
 		float wanderRange;
 		float aceleration;
 		//rigidbody de la entidad
-		RigidBodyComponent* rigidbodycomponent;
-		TransformComponent* transfrormcomponent;
+		VeryReal::RigidBodyComponent* rigidbodycomponent;
+		VeryReal::TransformComponent* transfrormcomponent;
 		int random360();
 
 	public:
