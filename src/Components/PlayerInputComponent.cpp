@@ -112,7 +112,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 	}
 
 	// Linterna
-	if (VeryReal::InputManager::Instance()->GetMouseButtonState(TI_MOUSE_LEFT) ||
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LCTRL) ||
 		VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_TRIGGERRIGHT) > 0) {
 		flashlight = true;
 	}
