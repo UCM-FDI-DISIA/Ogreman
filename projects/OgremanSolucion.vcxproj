@@ -29,6 +29,7 @@
     <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNNotesComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorNoteComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorOgremanHearingComponent.cpp" />
@@ -47,6 +48,7 @@
     <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\MerodeoMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\NNotesComponent.cpp" />
     <ClCompile Include="..\src\Components\NodeComponent.cpp" />
     <ClCompile Include="..\src\Components\NoteComponent.cpp" />
     <ClCompile Include="..\src\Components\OgremanHearingComponent.cpp" />
@@ -71,6 +73,7 @@
     <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorNNotesComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNoteComponent.h" />
     <ClInclude Include="..\src\Components\CreatorOgremanHearingComponent.h" />
@@ -91,6 +94,7 @@
     <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\MerodeoMovementComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
+    <ClInclude Include="..\src\Components\NNotesComponent.h" />
     <ClInclude Include="..\src\Components\NodeComponent.h" />
     <ClInclude Include="..\src\Components\NoteComponent.h" />
     <ClInclude Include="..\src\Components\OgremanHearingComponent.h" />

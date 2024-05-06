@@ -25,8 +25,10 @@
 #include "../Components/CreatorPlayerInteractionComponent.h"
 #include "../Components/CreatorRangosVisionComponent.h"
 #include "../Components/CreatorShowImageComponent.h"
+#include "../Components/CreatorNNotesComponent.h"
 #include "../Components/CreatorControlsButtonComponent.h"
 #include "../Components/GameManager.h"
+
 
 using namespace VeryReal;
 
@@ -57,6 +59,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("ShowImageComponent", new Ogreman::CreatorShowImageComponent());
         VeryReal::Creator::Instance()->AddCreator("OgremanAttackComponent", new Ogreman::CreatorOgremanAttackComponent());
         VeryReal::Creator::Instance()->AddCreator("ControlsButtonComponent", new Ogreman::CreatorControlsButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("NNotesComponent", new Ogreman::CreatorNNotesComponent());
 
         Ogreman::GameManager::Instance()->Start();
         //ScriptManager::Instance()->ReadScene("HouseScene",true);
