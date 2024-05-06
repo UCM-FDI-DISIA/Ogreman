@@ -1,7 +1,7 @@
 #include "NodeComponent.h"
 #include "GameManager.h"
 #include"Entity.h"
-#include "OgremanControllerComponent.h"
+
 using namespace Ogreman;
 NodeComponent::NodeComponent():cost(0),hcost(0),iswalkable(false) {
 
@@ -18,31 +18,13 @@ bool NodeComponent::InitComponent(bool ispatrol,float cost, float hcost, bool is
 	if (ispatrol)Ogreman::GameManager::Instance()->RegisterPatrolNode(this);
 	return true;
  }
-NodeComponent::~NodeComponent() {
-	
-	for (auto neighbor : neighbours) {//borrarme de los demas vecinos
-		neighbor->DeleteNeighbors(this);
-	}
-	neighbours.clear(); 
-}
+
 
 int NodeComponent::GetID() {
 	return this->id;
 }
-void NodeComponent::AddNeighbors(NodeComponent* node) {//en teoria no se usa
-	neighbours.push_back(node);
-}
-void  NodeComponent::DeleteNeighbors(NodeComponent* node) {//en teoria no se usa
-	neighbours.remove(node);
-}
-std::list<NodeComponent*> NodeComponent::GetNeighbours() {
-	return neighbours;
 
-}
- void NodeComponent::OnCollisionEnter(VeryReal::Entity* other) {
+NodeComponent::~NodeComponent() {
 
-	/* if (other->HasComponent("OgremanMovementComponent")) {
-		 std::cout << "se LLAMA??<\n";
-		 other->GetComponent<OgremanControllerComponent>()->NextNodePF();
-	 }*/
+
 }

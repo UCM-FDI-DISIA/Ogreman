@@ -6,6 +6,13 @@
 #include <math.h>
 #include "SceneManager.h"
 #include "Scene.h"
+
+#include "TransformComponent.h"
+#include "AnimatorComponent.h"
+
+#include "ColliderComponent.h"
+#include "Vector3.h"
+#include "RigidBodyComponent.h"
 Ogreman::OgremanControllerComponent::OgremanControllerComponent():last_node(false),rotation_y(0),trans(nullptr),animation(nullptr),current_index(0),current_states(pathfinding),current_node(nullptr), collider(nullptr){
 
 }
@@ -94,7 +101,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 			return false;
 		}
 	}
-	current_states = pathfinding;
+	current_states = patrol;
 	//std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
 	
 

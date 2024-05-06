@@ -2,17 +2,28 @@
 #ifndef OGREMANCONTROLLERCOMPONENT
 #define OGREMANCONTROLLERCOMPONENT
 #include <Component.h>
-#include "NodeComponent.h"
-#include "TransformComponent.h"
-#include "AnimatorComponent.h"
-#include "GridComponent.h"
-#include "ColliderComponent.h"
-#include "../Export.h"
-#include "RigidBodyComponent.h"
 
+
+#include "../Export.h"
+
+#include "NodeComponent.h"
+#include "GridComponent.h"
 #pragma warning(disable : 4251)
+using namespace Ogreman;
+using namespace VeryReal;
+
+namespace VeryReal {
+	class Vector3;
+	class RigidBodyComponent;
+	class ColliderComponent;
+	class AnimatorComponent;
+	class TransformComponent;
+	
+}
+
 
 namespace Ogreman {
+	
 	class OGREMAN_API OgremanControllerComponent : public VeryReal::Component {
 	public:
 		OgremanControllerComponent();
@@ -30,19 +41,20 @@ namespace Ogreman {
 
 		 VeryReal::Vector3 align();
 		 VeryReal::Vector3 cohere();
-			 VeryReal::Vector3 separate();
+		VeryReal::Vector3 separate();
 	protected:
+		
 		enum states { stop, patrol, pathfinding, follow };
 		states current_states=stop;
 		VeryReal::AnimatorComponent* animation=nullptr;
 		VeryReal::TransformComponent* trans=nullptr;
 		VeryReal::TransformComponent* current_node_trans = nullptr;
 		VeryReal::TransformComponent* player_trns = nullptr;
-		GridComponent* grid = nullptr;
-		NodeComponent* current_node = nullptr;
-		std::list<NodeComponent*> Astar_nodes;
-		std::vector<NodeComponent*> patrol_nodes;
-		std::vector<NodeComponent*> all_nodes;
+		Ogreman::GridComponent* grid = nullptr;
+		Ogreman::NodeComponent* current_node = nullptr;
+		std::list<Ogreman::NodeComponent*> Astar_nodes;
+		std::vector<Ogreman::NodeComponent*> patrol_nodes;
+		std::vector<Ogreman::NodeComponent*> all_nodes;
 		VeryReal::ColliderComponent* collider = nullptr;
 		VeryReal::RigidBodyComponent* my_rb = nullptr;
 		VeryReal::Vector3 dif;

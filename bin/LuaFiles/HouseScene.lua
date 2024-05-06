@@ -1081,7 +1081,7 @@ Entities={
                   {
                      name="NodeComponent",
                      parameters={
-                     ispatrol=false,
+                     ispatrol=true,
                          cost=1.8,
                          hcost=1.8,
                          iswalkable=true,
@@ -1136,7 +1136,7 @@ Entities={
              {
                 name="NodeComponent",
                 parameters={
-                ispatrol=false,
+                ispatrol=true,
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
@@ -2559,81 +2559,76 @@ components = {
             }
         }
     }, 
-    -- {
-    --     name = "Ogreman",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {-10, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = ""
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 0,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = false,
-    --                 mask = 2,
-    --                 group = 1
-    --             }
-    --         },
-    --         {
-    --             name="AnimatorComponent",
-    --             parameters={
-    --                 name="skeleton.mesh"
-    --             }
-    --         },
-    --         {
-    --             name="OgremanControllerComponent",
-    --             parameters={
-    --                 alignmentWeight=0.1,
-    --                 cohesionWeight=0.1,
-    --                 separationWeight=0.1,
-    --                 maxSpeed=6.0,
-    --                 separationDistance=2.0,
-    --                 max_dist_follow=100.0,
-    --                 min_dist_follow=50.0
-    --             }
-    --         },
-    --         {
-    --             name="OgremanHearingComponent",
-    --             parameters={
-    --                 sensitivity=8,
-    --                 rate=3.0,
-    --                 lowerThreshold=0.4,
-    --                 upperThreshold=1.0
-    --             }
-    --         },
-    --         {
-    --             name = "OgremanAttackComponent",
-    --             parameters = {
-                    
-    --             }
-    --         }
-    --     }
-    -- },
+    {
+        name = "Ogreman",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                 a = 0,
+                     position = {0, 0, 0},
+                     rotation = {0, 0, 0},
+                     scale = {1, 1, 1}                   
+               }
+             },
+            {
+                 name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                     materialname = ""
+                 }
+             },
+             {
+                name = "ColliderComponent",
+                parameters = {
+                 }
+            },
+             {
+                 name = "RigidBodyComponent",
+                 parameters = {
+                     shapeType = 1,
+                    movementType = 0,
+                     size = {2, 2, 2},
+                     mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                     trigger = false,
+                     mask = 2,
+                    group = 1
+    
+                 }
+             },
+             {
+                 name="AnimatorComponent",
+                 parameters={
+                     name="skeleton.mesh"
+                 }
+             },
+             {
+                 name="OgremanControllerComponent",
+                 parameters={
+                     alignmentWeight=0.1,
+                     cohesionWeight=0.1,
+                     separationWeight=0.1,
+                     maxSpeed=6.0,
+                     separationDistance=2.0,
+                     max_dist_follow=100.0,
+                     min_dist_follow=50.0
+                 }
+             },
+             {
+             name="OgremanHearingComponent",
+                 parameters={
+                     sensitivity=8,
+                     rate=3.0,
+                     lowerThreshold=0.4,
+                     upperThreshold=1.0
+                 }
+             }
+         }
+     },
     {
         name = "SueloCollider",
         components = 
