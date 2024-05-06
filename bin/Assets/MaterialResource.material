@@ -117,3 +117,90 @@ material FlashLigtContent
 		}
 	}
 }
+
+material nota1
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta1.png
+				colour_op replace
+			}
+		}
+	}
+}
+material nota2
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta2.png
+				colour_op replace
+			}
+		}
+	}
+}
+material nota3
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta3.png
+				colour_op replace
+			}
+		}
+	}
+}
+material nota4
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta4.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material cartelE
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture e.png
+				colour_op replace
+			}
+		}
+	}
+}
