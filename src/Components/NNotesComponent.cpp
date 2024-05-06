@@ -1,4 +1,7 @@
 #include "NNotesComponent.h"
+#include "Entity.h"
+#include "UI/UITextComponent.h"
+#include "string"
 bool Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
 	this->totalnotas = totalnotas;
@@ -8,6 +11,7 @@ bool Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	
 void Ogreman::NNotesComponent::restanota() {
 	numnotes--;
+	this->GetEntity()->GetComponent<VeryReal::UITextComponent>()->setCaption(std::to_string(numnotes));
 }
 int Ogreman::NNotesComponent::getnnota() {
 	return numnotes;
