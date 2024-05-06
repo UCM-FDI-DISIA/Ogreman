@@ -862,7 +862,7 @@ Entities={
     --          {
     --             name="NodeComponent",
     --             parameters={
-    --                 ispatrol=true,
+    --                 ispatrol=false,
     --                 cost=1.8,
     --                 hcost=1.8,
     --                 iswalkable=true,
@@ -916,7 +916,7 @@ Entities={
     --         {
     --             name="NodeComponent",
     --             parameters={
-    --                 ispatrol=true,
+    --                 ispatrol=false,
     --                 cost=1.8,
     --                 hcost=1.8,
     --                 iswalkable=true,
@@ -970,7 +970,7 @@ Entities={
     --         {
     --             name="NodeComponent",
     --             parameters={
-    --                 ispatrol=true,
+    --                 ispatrol=false,
     --                 cost=1.8,
     --                 hcost=1.8,
     --                 iswalkable=true,
@@ -1081,7 +1081,7 @@ Entities={
                   {
                      name="NodeComponent",
                      parameters={
-                     ispatrol=true,
+                     ispatrol=false,
                          cost=1.8,
                          hcost=1.8,
                          iswalkable=true,
@@ -1136,7 +1136,7 @@ Entities={
              {
                 name="NodeComponent",
                 parameters={
-                ispatrol=true,
+                ispatrol=false,
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
@@ -1191,7 +1191,7 @@ Entities={
          {
             name="NodeComponent",
             parameters={
-            ispatrol=true,
+            ispatrol=false,
                 cost=1.8,
                 hcost=1.8,
                 iswalkable=true,
@@ -1246,7 +1246,7 @@ Entities={
          {
             name="NodeComponent",
             parameters={
-            ispatrol=true,
+            ispatrol=false,
                 cost=1.8,
                 hcost=1.8,
                 iswalkable=true,
@@ -1301,7 +1301,7 @@ Entities={
          {
             name="NodeComponent",
             parameters={
-            ispatrol=true,
+            ispatrol=false,
                 cost=1.8,
                 hcost=1.8,
                 iswalkable=true,
@@ -1356,7 +1356,7 @@ Entities={
          {
             name="NodeComponent",
             parameters={
-            ispatrol=true,
+            ispatrol=false,
                 cost=1.8,
                 hcost=1.8,
                 iswalkable=true,
@@ -1411,7 +1411,7 @@ components = {
      {
         name="NodeComponent",
         parameters={
-        ispatrol=true,
+        ispatrol=false,
             cost=1.8,
             hcost=1.8,
             iswalkable=true,
@@ -1466,7 +1466,7 @@ components = {
      {
         name="NodeComponent",
         parameters={
-        ispatrol=true,
+        ispatrol=false,
             cost=1.8,
             hcost=1.8,
             iswalkable=true,
@@ -1521,7 +1521,7 @@ components = {
          {
             name="NodeComponent",
             parameters={
-            ispatrol=true,
+            ispatrol=false,
                 cost=1.8,
                 hcost=1.8,
                 iswalkable=true,
@@ -1576,7 +1576,7 @@ components = {
              {
                 name="NodeComponent",
                 parameters={
-                ispatrol=true,
+                ispatrol=false,
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
@@ -1632,7 +1632,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -1687,7 +1687,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -1742,7 +1742,7 @@ components = {
              {
                 name="NodeComponent",
                 parameters={
-                ispatrol=true,
+                ispatrol=false,
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
@@ -1797,7 +1797,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -1853,7 +1853,7 @@ components = {
                      {
                         name="NodeComponent",
                         parameters={
-                        ispatrol=true,
+                        ispatrol=false,
                             cost=1.8,
                             hcost=1.8,
                             iswalkable=true,
@@ -1908,7 +1908,7 @@ components = {
                      {
                         name="NodeComponent",
                         parameters={
-                        ispatrol=true,
+                        ispatrol=false,
                             cost=1.8,
                             hcost=1.8,
                             iswalkable=true,
@@ -1963,7 +1963,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -2018,7 +2018,7 @@ components = {
                      {
                         name="NodeComponent",
                         parameters={
-                        ispatrol=true,
+                        ispatrol=false,
                             cost=1.8,
                             hcost=1.8,
                             iswalkable=true,
@@ -2073,7 +2073,7 @@ components = {
                      {
                         name="NodeComponent",
                         parameters={
-                        ispatrol=true,
+                        ispatrol=false,
                             cost=1.8,
                             hcost=1.8,
                             iswalkable=true,
@@ -2128,7 +2128,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -2184,7 +2184,7 @@ components = {
                  {
                     name="NodeComponent",
                     parameters={
-                    ispatrol=true,
+                    ispatrol=false,
                         cost=1.8,
                         hcost=1.8,
                         iswalkable=true,
@@ -2239,7 +2239,7 @@ components = {
                      {
                         name="NodeComponent",
                         parameters={
-                        ispatrol=true,
+                        ispatrol=false,
                             cost=1.8,
                             hcost=1.8,
                             iswalkable=true,
@@ -2294,7 +2294,7 @@ components = {
                          {
                             name="NodeComponent",
                             parameters={
-                            ispatrol=true,
+                            ispatrol=false,
                                 cost=1.8,
                                 hcost=1.8,
                                 iswalkable=true,
@@ -2416,6 +2416,117 @@ components = {
                             
                             }
                 },
+ 
+                {
+                    name = "Nodo25",
+                    components = {
+                       {
+                           name = "TransformComponent",
+                           parameters = {  
+                               a = 0,
+                               position = {70, 0, 138},
+                               rotation = {0, 0, 0},
+                               scale = {1, 1, 1}                   
+                           }
+                       },
+                        {
+                         name = "MeshRenderComponent",
+                            parameters = {                  
+                                isstatic = false,
+                               modelname = "Sinbad.mesh",
+                               entityname= "sinbad",
+                                materialname = "Sinbad/Gold"
+                            }
+                        },
+                        {
+                           name = "ColliderComponent",
+                           parameters = {
+                            }
+                        },
+                      
+                        {
+                            name = "RigidBodyComponent",
+                            parameters = {
+                                shapeType = 1,
+                                movementType = 2,
+                                size = {2, 2, 2},
+                                mass = 1.0,
+                                friction =1.0,
+                                restitution=1.0,
+                                trigger = true,
+                                mask = 1,
+                                group = 2
+                            }
+                        },
+                         {
+                            name="NodeComponent",
+                            parameters={
+                            ispatrol=false,
+                                cost=1.8,
+                                hcost=1.8,
+                                iswalkable=true,
+                                id=25
+                    
+                            }
+                        }
+                    
+                    }
+        },
+        {
+            name = "Nodo26",
+            components = {
+               {
+                   name = "TransformComponent",
+                   parameters = {  
+                       a = 0,
+                       position = {70, 0, 170},
+                       rotation = {0, 0, 0},
+                       scale = {1, 1, 1}                   
+                   }
+               },
+                {
+                 name = "MeshRenderComponent",
+                    parameters = {                  
+                        isstatic = false,
+                       modelname = "Sinbad.mesh",
+                       entityname= "sinbad",
+                        materialname = "Sinbad/Gold"
+                    }
+                },
+                {
+                   name = "ColliderComponent",
+                   parameters = {
+                    }
+                },
+              
+                {
+                    name = "RigidBodyComponent",
+                    parameters = {
+                        shapeType = 1,
+                        movementType = 2,
+                        size = {2, 2, 2},
+                        mass = 1.0,
+                        friction =1.0,
+                        restitution=1.0,
+                        trigger = true,
+                        mask = 1,
+                        group = 2
+                    }
+                },
+                 {
+                    name="NodeComponent",
+                    parameters={
+                    ispatrol=false,
+                        cost=1.8,
+                        hcost=1.8,
+                        iswalkable=true,
+                        id=26
+            
+                    }
+                }
+            
+            }
+        },
 
 
     {
