@@ -58,9 +58,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("OgremanAttackComponent", new Ogreman::CreatorOgremanAttackComponent());
         VeryReal::Creator::Instance()->AddCreator("ControlsButtonComponent", new Ogreman::CreatorControlsButtonComponent());
 
-      //  Ogreman::GameManager::Instance()->Start();
+        Ogreman::GameManager::Instance()->Start();
         //ScriptManager::Instance()->ReadScene("HouseScene",true);
-        ScriptManager::Instance()->ReadScene("NPCLUA",true);
+        //ScriptManager::Instance()->ReadScene("NPCLUA",true);
         //ScriptManager::Instance()->ReadPrefabs();
 
         //ScriptManager::Instance()->ExposeFunctionsVoidToLua("HolaLua", Ogreman::GameManager::Instance()->HolaLua);
