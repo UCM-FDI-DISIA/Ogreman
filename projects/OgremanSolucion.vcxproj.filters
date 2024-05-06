@@ -109,6 +109,14 @@
     <ClCompile Include="..\src\Components\RangosVisionComponent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Components\CreatorShowImageComponent.cpp" />
+    <ClCompile Include="..\src\Components\ShowImageComponent.cpp" />
+    <ClCompile Include="..\src\Components\ControlsButtonComponent.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Components\CreatorControlsButtonComponent.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h">
@@ -223,6 +231,14 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Components\RangosVisionComponent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\CreatorShowImageComponent.h" />
+    <ClInclude Include="..\src\Components\ShowImageComponent.h" />
+    <ClInclude Include="..\src\Components\ControlsButtonComponent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\CreatorControlsButtonComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,17 +21,17 @@ void GameManager::Menu() {
 void GameManager::Pause() {
 	
 }
-void Ogreman::GameManager::Controles()
+void GameManager::Controls()
 {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
-	VeryReal::ScriptManager::Instance()->ReadScene("ControlesScene", true);
+	VeryReal::ScriptManager::Instance()->ReadScene("ControlsScene", true);
 }
 void GameManager::Play() {
-	/*VeryReal::SceneManager::Instance()->ActivationScene("ControlesScene", false);
-	VeryReal::SceneManager::Instance()->EliminationScene("ControlesScene", true);*/
-	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
-	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("ControlsScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
+	/*VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);*/
 	VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
 	
 	
@@ -61,7 +61,6 @@ void GameManager::GenerateTree(int n) {
 	std::string name = "Pino" + std::to_string(n);
 	std::cout << name << std::endl;
 	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
-
 	// Falta asignar una posicion aleatoria
 	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0, 0, 0));
 }

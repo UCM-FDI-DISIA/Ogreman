@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Components\CellComponent.cpp" />
+    <ClCompile Include="..\src\Components\ControlsButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorCellComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorControlsButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorGridComponent.cpp" />
@@ -60,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h" />
+    <ClInclude Include="..\src\Components\ControlsButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorCellComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorControlsButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h" />
     <ClInclude Include="..\src\Components\CreatorGridComponent.h" />

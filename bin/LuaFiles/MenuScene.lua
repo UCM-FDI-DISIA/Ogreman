@@ -1,11 +1,11 @@
 Entities={
     {
-        name = "PlayButton",
+        name = "ControlsButton",
         components = {           
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.4, 0.4},
+                    position = {0.4, 0.3},
                     scale = {0.2, 0.1},
                     hidden = false     
                 }
@@ -13,7 +13,7 @@ Entities={
             {
                 name = "UITextComponent",
                 parameters = {                  
-                    name = "playbutton",
+                    name = "controlsbutton",
                     font = "Ogreman",
                     caption = "PLAY",
                     zOrder = 3,
@@ -22,7 +22,7 @@ Entities={
                 }
             },
             {
-                name = "PlayButtonComponent",
+                name = "ControlsButtonComponent",
                 parameters = {  
                                   
                 }

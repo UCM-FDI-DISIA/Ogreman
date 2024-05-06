@@ -3,5 +3,5 @@
 
 void Ogreman::PlayButtonComponent::accion()
 {
-	Ogreman::GameManager::Instance()->Play();
+	Ogreman::GameManager::Instance()->Play();		
 }
