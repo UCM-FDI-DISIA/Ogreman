@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {20, 6, 500},
+                    position = {20, 6, 50},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -15,7 +15,7 @@ Entities={
                 name = "CameraComponent",
                 parameters = {                  
                     name = "anim",
-                    color = {0, 0, 0},
+                    color = {1, 0, 0},
                     alfa = 0.0,
                     offset = {0, 0, 0},
                     zOrder = 1
@@ -172,26 +172,26 @@ Entities={
 
                 }
             },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Casa.mesh",
-                    entityname= "casa",
-                    materialname = ""
-                }
-            },
+            -- {
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "Casa.mesh",
+            --         entityname= "casa",
+            --         materialname = ""
+            --     }
+            -- },
         }
     },  
-     {
-        name = "Suelo",
+    {
+        name = "SueloCollider",
         components = 
         {
             {
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, -30, 0},
+                    position = {0, -28, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -209,13 +209,81 @@ Entities={
                     movementType = 1,
                     size = {200, 20, 200},
                     mass = 100000.0,
-                    friction =1.0,
+                    friction =10.0,
                     restitution=0.0,
                     trigger = false,
                     mask = 1,
                     group = 2
                 }
             },
+        }
+    },
+    {
+        name = "NPC1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {20, 0, 0},
+                    rotation ={0, 0, 0},
+                    scale = {100, 100, 100}                   
+                }
+            },
+           
+           
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25.0,
+                    shadowdist = 25.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 0,
+                    size = {2, 6, 2},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = false,
+                    mask = 2,
+                    group = 1
+                }
+            },
+            {
+                name = "MovementComponent",
+                parameters = {                  
+                    
+                }
+            },     
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "lagartija.mesh",
+                    entityname= "NPC1",
+                    materialname = "Sinbad/Gold"
+                    }
+            },
+            {
+                name= "MerodeoMovementComponent",
+                parameters={
+
+                    }
+            }
         }
     }
 }

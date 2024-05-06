@@ -29,16 +29,14 @@ bool MerodeoMovementComponent::InitComponent() {
 	}
 	aceleration = 1;
 	timertochange = 3;
-	velocityx = 0;
-	velocityz = 2;
 	rigidbodycomponent->Rotate(Vector3(1, 0, 0), 180);
 	return true;
 }
-int MerodeoMovementComponent::random360() {
-	int random = rand() % 360;
+float MerodeoMovementComponent::random360() {
+	/*int random = rand() % 360;
 	int signo = rand() % 2;
 	int vel = rand() % 3;
-	/*switch (vel)
+	switch (vel)
 	{
 	case 0:
 		velocityx *= -1;
@@ -56,17 +54,42 @@ int MerodeoMovementComponent::random360() {
 	default:
 		break;
 	}*/
+	float vel = rand() % 5;
+	int signo = rand() % 2;
 	if (signo == 0) {
-		
-		return random;
+
+		return vel;
 	}
 	else {
-		velocityz *= -1;
-		return -random;
+		
+		return -vel;
 	}
+	return vel;
 	
+	return 0;
 	
 }
+
+float MerodeoMovementComponent::RotationY(Vector3& vector1, Vector3& vector2) {
+	// Calcular el ángulo entre los dos vectores usando el producto punto
+	float dotProduct = vector1.Dot(vector2);
+	float magnitude1 = vector1.Magnitude();
+	float magnitude2 = vector2.Magnitude();
+	float angle = std::acos(dotProduct / (magnitude1 * magnitude2));
+
+	// Calcular el vector de rotación usando el producto cruz
+	VeryReal::Vector3 rotationAxis = vector1.Cross(vector2).Normalize();
+
+	// Extraer la componente y del vector de rotación
+	float rotation_y = rotationAxis.GetY(); // Suponiendo que GetY() devuelve la componente y
+
+	// Determinar la dirección de rotación
+	int dir = (rotation_y > 0) ? -1 : 1;
+
+	angle = (angle * 180 / 3.1415) * dir;
+	return angle;
+}
+
 void MerodeoMovementComponent::Update(const double& dt){
 	if (timertochange < actualtimer) {
 		//si mi tiempo actual es mayor que cuando deberia cambiar entonces actualizo direccione
@@ -88,17 +111,23 @@ void MerodeoMovementComponent::Update(const double& dt){
 		//rigidbodycomponent->SetVelocityLinear(lineal);
 
 
-		Vector3 pos = transfrormcomponent->GetPosition();
+		/*Vector3 pos = transfrormcomponent->GetPosition();
 		Vector3 direction = transfrormcomponent->getFacingDirection();
-		direction = direction.Normalize();
+		direction = direction.Normalize();*/
 		
-		rigidbodycomponent->Rotate(Vector3(0, 1, 0), random360());
+		//rigidbodycomponent->Rotate(Vector3(0, 1, 0), random360());
+		
 
+		/*nextvel = Vector3(random360(), 0, random360());
+		
+		rigidbodycomponent->Rotate(Vector3(0, 1, 0), RotationY(actual, nextvel));*/
+		//std::cout << sig.GetX()<<" "<<sig.GetZ()<<" " << std::endl;
 
+		Vector3 actual = transfrormcomponent->getFacingDirection();
+		nextvel = Vector3 (random360(), 0, random360());
+		rigidbodycomponent->Rotate(Vector3(0, 1, 0), RotationY(actual, nextvel));
 		actualtimer = 0;
-		std::cout << pos.GetX()<<" "<<pos.GetZ()<<" " << std::endl;
 	}
 	else actualtimer += dt;
-	rigidbodycomponent->SetVelocityLinear(Vector3(velocityx, 0, velocityz));
-	
+	rigidbodycomponent->SetVelocityLinear(nextvel);
 }
