@@ -4,6 +4,7 @@
 #include "TransformComponent.h"
 #include <iostream>
 #include "ScriptManager.h"
+#include "PhysicsManager.h"
 using namespace Ogreman;
  GameManager::~GameManager() {
 
@@ -32,6 +33,15 @@ void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
 	VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
+	
+	
+	//Hace que no se actualicen los collider de los rigidbodies tras haber sido instanciados
+	//Descomentar si queremos ver cajas en movimiento
+#ifdef _DEBUG
+	//VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
+#endif // DEBUG
+
+
 }
 void GameManager::Win() {
 	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);

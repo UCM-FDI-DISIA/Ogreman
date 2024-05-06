@@ -1154,12 +1154,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1191,11 +1185,6 @@ Entities={
             },
             
             {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -1222,12 +1211,6 @@ Entities={
                     position = {92, 0, 121},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
-                }
-            },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
                 }
             },
             {
@@ -1259,12 +1242,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1292,12 +1269,6 @@ Entities={
                     position = {-98, 0, 47},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
-                }
-            },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
                 }
             },
             {
@@ -1329,12 +1300,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1359,15 +1324,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-5, 0, 46},
+                    position = {-5, 0, 45},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
-                }
-            },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
                 }
             },
             {
@@ -1399,12 +1358,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1434,12 +1387,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1464,15 +1411,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {182, 0, 105},
+                    position = {205, 0, 97},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
-                }
-            },
-            
-            {
-                name = "ColliderComponent",
-                parameters = {
                 }
             },
             {
@@ -1481,6 +1422,615 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {80, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider10",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {27, 0, 97},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {15, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider11",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {61, 0, 97},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {3, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider12",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {100.5, 0, 97},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {9, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider13",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {144, 0, 146},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {6, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider14",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {174, 0, 146},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider15",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {115, 0, 44},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {27, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider16",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {-102, 0, 43},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {100, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider17",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {13, 0, 0},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {23, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider18",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {13, 0, 58},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {20, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider19",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {13, 0, 97},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {4, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider20",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {13, 0, 118},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {2, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider21",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {37, 0, 47},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {50, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider22",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {63, 0, 70},
+                    rotation = {0, 90, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {25, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider23",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {93, 0, 70},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {25, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider24",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {141, 0, 60},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {87, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider25",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {37, 0, -22},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {4, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider26",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {37, 0, 152},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {30, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider27",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {88, 0, 126},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {4, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider27",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {88, 0, 166},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {21, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider28",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {172, 0, 167},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {20, 10, 1},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "CasaCollider29",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                        a = 0,
+                        position = {188, 0, 121},
+                        rotation = {0, 90, 0},
+                        scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {30, 10, 1},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=0.0,
