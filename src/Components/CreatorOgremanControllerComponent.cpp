@@ -16,12 +16,12 @@ void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal:
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para alignmentWeight este sera seteado por defecto" << std::endl;
-			alignmentWeight = 1;
+			alignmentWeight = 0.1;
 		}
 	}
 	else {
 		std::cout << "No existe ningun parametro alignmentWeight este sera seteado por defecto" << std::endl;
-		alignmentWeight = 1;
+		alignmentWeight = 0.1;
 	}
 #pragma endregion
 
@@ -33,12 +33,12 @@ void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal:
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para cohesionWeight este sera seteado por defecto" << std::endl;
-			cohesionWeight = 1;
+			cohesionWeight = 0.1;
 		}
 	}
 	else {
 		std::cout << "No existe ningun parametro cohesionWeight este sera seteado por defecto" << std::endl;
-		cohesionWeight = 1;
+		cohesionWeight = 0.1;
 	}
 #pragma endregion
 
@@ -50,12 +50,12 @@ void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal:
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para separationWeight este sera seteado por defecto" << std::endl;
-			separationWeight = 1;
+			separationWeight = 0.1;
 		}
 	}
 	else {
 		std::cout << "No existe ningun parametro separationWeight este sera seteado por defecto" << std::endl;
-		separationWeight = 1;
+		separationWeight = 0.1;
 	}
 #pragma endregion
 #pragma region MaxSpeed
