@@ -20,7 +20,15 @@ void GameManager::Menu() {
 void GameManager::Pause() {
 	
 }
+void Ogreman::GameManager::Controles()
+{
+	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
+	VeryReal::ScriptManager::Instance()->ReadScene("ControlesScene", true);
+}
 void GameManager::Play() {
+	/*VeryReal::SceneManager::Instance()->ActivationScene("ControlesScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("ControlesScene", true);*/
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
 	VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
