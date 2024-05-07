@@ -48,63 +48,64 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	this->separationDistance = separationDistance;
 	this->min_dist_follow = min_dist_follow;
 	this->max_dist_follow = max_dist_follow;
+
 	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
 
 		return { false, "Transform Component isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
+
 	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>();
 	if (animation == nullptr) {
 		return { false, "AnimatorComponent isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
 	animation->setAnimation("RunTop",true,true);
 	animation->setAnimation("RunBase", true, true);
+
 	my_rb= GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 	if (my_rb == nullptr) {
 		return { false, "RigidBodyComponent isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
 
 	all_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	patrol_nodes = Ogreman::GameManager::Instance()->GetPatrolNode();
-	
-	if (patrol_nodes.size() < 1) {
-		return { false, "There isn't NodoPatrullas" };
+	if (all_nodes.size() < 1) {
+		return { false, "There isn't All NodoPatrullas " };
 	}
+
+	patrol_nodes = Ogreman::GameManager::Instance()->GetPatrolNode();
+	if (patrol_nodes.size() < 1) {
+		return { false, "There isn't Patrol NodoPatrullas" };
+	}
+
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (current_node_trans == nullptr) {
-	#ifdef _DEBUG
-			std::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene TransformComponent "<<patrol_nodes[current_index]->GetID()<<"\n";
-	#endif // DEBUG
-
-			return { false, "" };
+		return { false, "There isn't TransformComponent in the curren node, in Node 0 of Patrol Nodes. ERROR from OgreManController" };
 	}
+
 	collider= GetEntity()->GetComponent<VeryReal::ColliderComponent>();
 	if (collider == nullptr) {
-		if (current_node_trans == nullptr) {
-#ifdef _DEBUG
-			std ::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene ColliderComponent " << patrol_nodes[current_index]->GetID() << "\n";
-#endif // DEBUG
-
-			return { false, "" };
-		}
+		return { false, "There isn't ColliderComponent in this entity. ERROR from ColliderComponent" };
 	}
+
 	current_states = patrol;
-	//std::cout <<"PATROL_NODES " << patrol_nodes.size() << "\n";
-	
-
 	VeryReal::Vector3 dif = current_node_trans->GetPosition() - trans->GetPosition();
-	
 	VeryReal::Vector3 vector_facing = trans->getFacingDirection();
-	//my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(vector_facing,dif));
 	my_rb->Rotate(VeryReal::Vector3(1,0, 0), 180);
-
 	grid = GameManager::Instance()->GetGris();
 	VeryReal::Vector3 v(10, 0, -30);
-	player_trns = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
+
+	Entity* p = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	
-	GoToLocation(v);
-	return { true, "" };
+	if (p == nullptr) {
+		return{ false,"Entity Player is isn't in the Scene, ERROR from OgremanController" };
+	}
+
+	player_trns =p->GetComponent<VeryReal::TransformComponent>();
+	if (player_trns == nullptr) {
+		return{ false,"Player doesn't have TransformComponent, ERROR from OgremanController" };
+	}
+	return GoToLocation(v);
 }
 // Función para alinear al ogro con el grupo
 VeryReal::Vector3 Ogreman::OgremanControllerComponent::align() {
@@ -137,12 +138,13 @@ VeryReal::Vector3 Ogreman::OgremanControllerComponent::separate() {
 	}
 }
 
-void Ogreman::OgremanControllerComponent::GoToLocation(VeryReal::Vector3& to) {
+std::pair<bool, std::string>  Ogreman::OgremanControllerComponent::GoToLocation(VeryReal::Vector3& to) {
 
 	current_states = pathfinding;
 	Astar_nodes = grid->GetPathDikstra(trans->GetPosition(),to);
-	if (Astar_nodes.size() <= 0) { std::cout << "no hay nodos en el a estrella\n"; return; }
+	if (Astar_nodes.size() <= 0) { return{ false,"Astar nodes doesn't has size, the GetPathDikstra method failed. ERROR OgremanController" }; }
 	NextNodePF();
+	return{ true, "Go To Location was made right" };
 }
 
 
@@ -234,10 +236,6 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 			 }
 
 		 }
-		
-
-
-
 	 }
 
  }
@@ -265,9 +263,6 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 	Astar_nodes.pop_front();
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	VeryReal::Vector3 facing = trans->getFacingDirection();
-	/*dif= trans->GetPosition() - current_node_trans->GetPosition();
-	my_rb->Rotate(VeryReal::Vector3(0, 1, 0),RotationYBetween(facing, dif));*/
-
 	facing = trans->getFacingDirection();
 	if (Astar_nodes.size() == 0)last_node = true;
 }
