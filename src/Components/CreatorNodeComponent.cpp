@@ -13,8 +13,8 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 #pragma region IsPatrol
 
 	if (parameters_map.find("ispatrol") != parameters_map.end()) {
-		if (std::holds_alternative<bool>(parameters_map.at("ispatrol")->GetVariant())) {
-			ispatrol = std::get<bool>(parameters_map.at("ispatrol")->GetVariant());
+		if (std::holds_alternative<bool>(parameters_map.at("ispatrol").GetVariant())) {
+			ispatrol = std::get<bool>(parameters_map.at("ispatrol").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para ispatrol este sera seteado por defecto" << std::endl;
@@ -30,8 +30,8 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 #pragma region IsWalkable
 
 	if (parameters_map.find("iswalkable") != parameters_map.end()) {
-		if (std::holds_alternative<bool>(parameters_map.at("iswalkable")->GetVariant())) {
-			iswalkable = std::get<bool>(parameters_map.at("iswalkable")->GetVariant());
+		if (std::holds_alternative<bool>(parameters_map.at("iswalkable").GetVariant())) {
+			iswalkable = std::get<bool>(parameters_map.at("iswalkable").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para iswalkable este sera seteado por defecto" << std::endl;
@@ -47,8 +47,8 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 #pragma region Cost
 
 	if (parameters_map.find("cost") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("cost")->GetVariant())) {
-			cost = std::get<float>(parameters_map.at("cost")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("cost").GetVariant())) {
+			cost = std::get<float>(parameters_map.at("cost").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para cost este sera seteado por defecto" << std::endl;
@@ -64,8 +64,8 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 #pragma region HCost
 
 	if (parameters_map.find("hcost") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("hcost")->GetVariant())) {
-			hcost = std::get<float>(parameters_map.at("hcost")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("hcost").GetVariant())) {
+			hcost = std::get<float>(parameters_map.at("hcost").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para hcost este sera seteado por defecto" << std::endl;
@@ -81,8 +81,8 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 #pragma region ID
 
 	if (parameters_map.find("id") != parameters_map.end()) {
-		if (std::holds_alternative<int>(parameters_map.at("id")->GetVariant())) {
-			id = std::get<int>(parameters_map.at("id")->GetVariant());
+		if (std::holds_alternative<int>(parameters_map.at("id").GetVariant())) {
+			id = std::get<int>(parameters_map.at("id").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para id este sera seteado por defecto" << std::endl;

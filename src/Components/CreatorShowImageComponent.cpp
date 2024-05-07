@@ -11,8 +11,8 @@ std::pair<bool, std::string>  Ogreman::CreatorShowImageComponent::SpecificInitCo
 #pragma region TimeShow
 
 	if (parameters_map.find("ttoshow") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("ttoshow")->GetVariant())) {
-			ttoshow = std::get<float>(parameters_map.at("ttoshow")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("ttoshow").GetVariant())) {
+			ttoshow = std::get<float>(parameters_map.at("ttoshow").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para ttoshow este sera seteado por defecto" << std::endl;

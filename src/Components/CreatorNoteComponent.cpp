@@ -12,8 +12,8 @@ std::pair<bool, std::string>  Ogreman::CreatorNoteComponent::SpecificInitCompone
 #pragma region Text
 
 	if (parameters_map.find("text") != parameters_map.end()) {
-		if (std::holds_alternative<std::string>(parameters_map.at("text")->GetVariant())) {
-			text = std::get<std::string>(parameters_map.at("text")->GetVariant());
+		if (std::holds_alternative<std::string>(parameters_map.at("text").GetVariant())) {
+			text = std::get<std::string>(parameters_map.at("text").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para text este sera seteado por defecto" << std::endl;

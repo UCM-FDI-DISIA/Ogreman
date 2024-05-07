@@ -13,8 +13,8 @@ std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificIni
 #pragma region MaxV
 
 	if (parameters_map.find("maxv") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("maxv")->GetVariant())) {
-			maxv = std::get<float>(parameters_map.at("maxv")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("maxv").GetVariant())) {
+			maxv = std::get<float>(parameters_map.at("maxv").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para maxv este sera seteado por defecto" << std::endl;
@@ -30,8 +30,8 @@ std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificIni
 #pragma region MinV
 
 	if (parameters_map.find("minv") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("minv")->GetVariant())) {
-			minv = std::get<float>(parameters_map.at("minv")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("minv").GetVariant())) {
+			minv = std::get<float>(parameters_map.at("minv").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para minv este sera seteado por defecto" << std::endl;
@@ -47,8 +47,8 @@ std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificIni
 #pragma region MaxT
 
 	if (parameters_map.find("maxt") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("maxt")->GetVariant())) {
-			maxt = std::get<float>(parameters_map.at("maxt")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("maxt").GetVariant())) {
+			maxt = std::get<float>(parameters_map.at("maxt").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para maxt este sera seteado por defecto" << std::endl;
@@ -65,8 +65,8 @@ std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificIni
 #pragma region MinT
 
 	if (parameters_map.find("mint") != parameters_map.end()) {
-		if (std::holds_alternative<float>(parameters_map.at("mint")->GetVariant())) {
-			mint = std::get<float>(parameters_map.at("mint")->GetVariant());
+		if (std::holds_alternative<float>(parameters_map.at("mint").GetVariant())) {
+			mint = std::get<float>(parameters_map.at("mint").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para mint este sera seteado por defecto" << std::endl;

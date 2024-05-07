@@ -13,8 +13,8 @@ std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitCompo
 #pragma region notes
 
 	if (parameters_map.find("notes") != parameters_map.end()) {
-		if (std::holds_alternative<int>(parameters_map.at("notes")->GetVariant())) {
-			notes = std::get<int>(parameters_map.at("notes")->GetVariant());
+		if (std::holds_alternative<int>(parameters_map.at("notes").GetVariant())) {
+			notes = std::get<int>(parameters_map.at("notes").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para notes este sera seteado por defecto" << std::endl;
@@ -29,8 +29,8 @@ std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitCompo
 #pragma region totalnotes
 
 	if (parameters_map.find("totalnotas") != parameters_map.end()) {
-		if (std::holds_alternative<int>(parameters_map.at("totalnotas")->GetVariant())) {
-			totalnotas = std::get<int>(parameters_map.at("totalnotas")->GetVariant());
+		if (std::holds_alternative<int>(parameters_map.at("totalnotas").GetVariant())) {
+			totalnotas = std::get<int>(parameters_map.at("totalnotas").GetVariant());
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para ttoshow este sera seteado por defecto" << std::endl;
