@@ -13,7 +13,7 @@
 
 using namespace std;
 
-bool Ogreman::PlayerInputComponent::InitComponent() {
+std::pair<bool, std::string> Ogreman::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
@@ -21,9 +21,9 @@ bool Ogreman::PlayerInputComponent::InitComponent() {
 	//my_pickup_component = this->GetEntity()->GetComponent<Ogreman::PickUpComponent>();
 
 	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
-		return true;
+		return { true, "" };
 	else
-		return false;
+		return { false, " " };
 }
 VeryReal::Entity* Ogreman::PlayerInputComponent::getCellToGet() {
 	return cell_to_get->GetEntity();

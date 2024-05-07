@@ -40,7 +40,7 @@ float RotationYBetween(VeryReal::Vector3& vector1, VeryReal::Vector3& vector2) {
 	return angle;
 }
 
-bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight, float maxSpeed, float separationDistance, float min_dist_follow, float max_dist_follow) {
+std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight, float maxSpeed, float separationDistance, float min_dist_follow, float max_dist_follow) {
 	this->alignmentWeight = alignmentWeight;
 	this->cohesionWeight = cohesionWeight;
 	this->separationWeight = separationWeight;
@@ -54,14 +54,14 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 		std ::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene TransformComponent\n";
 		#endif // DEBUG
 
-		return false;
+		return { false, "" };
 	}
 	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>();
 	if (animation == nullptr) {
 		#ifdef _DEBUG
 				std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene AnimatorComponent\n";
 		#endif // DEBUG
-				return false;
+				return { false, "" };
 	}
 	animation->setAnimation("RunTop",true,true);
 	animation->setAnimation("RunBase", true, true);
@@ -70,7 +70,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 #ifdef _DEBUG
 		std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene RigidBodyComponent\n";
 #endif // DEBUG
-		return false;
+		return { false, "" };
 	}
 
 	all_nodes = Ogreman::GameManager::Instance()->GetPathNode();
@@ -80,7 +80,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 	#ifdef _DEBUG
 			std ::cout << "No hay nodos de patrulla regitrados\n";
 	#endif // DEBUG
-		return false;
+			return { false, "" };
 	}
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -89,7 +89,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 			std::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene TransformComponent "<<patrol_nodes[current_index]->GetID()<<"\n";
 	#endif // DEBUG
 
-		return false;
+			return { false, "" };
 	}
 	collider= GetEntity()->GetComponent<VeryReal::ColliderComponent>();
 	if (collider == nullptr) {
@@ -98,7 +98,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 			std ::cout << "No se puede añadir el component OgremanControllerComponent dado que el NodeComponent no tiene ColliderComponent " << patrol_nodes[current_index]->GetID() << "\n";
 #endif // DEBUG
 
-			return false;
+			return { false, "" };
 		}
 	}
 	current_states = patrol;
@@ -116,7 +116,7 @@ bool Ogreman::OgremanControllerComponent::InitComponent(float alignmentWeight, f
 	player_trns = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	
 	GoToLocation(v);
-	return true;
+	return { true, "" };
 }
 // Función para alinear al ogro con el grupo
 VeryReal::Vector3 Ogreman::OgremanControllerComponent::align() {

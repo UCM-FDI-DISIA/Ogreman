@@ -1,8 +1,8 @@
 #include "NoteComponent.h"
-bool Ogreman::NoteComponent::InitComponent(std::string text) {
+std::pair<bool, std::string> Ogreman::NoteComponent::InitComponent(std::string text) {
 	textt = text;
 	pickedUp = false;
-	return true;
+	return { true,"Initcomponent correct NoteComponent" };
 }
 
 std::string Ogreman::NoteComponent::getText() {

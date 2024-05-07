@@ -1,14 +1,14 @@
 #include "ShowImageComponent.h"
 #include "Entity.h"
 #include "UI/UItransformComponent.h"
-bool Ogreman::ShowImageComponent::InitComponent(double ttoshow) {
+std::pair<bool, std::string>  Ogreman::ShowImageComponent::InitComponent(double ttoshow) {
 	time_toshow = ttoshow;
 	active = false;
 	uitr = this->GetEntity()->GetComponent<VeryReal::UITransformComponent>();
 	if (uitr == nullptr) {
-		return false;
+		return { false, " " };
 	}
-	return true;
+	return { true, " " };
 }
 
 void Ogreman::ShowImageComponent::Update(const double& dt) {

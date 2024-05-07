@@ -2,10 +2,10 @@
 #include "Entity.h"
 #include "UI/UITextComponent.h"
 #include "string"
-bool Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
+std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
 	this->totalnotas = totalnotas;
-	return true;
+	return { true," " };
 }
 
 	

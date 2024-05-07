@@ -3,13 +3,14 @@
 #define RANGOSVISIONCOMPONENT
 #include "Component.h"
 #include  "../Export.h"
+#include <iostream>
 
 namespace Ogreman {
 	class OGREMAN_API RangosVisionComponent : public VeryReal::Component {
 	public:
 		RangosVisionComponent();
 		virtual ~RangosVisionComponent();
-		virtual bool InitComponent(float maxv , float minv, float maxt, float mint);
+		std::pair<bool, std::string>  InitComponent(float maxv , float minv, float maxt, float mint);
 		float GetmaxVision();
 		float GetminVision();
 		float GetmaxTam();

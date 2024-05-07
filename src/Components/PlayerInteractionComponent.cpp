@@ -3,9 +3,8 @@
 #include "NoteComponent.h"
 #include "Entity.h"
 
-bool Ogreman::PlayerInteractionComponent::InitComponent() {
-	
-	return true;
+std::pair<bool, std::string>  Ogreman::PlayerInteractionComponent::InitComponent() {
+	return { true, " " };
 }
 
 void Ogreman::PlayerInteractionComponent::GetCell()

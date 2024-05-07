@@ -65,9 +65,6 @@ GridComponent::GridComponent():nodes(0) {}
 	
 	 return path;
  }
-
-
-
  NodeComponent* GridComponent::Vector2Node(VeryReal::Vector3 const& vec) {
 	 float minimun(INT16_MAX);
 
@@ -85,14 +82,13 @@ GridComponent::GridComponent():nodes(0) {}
 	 }
 	 return node;
  }
-
  std::pair<bool, std::string> GridComponent::InitComponent() {
-	scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	nodes = DigrafoValorado<float >(scenes_nodes.size());
-	std::sort(scenes_nodes.begin(), scenes_nodes.end(),
-		[](auto& a, auto& b) { return a->GetID() < b->GetID(); });
+	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
+	 nodes = DigrafoValorado<float >(scenes_nodes.size());
+	 std::sort(scenes_nodes.begin(), scenes_nodes.end(),
+		 [](auto& a, auto& b) { return a->GetID() < b->GetID(); });
 
-	//Desde un nodo lanzas Raycast a todo los demás por eso los dos For
+	 //Desde un nodo lanzas Raycast a todo los demás por eso los dos For
 	 for (auto c : scenes_nodes) {
 		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>();
 		 if (trans == nullptr) {
@@ -106,21 +102,21 @@ GridComponent::GridComponent():nodes(0) {}
 					 if (other == nullptr) {
 						 return { false,  "The NodeComponent doesn't have Transform Component" };
 					 }
-					std::list<VeryReal::Entity*> ents= VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
+					 std::list<VeryReal::Entity*> ents = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
 
 
 					 if ((c->GetID() == 1 && d->GetID() == 0) || (c->GetID() == 0 && d->GetID() == 2) || (c->GetID() == 1 && d->GetID() == 3)) {
-						 AristaDirigida<float> arista(c->GetID(),d->GetID(),coste);
+						 AristaDirigida<float> arista(c->GetID(), d->GetID(), coste);
 						 AristaDirigida<float> arista2(d->GetID(), c->GetID(), coste);
 						 nodes.ponArista(arista);
 						 nodes.ponArista(arista2);
 					 }
 				 }
 			 }
-		 }	
+		 }
 	 }
 	 GameManager::Instance()->RegisterGridComponent(this);
-	 return {true,"GridComponent made correctly"
+	 return { true,"GridComponent made correctly" };
  }

@@ -6,7 +6,7 @@ VeryReal::Component* Ogreman::CreatorOgremanHearingComponent::CreatorSpecificCom
 	return new OgremanHearingComponent();
 }
 
-void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     int sensitivity;
     float rate, lowerThreshold, upperThreshold;
@@ -80,11 +80,9 @@ void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponent(VeryReal::Co
     }
 #pragma endregion
 
-    if (!ogrehearing->InitComponent(rate, sensitivity, lowerThreshold, upperThreshold)) {
-        // Gestion de error
-    }
+    return ogrehearing->InitComponent(rate, sensitivity, lowerThreshold, upperThreshold);
 }
 
-void Ogreman::CreatorOgremanHearingComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorOgremanHearingComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, "" };
 }

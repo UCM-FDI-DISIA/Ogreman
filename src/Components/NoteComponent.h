@@ -10,7 +10,7 @@
 namespace Ogreman {
 	class OGREMAN_API NoteComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent(std::string text_);
+		std::pair<bool, std::string>  InitComponent(std::string text_);
 		std::string getText();
 	private:
 		bool pickedUp = false;

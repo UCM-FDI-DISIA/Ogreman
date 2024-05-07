@@ -9,7 +9,7 @@ namespace Ogreman
 		CreatorOgremanControllerComponent() { };
 		virtual ~CreatorOgremanControllerComponent() {};
 		VeryReal::Component* CreatorSpecificComponent() override;
-		void SpecificInitComponent(VeryReal::Component* c) override;
-		void SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) override;
+		std::pair<bool, std::string> SpecificInitComponent(VeryReal::Component* c) override;
+		std::pair<bool, std::string> SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) override;
 	};
 }

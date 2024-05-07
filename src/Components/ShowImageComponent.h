@@ -12,7 +12,7 @@ namespace VeryReal{
 namespace Ogreman {
 	class OGREMAN_API ShowImageComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent(double ttoshow);
+		std::pair<bool, std::string>  InitComponent(double ttoshow);
 		virtual void Update(const double& dt);
 		void activeTime();
 		inline float getTimeToShow() { return time_toshow; }

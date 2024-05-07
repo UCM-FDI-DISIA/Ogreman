@@ -7,7 +7,7 @@
 #include "GameManager.h"
 #include "ShowImageComponent.h"
 #include "AudioSourceComponent.h"
-bool Ogreman::OgremanAttackComponent::InitComponent() {
+std::pair<bool, std::string>  Ogreman::OgremanAttackComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	player_transform = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
 	player_UI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
@@ -15,9 +15,9 @@ bool Ogreman::OgremanAttackComponent::InitComponent() {
 	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<VeryReal::AudioSourceComponent>();
 	delay_scream = screamer_image->getTimeToShow();
 	if (this->my_transform != nullptr)
-		return true;
+		return { true," " };
 	else
-		return false;
+		return { false," " };
 }
 
 void  Ogreman::OgremanAttackComponent::Update(const double& dt)

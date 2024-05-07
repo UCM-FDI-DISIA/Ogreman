@@ -5,7 +5,7 @@ VeryReal::Component* Ogreman::CreatorShowImageComponent::CreatorSpecificComponen
     return new ShowImageComponent();
 }
 
-void Ogreman::CreatorShowImageComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string>  Ogreman::CreatorShowImageComponent::SpecificInitComponent(VeryReal::Component* c) {
     Ogreman::ShowImageComponent* showImage_comp = static_cast<Ogreman::ShowImageComponent*>(c);
     float ttoshow;
 #pragma region TimeShow
@@ -25,12 +25,10 @@ void Ogreman::CreatorShowImageComponent::SpecificInitComponent(VeryReal::Compone
 	}
 #pragma endregion
    
-    bool b = showImage_comp->InitComponent(ttoshow);
-    if (!b) {
-        // Gestion de error
-    }
+   return showImage_comp->InitComponent(ttoshow);
+   
 }
 
-void Ogreman::CreatorShowImageComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string>  Ogreman::CreatorShowImageComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return{ true, "" };
 }

@@ -6,15 +6,13 @@ VeryReal::Component* Ogreman::CreatorControlsButtonComponent::CreatorSpecificCom
     return new ControlsButtonComponent();
 }
 
-void Ogreman::CreatorControlsButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> Ogreman::CreatorControlsButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     Ogreman::ControlsButtonComponent* controlsbutton_comp = static_cast<Ogreman::ControlsButtonComponent*>(c);
 
-    if (!controlsbutton_comp->InitComponent()) {
-
-    }
+    return controlsbutton_comp->InitComponent();
 }
 
-void Ogreman::CreatorControlsButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorControlsButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, "" };
 }

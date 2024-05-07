@@ -30,7 +30,7 @@ namespace Ogreman
 
 	public:
 		MerodeoMovementComponent();
-		bool InitComponent();
+		std::pair<bool, std::string> InitComponent();
 		virtual ~MerodeoMovementComponent();
 		void Update(const double& dt) override;
 		float RotationY(VeryReal::Vector3& vector1, VeryReal::Vector3& vector2);

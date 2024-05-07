@@ -24,7 +24,7 @@ namespace Ogreman {
 namespace Ogreman {
 	class OGREMAN_API PlayerInputComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent();
+		 std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt);
 
 		bool IsFlashLightPressed();

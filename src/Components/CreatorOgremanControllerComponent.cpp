@@ -3,7 +3,7 @@
 VeryReal::Component* Ogreman::CreatorOgremanControllerComponent::CreatorSpecificComponent() {
 	return new Ogreman::OgremanControllerComponent();
 }
-void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string> Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal::Component* c) {
 	Ogreman::OgremanControllerComponent* com = static_cast<Ogreman::OgremanControllerComponent*>(c);
 
 	float  alignmentWeight, cohesionWeight, separationWeight, maxSpeed, separationDistance, min_dist_follow,max_dist_follow;
@@ -123,13 +123,9 @@ void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponent(VeryReal:
 		max_dist_follow = 1;
 	}
 #pragma endregion
-	bool b = com->InitComponent(alignmentWeight,cohesionWeight,separationWeight,maxSpeed,separationDistance,min_dist_follow,max_dist_follow);
-
-	if (!b) {
-
-	}
+	return com->InitComponent(alignmentWeight,cohesionWeight,separationWeight,maxSpeed,separationDistance,min_dist_follow,max_dist_follow);
 }
 
-void Ogreman::CreatorOgremanControllerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorOgremanControllerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return { true, "" };
 }

@@ -13,7 +13,7 @@
 #include <cmath> 
 #include <math.h>
 
-bool Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity, float lowerThreshold, float upperThreshold)
+std::pair<bool, std::string> Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity, float lowerThreshold, float upperThreshold)
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();
@@ -25,10 +25,10 @@ bool Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity
 	upper_intensity_threshold = upperThreshold;
 	player_noise_intensity = 0;
 	if(my_transform != nullptr ){
-		return true;
+		return { true, "" };
 	}
 	else {
-		return false;
+		return { false, " " };
 	}
 }
 

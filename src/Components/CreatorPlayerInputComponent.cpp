@@ -5,14 +5,12 @@ VeryReal::Component* Ogreman::CreatorPlayerInputComponent::CreatorSpecificCompon
     return new PlayerInputComponent();
 }
 
-void Ogreman::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string> Ogreman::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
     Ogreman::PlayerInputComponent* pi = static_cast<Ogreman::PlayerInputComponent*>(c);
 
-    if (!pi->InitComponent()) {
-        // Gestion de error
-    }
+    return pi->InitComponent();
 }
 
-void Ogreman::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return{ true, " " };
 }

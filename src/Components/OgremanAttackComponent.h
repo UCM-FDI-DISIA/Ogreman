@@ -18,7 +18,7 @@ namespace Ogreman
 	class OGREMAN_API OgremanAttackComponent : public VeryReal::Component
 	{
 	public:
-		virtual bool InitComponent();
+		std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt);
 	private:
 		VeryReal::TransformComponent* my_transform = nullptr;

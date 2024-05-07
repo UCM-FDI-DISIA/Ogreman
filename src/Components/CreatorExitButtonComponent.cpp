@@ -6,15 +6,13 @@ VeryReal::Component* Ogreman::CreatorExitButtonComponent::CreatorSpecificCompone
 	return new ExitButtonComponent();
 }
 
-void Ogreman::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> Ogreman::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     Ogreman::ExitButtonComponent* exitbutton_comp = static_cast<Ogreman::ExitButtonComponent*>(c);
 
-    if (!exitbutton_comp->InitComponent()) {
-
-    }
+	return exitbutton_comp->InitComponent();
 }
 
-void Ogreman::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return { true, "" };
 }

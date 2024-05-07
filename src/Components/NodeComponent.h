@@ -15,7 +15,7 @@ namespace Ogreman {
 	public:
 		NodeComponent();
 		virtual ~NodeComponent();
-		virtual bool InitComponent(bool ispatrol, float cost, float hcost, bool iswalkable, int id);
+		std::pair<bool, std::string>  InitComponent(bool ispatrol, float cost, float hcost, bool iswalkable, int id);
 		int GetID();
 		inline void setID(int const& i) { this->id = i; }
 		inline float Gethcost() { return hcost; }
@@ -31,10 +31,9 @@ namespace Ogreman {
 		inline float GetCost() { return cost; }
 		inline bool GetPatrol() { return ispatrol; }
 
-	protected:
+	private:
 		float estimated_cost = 0, cost = 0, hcost = 0;
 		bool iswalkable = false;
-
 		int id=0;
 		bool ispatrol=0;
 		float costsofar;

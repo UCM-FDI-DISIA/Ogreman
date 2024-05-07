@@ -4,15 +4,13 @@ VeryReal::Component* Ogreman::CreatorOgremanAttackComponent::CreatorSpecificComp
     return new OgremanAttackComponent();
 }
 
-void Ogreman::CreatorOgremanAttackComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string>  Ogreman::CreatorOgremanAttackComponent::SpecificInitComponent(VeryReal::Component* c) {
     Ogreman::OgremanAttackComponent* oa = static_cast<Ogreman::OgremanAttackComponent*>(c);
 
-    if (!oa->InitComponent()) {
-        // Gestion de error
-    }
+    return oa->InitComponent();
        
 }
 
-void Ogreman::CreatorOgremanAttackComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string>  Ogreman::CreatorOgremanAttackComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, "" };
 }

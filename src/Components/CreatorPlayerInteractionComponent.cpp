@@ -4,14 +4,12 @@
 VeryReal::Component* Ogreman::CreatorPlayerInteractionComponent::CreatorSpecificComponent() {
     return new PlayerInteractionComponent();
 }
-void Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string> Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponent(VeryReal::Component* c) {
     PlayerInteractionComponent* play_int = static_cast<PlayerInteractionComponent*>(c);
 
-    if (!play_int->InitComponent()) {
-        // Gestion de error
-    }
+    return play_int->InitComponent();
 }
 
-void Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorPlayerInteractionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, " i" };
 }

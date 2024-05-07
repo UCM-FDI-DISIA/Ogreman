@@ -4,7 +4,7 @@
 VeryReal::Component* Ogreman::CreatorRangosVisionComponent::CreatorSpecificComponent() {
 	return new RangosVisionComponent();
 }
-void Ogreman::CreatorRangosVisionComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificInitComponent(VeryReal::Component* c) {
 	RangosVisionComponent* ranvision = static_cast<RangosVisionComponent*>(c);
 
 	float  maxv, minv, maxt, mint;
@@ -78,12 +78,10 @@ void Ogreman::CreatorRangosVisionComponent::SpecificInitComponent(VeryReal::Comp
 		mint = 1;
 	}
 #pragma endregion
-	 bool b= ranvision->InitComponent( maxv,  minv,  maxt,  mint);
-	 if (!b) {
-
-	 }
+	return ranvision->InitComponent(maxv, minv, maxt, mint);
 }
+	
 
-void Ogreman::CreatorRangosVisionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string>  Ogreman::CreatorRangosVisionComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return { true, " " };
 }

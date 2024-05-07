@@ -12,7 +12,7 @@ namespace VeryReal{
 namespace Ogreman {
 	class OGREMAN_API NNotesComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent(int notes, int totalnotas);
+		std::pair<bool, std::string>  InitComponent(int notes, int totalnotas);
 		void restanota();
 		int getnnota();
 		int getotalnotas();

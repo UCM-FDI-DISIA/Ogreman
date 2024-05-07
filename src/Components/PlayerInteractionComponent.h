@@ -13,7 +13,7 @@ namespace Ogreman {
 namespace Ogreman {
 	class OGREMAN_API PlayerInteractionComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent();
+		std::pair<bool, std::string>  InitComponent();
 		void GetCell();
 		void GetNote(std::string note);
 	private:

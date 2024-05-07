@@ -31,7 +31,7 @@ namespace Ogreman {
 		virtual void Update(const double& dt);
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 		void GoToLocation(VeryReal::Vector3& to);
-		 bool InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight ,float maxSpeed, float separationDistance, float min_dist_follow, float max_dist_follow);
+		std::pair<bool, std::string> InitComponent(float alignmentWeight, float cohesionWeight, float separationWeight ,float maxSpeed, float separationDistance, float min_dist_follow, float max_dist_follow);
 		 void setPlayerTransform(VeryReal::TransformComponent* t);
 		 void SetState(int state);
 		 int  GetState();

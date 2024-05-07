@@ -14,12 +14,12 @@
 #include <TransformComponent.h>
 #include "ShowImageComponent.h"
 #include "RangosVisionComponent.h"
-bool Ogreman::PickUpComponent::InitComponent() {
+std::pair<bool, std::string> Ogreman::PickUpComponent::InitComponent() {
 	player_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_player_input_comp = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();
 	my_player_interaction_comp = this->GetEntity()->GetComponent<Ogreman::PlayerInteractionComponent>();
 	my_player_cam = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
-	return true;
+	return { true, "" };
 }
 
 void Ogreman::PickUpComponent::Update(const double& dt) {

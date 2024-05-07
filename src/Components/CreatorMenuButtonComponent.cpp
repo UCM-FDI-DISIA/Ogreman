@@ -6,15 +6,12 @@ VeryReal::Component* Ogreman::CreatorMenuButtonComponent::CreatorSpecificCompone
     return new MenuButtonComponent();
 }
 
-void Ogreman::CreatorMenuButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> Ogreman::CreatorMenuButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     Ogreman::MenuButtonComponent* menubutton_comp = static_cast<Ogreman::MenuButtonComponent*>(c);
-
-    if (!menubutton_comp->InitComponent()) {
-
-    }
+    return menubutton_comp->InitComponent();
 }
 
-void Ogreman::CreatorMenuButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorMenuButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, " " };
 }

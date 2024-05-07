@@ -1,7 +1,7 @@
 #include "MenuButtonComponent.h"
 #include "GameManager.h"
 
-void Ogreman::MenuButtonComponent::accion()
+void Ogreman::MenuButtonComponent::Action()
 {
 	Ogreman::GameManager::Instance()->Menu();
 }

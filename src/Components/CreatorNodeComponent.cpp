@@ -4,7 +4,7 @@
 VeryReal::Component* Ogreman::CreatorNodeComponent::CreatorSpecificComponent() {
 	return new NodeComponent();
 }
-void Ogreman::CreatorNodeComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponent(VeryReal::Component* c) {
 	NodeComponent* nodecom=static_cast<NodeComponent*>(c);
 	bool ispatrol,iswalkable;
 	float cost,hcost;
@@ -98,12 +98,9 @@ void Ogreman::CreatorNodeComponent::SpecificInitComponent(VeryReal::Component* c
 
 
 
-	 bool b=nodecom->InitComponent(ispatrol,cost,hcost,iswalkable,id);
-	 if (!b) {
-
-     }
+	 return nodecom->InitComponent(ispatrol,cost,hcost,iswalkable,id);
 }
 
-void Ogreman::CreatorNodeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return{ true," " };
 }

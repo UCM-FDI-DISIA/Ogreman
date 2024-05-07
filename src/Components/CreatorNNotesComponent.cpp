@@ -5,7 +5,7 @@ VeryReal::Component* Ogreman::CreatorNNotesComponent::CreatorSpecificComponent()
     return new NNotesComponent();
 }
 
-void Ogreman::CreatorNNotesComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitComponent(VeryReal::Component* c) {
     Ogreman::NNotesComponent* note_comp = static_cast<Ogreman::NNotesComponent*>(c);
 	int notes, totalnotas;
 	
@@ -42,13 +42,11 @@ void Ogreman::CreatorNNotesComponent::SpecificInitComponent(VeryReal::Component*
 		totalnotas = 4;
 	}
 #pragma endregion
-	bool b = note_comp->InitComponent(notes, totalnotas);
-	if (!b) {
-
-	}
+	return note_comp->InitComponent(notes, totalnotas);
+	
 	
 }
 
-void Ogreman::CreatorNNotesComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return { true, "" };
 }
