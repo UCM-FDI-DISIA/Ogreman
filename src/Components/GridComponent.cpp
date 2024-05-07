@@ -6,14 +6,9 @@
 #include "algorithm"
 #include <set>
 using namespace Ogreman;
-GridComponent::GridComponent():nodes(0) {
-
-}
- void GridComponent::Update(const double& dt) {
-
-}
+GridComponent::GridComponent():nodes(0) {}
+ void GridComponent::Update(const double& dt) {}
  NodeComponent* GridComponent::isInList(std::list<NodeComponent*> list, NodeComponent* node) {
-
 	 for (auto c : list) {
 		 if (c == node) {
 			 return c;
@@ -22,7 +17,6 @@ GridComponent::GridComponent():nodes(0) {
 	 return nullptr;
  }
 
-	
  std::list<NodeComponent*> GridComponent::GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition) {
 	 std::list<Ogreman::NodeComponent*> path;
 	 //std::cout << "busco\\n";
@@ -32,12 +26,12 @@ GridComponent::GridComponent():nodes(0) {
 	 if (src->GetID() == dest->GetID()) {
 		 path.push_back(src);
 		 return path;
-	}
+	 }
+
 	 int origen = 0;
 	 std::vector<float> dist(nodes.V(),INT_MAX);
 	 std::vector<AristaDirigida<float>> ulti(nodes.V());
 	 IndexPQ<float> pq(nodes.V());
-
 
 	 dist[src->GetID()] = 0;
 	 pq.push(src->GetID(), INT_MAX);
@@ -92,60 +86,41 @@ GridComponent::GridComponent():nodes(0) {
 	 return node;
  }
 
- bool GridComponent::InitComponent() {
-	 scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
-	 //std::cout << "TAMAÑO SCENES NODES " << scenes_nodes.size() << "\n";
-	//nodes(scenes_nodes.size());
+ std::pair<bool, std::string> GridComponent::InitComponent() {
+	scenes_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	nodes = DigrafoValorado<float >(scenes_nodes.size());
 	std::sort(scenes_nodes.begin(), scenes_nodes.end(),
 		[](auto& a, auto& b) { return a->GetID() < b->GetID(); });
 
+	//Desde un nodo lanzas Raycast a todo los demás por eso los dos For
 	 for (auto c : scenes_nodes) {
-		 //std::list<VeryReal::Entity*> MakeRayCast(VeryReal::Vector3 ray_Start, VeryReal::Vector3 ray_End);
-		
 		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>();
 		 if (trans == nullptr) {
-			 std::cerr << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
-			 return false;
+			 return { false,  "The NodeComponent doesn't have Transform Component" };
 		 }
 		 else {
 
 			 for (auto d : scenes_nodes) {
-				 std::cout << "HOLA"  << "\n";
 				 if (c->GetID() != d->GetID()) {//compruebpo que no soy yo mismo
-				
-					 std::cout << "ADIOS" << "\n";
 					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 					 if (other == nullptr) {
-						 std::cout << "El componente: NodeComponent no tiene el comoponente transform añadido id: " + c->GetID() << "\n";
-						 return false;
+						 return { false,  "The NodeComponent doesn't have Transform Component" };
 					 }
 					std::list<VeryReal::Entity*> ents= VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
-					std::cout << "TAMAÑE LISTE " << ents.size() << "\n";
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
 
 
 					 if ((c->GetID() == 1 && d->GetID() == 0) || (c->GetID() == 0 && d->GetID() == 2) || (c->GetID() == 1 && d->GetID() == 3)) {
-						 //AdysDirVal<NodeComponent*> arista;
 						 AristaDirigida<float> arista(c->GetID(),d->GetID(),coste);
 						 AristaDirigida<float> arista2(d->GetID(), c->GetID(), coste);
 						 nodes.ponArista(arista);
 						 nodes.ponArista(arista2);
 					 }
-					/* std::list<VeryReal::Entity*> colision = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
-					 std::cout << "tamaño lista" << colision.size()<<"\n";
-					 if (!colision.empty() && colision.back()->HasComponent("NodeComponent")) {
-
-						 c->AddNeighbors(d);
-						 std::cout << " AÑADO ARISTE\n";
-					 }*/
-
-
 				 }
 			 }
 		 }	
 	 }
 	 GameManager::Instance()->RegisterGridComponent(this);
-	 return true;
+	 return {true,"GridComponent made correctly"
  }

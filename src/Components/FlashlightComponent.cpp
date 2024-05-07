@@ -10,17 +10,21 @@ std::pair<bool,std::string> Ogreman::FlashlightComponent::InitComponent() {
 	my_light_spot = this->GetEntity()->GetComponent<VeryReal::LightComponent>();
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
 	
-	if (this->my_input != nullptr && this->my_light_spot != nullptr && this->my_progress_bar != nullptr) {
-		
+	if (this->my_input == nullptr ) {	
+		return { false,"FlashLight InitComponent Error, the entity doesn't have PlayerInputComponent" };
+	}
+	else if (this->my_light_spot == nullptr) {
+		return { false,"FlashLight InitComponent Error, the entity doesn't have LightComponent" };
+	}
+	else if (this->my_progress_bar != nullptr) {
+		return { false,"FlashLight InitComponent Error, the entity doesn't have UIProgressBarComponent" };
+	}
+	else 
+	{	
 		my_progress_bar->setMaximun(max_energy);
 		my_progress_bar->setProgress(energy_remaining);
 		return { true,"InitComponent FlashLight Completed" };
-	}
 		
-	else 
-	{
-		
-		return {false,"FlashLight InitComponent Error"}
 	}
 }
 

@@ -4,14 +4,11 @@
 VeryReal::Component* Ogreman::CreatorGridComponent::CreatorSpecificComponent() {
 	return new Ogreman::GridComponent();
 }
-void Ogreman::CreatorGridComponent::SpecificInitComponent(VeryReal::Component* c)  {
+std::pair<bool,std::string> Ogreman::CreatorGridComponent::SpecificInitComponent(VeryReal::Component* c)  {
 	Ogreman::GridComponent* grid = static_cast<Ogreman::GridComponent*>(c);
-	bool b=grid->InitComponent();
-	if (!b) {
-
-	}
+	return grid->InitComponent();
 }
 
-void Ogreman::CreatorGridComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorGridComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+	return { true, "Copied InitComponent" };
 }

@@ -5,14 +5,11 @@ VeryReal::Component* Ogreman::CreatorFlashlightComponent::CreatorSpecificCompone
     return new FlashlightComponent();
 }
 
-void Ogreman::CreatorFlashlightComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool,std::string> Ogreman::CreatorFlashlightComponent::SpecificInitComponent(VeryReal::Component* c) {
     Ogreman::FlashlightComponent* fl = static_cast<Ogreman::FlashlightComponent*>(c);
-
-    if (!fl->InitComponent()) {
-        // Gestion de error
-    }
+    return fl->InitComponent();
 }
 
-void Ogreman::CreatorFlashlightComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+std::pair<bool, std::string> Ogreman::CreatorFlashlightComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return {true,"Copied Init"}
 }
