@@ -10,6 +10,6 @@ std::pair<bool, std::string> Ogreman::CreatorCellComponent::SpecificInitComponen
     return cell_comp->InitComponent();
 }
 
-void Ogreman::CreatorCellComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    
+std::pair<bool, std::string> Ogreman::CreatorCellComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    return { true, " " };
 }

@@ -5,17 +5,22 @@
 #include "PlayerInputComponent.h"
 #include "UI/UIProgressBarComponent.h"
 
-bool Ogreman::FlashlightComponent::InitComponent() {
+std::pair<bool,std::string> Ogreman::FlashlightComponent::InitComponent() {
 	my_input = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();	
 	my_light_spot = this->GetEntity()->GetComponent<VeryReal::LightComponent>();
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
 	
-	if (this->my_input != nullptr && this->my_light_spot != nullptr && this->my_progress_bar != nullptr)
-		return true;
-	else {
+	if (this->my_input != nullptr && this->my_light_spot != nullptr && this->my_progress_bar != nullptr) {
+		
 		my_progress_bar->setMaximun(max_energy);
 		my_progress_bar->setProgress(energy_remaining);
-		return false;
+		return { true,"InitComponent FlashLight Completed" };
+	}
+		
+	else 
+	{
+		
+		return {false,"FlashLight InitComponent Error"}
 	}
 }
 

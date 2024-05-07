@@ -7,7 +7,7 @@
 namespace Ogreman {
 	class OGREMAN_API ControlsButtonComponent : public VeryReal::UIButtonComponent {
 	public:
-		virtual void accion();
+		void Action();
 	};
 }
 #endif
