@@ -30,6 +30,7 @@
 #include "../Components/GameManager.h"
 
 
+
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones

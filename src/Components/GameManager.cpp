@@ -10,8 +10,7 @@ using namespace Ogreman;
 
 }
 std::pair<bool,std::string> GameManager::Start() {
-	//return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
-	return VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
+	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 void GameManager::Update(const double& dt) {
 	VeryReal::SceneManager::Instance()->Update(dt);
@@ -39,7 +38,7 @@ void GameManager::Play() {
 	//Hace que no se actualicen los collider de los rigidbodies tras haber sido instanciados
 	//Descomentar si queremos ver cajas en movimiento
 #ifdef _DEBUG
-	//VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
+	VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
 #endif // DEBUG
 
 
