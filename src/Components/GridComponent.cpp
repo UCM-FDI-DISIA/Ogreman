@@ -4,7 +4,7 @@
 #include "TransformComponent.h"
 #include "Entity.h"
 #include "algorithm"
-#include <set>
+
 using namespace Ogreman;
 GridComponent::GridComponent():nodes(0) {}
  void GridComponent::Update(const double& dt) {}

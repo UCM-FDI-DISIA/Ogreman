@@ -17,17 +17,13 @@ namespace Ogreman
     {
     public:
         GridComponent();
+        std::pair<bool, std::string> InitComponent();
         virtual void Update(const double& dt);
-        virtual bool InitComponent();
-        NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node);
-       
-        
+        NodeComponent* isInList(std::list<NodeComponent*> list, NodeComponent* node);        
         NodeComponent* Vector2Node(VeryReal::Vector3 const& vec);
-       
         std::list<NodeComponent*> GetPathDikstra(VeryReal::Vector3 const& InitPos, VeryReal::Vector3 const& EndPosition);
 
-    protected:
-        //DigrafoValorado<Ogreman::NodeComponent*> grid;
+    private:
         std::vector<Ogreman::NodeComponent*>scenes_nodes;
         DigrafoValorado<float> nodes;
     };
