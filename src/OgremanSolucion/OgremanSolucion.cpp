@@ -39,7 +39,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         Ogreman::GameManager::Init();
-
         VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new Ogreman::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());

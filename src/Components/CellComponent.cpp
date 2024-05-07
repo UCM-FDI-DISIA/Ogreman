@@ -1,5 +1,5 @@
 #include "CellComponent.h"
-bool Ogreman::CellComponent::InitComponent() {
+std::pair<bool, std::string> Ogreman::CellComponent::InitComponent() {
 	pickedUp = false;
-	return true;
+	return { true, "CellComponent Inicialize" };
 }

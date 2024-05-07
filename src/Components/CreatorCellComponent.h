@@ -8,7 +8,7 @@ namespace Ogreman {
 		CreatorCellComponent() {}
 		virtual ~CreatorCellComponent() {}
 		VeryReal::Component* CreatorSpecificComponent() override;
-		void SpecificInitComponent(VeryReal::Component* c) override;
+		std::pair<bool,std::string> SpecificInitComponent(VeryReal::Component* c) override;
 		void SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) override;
 	};
 }
