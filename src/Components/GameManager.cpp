@@ -9,8 +9,8 @@ using namespace Ogreman;
  GameManager::~GameManager() {
 
 }
-void GameManager::Start() {
-	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+std::pair<bool,std::string> GameManager::Start() {
+	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 void GameManager::Update(const double& dt) {
 	VeryReal::SceneManager::Instance()->Update(dt);

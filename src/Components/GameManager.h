@@ -18,7 +18,7 @@ namespace Ogreman {
 	public:
 		
 		virtual ~GameManager();
-		void Start();
+		std::pair<bool,std::string> Start();
 		void Update(const double& dt);
 		void Win();
 		void Lose();

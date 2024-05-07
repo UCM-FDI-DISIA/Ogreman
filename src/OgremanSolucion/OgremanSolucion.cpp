@@ -36,7 +36,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 {
     // Declaración de la función que deseas exportar
 
-    __declspec(dllexport) bool start() {
+    __declspec(dllexport)  std::pair<bool, std::string> start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         Ogreman::GameManager::Init();
         VeryReal::Creator::Instance()->AddCreator("CellComponent", new Ogreman::CreatorCellComponent());
@@ -60,7 +60,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("ControlsButtonComponent", new Ogreman::CreatorControlsButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("NNotesComponent", new Ogreman::CreatorNNotesComponent());
 
-        Ogreman::GameManager::Instance()->Start();
+        
         //ScriptManager::Instance()->ReadScene("HouseScene",true);
         //ScriptManager::Instance()->ReadScene("NPCLUA",true);
         //ScriptManager::Instance()->ReadPrefabs();
@@ -70,7 +70,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
        /* ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", Ogreman::GameManager::Instance()->GenerateTree);
         ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);*/
       
-        return true;
+        return Ogreman::GameManager::Instance()->Start();
     }
 
     __declspec(dllexport) int main() {
