@@ -10,8 +10,8 @@ std::pair<bool, std::string> Ogreman::MovementComponent::InitComponent(){
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 	if (this->my_transform == nullptr)
 		return { false,"The entity doesn't have Transform Componet, Error from MovementComponent" };
-	else if (this->my_rigidbody != nullptr)
-		return { false,"The entity doesn't have Transform Componet, Error from MovementComponent" };
+	 if (this->my_rigidbody == nullptr)
+		return { false,"The entity doesn't have RigidBody Componet, Error from MovementComponent" };
 	else
 		return { true, "The MovementComponent was made correctly" };
 }

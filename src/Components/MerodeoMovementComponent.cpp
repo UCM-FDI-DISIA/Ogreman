@@ -15,11 +15,11 @@ MerodeoMovementComponent::~MerodeoMovementComponent() {
 std::pair<bool, std::string> MerodeoMovementComponent::InitComponent() {
 	transfrormcomponent = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (transfrormcomponent == nullptr) {
-		return { false, "The entity doesn't have TransformComponent,ERROR from MErodeoMovementComponent" };
+		return { false, "The entity doesn't have TransformComponent,ERROR from MerodeoMovementComponent" };
 	}
 	rigidbodycomponent = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 	if (rigidbodycomponent == nullptr) {
-		return { false,"The entity doesn't have TransformComponent,ERROR from MErodeoMovementComponent" };
+		return { false,"The entity doesn't have TransformComponent,ERROR from MerodeoMovementComponent" };
 	}
 	aceleration = 1;
 	timertochange = 3;

@@ -50,37 +50,25 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	this->max_dist_follow = max_dist_follow;
 	trans = GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (trans == nullptr) {
-		#ifdef _DEBUG
-		std ::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene TransformComponent\n";
-		#endif // DEBUG
 
-		return { false, "" };
+		return { false, "Transform Component isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
 	animation= GetEntity()->GetComponent<VeryReal::AnimatorComponent>();
 	if (animation == nullptr) {
-		#ifdef _DEBUG
-				std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene AnimatorComponent\n";
-		#endif // DEBUG
-				return { false, "" };
+		return { false, "AnimatorComponent isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
 	animation->setAnimation("RunTop",true,true);
 	animation->setAnimation("RunBase", true, true);
 	my_rb= GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 	if (my_rb == nullptr) {
-#ifdef _DEBUG
-		std::cout << "No se puede añadir el component OgremanControllerComponent dado que la entidad no tiene RigidBodyComponent\n";
-#endif // DEBUG
-		return { false, "" };
+		return { false, "RigidBodyComponent isn't in this entity, ERROR from OgremanControllerComponent" };
 	}
 
 	all_nodes = Ogreman::GameManager::Instance()->GetPathNode();
 	patrol_nodes = Ogreman::GameManager::Instance()->GetPatrolNode();
 	
 	if (patrol_nodes.size() < 1) {
-	#ifdef _DEBUG
-			std ::cout << "No hay nodos de patrulla regitrados\n";
-	#endif // DEBUG
-			return { false, "" };
+		return { false, "There isn't NodoPatrullas" };
 	}
 	current_node = patrol_nodes[current_index];
 	current_node_trans = current_node->GetEntity()->GetComponent<VeryReal::TransformComponent>();

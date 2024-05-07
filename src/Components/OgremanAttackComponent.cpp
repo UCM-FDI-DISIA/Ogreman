@@ -7,19 +7,44 @@
 #include "GameManager.h"
 #include "ShowImageComponent.h"
 #include "AudioSourceComponent.h"
+#include "Entity.h"
 std::pair<bool, std::string>  Ogreman::OgremanAttackComponent::InitComponent() {
+
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
-	player_transform = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
-	player_UI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::UITransformComponent>();
-	screamer_image = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<Ogreman::ShowImageComponent>();
-	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<VeryReal::AudioSourceComponent>();
+	if (my_transform == nullptr) {
+		return{ false, "Transform Component isn't in this entity, ERROR from OgremanAttackComponent" };
+	}
+
+	VeryReal::Entity* player = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
+	if (player == nullptr) {
+		return{ false, "The Player doesn't exist, ERROR from OgreMan AttackComponent" };
+	}
+
+	VeryReal::Entity* screamer = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer");
+	if (screamer == nullptr) {
+		return{ false, "The Screamer doesn't exist, ERROR from OgreMan AttackComponent" };
+	}
+	
+	player_transform = player->GetComponent<VeryReal::TransformComponent>();
+	if (player_transform == nullptr) {
+		return{ false, "Player doesn't have Transform, ERROR from OgreMan AttackComponent" };
+	}
+
+	player_UI = player->GetComponent<VeryReal::UITransformComponent>();
+	if (player_UI == nullptr) {
+		return{ false, "Player doesn't have UITransform, ERROR from OgreMan AttackComponent" };
+	}
+	screamer_image = screamer->GetComponent<Ogreman::ShowImageComponent>();
+	if (screamer_image == nullptr) {
+		return{ false, "Screamer doesn't have ShowImageComponent, ERROR from OgreMan AttackComponent" };
+	}
+	audio_detected = screamer->GetComponent<VeryReal::AudioSourceComponent>();
+	if (audio_detected == nullptr) {
+		return{ false, "Screamer doesn't have ShowImageComponent, ERROR from OgreMan AttackComponent" };
+	}
 	delay_scream = screamer_image->getTimeToShow();
 
-	
-	if (this->my_transform != nullptr)
-		return { true," " };
-	else
-		return { false," " };
+	return { true, "OgreManAttackComponent Correct Init" };
 }
 
 void  Ogreman::OgremanAttackComponent::Update(const double& dt)
