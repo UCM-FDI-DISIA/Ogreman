@@ -16,46 +16,45 @@
 std::pair<bool, std::string> Ogreman::OgremanHearingComponent::InitComponent(float rate, int sensitivity, float lowerThreshold, float upperThreshold)
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	if (my_transform == nullptr) {
+
+		return { false, "TransformComponent isn't in this entity, ERROR from OgremanHearingComponent" };
+	}
 	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();
-	player_transform = VeryReal::SceneManager::Instance()->GetScene("HouseScene")->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
-	player_input = VeryReal::SceneManager::Instance()->GetScene("HouseScene")->GetEntity("Player")->GetComponent<PlayerInputComponent>();
+	if (my_controller == nullptr) {
+
+		return { false, "OgremanControllerComponent isn't in this entity, ERROR from OgremanHearingComponent" };
+	}
+	VeryReal::Entity* player = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
+	if (player == nullptr) {
+		return{ false, "The Player doesn't exist, ERROR from OgremanHearingComponent" };
+	}
+	player_transform = player->GetComponent<VeryReal::TransformComponent>();
+	if (player_transform == nullptr) {
+		return{ false, "Player doesn't have Transform, ERROR from OgremanHearingComponent" };
+	}
+	player_input = player->GetComponent<PlayerInputComponent>();
+	if (player_input == nullptr) {
+		return{ false, "Player doesn't have PlayerInputComponent, ERROR from OgremanHearingComponent" };
+	}
 	radius_growth_rate = rate;
 	ogre_sound_sensitivity = sensitivity;
 	lower_intensity_threshold = lowerThreshold;
 	upper_intensity_threshold = upperThreshold;
 	player_noise_intensity = 0;
-	if(my_transform != nullptr ){
-		return { true, "" };
-	}
-	else {
-		return { false, " " };
-	}
+	return { true,"OgremanHearingComponent was made correct" };
 }
 
 void Ogreman::OgremanHearingComponent::Update(const double& dt)
 {
 	player_noise_intensity = VeryReal::AM().InputSoundIntensity();
-	/*if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_I)) {
-		player_noise_intensity += 0.001;
-
-		std::cout << "Suma" << std::endl;
-	}
-	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_U)) {
-		player_noise_intensity -= 0.001;
-		std::cout << "Resta" << std::endl;
-	}*/
 	if (player_noise_intensity < lower_intensity_threshold) player_noise_intensity = 0;
 	else if(player_noise_intensity >= upper_intensity_threshold) player_noise_intensity = upper_intensity_threshold;
-	//std::cout << player_noise_intensity << std::endl;
 	hearing_radius = CalculateRadius(player_noise_intensity);
-#ifdef _DEBUG
-	/*std::cout << "hearing_radius" << hearing_radius << "... \n";*/
-#endif
 	float dist_ogre_player = (my_transform->GetPosition().Distance(player_transform->GetPosition())) / 10;
 	if (hearing_radius >= dist_ogre_player) {
 		VeryReal::Vector3 player_position = player_transform->GetPosition();
 		my_controller->GoToLocation(player_position);
-		//std::cout << "detectado" << std::endl;
 		player_detected = true;
 	}
 	else {
