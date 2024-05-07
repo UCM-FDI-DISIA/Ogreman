@@ -1,10 +1,14 @@
 #include "PlayerInteractionComponent.h"
 #include "FlashlightComponent.h"
-#include "NoteComponent.h"
 #include "Entity.h"
 
 std::pair<bool, std::string>  Ogreman::PlayerInteractionComponent::InitComponent() {
-	return { true, " " };
+	my_flashlight_component = this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>();
+	if (my_flashlight_component == nullptr) {
+		return{ false,"FlashlightComponent isn't in this Entity, ERROR from PlayerInteractionComponent" };
+	}
+
+	return { true, " PlayerInteractionComponent was right made it" };
 }
 
 void Ogreman::PlayerInteractionComponent::GetCell()
@@ -12,8 +16,3 @@ void Ogreman::PlayerInteractionComponent::GetCell()
 	this->GetEntity()->GetComponent<Ogreman::FlashlightComponent>()->ChargeBatery(10); //la cantidad es temporal
 }
 
-void Ogreman::PlayerInteractionComponent::GetNote(std::string note)
-{
-	/*string myText = */
-	//hacer aparecer el texto en pantalla
-}

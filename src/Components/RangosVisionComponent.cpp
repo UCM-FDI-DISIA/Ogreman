@@ -1,14 +1,7 @@
 #include "RangosVisionComponent.h"
 #include <TransformComponent.h>
- Ogreman::RangosVisionComponent::RangosVisionComponent() {
-
-
-
-}
-  Ogreman::RangosVisionComponent::~RangosVisionComponent() {
-
-	
-}
+ Ogreman::RangosVisionComponent::RangosVisionComponent() {}
+  Ogreman::RangosVisionComponent::~RangosVisionComponent() {}
 
   std::pair<bool, std::string>  Ogreman::RangosVisionComponent::InitComponent(float maxv, float minv, float maxt, float mint) {
 	  maxvision = maxv;
@@ -20,7 +13,7 @@
 	  mintam = mint;
 	  if (mintam < 0.1)mintam = 0.1f;
 	  
-	  return { true, " " };
+	  return { true, " RangosVisionComponent was made right--> InitComponent" };
   }
 
 float  Ogreman::RangosVisionComponent::GetmaxVision() {

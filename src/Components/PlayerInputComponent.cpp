@@ -15,15 +15,23 @@ using namespace std;
 
 std::pair<bool, std::string> Ogreman::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	if (my_transform == nullptr) {
+		return { false, "TransformComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
 	my_movement_component = this->GetEntity()->GetComponent<Ogreman::MovementComponent>();
+	if (my_movement_component == nullptr) {
+		return { false, "MovementComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
+	if (my_camera_component == nullptr) {
+		return { false, "CameraComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
-	//my_pickup_component = this->GetEntity()->GetComponent<Ogreman::PickUpComponent>();
-
-	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
-		return { true, "" };
-	else
-		return { false, " " };
+	if (my_rigidbody == nullptr) {
+		return { false, "RigidBodyComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
+	
+	return { true," " };
 }
 VeryReal::Entity* Ogreman::PlayerInputComponent::getCellToGet() {
 	return cell_to_get->GetEntity();
@@ -38,7 +46,6 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
 			sprint = 1;
 		}
-
 		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
 
@@ -61,10 +68,6 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 			moveX += rightDirection.GetX();
 			moveZ += rightDirection.GetZ();
 		}
-
-		//cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ() << endl;
-		//cout << forwardDirection.GetX() << " " << forwardDirection.GetY() << " " << forwardDirection.GetZ() << endl;
-		//cout << rightDirection.GetX() << " " << rightDirection.GetY() << " " << rightDirection.GetZ() << endl;
 
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
@@ -90,8 +93,6 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) { // Rotar la cámara hacia abajo
 			my_camera_component->rotate(-1, rightDirection);
 		}
-
-
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			//VeryReal::InputManager::Instance()->Quit();
 		}
@@ -119,7 +120,6 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 	else {
 		flashlight = false;
 	}
-
 	// AUDIO
 	audio_intensity = VeryReal::AudioManager::Instance()->InputSoundIntensity();
 }

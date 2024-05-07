@@ -43,8 +43,6 @@ std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitCompo
 	}
 #pragma endregion
 	return note_comp->InitComponent(notes, totalnotas);
-	
-	
 }
 
 std::pair<bool, std::string>  Ogreman::CreatorNNotesComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {

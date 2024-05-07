@@ -6,9 +6,9 @@ std::pair<bool, std::string>  Ogreman::ShowImageComponent::InitComponent(double 
 	active = false;
 	uitr = this->GetEntity()->GetComponent<VeryReal::UITransformComponent>();
 	if (uitr == nullptr) {
-		return { false, " " };
+		return { false, "this entity doesn't have  UITransformComponent. ERROR:ShowImageComponent" };
 	}
-	return { true, " " };
+	return { true, "ShowImageComponent was made right-->InitComponent " };
 }
 
 void Ogreman::ShowImageComponent::Update(const double& dt) {

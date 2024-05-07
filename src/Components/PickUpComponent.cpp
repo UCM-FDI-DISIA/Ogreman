@@ -16,21 +16,29 @@
 #include "RangosVisionComponent.h"
 std::pair<bool, std::string> Ogreman::PickUpComponent::InitComponent() {
 	player_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
+	if (player_transform == nullptr) {
+
+		return { false, "TransformComponent isn't in this entity, ERROR from PickUpComponent" };
+	}
 	my_player_input_comp = this->GetEntity()->GetComponent<Ogreman::PlayerInputComponent>();
+	if (my_player_input_comp == nullptr) {
+		return{ false, "Player doesn't have PlayerInputComponent, ERROR from PickUpComponent" };
+	}
 	my_player_interaction_comp = this->GetEntity()->GetComponent<Ogreman::PlayerInteractionComponent>();
+	if (my_player_interaction_comp == nullptr) {
+		return{ false, "Player doesn't have PlayerInteractionComponent, ERROR from PickUpComponent" };
+	}
 	my_player_cam = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
+	if (my_player_cam == nullptr) {
+		return{ false, "Player doesn't have CameraComponent, ERROR from PickUpComponent" };
+	}
 	return { true, "" };
 }
 
 void Ogreman::PickUpComponent::Update(const double& dt) {
-	//VeryReal::Vector4 orientation = my_player_cam->getOrientation();
-	//std::cout << "Orientation: " << orientation.GetR() << " " << orientation.GetG() << " " << orientation.GetB() << " " << orientation.GetA() << "\n";
-	//std::cout << "Player: " << player_transform->GetPosition().GetX() << " " << player_transform->GetPosition().GetY() << " " << player_transform->GetPosition().GetZ() << " " << "\n";
-	//VeryReal::Vector3 h = player_transform->GetPosition() + VeryReal::Vector3(orientation.GetG(), orientation.GetB(), orientation.GetA()) * distance;
-	//std::cout << "Ray: " << h.GetX() << " " << h.GetY() << " " << h.GetZ() << " " << "\n\n\n";
+
 	VeryReal::Vector3 origin = player_transform->GetPosition();
 	VeryReal::Vector3 d = player_transform->getFacingDirection();
-	//VeryReal::Vector3 dest = { 20, 7, 70 };
 	VeryReal::Vector3 dest = player_transform->GetPosition() + d * distance;
 
 	auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(origin, dest);
@@ -80,7 +88,6 @@ void Ogreman::PickUpComponent::settam(VeryReal::Entity* obj) {
 	VeryReal::UISpriteRendererComponent* sp = obj->GetComponent<VeryReal::UISpriteRendererComponent>();
 	//rangos de vision lo tiene que tener el personaje
 	Ogreman::RangosVisionComponent* rv = GetEntity()->GetComponent<Ogreman::RangosVisionComponent>();
-//	ds->settodesactivate(true);
 	if (ui == nullptr || sp == nullptr || rv == nullptr) {
 		//si no tiene esos dos componentes entonces se devuelve porque no hay cartel
 		return;
@@ -111,9 +118,7 @@ void Ogreman::PickUpComponent::settam(VeryReal::Entity* obj) {
 }
 
 void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* cell) {
-	std::cout << "COGER" << "\n";
 	if (note != nullptr) {
-		my_player_interaction_comp->GetNote(note->getText());
 		my_player_input_comp->setNoteToGet(nullptr);
 		note->SetActive(false);
 		std::string name = note->getText();
@@ -131,8 +136,4 @@ void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* ce
 		cell->GetEntity()->SetActive(false);
 		control_update_cell = false;
 	}
-	// Raycast
-	// Detectar si es una nota o una pila 
-	// LLamar al playerInteraction para hacer GetCell() o GetNote()
-	// Borrar
 }

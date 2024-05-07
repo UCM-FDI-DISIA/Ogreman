@@ -17,7 +17,6 @@ std::pair<bool, std::string> Ogreman::OgremanHearingComponent::InitComponent(flo
 {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (my_transform == nullptr) {
-
 		return { false, "TransformComponent isn't in this entity, ERROR from OgremanHearingComponent" };
 	}
 	my_controller = this->GetEntity()->GetComponent<OgremanControllerComponent>();

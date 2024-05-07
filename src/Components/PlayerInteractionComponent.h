@@ -15,10 +15,9 @@ namespace Ogreman {
 	public:
 		std::pair<bool, std::string>  InitComponent();
 		void GetCell();
-		void GetNote(std::string note);
+		
 	private:
 		FlashlightComponent* my_flashlight_component = nullptr;
-		std::string my_text = "";
 	};
 }
 

@@ -5,10 +5,8 @@
 std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
 	this->totalnotas = totalnotas;
-	return { true," " };
+	return { true,"NNotesComponent was made right-->InitComponent" };
 }
-
-	
 void Ogreman::NNotesComponent::restanota() {
 	numnotes--;
 	this->GetEntity()->GetComponent<VeryReal::UITextComponent>()->setCaption(std::to_string(numnotes));
