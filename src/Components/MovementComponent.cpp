@@ -13,7 +13,7 @@ std::pair<bool, std::string> Ogreman::MovementComponent::InitComponent(){
 	else if (this->my_rigidbody != nullptr)
 		return { false,"The entity doesn't have Transform Componet, Error from MovementComponent" };
 	else
-		return { true, "The Component was made correctly" };
+		return { true, "The MovementComponent was made correctly" };
 }
 
 void Ogreman::MovementComponent::Update(const double& dt) 

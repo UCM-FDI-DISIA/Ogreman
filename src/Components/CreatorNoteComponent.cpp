@@ -30,5 +30,5 @@ std::pair<bool, std::string>  Ogreman::CreatorNoteComponent::SpecificInitCompone
 }
 
 std::pair<bool, std::string>  Ogreman::CreatorNoteComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-	return { true, " " };
+	return { true, "Copied InitComponent" };
 }

@@ -92,7 +92,7 @@ GridComponent::GridComponent():nodes(0) {}
 	 for (auto c : scenes_nodes) {
 		 VeryReal::TransformComponent* trans = (c->GetEntity())->GetComponent<VeryReal::TransformComponent>();
 		 if (trans == nullptr) {
-			 return { false,  "The NodeComponent doesn't have Transform Component" };
+			 return { false,  "The NodeComponent doesn't have Transform Component, ERROR from GridComponent" };
 		 }
 		 else {
 
@@ -100,7 +100,7 @@ GridComponent::GridComponent():nodes(0) {}
 				 if (c->GetID() != d->GetID()) {//compruebpo que no soy yo mismo
 					 VeryReal::TransformComponent* other = d->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 					 if (other == nullptr) {
-						 return { false,  "The NodeComponent doesn't have Transform Component" };
+						 return { false,  "The NodeComponent doesn't have Transform Component, ERROR from GridComponent" };
 					 }
 					 std::list<VeryReal::Entity*> ents = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
