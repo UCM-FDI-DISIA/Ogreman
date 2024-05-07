@@ -92,12 +92,6 @@ Entities={
                     
                 }
             }, 
-            {
-                name = "DesactiveUIComponent",
-                parameters = {                  
-                    
-                }
-            },
            
             {
                 name = "PlayerInteractionComponent",
