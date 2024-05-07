@@ -12,6 +12,6 @@ std::pair<bool, std::string> Ogreman::CreatorPlayButtonComponent::SpecificInitCo
 	return playbutton_comp->InitComponent();
 }
 std::pair<bool, std::string> Ogreman::CreatorPlayButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-	return { true, " " };
+	return { true, "Copied InitComponent " };
 }
 

@@ -12,5 +12,5 @@ std::pair<bool, std::string> Ogreman::CreatorMerodeoComponent::SpecificInitCompo
 }
 
 std::pair<bool, std::string> Ogreman::CreatorMerodeoComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    return { true," " };
+    return { true,"Copied InitComponent " };
 }

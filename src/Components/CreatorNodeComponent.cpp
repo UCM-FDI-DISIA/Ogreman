@@ -94,13 +94,9 @@ std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponen
 		id = 1;
 	}
 #pragma endregion
-
-
-
-
 	 return nodecom->InitComponent(ispatrol,cost,hcost,iswalkable,id);
 }
 
 std::pair<bool, std::string> Ogreman::CreatorNodeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-	return{ true," " };
+	return{ true,"Copied InitComponent " };
 }

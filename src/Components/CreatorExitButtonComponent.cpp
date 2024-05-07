@@ -14,5 +14,5 @@ std::pair<bool, std::string> Ogreman::CreatorExitButtonComponent::SpecificInitCo
 }
 
 std::pair<bool, std::string> Ogreman::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-	return { true, "" };
+	return { true, "Copied InitComponent" };
 }

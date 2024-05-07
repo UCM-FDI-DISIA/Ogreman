@@ -10,7 +10,8 @@ using namespace Ogreman;
 
 }
 std::pair<bool,std::string> GameManager::Start() {
-	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	//return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	return VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
 }
 void GameManager::Update(const double& dt) {
 	VeryReal::SceneManager::Instance()->Update(dt);

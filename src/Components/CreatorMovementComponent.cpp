@@ -12,5 +12,5 @@ std::pair<bool, std::string> Ogreman::CreatorMovementComponent::SpecificInitComp
 }
 
 std::pair<bool, std::string> Ogreman::CreatorMovementComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    return { true, " " };
+    return { true, "Copied InitComponent " };
 }

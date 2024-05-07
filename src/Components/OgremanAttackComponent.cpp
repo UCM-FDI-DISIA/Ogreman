@@ -14,6 +14,8 @@ std::pair<bool, std::string>  Ogreman::OgremanAttackComponent::InitComponent() {
 	screamer_image = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<Ogreman::ShowImageComponent>();
 	audio_detected = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Screamer")->GetComponent<VeryReal::AudioSourceComponent>();
 	delay_scream = screamer_image->getTimeToShow();
+
+	
 	if (this->my_transform != nullptr)
 		return { true," " };
 	else

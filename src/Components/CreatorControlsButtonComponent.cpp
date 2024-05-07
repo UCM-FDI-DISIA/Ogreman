@@ -14,5 +14,5 @@ std::pair<bool, std::string> Ogreman::CreatorControlsButtonComponent::SpecificIn
 }
 
 std::pair<bool, std::string> Ogreman::CreatorControlsButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    return { true, "" };
+    return { true, "Copied InitComponent" };
 }
