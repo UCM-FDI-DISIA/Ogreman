@@ -109,6 +109,9 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	if (player_trns == nullptr) {
 		return{ false,"Player doesn't have TransformComponent, ERROR from OgremanController" };
 	}
+
+	/*current_states = patrol;
+	return { true,"yulvez" };*/
 	return GoToLocation(v);
 }
 // Función para alinear al ogro con el grupo
