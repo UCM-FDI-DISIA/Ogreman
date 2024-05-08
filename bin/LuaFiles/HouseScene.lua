@@ -228,7 +228,7 @@ Entities={
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
-                    modelname = "Pila.mesh",
+                    modelname = "Cuaderno.mesh",
                     entityname= "nota1",
                     materialname = ""
                 }
@@ -332,7 +332,7 @@ Entities={
             name = "MeshRenderComponent",
             parameters = {                  
                 isstatic = false,
-                modelname = "Pila.mesh",
+                modelname = "Cuaderno.mesh",
                 entityname= "nota2",
                 materialname = ""
             }
@@ -437,7 +437,7 @@ Entities={
             name = "MeshRenderComponent",
             parameters = {                  
                 isstatic = false,
-                modelname = "Pila.mesh",
+                modelname = "Cuaderno.mesh",
                 entityname= "nota3",
                 materialname = ""
             }
@@ -541,7 +541,7 @@ Entities={
             name = "MeshRenderComponent",
             parameters = {                  
                 isstatic = false,
-                modelname = "Pila.mesh",
+                modelname = "Cuaderno.mesh",
                 entityname= "nota4",
                 materialname = ""
             }
