@@ -204,3 +204,75 @@ material cartelE
 		}
 	}
 }
+
+material playbutton
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture play.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material exitbutton
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture exit.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material controls
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture controls.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material keyboard
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture keyboard.png
+				colour_op replace
+			}
+		}
+	}
+}
