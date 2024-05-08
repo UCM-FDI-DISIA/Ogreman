@@ -13,6 +13,14 @@ Entities={
            
             {
                 name = "CameraComponent",
+                parameters = {                  
+                    name = "anim",
+                    position ={0,0,30},
+                    color = {1, 0, 0},
+                    alfa = 0.0,
+                    offset = {0, 7, 0},
+                    zOrder = 2
+                }
                 
             },   
             {
@@ -128,34 +136,7 @@ Entities={
                 name = "LightComponent",
                 parameters = {
                     type = 1,
-                    diffusecolour = {1, 1, 1},
-                    shadowfardist = 25.0,
-                    shadowdist = 100.0,
-                    ineerangle = 90.0,
-                    outerangle = 180.0,
-                    nearclipdist = 0.1,
-                    shdws = true
-                }
-	        }     
-        }
-    }, 
-    {  
-        name = "Light2",
-        components = {
-	        {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {-70,-0.5, 107},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "LightComponent",
-                parameters = {
-                    type = 0,
-                    diffusecolour = {1, 1, 1},
+                    diffusecolour = {100, 100, 100},
                     shadowfardist = 25.0,
                     shadowdist = 100.0,
                     ineerangle = 90.0,
@@ -653,44 +634,6 @@ Entities={
     --     }
     -- },
     -- {
-    --     name = "NotaPrueba",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
-                
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "notaPrueba", 
-    --                 material = "Sinbad/Gold", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "ShowImageComponent",
-    --             parameters = {
-    --                 ttoshow = 5.0
-    --             }
-    --         }
-            
-    --     }
-    -- },
-    -- {
     --     name = "Screamer",
     --     components = {
     --         {
@@ -738,291 +681,6 @@ Entities={
     --         }
     --     }
     -- },
-    -- {
-    --     name = "Nota",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Pila.mesh",
-    --                 entityname= "nota",
-    --                 materialname = "Pila.material"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-           
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {5, 5, 5},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
-                
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "notac", 
-    --                 material = "Sinbad/Gold", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "NoteComponent",
-    --             parameters = {
-    --                 text = "NotaPrueba"
-    --             }
-    --         }
-            
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman2",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {10, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-           
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --          {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=1
-
-    --             }
-    --         }
-
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman3",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=0
-
-    --             }
-
-    --         },
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman4",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {60, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=2
-
-    --             }
-
-    --         },
-    --     }
-    -- },
-    
-    -- {
-    --     name = "Ogreman5",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {10, 0, -30},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad5",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=3
-
-    --             }
-
-    --         },
-    --     }
-    -- },
 
     {
              name = "Nodo0",
@@ -1036,20 +694,6 @@ Entities={
                         scale = {1, 1, 1}                   
                     }
                 },
-                 {
-                  name = "MeshRenderComponent",
-                     parameters = {                  
-                         isstatic = false,
-                        modelname = "Sinbad.mesh",
-                        entityname= "sinbad",
-                         materialname = "Sinbad/Gold"
-                     }
-                 },
-                 {
-                    name = "ColliderComponent",
-                    parameters = {
-                     }
-                 },
                
                  {
                      name = "RigidBodyComponent",
@@ -1092,11 +736,6 @@ Entities={
                 }
             },
             {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
-            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -1125,12 +764,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-        
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1159,11 +792,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1192,11 +821,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1225,11 +850,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1258,11 +879,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1291,11 +908,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1324,11 +937,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1357,11 +966,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1390,11 +995,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1423,11 +1024,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1456,11 +1053,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1489,11 +1082,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1522,11 +1111,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1555,11 +1140,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1588,11 +1169,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1621,11 +1198,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1654,11 +1227,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1687,11 +1256,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1720,11 +1285,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1753,11 +1314,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1786,11 +1343,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1819,11 +1372,7 @@ Entities={
                     rotation = {0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1852,11 +1401,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1885,11 +1430,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1918,11 +1459,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1951,11 +1488,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -1984,11 +1517,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -2006,7 +1535,7 @@ Entities={
         }
     },
     {
-        name = "CasaCollider27",
+        name = "CasaCollider30",
         components = 
         {
             {
@@ -2017,11 +1546,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -2050,11 +1575,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            },
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -2083,11 +1604,7 @@ Entities={
                         rotation = {0, 90, 0},
                         scale = {1, 1, 1}                   
                 }
-            }, {
-                name = "ColliderComponent",
-                parameters = {
-                 }
-             },
+            }, 
             {
                 name = "RigidBodyComponent",
                 parameters = {
@@ -2116,20 +1633,6 @@ Entities={
                    scale = {1, 1, 1}                   
                }
            },
-            {
-             name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
           
             {
                 name = "RigidBodyComponent",
@@ -2172,20 +1675,6 @@ Entities={
                scale = {1, 1, 1}                   
            }
        },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
       
         {
             name = "RigidBodyComponent",
@@ -2227,20 +1716,6 @@ Entities={
                scale = {1, 1, 1}                   
            }
        },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
       
         {
             name = "RigidBodyComponent",
@@ -2282,20 +1757,6 @@ Entities={
                scale = {1, 1, 1}                   
            }
        },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
       
         {
             name = "RigidBodyComponent",
@@ -2339,20 +1800,6 @@ Entities={
                    scale = {1, 1, 1}                   
                }
            },
-            {
-             name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
           
             {
                 name = "RigidBodyComponent",
@@ -2395,20 +1842,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2450,20 +1883,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2514,26 +1933,6 @@ Entities={
                     materialname = "Sinbad/Gold"
                 }
             },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
-          
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1.0,
-                    friction =1.0,
-                    restitution=1.0,
-                    trigger = true,
-                    mask = 1,
-                    group = 2
-                }
-            },
              {
                 name="NodeComponent",
                 parameters={
@@ -2560,20 +1959,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2616,20 +2001,6 @@ Entities={
                            scale = {1, 1, 1}                   
                        }
                    },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
                   
                     {
                         name = "RigidBodyComponent",
@@ -2671,20 +2042,6 @@ Entities={
                            scale = {1, 1, 1}                   
                        }
                    },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
                   
                     {
                         name = "RigidBodyComponent",
@@ -2726,20 +2083,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2782,20 +2125,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2838,20 +2167,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
@@ -2893,20 +2208,6 @@ Entities={
                            scale = {1, 1, 1}                   
                        }
                    },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
                   
                     {
                         name = "RigidBodyComponent",
@@ -2948,20 +2249,6 @@ Entities={
                                scale = {1, 1, 1}                   
                            }
                        },
-                        {
-                         name = "MeshRenderComponent",
-                            parameters = {                  
-                                isstatic = false,
-                               modelname = "Sinbad.mesh",
-                               entityname= "sinbad",
-                                materialname = "Sinbad/Gold"
-                            }
-                        },
-                        {
-                           name = "ColliderComponent",
-                           parameters = {
-                            }
-                        },
                       
                         {
                             name = "RigidBodyComponent",
@@ -3003,20 +2290,6 @@ Entities={
                                    scale = {1, 1, 1}                   
                                }
                            },
-                            {
-                             name = "MeshRenderComponent",
-                                parameters = {                  
-                                    isstatic = false,
-                                   modelname = "Sinbad.mesh",
-                                   entityname= "sinbad",
-                                    materialname = "Sinbad/Gold"
-                                }
-                            },
-                            {
-                               name = "ColliderComponent",
-                               parameters = {
-                                }
-                            },
                           
                             {
                                 name = "RigidBodyComponent",
@@ -3059,20 +2332,6 @@ Entities={
                                        scale = {1, 1, 1}                   
                                    }
                                },
-                                {
-                                 name = "MeshRenderComponent",
-                                    parameters = {                  
-                                        isstatic = false,
-                                       modelname = "Sinbad.mesh",
-                                       entityname= "sinbad",
-                                        materialname = "Sinbad/Gold"
-                                    }
-                                },
-                                {
-                                   name = "ColliderComponent",
-                                   parameters = {
-                                    }
-                                },
                               
                                 {
                                     name = "RigidBodyComponent",
@@ -3116,21 +2375,6 @@ Entities={
                            }
                        },
                         {
-                         name = "MeshRenderComponent",
-                            parameters = {                  
-                                isstatic = false,
-                               modelname = "Sinbad.mesh",
-                               entityname= "sinbad",
-                                materialname = "Sinbad/Gold"
-                            }
-                        },
-                        {
-                           name = "ColliderComponent",
-                           parameters = {
-                            }
-                        },
-                      
-                        {
                             name = "RigidBodyComponent",
                             parameters = {
                                 shapeType = 1,
@@ -3171,21 +2415,6 @@ Entities={
                    }
                },
                 {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
                     name = "RigidBodyComponent",
                     parameters = {
                         shapeType = 1,
@@ -3224,20 +2453,6 @@ Entities={
                        scale = {1, 1, 1}                   
                    }
                },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
               
                 {
                     name = "RigidBodyComponent",
