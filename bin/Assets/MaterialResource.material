@@ -276,3 +276,21 @@ material keyboard
 		}
 	}
 }
+
+material controller
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture controller.png
+				colour_op replace
+			}
+		}
+	}
+}

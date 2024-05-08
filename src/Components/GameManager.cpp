@@ -5,6 +5,7 @@
 #include <iostream>
 #include "ScriptManager.h"
 #include "PhysicsManager.h"
+#include "ErrorManager.h"
 using namespace Ogreman;
  GameManager::~GameManager() {
 
@@ -12,11 +13,9 @@ using namespace Ogreman;
 std::pair<bool,std::string> GameManager::Start() {
 	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
-void GameManager::Update(const double& dt) {
-	VeryReal::SceneManager::Instance()->Update(dt);
-}
+
 void GameManager::Menu() {
-	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true));
 }
 void GameManager::Pause() {
 	
@@ -25,14 +24,14 @@ void GameManager::Controls()
 {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
-	VeryReal::ScriptManager::Instance()->ReadScene("ControlsScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("ControlsScene", true));
 }
 void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("ControlsScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
 	/*VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);*/
-	VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true));
 	
 	
 	//Hace que no se actualicen los collider de los rigidbodies tras haber sido instanciados
@@ -44,13 +43,13 @@ void GameManager::Play() {
 
 }
 void GameManager::Win() {
-	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true));
 	/*VeryReal::SceneManager::Instance()->ActivationScene("HouseScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("HouseScene", true);
 	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);*/
 }
 void GameManager::Lose() {
-	VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true));
 }
 
 void GameManager::HolaLua() {

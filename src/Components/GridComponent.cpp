@@ -130,7 +130,7 @@ using namespace Ogreman;
 					
 
 					// mystruct d = ents.top();
-					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() ) {
+					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() && ents.top().dist<75 ) {
 						 std::cout << "AÑADO ARISTE DE" << c->GetID() << "  a  " << d->GetID() << "\n";
 						 AristaDirigida<float> arista(c->GetID(), d->GetID(), coste);
 						 nodes.ponArista(arista);

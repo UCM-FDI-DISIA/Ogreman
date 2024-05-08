@@ -68,7 +68,7 @@ Entities={
                     a = 0,
                     position = {0.0, 0.0, 0.0},
                     rotation = {0.0, 0.0, 0.0},
-                    scale = {1, 1, 1}                   
+                    scale = {1, 1, 1}      
                 }
             },
             {
@@ -76,7 +76,8 @@ Entities={
                 parameters = {
                     name = "win",
                     color = {0.0, 0.0, 0.0},
-                    offset = {0.0, 0.0, 0.0}
+                    offset = {0.0, 0.0, 0.0},
+                    zOrder = 4
                 }
             }
         }

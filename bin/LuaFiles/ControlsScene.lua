@@ -83,7 +83,7 @@ Entities={
                 name = "UISpriteRendererComponent",
                 parameters = {
                     name = "controller", 
-                    material = "keyboard", 
+                    material = "controller", 
                     zOrder = 1
                 }
             }
