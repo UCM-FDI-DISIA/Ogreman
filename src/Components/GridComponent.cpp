@@ -124,10 +124,7 @@ using namespace Ogreman;
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
 					 
-					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() && c->GetID() == 0 && d->GetID() == 18) {
-						 std::cout << "MARICON";
-					 }
-					
+				
 
 					// mystruct d = ents.top();
 					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() && ents.top().dist<75 ) {
