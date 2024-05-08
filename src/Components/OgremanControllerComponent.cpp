@@ -13,6 +13,10 @@
 #include "ColliderComponent.h"
 #include "Vector3.h"
 #include "RigidBodyComponent.h"
+
+#include "PhysicsManager.h"
+
+
 Ogreman::OgremanControllerComponent::OgremanControllerComponent():last_node(false),rotation_y(0),trans(nullptr),animation(nullptr),current_index(0),current_states(pathfinding),current_node(nullptr), collider(nullptr){
 
 }
@@ -93,7 +97,7 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	VeryReal::Vector3 vector_facing = trans->getFacingDirection();
 	my_rb->Rotate(VeryReal::Vector3(1,0, 0), 180);
 	grid = GameManager::Instance()->GetGris();
-	VeryReal::Vector3 v(10, 0, -30);
+	VeryReal::Vector3 v(70, 0, 110);
 
 	Entity* p = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	
@@ -161,8 +165,22 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
 	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
 
-	if (dist_player < min_dist_follow && current_states != follow)current_states = follow;
-	else if (dist_player > max_dist_follow && current_states == follow)RestartPatrol();
+	if (dist_player < min_dist_follow && current_states != follow) {
+		
+
+		auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(my_rb->GetPosition(), player_trns->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>()->GetPosition());
+
+		/*if(list.size()>0 && list.front().ent->HasComponent("MovementComponent"))
+		current_states = follow;*/
+	
+	
+	}
+	else if (dist_player > max_dist_follow && current_states == follow) {
+		/*auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), dif_player.Normalize() * 10);
+		if (list.size() > 0 && !list.front()->HasComponent("MovementComponent") || list.size()<=0)
+		RestartPatrol(); */
+	
+	}
 	//std::cout << dist_player << "\n";
 	switch (current_states) {
 

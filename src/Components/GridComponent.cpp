@@ -4,10 +4,18 @@
 #include "TransformComponent.h"
 #include "Entity.h"
 #include "algorithm"
+#include <set>
+using namespace Ogreman;
+#include "IndexPQ.h"
+
+
+GridComponent::GridComponent() :nodes(0) {}
 
 using namespace Ogreman;
-GridComponent::GridComponent():nodes(0) {}
- void GridComponent::Update(const double& dt) {}
+
+ void GridComponent::Update(const double& dt) {
+
+}
  NodeComponent* GridComponent::isInList(std::list<NodeComponent*> list, NodeComponent* node) {
 	 for (auto c : list) {
 		 if (c == node) {
@@ -102,21 +110,39 @@ GridComponent::GridComponent():nodes(0) {}
 					 if (other == nullptr) {
 						 return { false,  "The NodeComponent doesn't have Transform Component, ERROR from GridComponent" };
 					 }
-					 std::list<VeryReal::Entity*> ents = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
+
+					 VeryReal::Vector3 origin = trans->GetPosition();
+					 VeryReal::Vector3 di = other->GetPosition()-trans->GetPosition();
+
+					 ////VeryReal::Vector3 dest = { 20, 7, 70 };
+					 VeryReal::Vector3 dest = trans->GetPosition() + di * 100;
+
+					 auto ents = VeryReal::PhysicsManager::Instance()->MakeRayCast(origin, other->GetPosition());
+					//auto ents= VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
+					std::cout << "LANZO RAYCAST DE  " << c->GetID()<<" a "<<d->GetID() << "\n";
+					std::cout << "TAMAÑE LISTE " << ents.size() << "\n";
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
+					 
+					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() && c->GetID() == 0 && d->GetID() == 18) {
+						 std::cout << "MARICON";
+					 }
+					
 
-
-					 if ((c->GetID() == 1 && d->GetID() == 0) || (c->GetID() == 0 && d->GetID() == 2) || (c->GetID() == 1 && d->GetID() == 3)) {
+					// mystruct d = ents.top();
+					 if (ents.size() > 0 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID() ) {
+						 std::cout << "AÑADO ARISTE DE" << c->GetID() << "  a  " << d->GetID() << "\n";
 						 AristaDirigida<float> arista(c->GetID(), d->GetID(), coste);
-						 AristaDirigida<float> arista2(d->GetID(), c->GetID(), coste);
 						 nodes.ponArista(arista);
-						 nodes.ponArista(arista2);
+
+
 					 }
 				 }
 			 }
 		 }
 	 }
+
+
 	 GameManager::Instance()->RegisterGridComponent(this);
 	 return { true,"GridComponent made correctly" };
  }

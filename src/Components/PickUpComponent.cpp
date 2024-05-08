@@ -44,25 +44,47 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 	auto collided_list = VeryReal::PhysicsManager::Instance()->MakeRayCast(origin, dest);
 	
 	int cont_notes = 0, cont_cells = 0;
-	for (auto elem_collided : collided_list) {
-		if (elem_collided->GetActive()) {
-			if (elem_collided->HasComponent("NoteComponent")) {
+	
+	while (collided_list.size() > 0) {
+		auto elem_collided = collided_list.top(); collided_list.pop();
+		if (elem_collided.ent->GetActive()) {
+			if (elem_collided.ent->HasComponent("NoteComponent")) {
 				my_player_input_comp->setCanPickUp(true);
-				my_player_input_comp->setNoteToGet(elem_collided->GetComponent<NoteComponent>());
-				settam(elem_collided);
+				my_player_input_comp->setNoteToGet(elem_collided.ent->GetComponent<NoteComponent>());
+				settam(elem_collided.ent);
 				cont_notes++;
 				control_update_note = true;
 			}
-			if (elem_collided->HasComponent("CellComponent")) {
+			if (elem_collided.ent->HasComponent("CellComponent")) {
 				my_player_input_comp->setCanPickUp(true);
-				my_player_input_comp->setCellToGet(elem_collided->GetComponent<CellComponent>());
-				settam(elem_collided);
+				my_player_input_comp->setCellToGet(elem_collided.ent->GetComponent<CellComponent>());
+				settam(elem_collided.ent);
 				cont_cells++;
 				control_update_cell = true;
 			}
 		}
-		
+
 	}
+
+	//for (auto elem_collided : collided_list) {
+	//	if (elem_collided->GetActive()) {
+	//		if (elem_collided->HasComponent("NoteComponent")) {
+	//			my_player_input_comp->setCanPickUp(true);
+	//			my_player_input_comp->setNoteToGet(elem_collided->GetComponent<NoteComponent>());
+	//			settam(elem_collided);
+	//			cont_notes++;
+	//			control_update_note = true;
+	//		}
+	//		if (elem_collided->HasComponent("CellComponent")) {
+	//			my_player_input_comp->setCanPickUp(true);
+	//			my_player_input_comp->setCellToGet(elem_collided->GetComponent<CellComponent>());
+	//			settam(elem_collided);
+	//			cont_cells++;
+	//			control_update_cell = true;
+	//		}
+	//	}
+	//	
+	//}
 	if (control_update_cell || control_update_note) {
 	
 		if (cont_cells == 0 && cont_notes == 0) {
