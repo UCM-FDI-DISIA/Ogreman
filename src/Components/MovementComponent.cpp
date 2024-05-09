@@ -18,7 +18,7 @@ std::pair<bool, std::string> Ogreman::MovementComponent::InitComponent(){
 
 void Ogreman::MovementComponent::Update(const double& dt) 
 {
-	
+	std::cout << my_transform->GetPosition().GetX() << "  " << my_transform->GetPosition().GetY() << " " << my_transform->GetPosition().GetZ() << "\n";
 	if (IsMoving() && IsGrounded()) {
        my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed*dt));
 	}
