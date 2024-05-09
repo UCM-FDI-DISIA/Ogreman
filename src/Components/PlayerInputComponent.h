@@ -10,6 +10,7 @@ namespace VeryReal {
 	class TransformComponent;
 	class CameraComponent;
 	class RigidBodyComponent;
+	class AudioSourceComponent;
 }
 
 namespace Ogreman {
@@ -38,15 +39,17 @@ namespace Ogreman {
 		std::pair<int32_t, int32_t> prev_mouse_pos = {-1, -1};
 
 		float audio_intensity = 0;
-		bool flashlight = false, canPickUp = false;
+		bool flashlight = false, canPickUp = false, sprintAudioPlayed = false;
 
 		VeryReal::TransformComponent* my_transform = nullptr;
 		Ogreman::MovementComponent* my_movement_component = nullptr;
 		VeryReal::CameraComponent* my_camera_component = nullptr;
+		VeryReal::AudioSourceComponent* my_run_audio_source_component = nullptr;
 		Ogreman::PickUpComponent* my_pickup_component = nullptr;
 		Ogreman::CellComponent* cell_to_get = nullptr;
 		Ogreman::NoteComponent* note_to_get = nullptr;
 		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
+
 	};
 }
 

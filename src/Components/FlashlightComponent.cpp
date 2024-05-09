@@ -1,6 +1,9 @@
 #include "FlashlightComponent.h"
+#include "AudioSourceComponent.h"
 #include <algorithm>
 #include "Entity.h"
+#include <SceneManager.h>
+#include <Scene.h>
 #include <LightComponent.h>
 #include "PlayerInputComponent.h"
 #include "UI/UIProgressBarComponent.h"
@@ -33,9 +36,16 @@ void Ogreman::FlashlightComponent::Update(const double& dt) {
 		energy_remaining = std::max(energy_remaining - energy_consume_rate * dt, 0.0);
 		my_progress_bar->setProgress(energy_remaining);
 		my_light_spot->setVisible(true);
+		if (!flashlight_on) {
+			flashlight_on = true;
+			VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("FlashLightAudio")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
+		}
 	}
 	else {
 		my_light_spot->setVisible(false);
+		if (flashlight_on) {
+			flashlight_on = false;
+		}
 	}
 	//std::cout << energy_remaining << std::endl;
 }

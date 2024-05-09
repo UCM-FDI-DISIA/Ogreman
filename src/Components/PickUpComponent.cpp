@@ -137,6 +137,7 @@ void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* ce
 		note->GetEntity()->SetActive(false);
 		control_update_note = false;
 		my_notes->RestaNota();
+		note->PlayPickUpSound();
 	}
 	if (cell != nullptr) {
 		my_player_interaction_comp->GetCell();
@@ -144,5 +145,6 @@ void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* ce
 		cell->SetActive(false);
 		cell->GetEntity()->SetActive(false);
 		control_update_cell = false;
+		cell->PlayPickUpSound();
 	}
 }

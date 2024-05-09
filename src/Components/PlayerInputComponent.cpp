@@ -5,6 +5,7 @@
 #include "InputManager.h"
 #include "CameraComponent.h"
 #include "AudioManager.h"
+#include "AudioSourceComponent.h"
 #include "PickUpComponent.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
@@ -30,7 +31,11 @@ std::pair<bool, std::string> Ogreman::PlayerInputComponent::InitComponent() {
 	if (my_rigidbody == nullptr) {
 		return { false, "RigidBodyComponent isn't in this entity, ERROR from PlayerInputComponent" };
 	}
-	
+	my_run_audio_source_component = this->GetEntity()->GetComponent<VeryReal::AudioSourceComponent>();
+	if (my_run_audio_source_component == nullptr) {
+		return { false, "AudioSourceComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
+
 	return { true," " };
 }
 VeryReal::Entity* Ogreman::PlayerInputComponent::getCellToGet() {
@@ -96,6 +101,15 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			VeryReal::InputManager::Instance()->Quit();
 		}
+
+		if (!sprintAudioPlayed && sprint > 0.5) {
+			sprintAudioPlayed = true;
+			my_run_audio_source_component->Resume();
+		}
+		if (sprint <= 0.5) {
+			sprintAudioPlayed = false;
+			my_run_audio_source_component->Pause();
+		}
 	}
 	else {
 		float sprint = 2;
@@ -109,6 +123,19 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		}
 		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0) {
 			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+		}
+
+		if (!sprintAudioPlayed && (sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX)) > 2) {
+			sprintAudioPlayed = true;
+			my_run_audio_source_component->Resume();
+		}
+		if (!sprintAudioPlayed && (sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY)) > 2) {
+			sprintAudioPlayed = true;
+			my_run_audio_source_component->Resume();
+		}
+		if (sprint <= 2) {
+			sprintAudioPlayed = false;
+			my_run_audio_source_component->Pause();
 		}
 	}
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Y)) {

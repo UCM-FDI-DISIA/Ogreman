@@ -130,6 +130,24 @@ Entities={
                     offset = {0.0, 0.0, 0.0}, 
                     zOrder = 1
                 }
+            },
+            {
+                name = "AudioListenerComponent",
+                parameters = {
+
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioIntro2",
+                    path = "sonido_fondo_inicio2.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 1,
+                    groupchannel = "music"
+                }
             }
         }
     }

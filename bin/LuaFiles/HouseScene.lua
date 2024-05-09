@@ -114,6 +114,18 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent",
+                parameters = {
+                    name = "audioCorrer",
+                    path = "sonido_correr_casa.mp3",
+                    onstart = false,
+                    loop = true,
+                    threed = false,
+                    volume = 2,
+                    groupchannel = "effects"
+                }
+            },
+            {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
@@ -149,6 +161,12 @@ Entities={
                     mint = 0.2
                 }
             },
+            {
+                name = "AudioListenerComponent",
+                parameters = {
+
+                }
+            }
   
         }
     }, 
@@ -176,7 +194,19 @@ Entities={
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        }     
+	        },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioFondoJuego",
+                    path = "sonido_fondo_juego_recortadobn.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 0.05,
+                    groupchannel = "music"
+                }
+            }     
         }
     }, 
     {  
@@ -304,6 +334,20 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota1",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+            },
+            {
                 name = "NoteComponent",
                 parameters = {
                     text = "NotaUI1"
@@ -408,6 +452,20 @@ Entities={
             }
         },
         {
+            name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota2",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+        },
+        {
             name = "NoteComponent",
             parameters = {
                 text = "NotaUI2"
@@ -510,6 +568,20 @@ Entities={
                 material = "cartelE", 
                 zOrder = 1
             }
+        },
+        {
+            name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota3",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
         },
         {
             name = "NoteComponent",
@@ -617,6 +689,20 @@ Entities={
             }
         },
         {
+            name = "AudioSourceComponent", 
+            parameters ={
+                name = "audioNota4",
+                path = "sonido_obtener_objeto.mp3",
+                onstart = false,
+                loop = false,
+                threed = true,
+                mindistance = 1.0,
+                maxdistance = 30.0,
+                volume = 1.5,
+                groupchannel = "effects"
+            }
+        },
+        {
             name = "NoteComponent",
             parameters = {
                 text = "NotaUI4"
@@ -711,6 +797,20 @@ Entities={
                 }
              },
              {
+                 name = "AudioSourceComponent", 
+                     parameters ={
+                         name = "audioPila1",
+                         path = "sonido_obtener_objeto.mp3",
+                         onstart = false,
+                         loop = false,
+                         threed = true,
+                         mindistance = 1.0,
+                         maxdistance = 45.0,
+                         volume = 1.5,
+                         groupchannel = "effects"
+                     }
+             },
+             {
                 name = "CellComponent",
                 parameters = {
                   
@@ -739,17 +839,17 @@ Entities={
                     hidden = true
                 }
             },
-            -- {
-            --     name ="AudioSourceComponent",
-            --     parameters ={
-            --         name = "audioScreamer",
-            --         path = "sonido_pillado_por_jefe.mp3",
-            --         onstart = false,
-            --         loop = false,
-            --         volume = 0.3,
-            --         groupchannel = "effects"
-            --     }
-            -- },
+            {
+                name ="AudioSourceComponent",
+                parameters ={
+                    name = "audioScreamer",
+                    path = "sonido_pillado_por_jefe.mp3",
+                    onstart = false,
+                    loop = false,
+                    volume = 0.3,
+                    groupchannel = "effects"
+                }
+            },
             {
                 
                 name = "UISpriteRendererComponent",
@@ -3184,9 +3284,49 @@ components = {
                      min_dist_follow=50.0
                  }
              },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioOgro",
+                    path = "sonido_jefe_merodeando2.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 60.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+            }
             
          }
      },
+     {
+        name = "FlashLightAudio",
+        components ={
+            {
+                name = "TransformComponent",
+                parameters = {  
+                 a = 0,
+                     position = {0,0,0},
+                     rotation = {0, 0, 0},
+                     scale = {0, 0, 0}                   
+               }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                name = "audioFlashlight1",
+                path = "sonido_linterna.mp3",
+                onstart = false,
+                loop = false,
+                threed = false,
+                volume = 1.5,
+                groupchannel = "effects"
+                }
+            }
+        }
+     }
    
 
     -- 
