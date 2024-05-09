@@ -846,7 +846,7 @@ Entities={
                     path = "sonido_pillado_por_jefe.mp3",
                     onstart = false,
                     loop = false,
-                    volume = 0.3,
+                    volume = 1.0,
                     groupchannel = "effects"
                 }
             },
@@ -862,7 +862,7 @@ Entities={
             {
                 name = "ShowImageComponent",
                 parameters = {
-                    ttoshow = 5.0
+                    ttoshow = 0.1
                 }
             }
         }
