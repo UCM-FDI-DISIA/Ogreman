@@ -625,100 +625,100 @@ Entities={
         
     }
 },
--- {
---     name = "PilaUI1",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {
---                 position = {40, -5, 20},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
---             name = "ShowImageComponent",
---             parameters = {
---                 ttoshow = 5.0
---             }
---         }
+{
+     name = "PilaUI1",
+          components = {
+         {
+             name = "TransformComponent",
+             parameters = {
+                 position = {40, -5, 20},
+                 rotation = {0, 0, 180},
+                 scale = {5, 5, 5}                   
+             }
+         },
+         {
+             name = "UITransformComponent",
+             parameters = {
+                 pos = {0.0, 0.0}, 
+                 scale= {1.0, 1.0 }, 
+                 hidden = true
+             }
+         },
+         {
+             name = "ShowImageComponent",
+             parameters = {
+                 ttoshow = 5.0
+             }
+         }
         
---     }
--- },
---     {
---         name = "Pila1",
---         components = {
---             {
---                 name = "TransformComponent",
---                 parameters = {  
---                     position = {-36,0,70},
---                     rotation = {0, 0, 180},
---                     scale = {5, 5, 5}                   
---                 }
---             },
---             {
---                 name = "MeshRenderComponent",
---                 parameters = {                  
---                     isstatic = false,
---                     modelname = "Pila.mesh",
---                     entityname= "pila",
---                     materialname = ""
---                 }
---             },
---             {
---                 name = "ColliderComponent",
---                 parameters = {
---                 }
---             },
+     }
+ },
+     {
+        name = "Pila1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {-36,0,70},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Pila.mesh",
+                    entityname= "pila",
+                    materialname = ""
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
            
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 1,
---                     size = {5, 5, 5},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = false,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---             {
---                 name = "UITransformComponent",
---                 parameters = {
---                     pos = {0.0, 0.0}, 
---                     scale= {1.0, 1.0 }, 
---                     hidden = true
---                 }
---             },
---             {
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
                 
---                 name = "UISpriteRendererComponent",
---                 parameters = {
---                     name = "nombree", 
---                     material = "Sinbad/Gold", 
---                     zOrder = 1
---                 }
---             },
---             {
---                 name = "CellComponent",
---                 parameters = {
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nombree", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
+             },
+             {
+                name = "CellComponent",
+                parameters = {
                   
---                 }
---             }
+                 }
+             }
             
---         }
---     },
+         }
+     },
     {
         name = "Screamer",
         components = {
