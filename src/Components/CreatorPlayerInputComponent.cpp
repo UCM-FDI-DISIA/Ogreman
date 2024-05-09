@@ -12,5 +12,5 @@ std::pair<bool, std::string> Ogreman::CreatorPlayerInputComponent::SpecificInitC
 }
 
 std::pair<bool, std::string> Ogreman::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    return{ true, "Copied InitComponent " };
+    return{ true, "Copied InitComponent" };
 }
