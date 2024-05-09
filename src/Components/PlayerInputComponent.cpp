@@ -48,7 +48,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		}
 		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
-
+		
 		float moveX = 0.0f;
 		float moveZ = 0.0f;
 
@@ -111,7 +111,10 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
 		}
 	}
-	
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Y)) {
+		//VeryReal::PhysicsManager::Instance()->SeeDebugColliders(true);
+	}
+
 	// Linterna
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LCTRL) ||
 		VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_TRIGGERRIGHT) > 0) {
