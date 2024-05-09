@@ -883,7 +883,75 @@ Entities={
             },
         }
     }
-}
+},
+{
+        name = "NPC1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {20, 0, 0},
+                    rotation ={0, 0, 0},
+                    scale = {10, 10, 10}                   
+                }
+            },
+           
+           
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25.0,
+                    shadowdist = 25.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 0,
+                    size = {2, 6, 2},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = false,
+                    mask = 2,
+                    group = 1
+                }
+            },
+            {
+                name = "MovementComponent",
+                parameters = {                  
+                    
+                }
+            },     
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "lagartija.mesh",
+                    entityname= "npc1",
+                    materialname = "Sinbad/Gold"
+                    }
+            },
+            {
+                name= "MerodeoMovementComponent",
+                parameters={
+
+                    }
+            }
+        }
+    }
     -- {
     --     name = "Pared1",
     --     components = 
