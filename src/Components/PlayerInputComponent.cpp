@@ -10,7 +10,7 @@
 #include "RigidBodyComponent.h"
 #include "NoteComponent.h"
 #include "CellComponent.h"
-
+#include "PhysicsManager.h"
 using namespace std;
 
 std::pair<bool, std::string> Ogreman::PlayerInputComponent::InitComponent() {
@@ -111,7 +111,9 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
 		}
 	}
-
+	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Y)) {
+		VeryReal::PhysicsManager::Instance()->SeeDebugColliders(true);
+	}
 	// Linterna
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LCTRL) ||
 		VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_TRIGGERRIGHT) > 0) {
@@ -121,6 +123,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 		flashlight = false;
 	}
 	// AUDIO
+
 	audio_intensity = VeryReal::AudioManager::Instance()->InputSoundIntensity();
 }
 bool Ogreman::PlayerInputComponent::IsFlashLightPressed() {

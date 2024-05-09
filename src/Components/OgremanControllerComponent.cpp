@@ -97,7 +97,7 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	VeryReal::Vector3 vector_facing = trans->getFacingDirection();
 	my_rb->Rotate(VeryReal::Vector3(1,0, 0), 180);
 	grid = GameManager::Instance()->GetGris();
-	VeryReal::Vector3 v(70, 0, 110);
+	VeryReal::Vector3 v(25, 0, 84);
 
 	Entity* p = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	
@@ -289,7 +289,7 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 }
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	
-	if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
+ if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
 		std::cout << "\nHAY COLISION\n";
 		NextNodePT();
 

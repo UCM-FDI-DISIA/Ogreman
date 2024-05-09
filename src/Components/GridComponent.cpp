@@ -61,6 +61,7 @@ using namespace Ogreman;
 	 // recuperamos el camino retrocediendo
 	 AristaDirigida<float> a;
 	 
+
 	 for (a = ulti[dest->GetID()]; a.desde() != src->GetID(); a = ulti[a.desde()]) {
 		 path.push_front(scenes_nodes[a.hasta()]);
 	 }

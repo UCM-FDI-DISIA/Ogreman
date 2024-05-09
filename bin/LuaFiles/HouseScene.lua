@@ -37,7 +37,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {70, 6, 110},
+                    position = {0, 0, 90},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -206,425 +206,425 @@ Entities={
 	        }     
         }
     }, 
-    {
-        name = "NotaUI1",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {40, -5, 20},
-                    rotation = {0, 0, 180},
-                    scale = {5, 5, 5}                   
-                }
-            },
-            {
-                name = "UITransformComponent",
-                parameters = {    
-                    position = { 0.0,0.0},   
-                    scale = { 1.0,1.0},   
-                    hidden = true   
+--     {
+--         name = "NotaUI1",
+--         components = {
+--             {
+--                 name = "TransformComponent",
+--                 parameters = {  
+--                     a = 0,
+--                     position = {40, -5, 20},
+--                     rotation = {0, 0, 180},
+--                     scale = {5, 5, 5}                   
+--                 }
+--             },
+--             {
+--                 name = "UITransformComponent",
+--                 parameters = {    
+--                     position = { 0.0,0.0},   
+--                     scale = { 1.0,1.0},   
+--                     hidden = true   
          
-                }
-            },
-            {
+--                 }
+--             },
+--             {
                 
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "notaui1", 
-                    material = "nota1", 
-                    zOrder = 1
-                }
-            },
-            {
-                name = "ShowImageComponent",
-                parameters = {
-                    ttoshow = 5.0
-                }
-            }
+--                 name = "UISpriteRendererComponent",
+--                 parameters = {
+--                     name = "notaui1", 
+--                     material = "nota1", 
+--                     zOrder = 1
+--                 }
+--             },
+--             {
+--                 name = "ShowImageComponent",
+--                 parameters = {
+--                     ttoshow = 5.0
+--                 }
+--             }
             
-        }
-    },
-    {
-        name = "Nota1",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {-70.25, 5.0, 107.44},
-                    rotation = {0, 0, 180},
-                    scale = {5, 5, 5}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Cuaderno.mesh",
-                    entityname= "nota1",
-                    materialname = ""
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
+--         }
+--     },
+--     {
+--         name = "Nota1",
+--         components = {
+--             {
+--                 name = "TransformComponent",
+--                 parameters = {  
+--                     a = 0,
+--                     position = {-70.25, 5.0, 107.44},
+--                     rotation = {0, 0, 180},
+--                     scale = {5, 5, 5}                   
+--                 }
+--             },
+--             {
+--                 name = "MeshRenderComponent",
+--                 parameters = {                  
+--                     isstatic = false,
+--                     modelname = "Cuaderno.mesh",
+--                     entityname= "nota1",
+--                     materialname = ""
+--                 }
+--             },
+--             {
+--                 name = "ColliderComponent",
+--                 parameters = {
+--                 }
+--             },
            
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 1,
-                    size = {5, 5, 5},
-                    mass = 1.0,
-                    friction =1.0,
-                    restitution=1.0,
-                    trigger = false,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name = "UITransformComponent",
-                parameters = {
-                    pos = {0.0, 0.0}, 
-                    scale= {1.0, 1.0 }, 
-                    hidden = true
-                }
-            },
-            {
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 1,
+--                     size = {5, 5, 5},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = false,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--             {
+--                 name = "UITransformComponent",
+--                 parameters = {
+--                     pos = {0.0, 0.0}, 
+--                     scale= {1.0, 1.0 }, 
+--                     hidden = true
+--                 }
+--             },
+--             {
                 
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "nota1", 
-                    material = "cartelE", 
-                    zOrder = 1
-                }
-            },
-            {
-                name = "NoteComponent",
-                parameters = {
-                    text = "NotaUI1"
-                }
-            }
-        }
-},
-{
-    name = "NotaUI2",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--                 name = "UISpriteRendererComponent",
+--                 parameters = {
+--                     name = "nota1", 
+--                     material = "cartelE", 
+--                     zOrder = 1
+--                 }
+--             },
+--             {
+--                 name = "NoteComponent",
+--                 parameters = {
+--                     text = "NotaUI1"
+--                 }
+--             }
+--         }
+-- },
+-- {
+--     name = "NotaUI2",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {40, -5, 20},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui2", 
-                material = "nota2", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "notaui2", 
+--                 material = "nota2", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "ShowImageComponent",
+--             parameters = {
+--                 ttoshow = 5.0
+--             }
+--         }
         
-    }
-},
-{
-    name = "Nota2",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {11.87, 5.0, 35.168},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota2",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
+--     }
+-- },
+-- {
+--     name = "Nota2",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {11.87, 5.0, 35.168},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "MeshRenderComponent",
+--             parameters = {                  
+--                 isstatic = false,
+--                 modelname = "Cuaderno.mesh",
+--                 entityname= "nota2",
+--                 materialname = ""
+--             }
+--         },
+--         {
+--             name = "ColliderComponent",
+--             parameters = {
+--             }
+--         },
        
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--         {
+--             name = "RigidBodyComponent",
+--             parameters = {
+--                 shapeType = 1,
+--                 movementType = 1,
+--                 size = {5, 5, 5},
+--                 mass = 1.0,
+--                 friction =1.0,
+--                 restitution=1.0,
+--                 trigger = false,
+--                 mask = 1,
+--                 group = 2
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota2", 
-                material = "cartelE", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI2"
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "nota2", 
+--                 material = "cartelE", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "NoteComponent",
+--             parameters = {
+--                 text = "NotaUI2"
+--             }
+--         }
         
-    }
-},
-{
-    name = "NotaUI3",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--     }
+-- },
+-- {
+--     name = "NotaUI3",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {40, -5, 20},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui3", 
-                material = "nota3", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "notaui3", 
+--                 material = "nota3", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "ShowImageComponent",
+--             parameters = {
+--                 ttoshow = 5.0
+--             }
+--         }
         
-    }
-},
-{
-    name = "Nota3",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {126, 5.0, 2.09},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota3",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--     }
+-- },
+-- {
+--     name = "Nota3",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {126, 5.0, 2.09},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "MeshRenderComponent",
+--             parameters = {                  
+--                 isstatic = false,
+--                 modelname = "Cuaderno.mesh",
+--                 entityname= "nota3",
+--                 materialname = ""
+--             }
+--         },
+--         {
+--             name = "ColliderComponent",
+--             parameters = {
+--             }
+--         },
+--         {
+--             name = "RigidBodyComponent",
+--             parameters = {
+--                 shapeType = 1,
+--                 movementType = 1,
+--                 size = {5, 5, 5},
+--                 mass = 1.0,
+--                 friction =1.0,
+--                 restitution=1.0,
+--                 trigger = false,
+--                 mask = 1,
+--                 group = 2
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota3", 
-                material = "cartelE", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI3"
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "nota3", 
+--                 material = "cartelE", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "NoteComponent",
+--             parameters = {
+--                 text = "NotaUI3"
+--             }
+--         }
         
-    }
-},
-{
-    name = "NotaUI4",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--     }
+-- },
+-- {
+--     name = "NotaUI4",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {40, -5, 20},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui4", 
-                material = "nota4", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "notaui4", 
+--                 material = "nota4", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "ShowImageComponent",
+--             parameters = {
+--                 ttoshow = 5.0
+--             }
+--         }
         
-    }
-},
-{
-    name = "Nota4",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota4",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
+--     }
+-- },
+-- {
+--     name = "Nota4",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {  
+--                 a = 0,
+--                 position = {40, -5, 20},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "MeshRenderComponent",
+--             parameters = {                  
+--                 isstatic = false,
+--                 modelname = "Cuaderno.mesh",
+--                 entityname= "nota4",
+--                 materialname = ""
+--             }
+--         },
+--         {
+--             name = "ColliderComponent",
+--             parameters = {
+--             }
+--         },
        
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
+--         {
+--             name = "RigidBodyComponent",
+--             parameters = {
+--                 shapeType = 1,
+--                 movementType = 1,
+--                 size = {5, 5, 5},
+--                 mass = 1.0,
+--                 friction =1.0,
+--                 restitution=1.0,
+--                 trigger = false,
+--                 mask = 1,
+--                 group = 2
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota4", 
-                material = "cartelE", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI4"
-            }
-        }
+--             name = "UISpriteRendererComponent",
+--             parameters = {
+--                 name = "nota4", 
+--                 material = "cartelE", 
+--                 zOrder = 1
+--             }
+--         },
+--         {
+--             name = "NoteComponent",
+--             parameters = {
+--                 text = "NotaUI4"
+--             }
+--         }
         
-    }
-},
+--     }
+-- },
     -- {
     --     name = "Pila",
     --     components = {
@@ -1064,61 +1064,7 @@ Entities={
     --     }
     -- },
 
-    {
-             name = "Nodo0",
-            components = {
-                {
-                    name = "TransformComponent",
-                    parameters = {  
-                        a = 0,
-                        position = {0, 0, 0},
-                        rotation = {0, 0, 0},
-                        scale = {1, 1, 1}                   
-                    }
-                },
-                 {
-                  name = "MeshRenderComponent",
-                     parameters = {                  
-                         isstatic = false,
-                        modelname = "Sinbad.mesh",
-                        entityname= "sinbad",
-                         materialname = "Sinbad/Gold"
-                     }
-                 },
-                 {
-                    name = "ColliderComponent",
-                    parameters = {
-                     }
-                 },
-               
-                 {
-                     name = "RigidBodyComponent",
-                     parameters = {
-                         shapeType = 1,
-                         movementType = 2,
-                         size = {1, 1, 1},
-                         mass = 1.0,
-                         friction =1.0,
-                         restitution=1.0,
-                         trigger = true,
-                         mask = 1,
-                         group = 2
-                     }
-                 },
-                  {
-                     name="NodeComponent",
-                     parameters={
-                     ispatrol=true,
-                         cost=1.8,
-                         hcost=1.8,
-                         iswalkable=true,
-                         id=0
-    
-                     }
-                 }
-    
-            }
-     }, {
+     {
         name = "SueloCollider",
         components = 
         {
@@ -2144,39 +2090,34 @@ Entities={
             },
         }
     },
-     {
-        name = "Nodo1",
+    
+   
+    {
+        name = "Nodo0",
        components = {
            {
                name = "TransformComponent",
                parameters = {  
-                   a = 0,
-                   position = {-35, 0, 0},
+                   position = {-82, 0, 71},
                    rotation = {0, 0, 0},
                    scale = {1, 1, 1}                   
                }
-           },
-            {
-             name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
+           }, {
+            name = "MeshRenderComponent",
+           parameters = {                  
+               isstatic = false,
+               modelname = "Sinbad.mesh",
+               entityname= "sinbad",
+                materialname = ""
+            }
+        },
           
             {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
                     movementType = 2,
-                    size = {1, 1, 1},
+                    size = {2,2,2},
                     mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
@@ -2184,7 +2125,11 @@ Entities={
                     mask = 1,
                     group = 2
                 }
-            },
+            },{
+                name = "ColliderComponent",
+                parameters = {
+                 }
+             },
              {
                 name="NodeComponent",
                 parameters={
@@ -2192,1122 +2137,938 @@ Entities={
                     cost=1.8,
                     hcost=1.8,
                     iswalkable=true,
-                    id=1
+                    id=0
 
                 }
             }
 
        }
-},
-
+}, 
 {
-    name = "Nodo2",
+    name = "Nodo1",
    components = {
        {
            name = "TransformComponent",
            parameters = {  
                a = 0,
-               position = {-88, 0, 48},
+               position = {-79, 0, 106},
                rotation = {0, 0, 0},
                scale = {1, 1, 1}                   
            }
        },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
-      
+       {
+        name = "MeshRenderComponent",
+       parameters = {                  
+           isstatic = false,
+           modelname = "Sinbad.mesh",
+           entityname= "sinbad",
+            materialname = ""
+        }
+    },
         {
             name = "RigidBodyComponent",
             parameters = {
                 shapeType = 1,
                 movementType = 2,
-                size = {2, 2, 2},
+                size = {2,2,2},
                 mass = 1.0,
                 friction =1.0,
                 restitution=1.0,
                 trigger = true,
                 mask = 1,
                 group = 2
-            }
-        },
-         {
-            name="NodeComponent",
-            parameters={
-            ispatrol=false,
-                cost=1.8,
-                hcost=1.8,
-                iswalkable=true,
-                id=2
-
-            }
-        }
-
-   }
-},
-{
-    name = "Nodo3",
-   components = {
-       {
-           name = "TransformComponent",
-           parameters = {  
-               a = 0,
-               position = {0, 0, 30},
-               rotation = {0, 0, 0},
-               scale = {1, 1, 1}                   
-           }
-       },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
-      
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 2,
-                size = {2, 2, 2},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = true,
-                mask = 1,
-                group = 2
-            }
-        },
-         {
-            name="NodeComponent",
-            parameters={
-            ispatrol=false,
-                cost=1.8,
-                hcost=1.8,
-                iswalkable=true,
-                id=3
-
-            }
-        }
-
-   }
-},
-{
-    name = "Nodo4",
-   components = {
-       {
-           name = "TransformComponent",
-           parameters = {  
-               a = 0,
-               position = {-35, 0, 35},
-               rotation = {0, 0, 0},
-               scale = {1, 1, 1}                   
-           }
-       },
-        {
-         name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = "Sinbad/Gold"
-            }
-        },
-        {
-           name = "ColliderComponent",
-           parameters = {
-            }
-        },
-      
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 2,
-                size = {1, 1, 1},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = true,
-                mask = 1,
-                group = 2
-            }
-        },
-         {
-            name="NodeComponent",
-            parameters={
-            ispatrol=false,
-                cost=1.8,
-                hcost=1.8,
-                iswalkable=true,
-                id=4
-
-            }
-        }
-
-   }
-},
-
-
-    {
-        name = "Nodo5",
-        components = {
-           {
-               name = "TransformComponent",
-               parameters = {  
-                   a = 0,
-                   position = {-90, 0, 110},
-                   rotation = {0, 0, 0},
-                   scale = {1, 1, 1}                   
-               }
-           },
-            {
-             name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
-          
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1.0,
-                    friction =1.0,
-                    restitution=1.0,
-                    trigger = true,
-                    mask = 1,
-                    group = 2
-                }
-            },
-             {
-                name="NodeComponent",
-                parameters={
-                ispatrol=false,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=5
-        
-                }
-            }
-        
-        }
-        },
-
-        {
-            name = "Nodo6",
-           components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {0, 0, 110},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=6
-        
-                    }
-                }
-        
-           }
-        },
-        {
-            name = "Nodo7",
-           components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {-35, 0, 110},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {1, 1, 1},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=7
-        
-                    }
-                }
-        
-           }
-        },
-        {
-        name = "Nodo8",
-        components = {
-           {
-               name = "TransformComponent",
-               parameters = {  
-                   a = 0,
-                   position = {-65, 0, 110},
-                   rotation = {0, 0, 0},
-                   scale = {1, 1, 1}                   
-               }
-           },
-            {
-             name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-               name = "ColliderComponent",
-               parameters = {
-                }
-            },
-          
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1.0,
-                    friction =1.0,
-                    restitution=1.0,
-                    trigger = true,
-                    mask = 1,
-                    group = 2
-                }
-            },
-             {
-                name="NodeComponent",
-                parameters={
-                ispatrol=false,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=8
-        
-                }
-            }
-        
-        }
-        },
-        {
-            name = "Nodo9",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {-90, 0, 80},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=9
-            
-                    }
-                }
-            
-            }
-            },
-    
-            {
-                name = "Nodo10",
-               components = {
-                   {
-                       name = "TransformComponent",
-                       parameters = {  
-                           a = 0,
-                           position = {0, 0, 80},
-                           rotation = {0, 0, 0},
-                           scale = {1, 1, 1}                   
-                       }
-                   },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
-                  
-                    {
-                        name = "RigidBodyComponent",
-                        parameters = {
-                            shapeType = 1,
-                            movementType = 2,
-                            size = {2, 2, 2},
-                            mass = 1.0,
-                            friction =1.0,
-                            restitution=1.0,
-                            trigger = true,
-                            mask = 1,
-                            group = 2
-                        }
-                    },
-                     {
-                        name="NodeComponent",
-                        parameters={
-                        ispatrol=false,
-                            cost=1.8,
-                            hcost=1.8,
-                            iswalkable=true,
-                            id=10
-            
-                        }
-                    }
-            
-               }
-            },
-            {
-                name = "Nodo11",
-               components = {
-                   {
-                       name = "TransformComponent",
-                       parameters = {  
-                           a = 0,
-                           position = {-35, 0, 80},
-                           rotation = {0, 0, 0},
-                           scale = {1, 1, 1}                   
-                       }
-                   },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
-                  
-                    {
-                        name = "RigidBodyComponent",
-                        parameters = {
-                            shapeType = 1,
-                            movementType = 2,
-                            size = {1, 1, 1},
-                            mass = 1.0,
-                            friction =1.0,
-                            restitution=1.0,
-                            trigger = true,
-                            mask = 1,
-                            group = 2
-                        }
-                    },
-                     {
-                        name="NodeComponent",
-                        parameters={
-                        ispatrol=false,
-                            cost=1.8,
-                            hcost=1.8,
-                            iswalkable=true,
-                            id=11
-            
-                        }
-                    }
-            
-               }
-            },
-            {
-            name = "Nodo12",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {-65, 0, 80},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=12
-            
-                    }
-                }
-            
-            }
-            },
-            
-            {
-            name = "Nodo13",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {70, 0, 110},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=13
-            
-                    }
-                }
-            
-            }
-            },
-            
-            {
-            name = "Nodo14",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {113, 0, 110},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=14
-            
-                    }
-                }
-            
-            }
-            },
-            {
-                name = "Nodo15",
-                components = {
-                   {
-                       name = "TransformComponent",
-                       parameters = {  
-                           a = 0,
-                           position = {112, 0, 140},
-                           rotation = {0, 0, 0},
-                           scale = {1, 1, 1}                   
-                       }
-                   },
-                    {
-                     name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                           modelname = "Sinbad.mesh",
-                           entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
-                    {
-                       name = "ColliderComponent",
-                       parameters = {
-                        }
-                    },
-                  
-                    {
-                        name = "RigidBodyComponent",
-                        parameters = {
-                            shapeType = 1,
-                            movementType = 2,
-                            size = {2, 2, 2},
-                            mass = 1.0,
-                            friction =1.0,
-                            restitution=1.0,
-                            trigger = true,
-                            mask = 1,
-                            group = 2
-                        }
-                    },
-                     {
-                        name="NodeComponent",
-                        parameters={
-                        ispatrol=false,
-                            cost=1.8,
-                            hcost=1.8,
-                            iswalkable=true,
-                            id=15
-                
-                        }
-                    }
-                
-                }
-                },
-                {
-                    name = "Nodo16",
-                    components = {
-                       {
-                           name = "TransformComponent",
-                           parameters = {  
-                               a = 0,
-                               position = {112, 0, 170},
-                               rotation = {0, 0, 0},
-                               scale = {1, 1, 1}                   
-                           }
-                       },
-                        {
-                         name = "MeshRenderComponent",
-                            parameters = {                  
-                                isstatic = false,
-                               modelname = "Sinbad.mesh",
-                               entityname= "sinbad",
-                                materialname = "Sinbad/Gold"
-                            }
-                        },
-                        {
-                           name = "ColliderComponent",
-                           parameters = {
-                            }
-                        },
-                      
-                        {
-                            name = "RigidBodyComponent",
-                            parameters = {
-                                shapeType = 1,
-                                movementType = 2,
-                                size = {2, 2, 2},
-                                mass = 1.0,
-                                friction =1.0,
-                                restitution=1.0,
-                                trigger = true,
-                                mask = 1,
-                                group = 2
-                            }
-                        },
-                         {
-                            name="NodeComponent",
-                            parameters={
-                            ispatrol=false,
-                                cost=1.8,
-                                hcost=1.8,
-                                iswalkable=true,
-                                id=16
-                    
-                            }
-                        }
-                    
-                    }
-                    },
-                    {
-                        name = "Nodo17",
-                        components = {
-                           {
-                               name = "TransformComponent",
-                               parameters = {  
-                                   a = 0,
-                                   position = {130, 0, 170},
-                                   rotation = {0, 0, 0},
-                                   scale = {1, 1, 1}                   
-                               }
-                           },
-                            {
-                             name = "MeshRenderComponent",
-                                parameters = {                  
-                                    isstatic = false,
-                                   modelname = "Sinbad.mesh",
-                                   entityname= "sinbad",
-                                    materialname = "Sinbad/Gold"
-                                }
-                            },
-                            {
-                               name = "ColliderComponent",
-                               parameters = {
-                                }
-                            },
-                          
-                            {
-                                name = "RigidBodyComponent",
-                                parameters = {
-                                    shapeType = 1,
-                                    movementType = 2,
-                                    size = {2, 2, 2},
-                                    mass = 1.0,
-                                    friction =1.0,
-                                    restitution=1.0,
-                                    trigger = true,
-                                    mask = 1,
-                                    group = 2
-                                }
-                            },
-                             {
-                                name="NodeComponent",
-                                parameters={
-                                ispatrol=false,
-                                    cost=1.8,
-                                    hcost=1.8,
-                                    iswalkable=true,
-                                    id=17
-                        
-                                }
-                            }
-                        
-                        }
-                        },
-
-                        {
-                            name = "Nodo18",
-                            components = {
-                               {
-                                   name = "TransformComponent",
-                                   parameters = {  
-                                       a = 0,
-                                       position = {155, 0, 170},
-                                       rotation = {0, 0, 0},
-                                       scale = {1, 1, 1}                   
-                                   }
-                               },
-                                {
-                                 name = "MeshRenderComponent",
-                                    parameters = {                  
-                                        isstatic = false,
-                                       modelname = "Sinbad.mesh",
-                                       entityname= "sinbad",
-                                        materialname = "Sinbad/Gold"
-                                    }
-                                },
-                                {
-                                   name = "ColliderComponent",
-                                   parameters = {
-                                    }
-                                },
-                              
-                                {
-                                    name = "RigidBodyComponent",
-                                    parameters = {
-                                        shapeType = 1,
-                                        movementType = 2,
-                                        size = {2, 2, 2},
-                                        mass = 1.0,
-                                        friction =1.0,
-                                        restitution=1.0,
-                                        trigger = true,
-                                        mask = 1,
-                                        group = 2
-                                    }
-                                },
-                                 {
-                                    name="NodeComponent",
-                                    parameters={
-                                    ispatrol=false,
-                                        cost=1.8,
-                                        hcost=1.8,
-                                        iswalkable=true,
-                                        id=18
-                            
-                                    }
-                                }
-                            
-                            }
-                },
- 
-                {
-                    name = "Nodo19",
-                    components = {
-                       {
-                           name = "TransformComponent",
-                           parameters = {  
-                               a = 0,
-                               position = {70, 0, 138},
-                               rotation = {0, 0, 0},
-                               scale = {1, 1, 1}                   
-                           }
-                       },
-                        {
-                         name = "MeshRenderComponent",
-                            parameters = {                  
-                                isstatic = false,
-                               modelname = "Sinbad.mesh",
-                               entityname= "sinbad",
-                                materialname = "Sinbad/Gold"
-                            }
-                        },
-                        {
-                           name = "ColliderComponent",
-                           parameters = {
-                            }
-                        },
-                      
-                        {
-                            name = "RigidBodyComponent",
-                            parameters = {
-                                shapeType = 1,
-                                movementType = 2,
-                                size = {2, 2, 2},
-                                mass = 1.0,
-                                friction =1.0,
-                                restitution=1.0,
-                                trigger = true,
-                                mask = 1,
-                                group = 2
-                            }
-                        },
-                         {
-                            name="NodeComponent",
-                            parameters={
-                            ispatrol=false,
-                                cost=1.8,
-                                hcost=1.8,
-                                iswalkable=true,
-                                id=19
-                    
-                            }
-                        }
-                    
-                    }
-        },
-        {
-            name = "Nodo20",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {70, 0, 170},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=20
-            
-                    }
-                }
-            
             }
         },{
-            name = "Nodo21",
-            components = {
-               {
-                   name = "TransformComponent",
-                   parameters = {  
-                       a = 0,
-                       position = {0, 0, 90},
-                       rotation = {0, 0, 0},
-                       scale = {1, 1, 1}                   
-                   }
-               },
-                {
-                 name = "MeshRenderComponent",
-                    parameters = {                  
-                        isstatic = false,
-                       modelname = "Sinbad.mesh",
-                       entityname= "sinbad",
-                        materialname = "Sinbad/Gold"
-                    }
-                },
-                {
-                   name = "ColliderComponent",
-                   parameters = {
-                    }
-                },
-              
-                {
-                    name = "RigidBodyComponent",
-                    parameters = {
-                        shapeType = 1,
-                        movementType = 2,
-                        size = {2, 2, 2},
-                        mass = 1.0,
-                        friction =1.0,
-                        restitution=1.0,
-                        trigger = true,
-                        mask = 1,
-                        group = 2
-                    }
-                },
-                 {
-                    name="NodeComponent",
-                    parameters={
-                    ispatrol=false,
-                        cost=1.8,
-                        hcost=1.8,
-                        iswalkable=true,
-                        id=21
-            
-                    }
-                }
-            
-            }
-        },
+            name = "ColliderComponent",
+            parameters = {
+             }
+         },
+         {
+            name="NodeComponent",
+            parameters={
+            ispatrol=true,
+                cost=1.8,
+                hcost=1.8,
+                iswalkable=true,
+                id=1
 
+            }
+        }
+
+   }
+},
+
+{
+name = "Nodo2",
+components = {
+   {
+       name = "TransformComponent",
+       parameters = {  
+           a = 0,
+           position = {0, 0, 106},
+           rotation = {0, 0, 0},
+           scale = {1, 1, 1}                   
+       }
+   },
+   {
+    name = "MeshRenderComponent",
+   parameters = {                  
+       isstatic = false,
+       modelname = "Sinbad.mesh",
+       entityname= "sinbad",
+        materialname = ""
+    }
+},
+    {
+        name = "RigidBodyComponent",
+        parameters = {
+            shapeType = 1,
+            movementType = 1,
+            size = {2, 2, 2},
+            mass = 1.0,
+            friction =1.0,
+            restitution=1.0,
+            trigger = true,
+            mask = 1,
+            group = 2
+        }
+    },{
+        name = "ColliderComponent",
+        parameters = {
+         }
+     },
+     {
+        name="NodeComponent",
+        parameters={
+        ispatrol=false,
+            cost=1.8,
+            hcost=1.8,
+            iswalkable=true,
+            id=2
+
+        }
+    }
+
+}
+},
+{
+name = "Nodo3",
+components = {
+   {
+       name = "TransformComponent",
+       parameters = {  
+           a = 0,
+           position = {-8, 0, 84},
+           rotation = {0, 0, 0},
+           scale = {1, 1, 1}                   
+       }
+   }, {
+    name = "MeshRenderComponent",
+   parameters = {                  
+       isstatic = false,
+       modelname = "Sinbad.mesh",
+       entityname= "sinbad",
+        materialname = ""
+    }
+},{
+    name = "ColliderComponent",
+    parameters = {
+     }
+ },
+  
+    {
+        name = "RigidBodyComponent",
+        parameters = {
+            shapeType = 1,
+            movementType = 2,
+            size = {2, 2, 2},
+            mass = 1.0,
+            friction =1.0,
+            restitution=1.0,
+            trigger = true,
+            mask = 1,
+            group = 2
+        }
+    },{
+        name = "ColliderComponent",
+        parameters = {
+         }
+     },
+     {
+        name="NodeComponent",
+        parameters={
+        ispatrol=false,
+            cost=1.8,
+            hcost=1.8,
+            iswalkable=true,
+            id=3
+
+        }
+    }
+
+}
+},
+{
+name = "Nodo4",
+components = {
+   {
+       name = "TransformComponent",
+       parameters = {  
+           a = 0,
+           position = {25, 0, 84},
+           rotation = {0, 0, 0},
+           scale = {1, 1, 1}                   
+       }
+   }, {
+    name = "MeshRenderComponent",
+   parameters = {                  
+       isstatic = false,
+       modelname = "Sinbad.mesh",
+       entityname= "sinbad",
+        materialname = ""
+    }
+},
+  
+    {
+        name = "RigidBodyComponent",
+        parameters = {
+            shapeType = 1,
+            movementType = 2,
+            size = {2,2,2},
+            mass = 1.0,
+            friction =1.0,
+            restitution=1.0,
+            trigger = true,
+            mask = 1,
+            group = 2
+        }
+    },{
+        name = "ColliderComponent",
+        parameters = {
+         }
+     },
+     {
+        name="NodeComponent",
+        parameters={
+        ispatrol=false,
+            cost=1.8,
+            hcost=1.8,
+            iswalkable=true,
+            id=4
+
+        }
+    }
+
+}
+},
+
+
+{
+    name = "Nodo5",
+     components = {
+       {
+           name = "TransformComponent",
+            parameters = {  
+               a = 0,
+               position = {41, 0,106},
+               rotation = {0, 0, 0},           
+                    scale = {1, 1, 1}                   
+            }   
+             }, {
+                name = "MeshRenderComponent",
+               parameters = {                  
+                   isstatic = false,
+                   modelname = "Sinbad.mesh",
+                   entityname= "sinbad",
+                    materialname = ""
+                }
+            },
+      
+         {
+             name = "RigidBodyComponent",
+             parameters = {
+                shapeType = 1,
+                 movementType = 1,
+                 size = {2, 2, 2},
+                 mass = 1.0,
+                 friction =1.0,
+                 restitution=1.0,
+                 trigger = true,
+                 mask = 1,
+                 group = 2
+             }
+         },{
+            name = "ColliderComponent",
+            parameters = {
+             }
+         },
+          {
+             name="NodeComponent",
+             parameters={
+             ispatrol=false,
+                 cost=1.8,
+                 hcost=1.8,
+                 iswalkable=true,
+                 id=5
+    
+             }
+         }
+    
+     }
+     },
+
+--     {
+--         name = "Nodo6",
+--        components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {0, 0, 110},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=6
+    
+--                 }
+--             }
+    
+--        }
+--     },
+--     {
+--         name = "Nodo7",
+--        components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {-35, 0, 110},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {1, 1, 1},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=7
+    
+--                 }
+--             }
+    
+--        }
+--     },
+--     {
+--     name = "Nodo8",
+--     components = {
+--        {
+--            name = "TransformComponent",
+--            parameters = {  
+--                a = 0,
+--                position = {-65, 0, 110},
+--                rotation = {0, 0, 0},
+--                scale = {1, 1, 1}                   
+--            }
+--        },
+--         {
+--          name = "MeshRenderComponent",
+--             parameters = {                  
+--                 isstatic = false,
+--                modelname = "Sinbad.mesh",
+--                entityname= "sinbad",
+--                 materialname = "Sinbad/Gold"
+--             }
+--         },
+--          {
+--             name="NodeComponent",
+--             parameters={
+--             ispatrol=false,
+--                 cost=1.8,
+--                 hcost=1.8,
+--                 iswalkable=true,
+--                 id=8
+    
+--             }
+--         }
+    
+--     }
+--     },
+--     {
+--         name = "Nodo9",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {-90, 0, 80},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=9
+        
+--                 }
+--             }
+        
+--         }
+--         },
+
+--         {
+--             name = "Nodo10",
+--            components = {
+--                {
+--                    name = "TransformComponent",
+--                    parameters = {  
+--                        a = 0,
+--                        position = {0, 0, 80},
+--                        rotation = {0, 0, 0},
+--                        scale = {1, 1, 1}                   
+--                    }
+--                },
+              
+--                 {
+--                     name = "RigidBodyComponent",
+--                     parameters = {
+--                         shapeType = 1,
+--                         movementType = 2,
+--                         size = {2, 2, 2},
+--                         mass = 1.0,
+--                         friction =1.0,
+--                         restitution=1.0,
+--                         trigger = true,
+--                         mask = 1,
+--                         group = 2
+--                     }
+--                 },
+--                  {
+--                     name="NodeComponent",
+--                     parameters={
+--                     ispatrol=false,
+--                         cost=1.8,
+--                         hcost=1.8,
+--                         iswalkable=true,
+--                         id=10
+        
+--                     }
+--                 }
+        
+--            }
+--         },
+--         {
+--             name = "Nodo11",
+--            components = {
+--                {
+--                    name = "TransformComponent",
+--                    parameters = {  
+--                        a = 0,
+--                        position = {-35, 0, 80},
+--                        rotation = {0, 0, 0},
+--                        scale = {1, 1, 1}                   
+--                    }
+--                },
+              
+--                 {
+--                     name = "RigidBodyComponent",
+--                     parameters = {
+--                         shapeType = 1,
+--                         movementType = 2,
+--                         size = {1, 1, 1},
+--                         mass = 1.0,
+--                         friction =1.0,
+--                         restitution=1.0,
+--                         trigger = true,
+--                         mask = 1,
+--                         group = 2
+--                     }
+--                 },
+--                  {
+--                     name="NodeComponent",
+--                     parameters={
+--                     ispatrol=false,
+--                         cost=1.8,
+--                         hcost=1.8,
+--                         iswalkable=true,
+--                         id=11
+        
+--                     }
+--                 }
+        
+--            }
+--         },
+--         {
+--         name = "Nodo12",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {-65, 0, 80},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=12
+        
+--                 }
+--             }
+        
+--         }
+--         },
+        
+--         {
+--         name = "Nodo13",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {70, 0, 110},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=13
+        
+--                 }
+--             }
+        
+--         }
+--         },
+        
+--         {
+--         name = "Nodo14",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {113, 0, 110},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=14
+        
+--                 }
+--             }
+        
+--         }
+--         },
+--         {
+--             name = "Nodo15",
+--             components = {
+--                {
+--                    name = "TransformComponent",
+--                    parameters = {  
+--                        a = 0,
+--                        position = {112, 0, 140},
+--                        rotation = {0, 0, 0},
+--                        scale = {1, 1, 1}                   
+--                    }
+--                },
+              
+--                 {
+--                     name = "RigidBodyComponent",
+--                     parameters = {
+--                         shapeType = 1,
+--                         movementType = 2,
+--                         size = {2, 2, 2},
+--                         mass = 1.0,
+--                         friction =1.0,
+--                         restitution=1.0,
+--                         trigger = true,
+--                         mask = 1,
+--                         group = 2
+--                     }
+--                 },
+--                  {
+--                     name="NodeComponent",
+--                     parameters={
+--                     ispatrol=false,
+--                         cost=1.8,
+--                         hcost=1.8,
+--                         iswalkable=true,
+--                         id=15
+            
+--                     }
+--                 }
+            
+--             }
+--             },
+--             {
+--                 name = "Nodo16",
+--                 components = {
+--                    {
+--                        name = "TransformComponent",
+--                        parameters = {  
+--                            a = 0,
+--                            position = {112, 0, 170},
+--                            rotation = {0, 0, 0},
+--                            scale = {1, 1, 1}                   
+--                        }
+--                    },
+                  
+--                     {
+--                         name = "RigidBodyComponent",
+--                         parameters = {
+--                             shapeType = 1,
+--                             movementType = 2,
+--                             size = {2, 2, 2},
+--                             mass = 1.0,
+--                             friction =1.0,
+--                             restitution=1.0,
+--                             trigger = true,
+--                             mask = 1,
+--                             group = 2
+--                         }
+--                     },
+--                      {
+--                         name="NodeComponent",
+--                         parameters={
+--                         ispatrol=false,
+--                             cost=1.8,
+--                             hcost=1.8,
+--                             iswalkable=true,
+--                             id=16
+                
+--                         }
+--                     }
+                
+--                 }
+--                 },
+--                 {
+--                     name = "Nodo17",
+--                     components = {
+--                        {
+--                            name = "TransformComponent",
+--                            parameters = {  
+--                                a = 0,
+--                                position = {130, 0, 170},
+--                                rotation = {0, 0, 0},
+--                                scale = {1, 1, 1}                   
+--                            }
+--                        },
+                      
+--                         {
+--                             name = "RigidBodyComponent",
+--                             parameters = {
+--                                 shapeType = 1,
+--                                 movementType = 2,
+--                                 size = {2, 2, 2},
+--                                 mass = 1.0,
+--                                 friction =1.0,
+--                                 restitution=1.0,
+--                                 trigger = true,
+--                                 mask = 1,
+--                                 group = 2
+--                             }
+--                         },
+--                          {
+--                             name="NodeComponent",
+--                             parameters={
+--                             ispatrol=false,
+--                                 cost=1.8,
+--                                 hcost=1.8,
+--                                 iswalkable=true,
+--                                 id=17
+                    
+--                             }
+--                         }
+                    
+--                     }
+--                     },
+
+--                     {
+--                         name = "Nodo18",
+--                         components = {
+--                            {
+--                                name = "TransformComponent",
+--                                parameters = {  
+--                                    a = 0,
+--                                    position = {155, 0, 170},
+--                                    rotation = {0, 0, 0},
+--                                    scale = {1, 1, 1}                   
+--                                }
+--                            },
+                          
+--                             {
+--                                 name = "RigidBodyComponent",
+--                                 parameters = {
+--                                     shapeType = 1,
+--                                     movementType = 2,
+--                                     size = {2, 2, 2},
+--                                     mass = 1.0,
+--                                     friction =1.0,
+--                                     restitution=1.0,
+--                                     trigger = true,
+--                                     mask = 1,
+--                                     group = 2
+--                                 }
+--                             },
+--                              {
+--                                 name="NodeComponent",
+--                                 parameters={
+--                                 ispatrol=false,
+--                                     cost=1.8,
+--                                     hcost=1.8,
+--                                     iswalkable=true,
+--                                     id=18
+                        
+--                                 }
+--                             }
+                        
+--                         }
+--             },
+
+--             {
+--                 name = "Nodo19",
+--                 components = {
+--                    {
+--                        name = "TransformComponent",
+--                        parameters = {  
+--                            a = 0,
+--                            position = {70, 0, 138},
+--                            rotation = {0, 0, 0},
+--                            scale = {1, 1, 1}                   
+--                        }
+--                    },
+--                     {
+--                         name = "RigidBodyComponent",
+--                         parameters = {
+--                             shapeType = 1,
+--                             movementType = 2,
+--                             size = {2, 2, 2},
+--                             mass = 1.0,
+--                             friction =1.0,
+--                             restitution=1.0,
+--                             trigger = true,
+--                             mask = 1,
+--                             group = 2
+--                         }
+--                     },
+--                      {
+--                         name="NodeComponent",
+--                         parameters={
+--                         ispatrol=false,
+--                             cost=1.8,
+--                             hcost=1.8,
+--                             iswalkable=true,
+--                             id=19
+                
+--                         }
+--                     }
+                
+--                 }
+--     },
+--     {
+--         name = "Nodo20",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {70, 0, 170},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=20
+        
+--                 }
+--             }
+        
+--         }
+--     },{
+--         name = "Nodo21",
+--         components = {
+--            {
+--                name = "TransformComponent",
+--                parameters = {  
+--                    a = 0,
+--                    position = {0, 0, 90},
+--                    rotation = {0, 0, 0},
+--                    scale = {1, 1, 1}                   
+--                }
+--            },
+          
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 2,
+--                     size = {2, 2, 2},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = true,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--              {
+--                 name="NodeComponent",
+--                 parameters={
+--                 ispatrol=false,
+--                     cost=1.8,
+--                     hcost=1.8,
+--                     iswalkable=true,
+--                     id=21
+        
+--                 }
+--             }
+        
+--         }
+--     },
 
     {
         name = "Casa:)",
@@ -3346,7 +3107,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                  a = 0,
-                     position = {0, 0, 0},
+                     position = {60,0,107},
                      rotation = {0, 0, 0},
                      scale = {1, 1, 1}                   
                }
@@ -3398,15 +3159,7 @@ Entities={
                      min_dist_follow=50.0
                  }
              },
-             {
-             name="OgremanHearingComponent",
-                 parameters={
-                     sensitivity=8,
-                     rate=3.0,
-                     lowerThreshold=0.4,
-                     upperThreshold=1.0
-                 }
-             }
+            
          }
      },
    
