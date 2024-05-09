@@ -111,9 +111,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
 		}
 	}
-	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_Y)) {
-		VeryReal::PhysicsManager::Instance()->SeeDebugColliders(true);
-	}
+	
 	// Linterna
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LCTRL) ||
 		VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_TRIGGERRIGHT) > 0) {
