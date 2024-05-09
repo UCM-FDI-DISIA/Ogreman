@@ -35,7 +35,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {150, 6, 50},
+                    position = {186,5,-148},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -490,7 +490,7 @@ Entities={
                     name = "TransformComponent",
                     parameters = {  
                         a = 0,
-                        position = {0, 0, 0},
+                        position = {-105,0,-119},
                         rotation = {0, 0, 0},
                         scale = {1, 1, 1}                   
                     }
@@ -543,7 +543,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-35, 0, 0},
+                    position = {220,0,-148},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -591,6 +591,116 @@ Entities={
 
         }
     },
+   
+    {
+        name = "Nodo2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {220,0,300},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                    materialname = "Sinbad/Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+        
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 2,
+                    size = {1, 1, 1},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = true,
+                    mask = 1,
+                    group = 2
+                }
+            },
+                {
+                name="NodeComponent",
+                parameters={
+                ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=2
+
+                }
+            }
+
+        }
+    },  {
+        name = "Nodo3",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {-105,0,300},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "sinbad",
+                    materialname = "Sinbad/Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+        
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 2,
+                    size = {1, 1, 1},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = true,
+                    mask = 1,
+                    group = 2
+                }
+            },
+                {
+                name="NodeComponent",
+                parameters={
+                ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=3
+
+                }
+            }
+
+        }
+    }, 
     {
         name = "Jardin",
         components = {
@@ -613,7 +723,36 @@ Entities={
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
-                    modelname = "Casa.mesh",
+                    modelname = "Arboles_jardin.mesh",
+                    entityname= "npc1",
+                    materialname = ""
+                }
+            }
+        }
+    }, 
+    {
+        name = "Jardin2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {                 
+                    position = {10, 0, 70},
+                    rotation = {180, 0, 0},
+                    scale = {8, 8, 8}                   
+                }
+            },
+           
+            {
+                name="GridComponent",
+                parameters={
+
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Jardin_sin_arboles.mesh",
                     entityname= "npc1",
                     materialname = ""
                 }
@@ -672,7 +811,7 @@ Entities={
                     alignmentWeight=0.1,
                     cohesionWeight=0.1,
                     separationWeight=0.1,
-                    maxSpeed=6.0,
+                    maxSpeed=16.0,
                     separationDistance=2.0,
                     max_dist_follow=100.0,
                     min_dist_follow=50.0
@@ -707,7 +846,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {200, 20, 200},
+                    size = {500, 20, 500},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=0.0,
@@ -718,6 +857,122 @@ Entities={
             },
         }
     }
+}
+    -- {
+    --     name = "Pared1",
+    --     components = 
+    --     {
+    --         {
+    --             name = "TransformComponent",
+    --             parameters = {  
+    --                 a = 0,
+    --                 position = {-137, -28, -254},
+    --                 rotation = {0, 0, 0},
+    --                 scale = {1, 1, 1}                   
+    --             }
+    --         },
+    --         {
+    --             name = "RigidBodyComponent",
+    --             parameters = {
+    --                 shapeType = 1,
+    --                 movementType = 1,
+    --                 size = {500, 500, 100},
+    --                 mass = 100000.0,
+    --                 friction =1.0,
+    --                 restitution=0.0,
+    --                 trigger = false,
+    --                 mask = 1,
+    --                 group = 2
+    --             }
+    --         },
+    --     }
+    -- },{
+    --     name = "Pared2",
+    --     components = 
+    --     {
+    --         {
+    --             name = "TransformComponent",
+    --             parameters = {  
+    --                 a = 0,
+    --                 position = {272, -28, -50},
+    --                 rotation = {0, 0, 0},
+    --                 scale = {1, 1, 1}                   
+    --             }
+    --         },
+    --         {
+    --             name = "RigidBodyComponent",
+    --             parameters = {
+    --                 shapeType = 1,
+    --                 movementType = 1,
+    --                 size = {100, 500, 500},
+    --                 mass = 100000.0,
+    --                 friction =1.0,
+    --                 restitution=0.0,
+    --                 trigger = false,
+    --                 mask = 1,
+    --                 group = 2
+    --             }
+    --         },
+    --     }
+    -- },
+    -- {
+    --     name = "Pared3",
+    --     components = 
+    --     {
+    --         {
+    --             name = "TransformComponent",
+    --             parameters = {  
+    --                 a = 0,
+    --                 position = {-195, -28, -100},
+    --                 rotation = {0, 0, 0},
+    --                 scale = {1, 1, 1}                   
+    --             }
+    --         },
+    --         {
+    --             name = "RigidBodyComponent",
+    --             parameters = {
+    --                 shapeType = 1,
+    --                 movementType = 1,
+    --                 size = {20, 500, 500},
+    --                 mass = 100000.0,
+    --                 friction =1.0,
+    --                 restitution=0.0,
+    --                 trigger = false,
+    --                 mask = 1,
+    --                 group = 2
+    --             }
+    --         },
+    --     }
+    -- }, 
+    -- {
+    --     name = "Pared4",
+    --     components = 
+    --     {
+    --         {
+    --             name = "TransformComponent",
+    --             parameters = {  
+    --                 a = 0,
+    --                 position = {-195, -28, -100},
+    --                 rotation = {0, 0, 0},
+    --                 scale = {1, 1, 1}                   
+    --             }
+    --         },
+    --         {
+    --             name = "RigidBodyComponent",
+    --             parameters = {
+    --                 shapeType = 1,
+    --                 movementType = 1,
+    --                 size = {20, 500, 500},
+    --                 mass = 100000.0,
+    --                 friction =1.0,
+    --                 restitution=0.0,
+    --                 trigger = false,
+    --                 mask = 1,
+    --                 group = 2
+    --             }
+    --         },
+    --     }
+    -- }
     -- {
     --     name = "NPC1",
     --     components = {
@@ -786,4 +1041,3 @@ Entities={
     --         }
     --     }
     -- }
-}
