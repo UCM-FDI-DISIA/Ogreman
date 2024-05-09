@@ -50,8 +50,8 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 	
 	int cont_notes = 0, cont_cells = 0;
 	
-	while (collided_list.size() > 0) {
-		auto elem_collided = collided_list.top(); collided_list.pop();
+	if (!collided_list.empty()) {
+		auto elem_collided = collided_list.top();
 		if (elem_collided.ent->GetActive()) {
 			if (elem_collided.ent->HasComponent("NoteComponent")) {
 				my_player_input_comp->setCanPickUp(true);
@@ -71,36 +71,17 @@ void Ogreman::PickUpComponent::Update(const double& dt) {
 
 	}
 
-	//for (auto elem_collided : collided_list) {
-	//	if (elem_collided->GetActive()) {
-	//		if (elem_collided->HasComponent("NoteComponent")) {
-	//			my_player_input_comp->setCanPickUp(true);
-	//			my_player_input_comp->setNoteToGet(elem_collided->GetComponent<NoteComponent>());
-	//			settam(elem_collided);
-	//			cont_notes++;
-	//			control_update_note = true;
-	//		}
-	//		if (elem_collided->HasComponent("CellComponent")) {
-	//			my_player_input_comp->setCanPickUp(true);
-	//			my_player_input_comp->setCellToGet(elem_collided->GetComponent<CellComponent>());
-	//			settam(elem_collided);
-	//			cont_cells++;
-	//			control_update_cell = true;
-	//		}
-	//	}
-	//	
-	//}
 	if (control_update_cell || control_update_note) {
 	
 		if (cont_cells == 0 && cont_notes == 0) {
 			my_player_input_comp->setCanPickUp(false);
 		}
-		 if (cont_cells == 0 && control_update_cell ) {
+		if (cont_cells == 0 && control_update_cell ) {
 			my_player_input_comp->getCellToGet()->GetComponent<VeryReal::UITransformComponent>()->hideElement();
 			my_player_input_comp->setCellToGet(nullptr);
 			control_update_cell = false;
 		}
-		 if (cont_notes == 0 && control_update_note ) {
+		if (cont_notes == 0 && control_update_note ) {
 			my_player_input_comp->getNoteToGet()->GetComponent<VeryReal::UITransformComponent>()->hideElement();
 
 			my_player_input_comp->setNoteToGet(nullptr);

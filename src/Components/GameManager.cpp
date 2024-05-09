@@ -40,7 +40,7 @@ void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
 	/*VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);*/
-	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("JardinScene", true));
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true));
 	//Hace que no se actualicen los collider de los rigidbodies tras haber sido instanciados
 	//Descomentar si queremos ver cajas en movimiento
 #ifdef _DEBUG

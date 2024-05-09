@@ -625,445 +625,148 @@ Entities={
         
     }
 },
-    -- {
-    --     name = "Pila",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {20, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Pila.mesh",
-    --                 entityname= "pila",
-    --                 materialname = ""
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
+-- {
+--     name = "PilaUI1",
+--     components = {
+--         {
+--             name = "TransformComponent",
+--             parameters = {
+--                 position = {40, -5, 20},
+--                 rotation = {0, 0, 180},
+--                 scale = {5, 5, 5}                   
+--             }
+--         },
+--         {
+--             name = "UITransformComponent",
+--             parameters = {
+--                 pos = {0.0, 0.0}, 
+--                 scale= {1.0, 1.0 }, 
+--                 hidden = true
+--             }
+--         },
+--         {
+--             name = "ShowImageComponent",
+--             parameters = {
+--                 ttoshow = 5.0
+--             }
+--         }
+        
+--     }
+-- },
+--     {
+--         name = "Pila1",
+--         components = {
+--             {
+--                 name = "TransformComponent",
+--                 parameters = {  
+--                     position = {-36,0,70},
+--                     rotation = {0, 0, 180},
+--                     scale = {5, 5, 5}                   
+--                 }
+--             },
+--             {
+--                 name = "MeshRenderComponent",
+--                 parameters = {                  
+--                     isstatic = false,
+--                     modelname = "Pila.mesh",
+--                     entityname= "pila",
+--                     materialname = ""
+--                 }
+--             },
+--             {
+--                 name = "ColliderComponent",
+--                 parameters = {
+--                 }
+--             },
            
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {5, 5, 5},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
+--             {
+--                 name = "RigidBodyComponent",
+--                 parameters = {
+--                     shapeType = 1,
+--                     movementType = 1,
+--                     size = {5, 5, 5},
+--                     mass = 1.0,
+--                     friction =1.0,
+--                     restitution=1.0,
+--                     trigger = false,
+--                     mask = 1,
+--                     group = 2
+--                 }
+--             },
+--             {
+--                 name = "UITransformComponent",
+--                 parameters = {
+--                     pos = {0.0, 0.0}, 
+--                     scale= {1.0, 1.0 }, 
+--                     hidden = true
+--                 }
+--             },
+--             {
                 
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "nombree", 
-    --                 material = "Sinbad/Gold", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "CellComponent",
-    --             parameters = {
+--                 name = "UISpriteRendererComponent",
+--                 parameters = {
+--                     name = "nombree", 
+--                     material = "Sinbad/Gold", 
+--                     zOrder = 1
+--                 }
+--             },
+--             {
+--                 name = "CellComponent",
+--                 parameters = {
                   
-    --             }
-    --         }
+--                 }
+--             }
             
-    --     }
-    -- },
-    -- {
-    --     name = "NotaPrueba",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
+--         }
+--     },
+    {
+        name = "Screamer",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            -- {
+            --     name ="AudioSourceComponent",
+            --     parameters ={
+            --         name = "audioScreamer",
+            --         path = "sonido_pillado_por_jefe.mp3",
+            --         onstart = false,
+            --         loop = false,
+            --         volume = 0.3,
+            --         groupchannel = "effects"
+            --     }
+            -- },
+            {
                 
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "notaPrueba", 
-    --                 material = "Sinbad/Gold", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "ShowImageComponent",
-    --             parameters = {
-    --                 ttoshow = 5.0
-    --             }
-    --         }
-            
-    --     }
-    -- },
-    -- {
-    --     name = "Screamer",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
-    --             name ="AudioSourceComponent",
-    --             parameters ={
-    --                 name = "audioScreamer",
-    --                 path = "sonido_pillado_por_jefe.mp3",
-    --                 onstart = false,
-    --                 loop = false,
-    --                 volume = 0.3,
-    --                 groupchannel = "effects"
-    --             }
-    --         },
-    --         {
-                
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "screamer", 
-    --                 material = "UI/screamer", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "ShowImageComponent",
-    --             parameters = {
-    --                 ttoshow = 5.0
-    --             }
-    --         }
-    --     }
-    -- },
-    -- {
-    --     name = "Nota",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, -5, 20},
-    --                 rotation = {0, 0, 180},
-    --                 scale = {5, 5, 5}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Pila.mesh",
-    --                 entityname= "nota",
-    --                 materialname = "Pila.material"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-           
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {5, 5, 5},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name = "UITransformComponent",
-    --             parameters = {
-    --                 pos = {0.0, 0.0}, 
-    --                 scale= {1.0, 1.0 }, 
-    --                 hidden = true
-    --             }
-    --         },
-    --         {
-                
-    --             name = "UISpriteRendererComponent",
-    --             parameters = {
-    --                 name = "notac", 
-    --                 material = "Sinbad/Gold", 
-    --                 zOrder = 1
-    --             }
-    --         },
-    --         {
-    --             name = "NoteComponent",
-    --             parameters = {
-    --                 text = "NotaPrueba"
-    --             }
-    --         }
-            
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman2",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {10, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-           
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --          {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=1
-
-    --             }
-    --         }
-
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman3",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {40, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=0
-
-    --             }
-
-    --         },
-    --     }
-    -- },
-    -- {
-    --     name = "Ogreman4",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {60, 0, 0},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=2
-
-    --             }
-
-    --         },
-    --     }
-    -- },
-    
-    -- {
-    --     name = "Ogreman5",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {10, 0, -30},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "Sinbad.mesh",
-    --                 entityname= "sinbad5",
-    --                 materialname = "Sinbad/Gold"
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 2,
-    --                 size = {2, 2, 2},
-    --                 mass = 1.0,
-    --                 friction =1.0,
-    --                 restitution=1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name="NodeComponent",
-    --             parameters={
-    --                 ispatrol=false,
-    --                 cost=1.8,
-    --                 hcost=1.8,
-    --                 iswalkable=true,
-    --                 id=3
-
-    --             }
-
-    --         },
-    --     }
-    -- },
-
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "screamer", 
+                    material = "UI/screamer", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
+            }
+        }
+    },
      {
         name = "SueloCollider",
         components = 
