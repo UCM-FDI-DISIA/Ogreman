@@ -3297,6 +3297,12 @@ components = {
                     volume = 1.5,
                     groupchannel = "effects"
                 }
+            },
+            {
+                name = "OgremanAttackComponent",
+                parameters ={
+                    
+                }
             }
             
          }
