@@ -161,18 +161,18 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	VeryReal::Vector3 dif_player;
 	if(player_trns!=nullptr) dif_player = player_trns->GetPosition() - trans->GetPosition();
 	VeryReal::Vector3 myforward = trans->getFacingDirection();
-	float dist_player = sqrt(player_trns->GetPosition().GetX() * player_trns->GetPosition().GetX() + player_trns->GetPosition().GetY() * player_trns->GetPosition().GetY() + player_trns->GetPosition().GetZ() * player_trns->GetPosition().GetZ());
+	float dist_player = sqrt(dif_player.GetX() * dif_player.GetX() + dif_player.GetY() * dif_player.GetY() + dif_player.GetZ() * dif_player.GetZ());
 	VeryReal::Vector3 vec(0,0,0), rot(0,0,0); 
 	vec = current_node_trans->GetPosition();
 	// Calcular vectores de dirección para los comportamientos de Flocking
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
 	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
-
+	std::cout << "DISTANCOA CON OGREMEN: " << dist_player << "\n";
 	if (dist_player < min_dist_follow && current_states != follow) {
 		
 
 		auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(my_rb->GetPosition(), player_trns->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>()->GetPosition());
-
+		current_states = follow;
 		/*if(list.size()>0 && list.front().ent->HasComponent("MovementComponent"))
 		current_states = follow;*/
 	
@@ -180,8 +180,8 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	}
 	else if (dist_player > max_dist_follow && current_states == follow) {
 		/*auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), dif_player.Normalize() * 10);
-		if (list.size() > 0 && !list.front()->HasComponent("MovementComponent") || list.size()<=0)
-		RestartPatrol(); */
+		if (list.size() > 0 && !list.front()->HasComponent("MovementComponent") || list.size()<=0)*/
+		RestartPatrol(); 
 	
 	}
 	//std::cout << dist_player << "\n";

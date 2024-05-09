@@ -28,6 +28,32 @@ Entities={
                 }
             }
         }
+    }, {  
+        name = "Light",
+        components = {
+	        {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {186,5,-148},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25.0,
+                    shadowdist = 100.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        }     
+        }
     }, 
     {
         name = "Player",

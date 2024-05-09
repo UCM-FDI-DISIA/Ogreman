@@ -99,12 +99,12 @@ std::pair<bool, std::string> Ogreman::CreatorOgremanControllerComponent::Specifi
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para min_dist_follow este sera seteado por defecto" << std::endl;
-			min_dist_follow = 1;
+			min_dist_follow = 50;
 		}
 	}
 	else {
 		std::cout << "No existe ningun parametro min_dist_follow este sera seteado por defecto" << std::endl;
-		min_dist_follow = 1;
+		min_dist_follow = 50;
 	}
 #pragma endregion
 #pragma region MaxDistFollow
@@ -115,12 +115,12 @@ std::pair<bool, std::string> Ogreman::CreatorOgremanControllerComponent::Specifi
 		}
 		else {
 			std::cout << "No se ha especificado ningun valor para max_dist_follow este sera seteado por defecto" << std::endl;
-			max_dist_follow = 1;
+			max_dist_follow = 100;
 		}
 	}
 	else {
 		std::cout << "No existe ningun parametro max_dist_follow este sera seteado por defecto" << std::endl;
-		max_dist_follow = 1;
+		max_dist_follow = 100;
 	}
 #pragma endregion
 	return com->InitComponent(alignmentWeight,cohesionWeight,separationWeight,maxSpeed,separationDistance,min_dist_follow,max_dist_follow);
