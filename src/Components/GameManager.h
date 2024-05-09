@@ -23,6 +23,7 @@ namespace Ogreman {
 		void Lose();
 		void Menu();
 		void Play();
+		void NextLevel();
 		void Pause();
 		void Controls();
 		static bool Init() {

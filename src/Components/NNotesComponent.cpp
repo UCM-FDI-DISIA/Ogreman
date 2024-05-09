@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "UI/UITextComponent.h"
 #include "string"
+#include "GameManager.h"
 
 std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
@@ -18,6 +19,10 @@ std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes,
 void Ogreman::NNotesComponent::RestaNota() {
 	numnotes--;
 	texto->setCaption(std::to_string(numnotes));
+
+	if (numnotes <= 3) {
+		GameManager::Instance()->NextLevel();
+	}
 }
 
 int Ogreman::NNotesComponent::GetNNota() {

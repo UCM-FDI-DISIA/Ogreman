@@ -1,5 +1,37 @@
 Entities={
     {
+    name = "NoteUI",
+    components = {              
+        {
+            name = "UITransformComponent",
+            parameters = {    
+                position = { -0.05, 0.1 },   
+                scale = { 0.11,0.1},   
+                hidden = false   
+     
+            }
+        },
+        {
+            name = "UITextComponent",
+            parameters = {   
+                name = "notas2",
+                font = "Ogreman",
+                caption = "prueba",
+                zOrder = 7,
+                charHeight = 0.08,
+                color = {1, 0, 0}
+            }
+        },
+        {
+            name = "NNotesComponent",
+            parameters = {             
+                notes = 4
+            }
+        }
+    }
+
+    }, 
+    {
         name = "Player",
         components = {
             {
@@ -14,12 +46,12 @@ Entities={
             {
                 name = "CameraComponent",
                 parameters = {                  
-                    name = "anim",
+                    name = "anim56785t8",
                     position ={0,0,30},
                     color = {1, 0, 0},
                     alfa = 0.0,
                     offset = {0, 7, 0},
-                    zOrder = 2
+                    zOrder = 20
                 }
             },   
             {
@@ -74,7 +106,7 @@ Entities={
                 parameters = {             
                     maximo = 100.0,
                     progres = 100.0,
-                    progressBarName = "p",
+                    progressBarName = "p2",
                     frameMaterial = "FlashLigt",
                     contentMaterial = "FlashLigtContent",
                     zOrder = 1                   

@@ -42,6 +42,14 @@ void GameManager::Play() {
 
 
 }
+
+void Ogreman::GameManager::NextLevel() {
+	VeryReal::SceneManager::Instance()->ActivationScene("HouseScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("HouseScene", true);
+
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("JardinScene", true));
+}
+
 void GameManager::Win() {
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true));
 	/*VeryReal::SceneManager::Instance()->ActivationScene("HouseScene", false);

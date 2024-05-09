@@ -186,6 +186,58 @@ material nota4
 		}
 	}
 }
+material nota5
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta5.png
+				colour_op replace
+			}
+		}
+	}
+}
+material nota6
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta6.png
+				colour_op replace
+			}
+		}
+	}
+}
+material nota7
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture carta7.png
+				colour_op replace
+			}
+		}
+	}
+}
+
 
 material cartelE
 {
