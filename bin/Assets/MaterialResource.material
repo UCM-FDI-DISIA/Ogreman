@@ -346,3 +346,57 @@ material controller
 		}
 	}
 }
+
+material menu
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture menu.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material gameover
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture gameover.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material escaped
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture escaped.png
+				colour_op replace
+			}
+		}
+	}
+}

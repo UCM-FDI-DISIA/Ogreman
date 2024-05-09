@@ -59,6 +59,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("OgremanAttackComponent", new Ogreman::CreatorOgremanAttackComponent());
         VeryReal::Creator::Instance()->AddCreator("ControlsButtonComponent", new Ogreman::CreatorControlsButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("NNotesComponent", new Ogreman::CreatorNNotesComponent());
+        VeryReal::Creator::Instance()->AddCreator("MenuButtonComponent", new Ogreman::CreatorMenuButtonComponent());
 
         
         //ScriptManager::Instance()->ReadScene("HouseScene",true);
