@@ -1,6 +1,6 @@
 ﻿::compilamos el motor
-::cd VeryReal\VeryRealSolucion\dependencies\cMake
-::call All.bat
+cd VeryReal\VeryRealSolucion\dependencies\cMake
+call All.bat
 cd VeryReal\VeryRealSolucion
 ::copiamos la carpeta entera de bin a bin de juego
 :: que quieres      donde lo quieres 
