@@ -57,7 +57,7 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 				attacking = true;
 				player_UI->hideElement();
 				screamer_image->activeTime();
-				VeryReal::ErrorManager::Instance()->canBeError(audio_detected->Play());
+				VeryReal::ErrorManager::Instance()->canBeError(audio_detected->Resume());
 				nAttacks++;
 			}
 			else {

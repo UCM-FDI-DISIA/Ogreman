@@ -136,6 +136,18 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent",
+                parameters = {
+                    name = "audioCorrerFueraa",
+                    path = "sonido_correr_casa.mp3",
+                    onstart = false,
+                    loop = true,
+                    threed = false,
+                    volume = 2,
+                    groupchannel = "effects"
+                }
+            },
+            {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
@@ -161,7 +173,13 @@ Entities={
                     
                 }
             },
-            
+            {
+                name = "AudioListenerComponent",
+                parameters ={
+
+                }
+
+            },
             {
                 name = "RangosVisionComponent",
                 parameters = {                  
@@ -293,6 +311,20 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota5",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+            },
+            {
                 name = "NoteComponent",
                 parameters = {
                     text = "NotaUI5"
@@ -397,6 +429,20 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota6",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+            },
+            {
                 name = "NoteComponent",
                 parameters = {
                     text = "NotaUI6"
@@ -498,6 +544,20 @@ Entities={
                     name = "nota7", 
                     material = "cartelE", 
                     zOrder = 1
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioNota7",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 30.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
                 }
             },
             {
@@ -935,7 +995,7 @@ Entities={
                     isstatic = false,
                     modelname = "lagartija.mesh",
                     entityname= "NPC1",
-                    materialname = "Sinbad/Gold"
+                    materialname = ""
                     }
             },
             {
@@ -943,6 +1003,18 @@ Entities={
                 parameters={
 
                     }
+            },
+            {
+                name = "AudioSourceComponent",
+                parameters = {
+                    name = "audioLagartija",
+                    path = "sonido_lagartija_idle.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 2,
+                    groupchannel = "effects"
+                }
             }
         }
     }
