@@ -15,6 +15,7 @@ namespace Ogreman {
 	class PlayerInputComponent;
 	class NoteComponent;
 	class CellComponent;
+	class NNotesComponent;
 }
 
 namespace Ogreman {
@@ -30,6 +31,7 @@ namespace Ogreman {
 		Ogreman::PlayerInteractionComponent* my_player_interaction_comp = nullptr;
 		Ogreman::PlayerInputComponent* my_player_input_comp = nullptr;
 		VeryReal::CameraComponent* my_player_cam = nullptr;
+		Ogreman::NNotesComponent* my_notes = nullptr;
 		bool control_update_cell = false;
 		bool control_update_note = false;
 		float distance = 1000;

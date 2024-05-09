@@ -2,21 +2,32 @@
 #include "Entity.h"
 #include "UI/UITextComponent.h"
 #include "string"
+
 std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
 	this->totalnotas = totalnotas;
+
+	texto = this->GetEntity()->GetComponent<VeryReal::UITextComponent>();
+	if(texto == nullptr)
+		return { false,"NNotesComponent was NOT made right-->InitComponent" };
+	texto->setCaption(std::to_string(numnotes)); 
+
 	return { true,"NNotesComponent was made right-->InitComponent" };
 }
-void Ogreman::NNotesComponent::restanota() {
+
+void Ogreman::NNotesComponent::RestaNota() {
 	numnotes--;
-	this->GetEntity()->GetComponent<VeryReal::UITextComponent>()->setCaption(std::to_string(numnotes));
+	texto->setCaption(std::to_string(numnotes));
 }
-int Ogreman::NNotesComponent::getnnota() {
+
+int Ogreman::NNotesComponent::GetNNota() {
 	return numnotes;
 }
-int Ogreman::NNotesComponent::getotalnotas() {
+
+int Ogreman::NNotesComponent::GetTotalNotas() {
 	return totalnotas;
 }
-bool Ogreman::NNotesComponent::totalnotes() {
+
+bool Ogreman::NNotesComponent::TotalNotes() {
 	return numnotes == totalnotas;
 }

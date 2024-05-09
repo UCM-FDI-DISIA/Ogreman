@@ -4,6 +4,7 @@
 #include "PlayerInteractionComponent.h"
 #include <SceneManager.h>
 #include <Scene.h>
+#include "Entity.h"
 #include <PhysicsManager.h>
 #include "PlayerInputComponent.h"
 #include "NoteComponent.h"
@@ -14,6 +15,8 @@
 #include <TransformComponent.h>
 #include "ShowImageComponent.h"
 #include "RangosVisionComponent.h"
+#include "NNotesComponent.h"
+
 std::pair<bool, std::string> Ogreman::PickUpComponent::InitComponent() {
 	player_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	if (player_transform == nullptr) {
@@ -31,6 +34,13 @@ std::pair<bool, std::string> Ogreman::PickUpComponent::InitComponent() {
 	my_player_cam = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
 	if (my_player_cam == nullptr) {
 		return{ false, "Player doesn't have CameraComponent, ERROR from PickUpComponent" };
+	}
+	VeryReal::Entity* noteUI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("NoteUI");
+	if(noteUI != nullptr) 
+		my_notes = noteUI->GetComponent<NNotesComponent>();
+
+	if (my_notes == nullptr) {
+		return{ false, "Player doesn't have NNotesComponent, ERROR from PickUpComponent" };
 	}
 	return { true, "" };
 }
@@ -150,6 +160,7 @@ void Ogreman::PickUpComponent::GetElement(NoteComponent* note, CellComponent* ce
 		}
 		note->GetEntity()->SetActive(false);
 		control_update_note = false;
+		my_notes->RestaNota();
 	}
 	if (cell != nullptr) {
 		my_player_interaction_comp->GetCell();
