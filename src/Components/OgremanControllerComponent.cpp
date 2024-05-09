@@ -110,9 +110,9 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 		return{ false,"Player doesn't have TransformComponent, ERROR from OgremanController" };
 	}
 
-	/*current_states = patrol;
-	return { true,"yulvez" };*/
-	return GoToLocation(v);
+	current_states = patrol;
+	return { true,"yulvez" };
+	//return GoToLocation(v);
 }
 // Función para alinear al ogro con el grupo
 VeryReal::Vector3 Ogreman::OgremanControllerComponent::align() {

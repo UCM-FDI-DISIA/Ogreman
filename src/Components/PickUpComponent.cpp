@@ -9,7 +9,6 @@
 #include "PlayerInputComponent.h"
 #include "NoteComponent.h"
 #include "CellComponent.h"
-#include "CameraComponent.h"
 #include <UI/UISpriteRenderComponent.h>
 #include <UI/UItransformComponent.h>
 #include <TransformComponent.h>
@@ -30,10 +29,6 @@ std::pair<bool, std::string> Ogreman::PickUpComponent::InitComponent() {
 	my_player_interaction_comp = this->GetEntity()->GetComponent<Ogreman::PlayerInteractionComponent>();
 	if (my_player_interaction_comp == nullptr) {
 		return{ false, "Player doesn't have PlayerInteractionComponent, ERROR from PickUpComponent" };
-	}
-	my_player_cam = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
-	if (my_player_cam == nullptr) {
-		return{ false, "Player doesn't have CameraComponent, ERROR from PickUpComponent" };
 	}
 	VeryReal::Entity* noteUI = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("NoteUI");
 	if(noteUI != nullptr) 
