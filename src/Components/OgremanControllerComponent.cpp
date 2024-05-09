@@ -167,7 +167,7 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	// Calcular vectores de dirección para los comportamientos de Flocking
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
 	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
-	std::cout << "DISTANCOA CON OGREMEN: " << dist_player << "\n";
+	//std::cout << "DISTANCOA CON OGREMEN: " << dist_player << "\n";
 	if (dist_player < min_dist_follow && current_states != follow) {
 		
 

@@ -58,7 +58,7 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 	}
 	/*if (player_noise_intensity < lower_intensity_threshold) player_noise_intensity = 0;
 	else*/ if(player_noise_intensity >= upper_intensity_threshold) player_noise_intensity = upper_intensity_threshold;
-	std::cout << player_noise_intensity << std::endl;
+	//std::cout << player_noise_intensity << std::endl;
 	hearing_radius = CalculateRadius(player_noise_intensity);
 	float dist_ogre_player = (my_transform->GetPosition().Distance(player_transform->GetPosition())) / 10;
 	if (hearing_radius >= dist_ogre_player) {
