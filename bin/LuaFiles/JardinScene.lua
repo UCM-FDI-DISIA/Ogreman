@@ -942,9 +942,9 @@ Entities={
                 }
             },
         }
-    }
-},
-{
+    
+    },
+    {
         name = "NPC1",
         components = {
             {
@@ -1017,187 +1017,214 @@ Entities={
                 }
             }
         }
-    }
-    -- {
-    --     name = "Pared1",
-    --     components = 
-    --     {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {-137, -28, -254},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {500, 500, 100},
-    --                 mass = 100000.0,
-    --                 friction =1.0,
-    --                 restitution=0.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --     }
-    -- },{
-    --     name = "Pared2",
-    --     components = 
-    --     {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {272, -28, -50},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {100, 500, 500},
-    --                 mass = 100000.0,
-    --                 friction =1.0,
-    --                 restitution=0.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --     }
-    -- },
-    -- {
-    --     name = "Pared3",
-    --     components = 
-    --     {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {-195, -28, -100},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {20, 500, 500},
-    --                 mass = 100000.0,
-    --                 friction =1.0,
-    --                 restitution=0.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --     }
-    -- }, 
-    -- {
-    --     name = "Pared4",
-    --     components = 
-    --     {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = {-195, -28, -100},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {1, 1, 1}                   
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {20, 500, 500},
-    --                 mass = 100000.0,
-    --                 friction =1.0,
-    --                 restitution=0.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --     }
-    -- }
-    -- {
-    --     name = "NPC1",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 position = {20, 0, 0},
-    --                 rotation ={0, 0, 0},
-    --                 scale = {10, 10, 10}                   
-    --             }
-    --         },
+    },
+    {
+        name = "Pared1",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {0, 1, 0},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {50, 50, 50},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },{
+        name = "Pared2",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {272, -28, -50},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {100, 500, 500},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "Pared3",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {-195, -28, -100},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {20, 500, 500},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    }, 
+    {
+        name = "Pared4",
+        components = 
+        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {-195, -28, -100},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {20, 500, 500},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=0.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+        }
+    },
+    {
+        name = "NPC1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {20, 0, 0},
+                    rotation ={0, 0, 0},
+                    scale = {10, 10, 10}                   
+                }
+            },
            
            
-    --         {
-    --             name = "LightComponent",
-    --             parameters = {
-    --                 type = 1,
-    --                 diffusecolour = {1, 1, 1},
-    --                 shadowfardist = 25.0,
-    --                 shadowdist = 25.0,
-    --                 ineerangle = 90.0,
-    --                 outerangle = 180.0,
-    --                 nearclipdist = 0.1,
-    --                 shdws = true
-    --             }
-	--         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 0,
-    --                 size = {2, 6, 2},
-    --                 mass = 10.0,
-    --                 friction = 0.5,
-    --                 restitution = 0.0,
-    --                 trigger = false,
-    --                 mask = 2,
-    --                 group = 1
-    --             }
-    --         },
-    --         {
-    --             name = "MovementComponent",
-    --             parameters = {                  
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25.0,
+                    shadowdist = 25.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 0,
+                    size = {2, 6, 2},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = false,
+                    mask = 2,
+                    group = 1
+                }
+            },
+            {
+                name = "MovementComponent",
+                parameters = {                  
                     
-    --             }
-    --         },     
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "lagartija.mesh",
-    --                 entityname= "npc1",
-    --                 materialname = "Sinbad/Gold"
-    --                 }
-    --         },
-    --         {
-    --             name= "MerodeoMovementComponent",
-    --             parameters={
+                }
+            },     
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "lagartija.mesh",
+                    entityname= "lagartija",
+                    materialname = ""
+                    }
+            },
+            {
+                name= "MerodeoMovementComponent",
+                parameters={
 
-    --                 }
-    --         }
-    --     }
-    -- }
+                    }
+            }
+        }
+    },
+        {
+            name = "FlashLightAudio",
+            components ={
+                {
+                    name = "TransformComponent",
+                    parameters = {  
+                     a = 0,
+                         position = {0,0,0},
+                         rotation = {0, 0, 0},
+                         scale = {0, 0, 0}                   
+                   }
+                },
+                {
+                    name = "AudioSourceComponent", 
+                    parameters ={
+                        name = "audioFlashlight2",
+                        path = "sonido_linterna.mp3",
+                        onstart = false,
+                        loop = false,
+                        threed = false,
+                        volume = 1.5,
+                        groupchannel = "effects"
+                    }
+                }
+            }
+        }
+    }
