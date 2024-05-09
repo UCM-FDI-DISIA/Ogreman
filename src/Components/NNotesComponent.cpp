@@ -16,12 +16,23 @@ std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes,
 	return { true,"NNotesComponent was made right-->InitComponent" };
 }
 
+void Ogreman::NNotesComponent::Update(const double& dt) {
+	if (delay_to_finish) {
+		time_while_finishing += dt;
+		if (time_to_finish < time_while_finishing) {
+			GameManager::Instance()->NextLevel();
+			delay_to_finish = false;
+		}
+	}
+}
+
 void Ogreman::NNotesComponent::RestaNota() {
 	numnotes--;
 	texto->setCaption(std::to_string(numnotes));
 
-	if (numnotes <= 3) {
-		GameManager::Instance()->NextLevel();
+	if (numnotes <= 0) {
+		delay_to_finish = true;
+		
 	}
 }
 

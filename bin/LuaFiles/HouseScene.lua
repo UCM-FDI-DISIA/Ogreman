@@ -37,7 +37,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-88,0,26},
+                    position = {-36,0,110},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -206,425 +206,425 @@ Entities={
 	        }     
         }
     }, 
---     {
---         name = "NotaUI1",
---         components = {
---             {
---                 name = "TransformComponent",
---                 parameters = {  
---                     a = 0,
---                     position = {40, -5, 20},
---                     rotation = {0, 0, 180},
---                     scale = {5, 5, 5}                   
---                 }
---             },
---             {
---                 name = "UITransformComponent",
---                 parameters = {    
---                     position = { 0.0,0.0},   
---                     scale = { 1.0,1.0},   
---                     hidden = true   
+    {
+        name = "NotaUI1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {    
+                    position = { 0.0,0.0},   
+                    scale = { 1.0,1.0},   
+                    hidden = true   
          
---                 }
---             },
---             {
+                }
+            },
+            {
                 
---                 name = "UISpriteRendererComponent",
---                 parameters = {
---                     name = "notaui1", 
---                     material = "nota1", 
---                     zOrder = 1
---                 }
---             },
---             {
---                 name = "ShowImageComponent",
---                 parameters = {
---                     ttoshow = 5.0
---                 }
---             }
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notaui1", 
+                    material = "nota1", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
+            }
             
---         }
---     },
---     {
---         name = "Nota1",
---         components = {
---             {
---                 name = "TransformComponent",
---                 parameters = {  
---                     a = 0,
---                     position = {-70.25, 5.0, 107.44},
---                     rotation = {0, 0, 180},
---                     scale = {5, 5, 5}                   
---                 }
---             },
---             {
---                 name = "MeshRenderComponent",
---                 parameters = {                  
---                     isstatic = false,
---                     modelname = "Cuaderno.mesh",
---                     entityname= "nota1",
---                     materialname = ""
---                 }
---             },
---             {
---                 name = "ColliderComponent",
---                 parameters = {
---                 }
---             },
+        }
+    },
+    {
+        name = "Nota1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {25, 4.0, 48},
+                    rotation = {0, 0, 90},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Cuaderno.mesh",
+                    entityname= "nota1",
+                    materialname = ""
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
            
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 1,
---                     size = {5, 5, 5},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = false,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---             {
---                 name = "UITransformComponent",
---                 parameters = {
---                     pos = {0.0, 0.0}, 
---                     scale= {1.0, 1.0 }, 
---                     hidden = true
---                 }
---             },
---             {
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
                 
---                 name = "UISpriteRendererComponent",
---                 parameters = {
---                     name = "nota1", 
---                     material = "cartelE", 
---                     zOrder = 1
---                 }
---             },
---             {
---                 name = "NoteComponent",
---                 parameters = {
---                     text = "NotaUI1"
---                 }
---             }
---         }
--- },
--- {
---     name = "NotaUI2",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {40, -5, 20},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nota1", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "NoteComponent",
+                parameters = {
+                    text = "NotaUI1"
+                }
+            }
+        }
+},
+{
+    name = "NotaUI2",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {40, -5, 20},
+                rotation = {0, 0, 180},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "notaui2", 
---                 material = "nota2", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "ShowImageComponent",
---             parameters = {
---                 ttoshow = 5.0
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "notaui2", 
+                material = "nota2", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "ShowImageComponent",
+            parameters = {
+                ttoshow = 5.0
+            }
+        }
         
---     }
--- },
--- {
---     name = "Nota2",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {11.87, 5.0, 35.168},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "MeshRenderComponent",
---             parameters = {                  
---                 isstatic = false,
---                 modelname = "Cuaderno.mesh",
---                 entityname= "nota2",
---                 materialname = ""
---             }
---         },
---         {
---             name = "ColliderComponent",
---             parameters = {
---             }
---         },
+    }
+},
+{
+    name = "Nota2",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {181, 4.0, 140},
+                rotation = {0, -135, 90},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = false,
+                modelname = "Cuaderno.mesh",
+                entityname= "nota2",
+                materialname = ""
+            }
+        },
+        {
+            name = "ColliderComponent",
+            parameters = {
+            }
+        },
        
---         {
---             name = "RigidBodyComponent",
---             parameters = {
---                 shapeType = 1,
---                 movementType = 1,
---                 size = {5, 5, 5},
---                 mass = 1.0,
---                 friction =1.0,
---                 restitution=1.0,
---                 trigger = false,
---                 mask = 1,
---                 group = 2
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+        {
+            name = "RigidBodyComponent",
+            parameters = {
+                shapeType = 1,
+                movementType = 1,
+                size = {5, 5, 5},
+                mass = 1.0,
+                friction =1.0,
+                restitution=1.0,
+                trigger = false,
+                mask = 1,
+                group = 2
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "nota2", 
---                 material = "cartelE", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "NoteComponent",
---             parameters = {
---                 text = "NotaUI2"
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "nota2", 
+                material = "cartelE", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "NoteComponent",
+            parameters = {
+                text = "NotaUI2"
+            }
+        }
         
---     }
--- },
--- {
---     name = "NotaUI3",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {40, -5, 20},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+    }
+},
+{
+    name = "NotaUI3",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {40, -5, 20},
+                rotation = {0, 0, 180},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "notaui3", 
---                 material = "nota3", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "ShowImageComponent",
---             parameters = {
---                 ttoshow = 5.0
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "notaui3", 
+                material = "nota3", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "ShowImageComponent",
+            parameters = {
+                ttoshow = 5.0
+            }
+        }
         
---     }
--- },
--- {
---     name = "Nota3",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {126, 5.0, 2.09},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "MeshRenderComponent",
---             parameters = {                  
---                 isstatic = false,
---                 modelname = "Cuaderno.mesh",
---                 entityname= "nota3",
---                 materialname = ""
---             }
---         },
---         {
---             name = "ColliderComponent",
---             parameters = {
---             }
---         },
---         {
---             name = "RigidBodyComponent",
---             parameters = {
---                 shapeType = 1,
---                 movementType = 1,
---                 size = {5, 5, 5},
---                 mass = 1.0,
---                 friction =1.0,
---                 restitution=1.0,
---                 trigger = false,
---                 mask = 1,
---                 group = 2
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+    }
+},
+{
+    name = "Nota3",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {134, 4.0, -19},
+                rotation = {0, -45, 90},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = false,
+                modelname = "Cuaderno.mesh",
+                entityname= "nota3",
+                materialname = ""
+            }
+        },
+        {
+            name = "ColliderComponent",
+            parameters = {
+            }
+        },
+        {
+            name = "RigidBodyComponent",
+            parameters = {
+                shapeType = 1,
+                movementType = 1,
+                size = {5, 5, 5},
+                mass = 1.0,
+                friction =1.0,
+                restitution=1.0,
+                trigger = false,
+                mask = 1,
+                group = 2
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "nota3", 
---                 material = "cartelE", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "NoteComponent",
---             parameters = {
---                 text = "NotaUI3"
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "nota3", 
+                material = "cartelE", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "NoteComponent",
+            parameters = {
+                text = "NotaUI3"
+            }
+        }
         
---     }
--- },
--- {
---     name = "NotaUI4",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {40, -5, 20},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+    }
+},
+{
+    name = "NotaUI4",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {40, -5, 20},
+                rotation = {0, 0, 180},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "notaui4", 
---                 material = "nota4", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "ShowImageComponent",
---             parameters = {
---                 ttoshow = 5.0
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "notaui4", 
+                material = "nota4", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "ShowImageComponent",
+            parameters = {
+                ttoshow = 5.0
+            }
+        }
         
---     }
--- },
--- {
---     name = "Nota4",
---     components = {
---         {
---             name = "TransformComponent",
---             parameters = {  
---                 a = 0,
---                 position = {40, -5, 20},
---                 rotation = {0, 0, 180},
---                 scale = {5, 5, 5}                   
---             }
---         },
---         {
---             name = "MeshRenderComponent",
---             parameters = {                  
---                 isstatic = false,
---                 modelname = "Cuaderno.mesh",
---                 entityname= "nota4",
---                 materialname = ""
---             }
---         },
---         {
---             name = "ColliderComponent",
---             parameters = {
---             }
---         },
+    }
+},
+{
+    name = "Nota4",
+    components = {
+        {
+            name = "TransformComponent",
+            parameters = {  
+                a = 0,
+                position = {43, 4.0, 178},
+                rotation = {0, 135, 90},
+                scale = {5, 5, 5}                   
+            }
+        },
+        {
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = false,
+                modelname = "Cuaderno.mesh",
+                entityname= "nota4",
+                materialname = ""
+            }
+        },
+        {
+            name = "ColliderComponent",
+            parameters = {
+            }
+        },
        
---         {
---             name = "RigidBodyComponent",
---             parameters = {
---                 shapeType = 1,
---                 movementType = 1,
---                 size = {5, 5, 5},
---                 mass = 1.0,
---                 friction =1.0,
---                 restitution=1.0,
---                 trigger = false,
---                 mask = 1,
---                 group = 2
---             }
---         },
---         {
---             name = "UITransformComponent",
---             parameters = {
---                 pos = {0.0, 0.0}, 
---                 scale= {1.0, 1.0 }, 
---                 hidden = true
---             }
---         },
---         {
+        {
+            name = "RigidBodyComponent",
+            parameters = {
+                shapeType = 1,
+                movementType = 1,
+                size = {5, 5, 5},
+                mass = 1.0,
+                friction =1.0,
+                restitution=1.0,
+                trigger = false,
+                mask = 1,
+                group = 2
+            }
+        },
+        {
+            name = "UITransformComponent",
+            parameters = {
+                pos = {0.0, 0.0}, 
+                scale= {1.0, 1.0 }, 
+                hidden = true
+            }
+        },
+        {
             
---             name = "UISpriteRendererComponent",
---             parameters = {
---                 name = "nota4", 
---                 material = "cartelE", 
---                 zOrder = 1
---             }
---         },
---         {
---             name = "NoteComponent",
---             parameters = {
---                 text = "NotaUI4"
---             }
---         }
+            name = "UISpriteRendererComponent",
+            parameters = {
+                name = "nota4", 
+                material = "cartelE", 
+                zOrder = 1
+            }
+        },
+        {
+            name = "NoteComponent",
+            parameters = {
+                text = "NotaUI4"
+            }
+        }
         
---     }
--- },
+    }
+},
     -- {
     --     name = "Pila",
     --     components = {
