@@ -7,7 +7,7 @@ Prefabs={
                 parameters = {
                     position = {0, 0, 0},
                     rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
+                    scale = {10000000, 10000000, 10000000}                   
                 }
             },
             {
@@ -19,25 +19,6 @@ Prefabs={
                     materialname = ""
                 }
             },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 0,
-                    size = {2, 2, 2},
-                    mass = 1.0,
-                    friction =1.0,
-                    restitution=1.0,
-                    trigger = false,
-                    mask = 2,
-                    group = 1
-                }
-            }
         }
     }
 }

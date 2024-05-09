@@ -3,6 +3,7 @@
 #include "UI/UITextComponent.h"
 #include "string"
 #include "GameManager.h"
+#include "Scene.h"
 
 std::pair<bool, std::string>  Ogreman::NNotesComponent::InitComponent(int notes, int totalnotas) {
 	numnotes = notes;
@@ -20,7 +21,12 @@ void Ogreman::NNotesComponent::Update(const double& dt) {
 	if (delay_to_finish) {
 		time_while_finishing += dt;
 		if (time_to_finish < time_while_finishing) {
-			GameManager::Instance()->NextLevel();
+			if (VeryReal::SceneManager::Instance()->GetActiveScene()->GetName() == "HouseScene") {
+				GameManager::Instance()->NextLevel();
+			}
+			else if (VeryReal::SceneManager::Instance()->GetActiveScene()->GetName() == "JardinScene") {
+				GameManager::Instance()->Win();
+			}
 			delay_to_finish = false;
 		}
 	}
