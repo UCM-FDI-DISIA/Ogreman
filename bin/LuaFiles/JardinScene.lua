@@ -24,7 +24,7 @@ Entities={
             {
                 name = "NNotesComponent",
                 parameters = {             
-                    notes = 4
+                    notes = 3
                 }
             }
         }
@@ -260,7 +260,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {                     
-                    position = {-70.25, 5.0, 107.44},
+                    position = {170, 0, 67},
                     rotation = {0, 0, 180},
                     scale = {5, 5, 5}                   
                 }
@@ -377,7 +377,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {11.87, 5.0, 35.168},
+                    position = {-30,0,-20},
                     rotation = {0, 0, 180},
                     scale = {5, 5, 5}                   
                 }
@@ -496,7 +496,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {126, 5.0, 2.09},
+                    position = {15,0,164},
                     rotation = {0, 0, 180},
                     scale = {5, 5, 5}                   
                 }
@@ -581,45 +581,36 @@ Entities={
                         scale = {1, 1, 1}                   
                     }
                 },
-                    -- {
-                    -- name = "MeshRenderComponent",
-                    --     parameters = {                  
-                    --         isstatic = false,
-                    --     modelname = "Sinbad.mesh",
-                    --     entityname= "sinbad",
-                    --         materialname = "Sinbad/Gold"
-                    --     }
-                    -- },
-                    {
-                    name = "ColliderComponent",
-                    parameters = {
-                        }
-                    },
-            
-                    {
-                        name = "RigidBodyComponent",
-                        parameters = {
-                            shapeType = 1,
-                            movementType = 2,
-                            size = {1, 1, 1},
-                            mass = 1.0,
-                            friction =1.0,
-                            restitution=1.0,
-                            trigger = true,
-                            mask = 1,
-                            group = 2
-                        }
-                    },
-                    {
-                        name="NodeComponent",
-                        parameters={
-                        ispatrol=true,
-                            cost=1.8,
-                            hcost=1.8,
-                            iswalkable=true,
-                            id=0
-                        }
+                {
+                name = "ColliderComponent",
+                parameters = {
                     }
+                },
+        
+                {
+                    name = "RigidBodyComponent",
+                    parameters = {
+                        shapeType = 1,
+                        movementType = 2,
+                        size = {1, 1, 1},
+                        mass = 1.0,
+                        friction =1.0,
+                        restitution=1.0,
+                        trigger = true,
+                        mask = 1,
+                        group = 2
+                    }
+                },
+                {
+                    name="NodeComponent",
+                    parameters={
+                    ispatrol=true,
+                        cost=1.8,
+                        hcost=1.8,
+                        iswalkable=true,
+                        id=0
+                    }
+                }
             }
     },
     {
@@ -634,15 +625,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            -- {
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "Sinbad.mesh",
-            --         entityname= "sinbad",
-            --         materialname = "Sinbad/Gold"
-            --     }
-            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -690,15 +672,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            -- {
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "Sinbad.mesh",
-            --         entityname= "sinbad",
-            --         materialname = "Sinbad/Gold"
-            --     }
-            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -844,7 +817,56 @@ Entities={
                 }
             }
         }
-    }, 
+    },
+    
+        {
+            name = "Screamer",
+            components = {
+                {
+                    name = "TransformComponent",
+                    parameters = {  
+                        a = 0,
+                        position = {40, -5, 20},
+                        rotation = {0, 0, 180},
+                        scale = {5, 5, 5}                   
+                    }
+                },
+                {
+                    name = "UITransformComponent",
+                    parameters = {
+                        pos = {0.0, 0.0}, 
+                        scale= {1.0, 1.0 }, 
+                        hidden = true
+                    }
+                },
+                {
+                    name ="AudioSourceComponent",
+                    parameters ={
+                        name = "audioScreamer",
+                        path = "sonido_pillado_por_jefe.mp3",
+                        onstart = false,
+                        loop = false,
+                        volume = 0.3,
+                        groupchannel = "effects"
+                    }
+                },
+                {
+                    
+                    name = "UISpriteRendererComponent",
+                    parameters = {
+                        name = "screamer", 
+                        material = "UI/screamer", 
+                        zOrder = 1
+                    }
+                },
+                {
+                    name = "ShowImageComponent",
+                    parameters = {
+                        ttoshow = 5.0
+                    }
+                }
+            }
+        },
     {
         name = "Ogreman",
         components = {
@@ -911,7 +933,27 @@ Entities={
                     lowerThreshold=0.4,
                     upperThreshold=1.0
                 }
-            }           
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioOgro2",
+                    path = "sonido_jefe_merodeando2.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 60.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
+            },
+            {
+                name = "OgremanAttackComponent",
+                parameters ={
+                    
+                }
+            }         
         }
     },
     {
@@ -1026,7 +1068,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 1, 0},
+                    position = {-137, -28, -254},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -1036,7 +1078,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {50, 50, 50},
+                    size = {500, 500, 100},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=0.0,

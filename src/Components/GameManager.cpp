@@ -38,13 +38,9 @@ void GameManager::Controls()
 void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("ControlsScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
-	/*VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
-	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);*/
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true));
-	//Hace que no se actualicen los collider de los rigidbodies tras haber sido instanciados
-	//Descomentar si queremos ver cajas en movimiento
 #ifdef _DEBUG
-	VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
+	//VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
 #endif // DEBUG
 
 
@@ -76,10 +72,6 @@ void GameManager::Lose() {
 		VeryReal::SceneManager::Instance()->EliminationScene("JardinScene", true);
 	}
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true));
-}
-
-void GameManager::HolaLua() {
-	std::cout << "Hola Lua\n";
 }
 
 void GameManager::GenerateTree(int n) {
