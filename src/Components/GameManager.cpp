@@ -55,6 +55,9 @@ void Ogreman::GameManager::NextLevel() {
 	VeryReal::SceneManager::Instance()->EliminationScene("HouseScene", true);
 
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("JardinScene", true));
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	VeryReal::ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", GenerateTree);
+	VeryReal::ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);
 }
 
 void GameManager::Win() {

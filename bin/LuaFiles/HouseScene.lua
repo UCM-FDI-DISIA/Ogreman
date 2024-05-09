@@ -1805,15 +1805,16 @@ Entities={
                    rotation = {0, 0, 0},
                    scale = {1, 1, 1}                   
                }
-           }, {
-            name = "MeshRenderComponent",
-           parameters = {                  
-               isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = ""
-            }
-        },
+           },
+        --     {
+        --     name = "MeshRenderComponent",
+        --    parameters = {                  
+        --        isstatic = false,
+        --        modelname = "Sinbad.mesh",
+        --        entityname= "sinbad",
+        --         materialname = ""
+        --     }
+        -- },
           
             {
                 name = "RigidBodyComponent",
@@ -1859,15 +1860,15 @@ Entities={
                scale = {1, 1, 1}                   
            }
        },
-       {
-        name = "MeshRenderComponent",
-       parameters = {                  
-           isstatic = false,
-           modelname = "Sinbad.mesh",
-           entityname= "sinbad",
-            materialname = ""
-        }
-    },
+    --    {
+    --     name = "MeshRenderComponent",
+    --    parameters = {                  
+    --        isstatic = false,
+    --        modelname = "Sinbad.mesh",
+    --        entityname= "sinbad",
+    --         materialname = ""
+    --     }
+    -- },
         {
             name = "RigidBodyComponent",
             parameters = {
@@ -1913,15 +1914,15 @@ components = {
            scale = {1, 1, 1}                   
        }
    },
-   {
-    name = "MeshRenderComponent",
-   parameters = {                  
-       isstatic = false,
-       modelname = "Sinbad.mesh",
-       entityname= "sinbad",
-        materialname = ""
-    }
-},
+--    {
+--     name = "MeshRenderComponent",
+--    parameters = {                  
+--        isstatic = false,
+--        modelname = "Sinbad.mesh",
+--        entityname= "sinbad",
+--         materialname = ""
+--     }
+-- },
     {
         name = "RigidBodyComponent",
         parameters = {
@@ -1965,15 +1966,17 @@ components = {
            rotation = {0, 0, 0},
            scale = {1, 1, 1}                   
        }
-   }, {
-    name = "MeshRenderComponent",
-   parameters = {                  
-       isstatic = false,
-       modelname = "Sinbad.mesh",
-       entityname= "sinbad",
-        materialname = ""
-    }
-},{
+   }, 
+--    {
+--     name = "MeshRenderComponent",
+--    parameters = {                  
+--        isstatic = false,
+--        modelname = "Sinbad.mesh",
+--        entityname= "sinbad",
+--         materialname = ""
+--     }
+-- },
+{
     name = "ColliderComponent",
     parameters = {
      }
@@ -2022,15 +2025,16 @@ components = {
            rotation = {0, 0, 0},
            scale = {1, 1, 1}                   
        }
-   }, {
-    name = "MeshRenderComponent",
-   parameters = {                  
-       isstatic = false,
-       modelname = "Sinbad.mesh",
-       entityname= "sinbad",
-        materialname = ""
-    }
-},
+   }, 
+--    {
+--     name = "MeshRenderComponent",
+--    parameters = {                  
+--        isstatic = false,
+--        modelname = "Sinbad.mesh",
+--        entityname= "sinbad",
+--         materialname = ""
+--     }
+-- },
   
     {
         name = "RigidBodyComponent",
@@ -2077,15 +2081,16 @@ components = {
                rotation = {0, 0, 0},           
                     scale = {1, 1, 1}                   
             }   
-             }, {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                }
-            },
+             }, 
+            --  {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     }
+            -- },
       
          {
              name = "RigidBodyComponent",
@@ -2132,15 +2137,15 @@ components = {
                    scale = {1, 1, 1}                   
                }
            },
-           {
-            name = "MeshRenderComponent",
-           parameters = {                  
-               isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = ""
-            }
-        },
+        --    {
+        --     name = "MeshRenderComponent",
+        --    parameters = {                  
+        --        isstatic = false,
+        --        modelname = "Sinbad.mesh",
+        --        entityname= "sinbad",
+        --         materialname = ""
+        --     }
+        -- },
   
           
             {
@@ -2187,15 +2192,15 @@ components = {
                    scale = {1, 1, 1}                   
                }
            }, 
-           {
-            name = "MeshRenderComponent",
-           parameters = {                  
-               isstatic = false,
-               modelname = "Sinbad.mesh",
-               entityname= "sinbad",
-                materialname = ""
-            }
-        },
+        --    {
+        --     name = "MeshRenderComponent",
+        --    parameters = {                  
+        --        isstatic = false,
+        --        modelname = "Sinbad.mesh",
+        --        entityname= "sinbad",
+        --         materialname = ""
+        --     }
+        -- },
   
           
             {
@@ -2242,15 +2247,15 @@ components = {
                scale = {1, 1, 1}                   
            }
        }, 
-       {
-        name = "MeshRenderComponent",
-       parameters = {                  
-           isstatic = false,
-           modelname = "Sinbad.mesh",
-           entityname= "sinbad",
-            materialname = ""
-        },
-    },
+    --    {
+    --     name = "MeshRenderComponent",
+    --    parameters = {                  
+    --        isstatic = false,
+    --        modelname = "Sinbad.mesh",
+    --        entityname= "sinbad",
+    --         materialname = ""
+    --     },
+    -- },
        
        {
         name = "RigidBodyComponent",
@@ -2300,15 +2305,15 @@ components = {
                scale = {1, 1, 1}                   
            }
        }, 
-       {
-        name = "MeshRenderComponent",
-       parameters = {                  
-           isstatic = false,
-           modelname = "Sinbad.mesh",
-           entityname= "sinbad",
-            materialname = ""
-        },
-    },
+    --    {
+    --     name = "MeshRenderComponent",
+    --    parameters = {                  
+    --        isstatic = false,
+    --        modelname = "Sinbad.mesh",
+    --        entityname= "sinbad",
+    --         materialname = ""
+    --     },
+    -- },
        
        {
         name = "RigidBodyComponent",
@@ -2359,15 +2364,15 @@ components = {
                    }
                },
               
-               {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                },
-            },
+            --    {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     },
+            -- },
                
                {
                 name = "RigidBodyComponent",
@@ -2417,15 +2422,15 @@ components = {
                    }
                },
               
-               {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                },
-            },
+            --    {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     },
+            -- },
                
                {
                 name = "RigidBodyComponent",
@@ -2475,15 +2480,15 @@ components = {
                    }
                },
               
-               {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                },
-            },
+            --    {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     },
+            -- },
                
                {
                 name = "RigidBodyComponent",
@@ -2533,15 +2538,15 @@ components = {
                    }
                },
               
-               {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                },
-            },
+            --    {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     },
+            -- },
                
                {
                 name = "RigidBodyComponent",
@@ -2591,15 +2596,15 @@ components = {
                    }
                },
               
-               {
-                name = "MeshRenderComponent",
-               parameters = {                  
-                   isstatic = false,
-                   modelname = "Sinbad.mesh",
-                   entityname= "sinbad",
-                    materialname = ""
-                },
-            },
+            --    {
+            --     name = "MeshRenderComponent",
+            --    parameters = {                  
+            --        isstatic = false,
+            --        modelname = "Sinbad.mesh",
+            --        entityname= "sinbad",
+            --         materialname = ""
+            --     },
+            -- },
                
                {
                 name = "RigidBodyComponent",

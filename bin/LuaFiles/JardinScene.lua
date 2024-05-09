@@ -521,15 +521,15 @@ Entities={
                         scale = {1, 1, 1}                   
                     }
                 },
-                    {
-                    name = "MeshRenderComponent",
-                        parameters = {                  
-                            isstatic = false,
-                        modelname = "Sinbad.mesh",
-                        entityname= "sinbad",
-                            materialname = "Sinbad/Gold"
-                        }
-                    },
+                    -- {
+                    -- name = "MeshRenderComponent",
+                    --     parameters = {                  
+                    --         isstatic = false,
+                    --     modelname = "Sinbad.mesh",
+                    --     entityname= "sinbad",
+                    --         materialname = "Sinbad/Gold"
+                    --     }
+                    -- },
                     {
                     name = "ColliderComponent",
                     parameters = {
@@ -574,15 +574,15 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
+            -- {
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "Sinbad.mesh",
+            --         entityname= "sinbad",
+            --         materialname = "Sinbad/Gold"
+            --     }
+            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -630,15 +630,15 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
+            -- {
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "Sinbad.mesh",
+            --         entityname= "sinbad",
+            --         materialname = "Sinbad/Gold"
+            --     }
+            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -684,15 +684,15 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                    materialname = "Sinbad/Gold"
-                }
-            },
+            -- {
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "Sinbad.mesh",
+            --         entityname= "sinbad",
+            --         materialname = "Sinbad/Gold"
+            --     }
+            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -890,9 +890,9 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {20, 0, 0},
+                    position = {186,1,-148},
                     rotation ={0, 0, 0},
-                    scale = {10, 10, 10}                   
+                    scale = {100, 100, 100}                   
                 }
             },
            
@@ -928,19 +928,13 @@ Entities={
                     mask = 2,
                     group = 1
                 }
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            },     
+            },   
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
                     modelname = "lagartija.mesh",
-                    entityname= "npc1",
+                    entityname= "NPC1",
                     materialname = "Sinbad/Gold"
                     }
             },
