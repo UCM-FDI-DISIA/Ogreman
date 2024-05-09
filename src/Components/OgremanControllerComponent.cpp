@@ -97,7 +97,7 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	VeryReal::Vector3 vector_facing = trans->getFacingDirection();
 	my_rb->Rotate(VeryReal::Vector3(1,0, 0), 180);
 	grid = GameManager::Instance()->GetGris();
-	VeryReal::Vector3 v(25, 0, 84);
+	VeryReal::Vector3 v(41, 0, 106);
 
 	Entity* p = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	

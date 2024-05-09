@@ -73,11 +73,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         return Ogreman::GameManager::Instance()->Start();
     }
 
-    __declspec(dllexport) int main() {
-    }
-    __declspec(dllexport) void loop(float dt) {
-      /*  std::cout << "Pepa" << std::endl;*/
-    }
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
