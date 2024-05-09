@@ -127,6 +127,16 @@
     <ClCompile Include="..\src\Components\ShowImageComponent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+      <ClCompile Include="..\src\Components\CreatorNNotesComponent.cpp" />
+    <Filter>Archivos de origen</Filter>
+      </ClCompile>
+    <ClCompile Include="..\src\Components\NNotesComponent.cpp" />
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Components\TransformFollowComponent.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Components\CreatorTransformFollowComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\CellComponent.h">
@@ -259,6 +269,18 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Components\ShowImageComponent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\CreatorNNotesComponent.h" />
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\NNotesComponent.h" />
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\TransformFollowComponent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Components\CreatorTransformFollowComponent.h" />
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
