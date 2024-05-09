@@ -18,7 +18,11 @@ namespace Ogreman {
 		int GetNNota();
 		int GetTotalNotas();
 		bool TotalNotes();
+		virtual void Update(const double& dt);
 	private:
+		bool delay_to_finish = false;
+		float time_to_finish = 5.5;
+		float time_while_finishing = 0;
 		int numnotes;
 		int totalnotas;
 		VeryReal::UITextComponent* texto;

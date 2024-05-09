@@ -94,7 +94,7 @@ void Ogreman::PlayerInputComponent::Update(const double& dt) {
 			my_camera_component->rotate(-1, rightDirection);
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
-			//VeryReal::InputManager::Instance()->Quit();
+			VeryReal::InputManager::Instance()->Quit();
 		}
 	}
 	else {
