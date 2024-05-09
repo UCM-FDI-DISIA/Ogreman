@@ -2483,7 +2483,8 @@ components = {
                    rotation = {0, 0, 0},
                    scale = {1, 1, 1}                   
                }
-           }, {
+           }, 
+           {
             name = "MeshRenderComponent",
            parameters = {                  
                isstatic = false,
@@ -2545,8 +2546,8 @@ components = {
            modelname = "Sinbad.mesh",
            entityname= "sinbad",
             materialname = ""
-        }
-       ,
+        },
+    },
        
        {
         name = "RigidBodyComponent",
@@ -2561,7 +2562,9 @@ components = {
             mask = 1,
             group = 2
         }
-    },
+        },
+    
+    
     {
             name = "ColliderComponent",
             parameters = {
@@ -2580,7 +2583,9 @@ components = {
         }
     
     }
-    },
+}
+,
+    -- },
 --     {
 --         name = "Nodo9",
 --         components = {
