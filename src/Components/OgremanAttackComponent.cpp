@@ -8,6 +8,7 @@
 #include "ShowImageComponent.h"
 #include "AudioSourceComponent.h"
 #include "Entity.h"
+#include "ErrorManager.h"
 std::pair<bool, std::string>  Ogreman::OgremanAttackComponent::InitComponent() {
 
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -56,7 +57,7 @@ void  Ogreman::OgremanAttackComponent::Update(const double& dt)
 				attacking = true;
 				player_UI->hideElement();
 				screamer_image->activeTime();
-				audio_detected->Play();
+				VeryReal::ErrorManager::Instance()->canBeError(audio_detected->Play());
 				nAttacks++;
 			}
 			else {
