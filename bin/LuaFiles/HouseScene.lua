@@ -862,7 +862,7 @@ Entities={
             {
                 name = "ShowImageComponent",
                 parameters = {
-                    ttoshow = 0.1
+                    ttoshow = 5.0
                 }
             }
         }
