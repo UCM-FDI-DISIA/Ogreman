@@ -1,4 +1,5 @@
 ﻿::compilamos el motor
+call updateSubmodule.bat
 cd VeryReal\VeryRealSolucion\dependencies\cMake
 call All.bat
 cd ..\..\
