@@ -78,6 +78,5 @@ void GameManager::GenerateTree(int n) {
 	std::string name = "Pino" + std::to_string(n);
 	std::cout << name << std::endl;
 	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
-	// Falta asignar una posicion aleatoria
-	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0, 0, 0));
+	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0 + 10 * n, 0, 0));
 }
