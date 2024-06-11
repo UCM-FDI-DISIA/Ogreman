@@ -71,7 +71,11 @@ void GameManager::Lose() {
 
 void GameManager::GenerateTree(int n) {
 	std::string name = "Pino" + std::to_string(n);
+#ifdef _DEBUG
 	std::cout << name << std::endl;
+#endif // _DEBUG
+
+	
 	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
 	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0 + 10 * n, 0, 0));
 }

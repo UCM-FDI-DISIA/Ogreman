@@ -120,8 +120,12 @@ using namespace Ogreman;
 
 					 auto ents = VeryReal::PhysicsManager::Instance()->MakeRayCast(origin, other->GetPosition());
 					//auto ents= VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), other->GetPosition());
-					std::cout << "LANZO RAYCAST DE  " << c->GetID()<<" a "<<d->GetID() << "\n";
-					std::cout << "TAMAÑE LISTE " << ents.size() << "\n";
+					#ifdef _DEBUG
+					 std::cout << "LANZO RAYCAST DE  " << c->GetID() << " a " << d->GetID() << "\n";
+					 std::cout << "TAMAÑE LISTE " << ents.size() << "\n";
+
+					#endif // _DEBUG
+
 					 c->sethCost((trans->GetPosition() - other->GetPosition()).Magnitude());
 					 float coste = (trans->GetPosition() - other->GetPosition()).Magnitude();
 					 
@@ -129,7 +133,11 @@ using namespace Ogreman;
 
 					// mystruct d = ents.top();
 					 if (ents.size()==1 && ents.top().ent->GetComponent<NodeComponent>() != nullptr && ents.top().ent->GetComponent<NodeComponent>()->GetID() == d->GetID()  ) {
-						 std::cout << "AÑADO ARISTE DE" << c->GetID() << "  a  " << d->GetID() << "\n";
+						 #ifdef _DEBUG
+						  std::cout << "AÑADO ARISTE DE" << c->GetID() << "  a  " << d->GetID() << "\n";
+						 #endif // _DEBUG
+
+						
 						 AristaDirigida<float> arista(c->GetID(), d->GetID(), coste);
 						 nodes.ponArista(arista);
 

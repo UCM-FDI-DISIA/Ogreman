@@ -49,12 +49,15 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 	//player_noise_intensity = VeryReal::AM().InputSoundIntensity();
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_I)) {
 		player_noise_intensity += 0.001;
-
-		std::cout << "Suma" << std::endl;
+		#ifdef _DEBUG
+			std::cout << "Suma" << std::endl;
+		#endif // DEBUG
 	}
 	if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_U)) {
 		player_noise_intensity -= 0.001;
-		std::cout << "Resta" << std::endl;
+		#ifdef _DEBUG
+			std::cout << "Resta" << std::endl;
+		#endif // _DEBUG
 	}
 	/*if (player_noise_intensity < lower_intensity_threshold) player_noise_intensity = 0;
 	else*/ if(player_noise_intensity >= upper_intensity_threshold) player_noise_intensity = upper_intensity_threshold;
@@ -64,7 +67,9 @@ void Ogreman::OgremanHearingComponent::Update(const double& dt)
 	if (hearing_radius >= dist_ogre_player) {
 		VeryReal::Vector3 player_position = player_transform->GetPosition();
 		my_controller->GoToLocation(player_position);
+		#ifdef _DEBUG
 		std::cout << "detectado" << std::endl;
+		#endif // _DEBUG
 		player_detected = true;
 	}
 	else {

@@ -290,9 +290,10 @@ void Ogreman::OgremanControllerComponent::NextNodePF() {
 void Ogreman::OgremanControllerComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	
  if (current_states==patrol && other != nullptr && other->HasComponent("NodeComponent") && other->GetComponent<NodeComponent>()->GetID()==  current_node->GetID()) {
-		std::cout << "\nHAY COLISION\n";
+		#ifdef _DEBUG
+			std::cout << "\nHAY COLISION\n";
+		#endif // _DEBUG
 		NextNodePT();
-
 	}
 	else if (current_states == pathfinding && other!=nullptr &&other->HasComponent("NodeComponent")) {
 		if (last_node)RestartPatrol();
