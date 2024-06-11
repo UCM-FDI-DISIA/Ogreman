@@ -39,11 +39,6 @@ void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("ControlsScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true));
-#ifdef _DEBUG
-	//VeryReal::PhysicsManager::Instance()->SeeDebugColliders(false);
-#endif // DEBUG
-
-
 }
 
 void Ogreman::GameManager::NextLevel() {
