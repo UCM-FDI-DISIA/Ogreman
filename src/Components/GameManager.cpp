@@ -49,12 +49,14 @@ void Ogreman::GameManager::NextLevel() {
 	VeryReal::ScriptManager::Instance()->ReadPrefabs();
 	VeryReal::ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", GenerateTree);
 	VeryReal::ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);
+	Clear();
 }
 
 void GameManager::Win() {
 	VeryReal::SceneManager::Instance()->ActivationScene("JardinScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("JardinScene", true);
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true));
+	Clear();
 }
 void GameManager::Lose() {
 	std::string currentScene = VeryReal::SceneManager::Instance()->GetActiveScene()->GetName();
@@ -66,7 +68,9 @@ void GameManager::Lose() {
 		VeryReal::SceneManager::Instance()->ActivationScene("JardinScene", false);
 		VeryReal::SceneManager::Instance()->EliminationScene("JardinScene", true);
 	}
+	
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true));
+	Clear();
 }
 
 void GameManager::GenerateTree(int n) {
@@ -78,4 +82,9 @@ void GameManager::GenerateTree(int n) {
 	
 	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
 	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0 + 10 * n, 0, 0));
+}
+
+void GameManager::Clear() {
+	pathNodes.clear();
+	patrolNodes.clear();
 }

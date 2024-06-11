@@ -25,6 +25,7 @@ namespace Ogreman {
 		void NextLevel();
 		void Pause();
 		void Controls();
+		void Clear();
 		static bool Init() {
 			GameManager* a = new GameManager();
 			if (a != nullptr) {
