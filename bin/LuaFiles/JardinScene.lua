@@ -570,7 +570,7 @@ Entities={
         }
     },
     
-{
+    {
      name = "PilaUI2",
           components = {
          {
@@ -597,82 +597,81 @@ Entities={
          }
         
      }
- },
+    },
     {
-    name = "Pila2",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                position = {62,5,0},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Pila.mesh",
-                entityname= "pilajardin",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
-        
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
-            
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nombree", 
-                material = "cartelE", 
-                zOrder = 1
-            }
+        name = "Pila2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {62,5,0},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Pila.mesh",
+                    entityname= "pilajardin",
+                    materialname = ""
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },            
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nombreeDDD", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
             },
             {
                 name = "AudioSourceComponent", 
-                    parameters ={
-                        name = "audioPila2",
-                        path = "sonido_obtener_objeto.mp3",
-                        onstart = false,
-                        loop = false,
-                        threed = true,
-                        mindistance = 1.0,
-                        maxdistance = 45.0,
-                        volume = 1.5,
-                        groupchannel = "effects"
-                    }
+                parameters ={
+                    name = "audioPila2",
+                    path = "sonido_obtener_objeto.mp3",
+                    onstart = false,
+                    loop = false,
+                    threed = true,
+                    mindistance = 1.0,
+                    maxdistance = 45.0,
+                    volume = 1.5,
+                    groupchannel = "effects"
+                }
             },
             {
-            name = "CellComponent",
-            parameters = {
-                
+                name = "CellComponent",
+                parameters = {
+                    
                 }
             }
         
@@ -951,7 +950,7 @@ Entities={
                 {
                     name ="AudioSourceComponent",
                     parameters ={
-                        name = "audioScreamer",
+                        name = "audioScreamer2",
                         path = "sonido_pillado_por_jefe.mp3",
                         onstart = false,
                         loop = false,
@@ -963,7 +962,7 @@ Entities={
                     
                     name = "UISpriteRendererComponent",
                     parameters = {
-                        name = "screamer", 
+                        name = "screamer2", 
                         material = "UI/screamer", 
                         zOrder = 1
                     }
