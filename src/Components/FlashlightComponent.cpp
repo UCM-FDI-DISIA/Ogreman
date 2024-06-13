@@ -24,6 +24,11 @@ std::pair<bool,std::string> Ogreman::FlashlightComponent::InitComponent() {
 	}
 	else 
 	{	
+		 max_energy = 100.0f;
+		 MAX_ENERGY = 5;
+		 energy_remaining = MAX_ENERGY;
+		 energy_consume_rate = 1.0f;
+		 flashlight_on = false;
 		my_progress_bar->setMaximun(max_energy);
 		my_progress_bar->setProgress(energy_remaining);
 		return { true,"InitComponent FlashLight Completed" };
