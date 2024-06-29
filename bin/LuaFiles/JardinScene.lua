@@ -271,7 +271,7 @@ Entities={
                     isstatic = false,
                     modelname = "Cuaderno.mesh",
                     entityname= "nota5",
-                    materialname = ""
+                    materialname = "Cuaderno_Material"
                 }
             },
             {
@@ -388,7 +388,7 @@ Entities={
                     isstatic = false,
                     modelname = "Cuaderno.mesh",
                     entityname= "nota6",
-                    materialname = ""
+                    materialname = "Cuaderno_Material"
                 }
             },
             {
@@ -507,7 +507,7 @@ Entities={
                     isstatic = false,
                     modelname = "Cuaderno.mesh",
                     entityname= "nota7",
-                    materialname = ""
+                    materialname = "Cuaderno_Material"
                 }
             },
             {
@@ -615,7 +615,7 @@ Entities={
                     isstatic = false,
                     modelname = "Pila.mesh",
                     entityname= "pilajardin",
-                    materialname = ""
+                    materialname = "Pila_BakedBatteryC"
                 }
             },
             {
@@ -825,15 +825,6 @@ Entities={
                     scale = {1, 1, 1}                   
                 }
             },
-            -- {
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "Sinbad.mesh",
-            --         entityname= "sinbad",
-            --         materialname = "Sinbad/Gold"
-            --     }
-            -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -992,13 +983,13 @@ Entities={
                     isstatic = false,
                     modelname = "Sinbad.mesh",
                     entityname= "sinbad",
-                        materialname = ""
-                    }
+                    materialname = ""
+                }
             },
             {
                 name = "ColliderComponent",
                 parameters = {
-                    }
+                }
             },
             {
                 name = "RigidBodyComponent",
@@ -1145,7 +1136,7 @@ Entities={
                     isstatic = false,
                     modelname = "lagartija.mesh",
                     entityname= "NPC1",
-                    materialname = ""
+                    materialname = "lagartijaMaterial"
                     }
             },
             {
@@ -1340,7 +1331,7 @@ Entities={
                     isstatic = false,
                     modelname = "lagartija.mesh",
                     entityname= "lagartija",
-                    materialname = ""
+                    materialname = "lagartijaMaterial"
                     }
             },
             {

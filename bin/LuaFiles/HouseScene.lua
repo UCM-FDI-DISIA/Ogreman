@@ -293,7 +293,7 @@ Entities={
                     isstatic = false,
                     modelname = "Cuaderno.mesh",
                     entityname= "nota1",
-                    materialname = ""
+                    materialname = "Cuaderno_Material"
                 }
             },
             {
@@ -354,107 +354,344 @@ Entities={
                 }
             }
         }
-},
-{
-    name = "NotaUI2",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
+    },
+    {
+        name = "NotaUI2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notaui2", 
+                    material = "nota2", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
             }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui2", 
-                material = "nota2", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
         }
+    },
+    {
+        name = "Nota2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {181, 4.0, 140},
+                    rotation = {0, -135, 90},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Cuaderno.mesh",
+                    entityname= "nota2",
+                    materialname = "Cuaderno_Material"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
         
-    }
-},
-{
-    name = "Nota2",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {181, 4.0, 140},
-                rotation = {0, -135, 90},
-                scale = {5, 5, 5}                   
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nota2", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                    parameters ={
+                        name = "audioNota2",
+                        path = "sonido_obtener_objeto.mp3",
+                        onstart = false,
+                        loop = false,
+                        threed = true,
+                        mindistance = 1.0,
+                        maxdistance = 30.0,
+                        volume = 1.5,
+                        groupchannel = "effects"
+                    }
+            },
+            {
+                name = "NoteComponent",
+                parameters = {
+                    text = "NotaUI2"
+                }
             }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota2",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
-       
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota2", 
-                material = "cartelE", 
-                zOrder = 1
+        }
+    },
+    {
+        name = "NotaUI3",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notaui3", 
+                    material = "nota3", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
             }
-        },
-        {
-            name = "AudioSourceComponent", 
+            
+        }
+    },
+    {
+        name = "Nota3",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {134, 4.0, -19},
+                    rotation = {0, -45, 90},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Cuaderno.mesh",
+                    entityname= "nota3",
+                    materialname = "Cuaderno_Material"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nota3", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                    parameters ={
+                        name = "audioNota3",
+                        path = "sonido_obtener_objeto.mp3",
+                        onstart = false,
+                        loop = false,
+                        threed = true,
+                        mindistance = 1.0,
+                        maxdistance = 30.0,
+                        volume = 1.5,
+                        groupchannel = "effects"
+                    }
+            },
+            {
+                name = "NoteComponent",
+                parameters = {
+                    text = "NotaUI3"
+                }
+            }
+            
+        }
+    },
+    {
+        name = "NotaUI4",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "notaui4", 
+                    material = "nota4", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
+            }
+            
+        }
+    },
+    {
+        name = "Nota4",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {43, 4.0, 178},
+                    rotation = {0, 135, 90},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Cuaderno.mesh",
+                    entityname= "nota4",
+                    materialname = "Cuaderno_Material"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+        
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 5, 5},
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "nota4", 
+                    material = "cartelE", 
+                    zOrder = 1
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
                 parameters ={
-                    name = "audioNota2",
+                    name = "audioNota4",
                     path = "sonido_obtener_objeto.mp3",
                     onstart = false,
                     loop = false,
@@ -464,282 +701,45 @@ Entities={
                     volume = 1.5,
                     groupchannel = "effects"
                 }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI2"
-            }
-        }
-        
-    }
-},
-{
-    name = "NotaUI3",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
-            
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui3", 
-                material = "nota3", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
-        }
-        
-    }
-},
-{
-    name = "Nota3",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {134, 4.0, -19},
-                rotation = {0, -45, 90},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota3",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
-            
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota3", 
-                material = "cartelE", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "AudioSourceComponent", 
-                parameters ={
-                    name = "audioNota3",
-                    path = "sonido_obtener_objeto.mp3",
-                    onstart = false,
-                    loop = false,
-                    threed = true,
-                    mindistance = 1.0,
-                    maxdistance = 30.0,
-                    volume = 1.5,
-                    groupchannel = "effects"
+            },
+            {
+                name = "NoteComponent",
+                parameters = {
+                    text = "NotaUI4"
                 }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI3"
             }
-        }
-        
-    }
-},
-{
-    name = "NotaUI4",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {40, -5, 20},
-                rotation = {0, 0, 180},
-                scale = {5, 5, 5}                   
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "notaui4", 
-                material = "nota4", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "ShowImageComponent",
-            parameters = {
-                ttoshow = 5.0
-            }
         }
-        
-    }
-},
-{
-    name = "Nota4",
-    components = {
-        {
-            name = "TransformComponent",
-            parameters = {  
-                a = 0,
-                position = {43, 4.0, 178},
-                rotation = {0, 135, 90},
-                scale = {5, 5, 5}                   
+    },
+    {
+        name = "PilaUI1",
+            components = {
+            {
+                name = "TransformComponent",
+                parameters = {
+                    position = {40, -5, 20},
+                    rotation = {0, 0, 180},
+                    scale = {5, 5, 5}                   
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {
+                    pos = {0.0, 0.0}, 
+                    scale= {1.0, 1.0 }, 
+                    hidden = true
+                }
+            },
+            {
+                name = "ShowImageComponent",
+                parameters = {
+                    ttoshow = 5.0
+                }
             }
-        },
-        {
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = false,
-                modelname = "Cuaderno.mesh",
-                entityname= "nota4",
-                materialname = ""
-            }
-        },
-        {
-            name = "ColliderComponent",
-            parameters = {
-            }
-        },
-       
-        {
-            name = "RigidBodyComponent",
-            parameters = {
-                shapeType = 1,
-                movementType = 1,
-                size = {5, 5, 5},
-                mass = 1.0,
-                friction =1.0,
-                restitution=1.0,
-                trigger = false,
-                mask = 1,
-                group = 2
-            }
-        },
-        {
-            name = "UITransformComponent",
-            parameters = {
-                pos = {0.0, 0.0}, 
-                scale= {1.0, 1.0 }, 
-                hidden = true
-            }
-        },
-        {
             
-            name = "UISpriteRendererComponent",
-            parameters = {
-                name = "nota4", 
-                material = "cartelE", 
-                zOrder = 1
-            }
-        },
-        {
-            name = "AudioSourceComponent", 
-            parameters ={
-                name = "audioNota4",
-                path = "sonido_obtener_objeto.mp3",
-                onstart = false,
-                loop = false,
-                threed = true,
-                mindistance = 1.0,
-                maxdistance = 30.0,
-                volume = 1.5,
-                groupchannel = "effects"
-            }
-        },
-        {
-            name = "NoteComponent",
-            parameters = {
-                text = "NotaUI4"
-            }
         }
-        
-    }
-},
-{
-     name = "PilaUI1",
-          components = {
-         {
-             name = "TransformComponent",
-             parameters = {
-                 position = {40, -5, 20},
-                 rotation = {0, 0, 180},
-                 scale = {5, 5, 5}                   
-             }
-         },
-         {
-             name = "UITransformComponent",
-             parameters = {
-                 pos = {0.0, 0.0}, 
-                 scale= {1.0, 1.0 }, 
-                 hidden = true
-             }
-         },
-         {
-             name = "ShowImageComponent",
-             parameters = {
-                 ttoshow = 5.0
-             }
-         }
-        
-     }
- },
-     {
+    },
+    {
         name = "Pila1",
         components = {
             {
@@ -756,7 +756,7 @@ Entities={
                     isstatic = false,
                     modelname = "Pila.mesh",
                     entityname= "pila",
-                    materialname = ""
+                    materialname = "Pila_BakedBatteryC"
                 }
             },
             {
@@ -795,30 +795,30 @@ Entities={
                     material = "cartelE", 
                     zOrder = 1
                 }
-             },
-             {
-                 name = "AudioSourceComponent", 
-                     parameters ={
-                         name = "audioPila1",
-                         path = "sonido_obtener_objeto.mp3",
-                         onstart = false,
-                         loop = false,
-                         threed = true,
-                         mindistance = 1.0,
-                         maxdistance = 45.0,
-                         volume = 1.5,
-                         groupchannel = "effects"
+            },
+            {
+                name = "AudioSourceComponent", 
+                    parameters ={
+                        name = "audioPila1",
+                        path = "sonido_obtener_objeto.mp3",
+                        onstart = false,
+                        loop = false,
+                        threed = true,
+                        mindistance = 1.0,
+                        maxdistance = 45.0,
+                        volume = 1.5,
+                        groupchannel = "effects"
                      }
-             },
-             {
+            },
+            {
                 name = "CellComponent",
                 parameters = {
                   
-                 }
+                }
              }
             
-         }
-     },
+        }
+    },
     {
         name = "Screamer",
         components = {
@@ -867,7 +867,7 @@ Entities={
             }
         }
     },
-     {
+    {
         name = "SueloCollider",
         components = 
         {
@@ -2741,460 +2741,6 @@ components = {
             
             }
         },
-   
---         {
---             name = "Nodo11",
---            components = {
---                {
---                    name = "TransformComponent",
---                    parameters = {  
---                        a = 0,
---                        position = {-35, 0, 80},
---                        rotation = {0, 0, 0},
---                        scale = {1, 1, 1}                   
---                    }
---                },
-              
---                 {
---                     name = "RigidBodyComponent",
---                     parameters = {
---                         shapeType = 1,
---                         movementType = 2,
---                         size = {1, 1, 1},
---                         mass = 1.0,
---                         friction =1.0,
---                         restitution=1.0,
---                         trigger = true,
---                         mask = 1,
---                         group = 2
---                     }
---                 },
---                  {
---                     name="NodeComponent",
---                     parameters={
---                     ispatrol=false,
---                         cost=1.8,
---                         hcost=1.8,
---                         iswalkable=true,
---                         id=11
-        
---                     }
---                 }
-        
---            }
---         },
---         {
---         name = "Nodo12",
---         components = {
---            {
---                name = "TransformComponent",
---                parameters = {  
---                    a = 0,
---                    position = {-65, 0, 80},
---                    rotation = {0, 0, 0},
---                    scale = {1, 1, 1}                   
---                }
---            },
-          
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 2,
---                     size = {2, 2, 2},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = true,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---              {
---                 name="NodeComponent",
---                 parameters={
---                 ispatrol=false,
---                     cost=1.8,
---                     hcost=1.8,
---                     iswalkable=true,
---                     id=12
-        
---                 }
---             }
-        
---         }
---         },
-        
---         {
---         name = "Nodo13",
---         components = {
---            {
---                name = "TransformComponent",
---                parameters = {  
---                    a = 0,
---                    position = {70, 0, 110},
---                    rotation = {0, 0, 0},
---                    scale = {1, 1, 1}                   
---                }
---            },
-          
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 2,
---                     size = {2, 2, 2},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = true,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---              {
---                 name="NodeComponent",
---                 parameters={
---                 ispatrol=false,
---                     cost=1.8,
---                     hcost=1.8,
---                     iswalkable=true,
---                     id=13
-        
---                 }
---             }
-        
---         }
---         },
-        
---         {
---         name = "Nodo14",
---         components = {
---            {
---                name = "TransformComponent",
---                parameters = {  
---                    a = 0,
---                    position = {113, 0, 110},
---                    rotation = {0, 0, 0},
---                    scale = {1, 1, 1}                   
---                }
---            },
-          
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 2,
---                     size = {2, 2, 2},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = true,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---              {
---                 name="NodeComponent",
---                 parameters={
---                 ispatrol=false,
---                     cost=1.8,
---                     hcost=1.8,
---                     iswalkable=true,
---                     id=14
-        
---                 }
---             }
-        
---         }
---         },
---         {
---             name = "Nodo15",
---             components = {
---                {
---                    name = "TransformComponent",
---                    parameters = {  
---                        a = 0,
---                        position = {112, 0, 140},
---                        rotation = {0, 0, 0},
---                        scale = {1, 1, 1}                   
---                    }
---                },
-              
---                 {
---                     name = "RigidBodyComponent",
---                     parameters = {
---                         shapeType = 1,
---                         movementType = 2,
---                         size = {2, 2, 2},
---                         mass = 1.0,
---                         friction =1.0,
---                         restitution=1.0,
---                         trigger = true,
---                         mask = 1,
---                         group = 2
---                     }
---                 },
---                  {
---                     name="NodeComponent",
---                     parameters={
---                     ispatrol=false,
---                         cost=1.8,
---                         hcost=1.8,
---                         iswalkable=true,
---                         id=15
-            
---                     }
---                 }
-            
---             }
---             },
---             {
---                 name = "Nodo16",
---                 components = {
---                    {
---                        name = "TransformComponent",
---                        parameters = {  
---                            a = 0,
---                            position = {112, 0, 170},
---                            rotation = {0, 0, 0},
---                            scale = {1, 1, 1}                   
---                        }
---                    },
-                  
---                     {
---                         name = "RigidBodyComponent",
---                         parameters = {
---                             shapeType = 1,
---                             movementType = 2,
---                             size = {2, 2, 2},
---                             mass = 1.0,
---                             friction =1.0,
---                             restitution=1.0,
---                             trigger = true,
---                             mask = 1,
---                             group = 2
---                         }
---                     },
---                      {
---                         name="NodeComponent",
---                         parameters={
---                         ispatrol=false,
---                             cost=1.8,
---                             hcost=1.8,
---                             iswalkable=true,
---                             id=16
-                
---                         }
---                     }
-                
---                 }
---                 },
---                 {
---                     name = "Nodo17",
---                     components = {
---                        {
---                            name = "TransformComponent",
---                            parameters = {  
---                                a = 0,
---                                position = {130, 0, 170},
---                                rotation = {0, 0, 0},
---                                scale = {1, 1, 1}                   
---                            }
---                        },
-                      
---                         {
---                             name = "RigidBodyComponent",
---                             parameters = {
---                                 shapeType = 1,
---                                 movementType = 2,
---                                 size = {2, 2, 2},
---                                 mass = 1.0,
---                                 friction =1.0,
---                                 restitution=1.0,
---                                 trigger = true,
---                                 mask = 1,
---                                 group = 2
---                             }
---                         },
---                          {
---                             name="NodeComponent",
---                             parameters={
---                             ispatrol=false,
---                                 cost=1.8,
---                                 hcost=1.8,
---                                 iswalkable=true,
---                                 id=17
-                    
---                             }
---                         }
-                    
---                     }
---                     },
-
---                     {
---                         name = "Nodo18",
---                         components = {
---                            {
---                                name = "TransformComponent",
---                                parameters = {  
---                                    a = 0,
---                                    position = {155, 0, 170},
---                                    rotation = {0, 0, 0},
---                                    scale = {1, 1, 1}                   
---                                }
---                            },
-                          
---                             {
---                                 name = "RigidBodyComponent",
---                                 parameters = {
---                                     shapeType = 1,
---                                     movementType = 2,
---                                     size = {2, 2, 2},
---                                     mass = 1.0,
---                                     friction =1.0,
---                                     restitution=1.0,
---                                     trigger = true,
---                                     mask = 1,
---                                     group = 2
---                                 }
---                             },
---                              {
---                                 name="NodeComponent",
---                                 parameters={
---                                 ispatrol=false,
---                                     cost=1.8,
---                                     hcost=1.8,
---                                     iswalkable=true,
---                                     id=18
-                        
---                                 }
---                             }
-                        
---                         }
---             },
-
---             {
---                 name = "Nodo19",
---                 components = {
---                    {
---                        name = "TransformComponent",
---                        parameters = {  
---                            a = 0,
---                            position = {70, 0, 138},
---                            rotation = {0, 0, 0},
---                            scale = {1, 1, 1}                   
---                        }
---                    },
---                     {
---                         name = "RigidBodyComponent",
---                         parameters = {
---                             shapeType = 1,
---                             movementType = 2,
---                             size = {2, 2, 2},
---                             mass = 1.0,
---                             friction =1.0,
---                             restitution=1.0,
---                             trigger = true,
---                             mask = 1,
---                             group = 2
---                         }
---                     },
---                      {
---                         name="NodeComponent",
---                         parameters={
---                         ispatrol=false,
---                             cost=1.8,
---                             hcost=1.8,
---                             iswalkable=true,
---                             id=19
-                
---                         }
---                     }
-                
---                 }
---     },
---     {
---         name = "Nodo20",
---         components = {
---            {
---                name = "TransformComponent",
---                parameters = {  
---                    a = 0,
---                    position = {70, 0, 170},
---                    rotation = {0, 0, 0},
---                    scale = {1, 1, 1}                   
---                }
---            },
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 2,
---                     size = {2, 2, 2},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = true,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---              {
---                 name="NodeComponent",
---                 parameters={
---                 ispatrol=false,
---                     cost=1.8,
---                     hcost=1.8,
---                     iswalkable=true,
---                     id=20
-        
---                 }
---             }
-        
---         }
---     },{
---         name = "Nodo21",
---         components = {
---            {
---                name = "TransformComponent",
---                parameters = {  
---                    a = 0,
---                    position = {0, 0, 90},
---                    rotation = {0, 0, 0},
---                    scale = {1, 1, 1}                   
---                }
---            },
-          
---             {
---                 name = "RigidBodyComponent",
---                 parameters = {
---                     shapeType = 1,
---                     movementType = 2,
---                     size = {2, 2, 2},
---                     mass = 1.0,
---                     friction =1.0,
---                     restitution=1.0,
---                     trigger = true,
---                     mask = 1,
---                     group = 2
---                 }
---             },
---              {
---                 name="NodeComponent",
---                 parameters={
---                 ispatrol=false,
---                     cost=1.8,
---                     hcost=1.8,
---                     iswalkable=true,
---                     id=21
-        
---                 }
---             }
-        
---         }
---     },
-
     {
         name = "Casa:)",
         components = {
@@ -3207,11 +2753,10 @@ components = {
                     scale = {8, 8, 8}                   
                 }
             },
-           
+        
             {
                 name="GridComponent",
                 parameters={
-
                 }
             },
             {
@@ -3231,59 +2776,59 @@ components = {
             {
                 name = "TransformComponent",
                 parameters = {  
-                 a = 0,
-                     position = {-28,0,32},
-                     rotation = {0, 0, 0},
-                     scale = {1, 1, 1}                   
+                a = 0,
+                    position = {-28,0,32},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
                }
-             },
+            },
             {
-                 name = "MeshRenderComponent",
+                name = "MeshRenderComponent",
                 parameters = {                  
-                    isstatic = false,
                     modelname = "Sinbad.mesh",
-                    entityname= "sinbad",
-                     materialname = ""
-                 }
-             },
-             {
+                    entityname= "Sinbad1",
+                    materialname = "",
+                    isstatic = false
+                }
+            },
+            {
                 name = "ColliderComponent",
                 parameters = {
-                 }
+                }
             },
-             {
+            {
                  name = "RigidBodyComponent",
                  parameters = {
-                     shapeType = 1,
+                    shapeType = 1,
                     movementType = 0,
-                     size = {2, 2, 2},
-                     mass = 1.0,
+                    size = {2, 2, 2},
+                    mass = 1.0,
                     friction =1.0,
                     restitution=1.0,
-                     trigger = false,
-                     mask = 2,
+                    trigger = false,
+                    mask = 2,
                     group = 1
     
-                 }
-             },
-             {
-                 name="AnimatorComponent",
-                 parameters={
-                     name="skeleton.mesh"
-                 }
-             },
-             {
-                 name="OgremanControllerComponent",
-                 parameters={
-                     alignmentWeight=0.1,
-                     cohesionWeight=0.1,
-                     separationWeight=0.1,
-                     maxSpeed=6.0,
-                     separationDistance=2.0,
-                     max_dist_follow=100.0,
-                     min_dist_follow=50.0
-                 }
-             },
+                }
+            },
+            {
+                name="AnimatorComponent",
+                parameters={
+                    name="skeleton.mesh"
+                }
+            },
+            {
+                name="OgremanControllerComponent",
+                parameters={
+                    alignmentWeight=0.1,
+                    cohesionWeight=0.1,
+                    separationWeight=0.1,
+                    maxSpeed=6.0,
+                    separationDistance=2.0,
+                    max_dist_follow=100.0,
+                    min_dist_follow=50.0
+                }
+            },
             {
                 name = "AudioSourceComponent", 
                 parameters ={
@@ -3305,9 +2850,9 @@ components = {
                 }
             }
             
-         }
-     },
-     {
+        }
+    },
+    {
         name = "FlashLightAudio",
         components ={
             {
@@ -3332,9 +2877,5 @@ components = {
                 }
             }
         }
-     }
-   
-
-    -- 
-    
+    }   
 }
