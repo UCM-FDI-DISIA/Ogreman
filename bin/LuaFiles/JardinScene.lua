@@ -1136,7 +1136,7 @@ Entities={
                     isstatic = false,
                     modelname = "lagartija.mesh",
                     entityname= "NPC1",
-                    materialname = "lagartijaMaterial"
+                    materialname = ""
                     }
             },
             {
@@ -1331,7 +1331,7 @@ Entities={
                     isstatic = false,
                     modelname = "lagartija.mesh",
                     entityname= "lagartija",
-                    materialname = "lagartijaMaterial"
+                    materialname = ""
                     }
             },
             {
