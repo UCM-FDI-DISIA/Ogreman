@@ -38,17 +38,23 @@ void GameManager::Controls()
 void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("ControlsScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("ControlsScene", true);
+
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("HouseScene", true));
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadPrefabs());
+	VeryReal::ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateHumo", GenerateHumo);
+	VeryReal::ScriptManager::Instance()->ReadFunction("GenerateHumoLua", 10);
 }
 
 void Ogreman::GameManager::NextLevel() {
 	VeryReal::SceneManager::Instance()->ActivationScene("HouseScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("HouseScene", true);
-
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("JardinScene", true));
-	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadPrefabs());
+
 	VeryReal::ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateTree", GenerateTree);
 	VeryReal::ScriptManager::Instance()->ReadFunction("GenerateTreeLua", 10);
+	VeryReal::ScriptManager::Instance()->ExposeFunctionsVoidIntToLua("GenerateHumo", GenerateHumo);
+	VeryReal::ScriptManager::Instance()->ReadFunction("GenerateHumoLua", 10);
 	Clear();
 }
 
@@ -83,7 +89,17 @@ void GameManager::GenerateTree(int n) {
 	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabPino", name);
 	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(0 + 10 * n, 0, 0));
 }
+void GameManager::GenerateHumo(int n) {
+	std::string name = "smoke" + std::to_string(n);
+#ifdef _DEBUG
+	std::cout << name << std::endl;
+#endif // _DEBUG
 
+
+	VeryReal::Entity* e = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", name);
+	VeryReal::Vector3 t = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Ogreman")->GetComponent<VeryReal::TransformComponent>()->GetPosition();
+	e->GetComponent<VeryReal::TransformComponent>()->SetPosition(VeryReal::Vector3(t.GetX(), t.GetY() - 10,t.GetZ()));
+}
 void GameManager::Clear() {
 	pathNodes.clear();
 	patrolNodes.clear();

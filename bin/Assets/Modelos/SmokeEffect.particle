@@ -1,0 +1,27 @@
+particle_system SmokeEffect
+{
+    material SmokeEffect_T
+    particle_width 75
+    particle_height 75
+    cull_each false
+    quota 100
+    billboard_type point
+
+    emitter Point
+    {
+        angle 5
+        emission_rate 10
+        time_to_live 0.5
+        direction 0 0 0
+        velocity 1
+        colour 0.2 0.2 0.2
+    }
+
+    affector ColourFader
+    {
+        red -0.01
+        green -0.01
+        blue -0.01
+        alpha -0.01
+    }
+}

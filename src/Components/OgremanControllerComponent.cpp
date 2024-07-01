@@ -15,7 +15,7 @@
 #include "RigidBodyComponent.h"
 
 #include "PhysicsManager.h"
-
+#include "SmokeComponent.h"
 
 Ogreman::OgremanControllerComponent::OgremanControllerComponent():last_node(false),rotation_y(0),trans(nullptr),animation(nullptr),current_index(0),current_states(pathfinding),current_node(nullptr), collider(nullptr){
 
@@ -109,6 +109,19 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	if (player_trns == nullptr) {
 		return{ false,"Player doesn't have TransformComponent, ERROR from OgremanController" };
 	}
+	// Inicializar el prefab de humo
+	smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke" + std::to_string(numB));
+	if (smoke) {
+		VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
+		if (smoke_transform) {
+			smoke_transform->SetPosition(trans->GetPosition());
+		}
+	}
+	else {
+		std::cout << "Failed to create smoke\n";
+	}
+
+	numB++;
 
 	current_states = patrol;
 	return { true,"yulvez" };
@@ -235,8 +248,14 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 	default:
 		break;
 	}
-
- }
+	// Actualizar la posición del efecto de humo
+	if (smoke) {
+		VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
+		if (smoke_transform) {
+			smoke_transform->SetPosition(trans->GetPosition() - myforward * 0.5);
+		}
+	}
+}
  void Ogreman::OgremanControllerComponent::RestartPatrol() {
 	 if (current_states != patrol) {
 		 if (current_node->GetPatrol()) {

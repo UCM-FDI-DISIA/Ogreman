@@ -55,6 +55,7 @@ namespace Ogreman {
 		}
 
 		static void GenerateTree(int n);
+		static void GenerateHumo(int n);
 	};
 }
 

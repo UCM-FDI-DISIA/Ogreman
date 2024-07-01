@@ -41,6 +41,7 @@
     <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorRangosVisionComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorShowImageComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorSmokeComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorTransformFollowComponent.cpp" />
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\FlashlightComponent.cpp" />
@@ -61,6 +62,7 @@
     <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
     <ClCompile Include="..\src\Components\RangosVisionComponent.cpp" />
     <ClCompile Include="..\src\Components\ShowImageComponent.cpp" />
+    <ClCompile Include="..\src\Components\SmokeComponent.cpp" />
     <ClCompile Include="..\src\Components\TransformFollowComponent.cpp" />
     <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
   </ItemGroup>
@@ -87,6 +89,7 @@
     <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
     <ClInclude Include="..\src\Components\CreatorRangosVisionComponent.h" />
     <ClInclude Include="..\src\Components\CreatorShowImageComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorSmokeComponent.h" />
     <ClInclude Include="..\src\Components\CreatorTransformFollowComponent.h" />
     <ClInclude Include="..\src\Components\DigrafoValorado.h" />
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
@@ -109,6 +112,7 @@
     <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
     <ClInclude Include="..\src\Components\RangosVisionComponent.h" />
     <ClInclude Include="..\src\Components\ShowImageComponent.h" />
+    <ClInclude Include="..\src\Components\SmokeComponent.h" />
     <ClInclude Include="..\src\Components\TransformFollowComponent.h" />
     <ClInclude Include="..\src\Export.h" />
   </ItemGroup>

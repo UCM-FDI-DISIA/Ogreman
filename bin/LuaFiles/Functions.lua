@@ -4,3 +4,8 @@ function GenerateTreeLua(n)
     end
 end
 
+function GenerateHumoLua(n)
+    for i = 0, n do
+        GenerateHumo(i)
+    end
+end

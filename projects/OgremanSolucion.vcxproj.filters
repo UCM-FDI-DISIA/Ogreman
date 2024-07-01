@@ -1,295 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\src\Components\CellComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorCellComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorGridComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorNoteComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorOgremanAttackComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorOgremanControllerComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorOgremanHearingComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorPickUpComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorRangosVisionComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\ExitButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\FlashlightComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\GameManager.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\GridComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\MenuButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\MerodeoMovementComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\MovementComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\NodeComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\NoteComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\OgremanAttackComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\OgremanControllerComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\OgremanHearingComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\PickUpComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\PlayButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\PlayerInputComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\RangosVisionComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\ControlsButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorControlsButtonComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorNNotesComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\CreatorShowImageComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\NNotesComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\ShowImageComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-      <ClCompile Include="..\src\Components\CreatorNNotesComponent.cpp" />
-    <Filter>Archivos de origen</Filter>
-      </ClCompile>
-    <ClCompile Include="..\src\Components\NNotesComponent.cpp" />
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Components\TransformFollowComponent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
+    <ClCompile Include="..\src\Components\CellComponent.cpp" />
+    <ClCompile Include="..\src\Components\ControlsButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorCellComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorControlsButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorFlashlightComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorGridComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMerodeoComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNNotesComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNodeComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorNoteComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorOgremanHearingComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorOgremanAttackComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorOgremanControllerComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPickUpComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayerInteractionComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorRangosVisionComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorShowImageComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorTransformFollowComponent.cpp" />
+    <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\FlashlightComponent.cpp" />
+    <ClCompile Include="..\src\Components\GameManager.cpp" />
+    <ClCompile Include="..\src\Components\GridComponent.cpp" />
+    <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\MerodeoMovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\MovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\NNotesComponent.cpp" />
+    <ClCompile Include="..\src\Components\NodeComponent.cpp" />
+    <ClCompile Include="..\src\Components\NoteComponent.cpp" />
+    <ClCompile Include="..\src\Components\OgremanHearingComponent.cpp" />
+    <ClCompile Include="..\src\Components\OgremanAttackComponent.cpp" />
+    <ClCompile Include="..\src\Components\OgremanControllerComponent.cpp" />
+    <ClCompile Include="..\src\Components\PickUpComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayerInteractionComponent.cpp" />
+    <ClCompile Include="..\src\Components\RangosVisionComponent.cpp" />
+    <ClCompile Include="..\src\Components\ShowImageComponent.cpp" />
+    <ClCompile Include="..\src\Components\TransformFollowComponent.cpp" />
+    <ClCompile Include="..\src\OgremanSolucion\OgremanSolucion.cpp" />
+    <ClCompile Include="..\src\Components\CreatorSmokeComponent.cpp" />
+    <ClCompile Include="..\src\Components\SmokeComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Components\CellComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorCellComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorGridComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorMovementComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorNodeComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorNoteComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorOgremanAttackComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorOgremanControllerComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorOgremanHearingComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorPickUpComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorRangosVisionComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\DigrafoValorado.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\ExitButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Export.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\FlashlightComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\GameManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\GridComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\IndexPQ.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\MenuButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\MerodeoMovementComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\MovementComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\NodeComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\NoteComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\OgremanAttackComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\OgremanControllerComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\OgremanHearingComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\PickUpComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\PlayButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\PlayerInputComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\PlayerInteractionComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\RangosVisionComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\ControlsButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorControlsButtonComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorNNotesComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\CreatorShowImageComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\NNotesComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\ShowImageComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
+    <ClInclude Include="..\src\Components\CellComponent.h" />
+    <ClInclude Include="..\src\Components\ControlsButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorCellComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorControlsButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorFlashlightComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorGridComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMerodeoComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorNNotesComponent.h" />
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\NNotesComponent.h" />
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Components\TransformFollowComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
+    <ClInclude Include="..\src\Components\CreatorNodeComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorNoteComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorOgremanHearingComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorOgremanAttackComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorOgremanControllerComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPickUpComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorRangosVisionComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorShowImageComponent.h" />
     <ClInclude Include="..\src\Components\CreatorTransformFollowComponent.h" />
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{c4811e07-db02-4b77-ae7a-aabf41437606}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{0e01501b-75d6-4e42-8eb6-b17752c9ec00}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="..\src\Components\DigrafoValorado.h" />
+    <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
+    <ClInclude Include="..\src\Components\FlashlightComponent.h" />
+    <ClInclude Include="..\src\Components\GameManager.h" />
+    <ClInclude Include="..\src\Components\GridComponent.h" />
+    <ClInclude Include="..\src\Components\IndexPQ.h" />
+    <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
+    <ClInclude Include="..\src\Components\MerodeoMovementComponent.h" />
+    <ClInclude Include="..\src\Components\MovementComponent.h" />
+    <ClInclude Include="..\src\Components\NNotesComponent.h" />
+    <ClInclude Include="..\src\Components\NodeComponent.h" />
+    <ClInclude Include="..\src\Components\NoteComponent.h" />
+    <ClInclude Include="..\src\Components\OgremanHearingComponent.h" />
+    <ClInclude Include="..\src\Components\OgremanAttackComponent.h" />
+    <ClInclude Include="..\src\Components\OgremanControllerComponent.h" />
+    <ClInclude Include="..\src\Components\PickUpComponent.h" />
+    <ClInclude Include="..\src\Components\PlayButtonComponent.h" />
+    <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\PlayerInteractionComponent.h" />
+    <ClInclude Include="..\src\Components\RangosVisionComponent.h" />
+    <ClInclude Include="..\src\Components\ShowImageComponent.h" />
+    <ClInclude Include="..\src\Components\TransformFollowComponent.h" />
+    <ClInclude Include="..\src\Export.h" />
+    <ClInclude Include="..\src\Components\SmokeComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorSmokeComponent.h" />
   </ItemGroup>
 </Project>
