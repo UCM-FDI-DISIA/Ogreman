@@ -2848,6 +2848,11 @@ components = {
                 parameters ={
                     
                 }
+            },
+            {
+                name = "SmokeComponent",
+                parameters = {
+                }
             }
             
         }

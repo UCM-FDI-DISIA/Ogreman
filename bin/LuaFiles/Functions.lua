@@ -6,6 +6,6 @@ end
 
 function GenerateHumoLua(n)
     for i = 0, n do
-        GenerateHumo(i)
+        -- GenerateHumo(i)
     end
 end

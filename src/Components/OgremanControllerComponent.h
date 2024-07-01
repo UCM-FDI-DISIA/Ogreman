@@ -63,7 +63,8 @@ namespace Ogreman {
         int numB = 0;
         float rotation_y = 0;
 
-        VeryReal::Entity* smoke = nullptr;
+        VeryReal::Entity* my_smoke = nullptr;
+
 
         // Parámetros de Flocking
         float alignmentWeight = 0.1f; // Peso de la alineación

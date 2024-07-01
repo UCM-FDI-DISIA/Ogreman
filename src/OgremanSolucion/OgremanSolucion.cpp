@@ -44,6 +44,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new Ogreman::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("FlashlightComponent", new Ogreman::CreatorFlashlightComponent());
         VeryReal::Creator::Instance()->AddCreator("GridComponent", new Ogreman::CreatorGridComponent());
+        VeryReal::Creator::Instance()->AddCreator("SmokeComponent", new Ogreman::CreatorSmokeComponent());
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new Ogreman::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("NodeComponent", new Ogreman::CreatorNodeComponent());
         VeryReal::Creator::Instance()->AddCreator("NoteComponent", new Ogreman::CreatorNoteComponent());
@@ -60,7 +61,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("ControlsButtonComponent", new Ogreman::CreatorControlsButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("NNotesComponent", new Ogreman::CreatorNNotesComponent());
         VeryReal::Creator::Instance()->AddCreator("MenuButtonComponent", new Ogreman::CreatorMenuButtonComponent());
-        VeryReal::Creator::Instance()->AddCreator("SmokeComponent", new Ogreman::CreatorSmokeComponent());
 
         return Ogreman::GameManager::Instance()->Start();
     }

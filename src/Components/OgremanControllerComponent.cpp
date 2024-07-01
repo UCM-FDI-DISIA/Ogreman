@@ -109,19 +109,6 @@ std::pair<bool, std::string> Ogreman::OgremanControllerComponent::InitComponent(
 	if (player_trns == nullptr) {
 		return{ false,"Player doesn't have TransformComponent, ERROR from OgremanController" };
 	}
-	// Inicializar el prefab de humo
-	smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke" + std::to_string(numB));
-	if (smoke) {
-		VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
-		if (smoke_transform) {
-			smoke_transform->SetPosition(trans->GetPosition());
-		}
-	}
-	else {
-		std::cout << "Failed to create smoke\n";
-	}
-
-	numB++;
 
 	current_states = patrol;
 	return { true,"yulvez" };
@@ -169,38 +156,41 @@ std::pair<bool, std::string>  Ogreman::OgremanControllerComponent::GoToLocation(
 
 
 void Ogreman::OgremanControllerComponent::Update(const double& dt) {
-	 dif = current_node_trans->GetPosition() - trans->GetPosition();
+	// Inicializar el prefab de humo solo si aún no se ha creado
+	if (!my_smoke) {
+		my_smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke");
+		if (my_smoke) {
+			VeryReal::TransformComponent* smoke_transform = my_smoke->GetComponent<VeryReal::TransformComponent>();
+			if (smoke_transform) {
+				smoke_transform->SetPosition(trans->GetPosition());
+			}
+		}
+		else {
+			std::cout << "Failed to create smoke\n";
+		}
+	}
+
+	dif = current_node_trans->GetPosition() - trans->GetPosition();
 
 	VeryReal::Vector3 dif_player;
-	if(player_trns!=nullptr) dif_player = player_trns->GetPosition() - trans->GetPosition();
+	if (player_trns != nullptr) dif_player = player_trns->GetPosition() - trans->GetPosition();
 	VeryReal::Vector3 myforward = trans->getFacingDirection();
 	float dist_player = sqrt(dif_player.GetX() * dif_player.GetX() + dif_player.GetY() * dif_player.GetY() + dif_player.GetZ() * dif_player.GetZ());
-	VeryReal::Vector3 vec(0,0,0), rot(0,0,0); 
+	VeryReal::Vector3 vec(0, 0, 0), rot(0, 0, 0);
 	vec = current_node_trans->GetPosition();
 	// Calcular vectores de dirección para los comportamientos de Flocking
 	VeryReal::Vector3 alignment, cohesion, separation, totalDirection;
-	float yaw=0, pitch=0,diff = 0,rota=0,dist=0;
-	//std::cout << "DISTANCOA CON OGREMEN: " << dist_player << "\n";
-	if (dist_player < min_dist_follow && current_states != follow) {
-		
+	float yaw = 0, pitch = 0, diff = 0, rota = 0, dist = 0;
 
+	if (dist_player < min_dist_follow && current_states != follow) {
 		auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(my_rb->GetPosition(), player_trns->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>()->GetPosition());
 		current_states = follow;
-		/*if(list.size()>0 && list.front().ent->HasComponent("MovementComponent"))
-		current_states = follow;*/
-	
-	
 	}
 	else if (dist_player > max_dist_follow && current_states == follow) {
-		/*auto list = VeryReal::PhysicsManager::Instance()->MakeRayCast(trans->GetPosition(), dif_player.Normalize() * 10);
-		if (list.size() > 0 && !list.front()->HasComponent("MovementComponent") || list.size()<=0)*/
-		RestartPatrol(); 
-	
+		RestartPatrol();
 	}
-	//std::cout << dist_player << "\n";
+
 	switch (current_states) {
-
-
 	case Ogreman::OgremanControllerComponent::stop:
 		break;
 	case Ogreman::OgremanControllerComponent::patrol:
@@ -208,55 +198,49 @@ void Ogreman::OgremanControllerComponent::Update(const double& dt) {
 		dif *= maxSpeed;
 		my_rb->SetVelocityLinear(dif);
 		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
-		//std::cout << dif.GetX() << " \n";
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
 			NextNodePT();
 		}
-
 		break;
 	case Ogreman::OgremanControllerComponent::pathfinding:
-
-		
-		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T) ) {
-			if (last_node)RestartPatrol();
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_T)) {
+			if (last_node) RestartPatrol();
 			else NextNodePF();
-
 		}
-			dif = dif.Normalize();
-			dif *= maxSpeed;
-			my_rb->SetVelocityLinear(dif);
-			my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
+		dif = dif.Normalize();
+		dif *= maxSpeed;
+		my_rb->SetVelocityLinear(dif);
+		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, dif));
 		break;
 	case Ogreman::OgremanControllerComponent::follow:
-		 alignment = align();
-		 cohesion = cohere();
-		 separation = separate();
-		 totalDirection = alignment * alignmentWeight + cohesion * cohesionWeight + separation * separationWeight;
+		alignment = align();
+		cohesion = cohere();
+		separation = separate();
+		totalDirection = alignment * alignmentWeight + cohesion * cohesionWeight + separation * separationWeight;
 
-		 // Limitar la velocidad máxima
-		 if (totalDirection.Magnitude() > maxSpeed) {
-			 totalDirection = totalDirection.Normalize() * maxSpeed;
-		 }
+		if (totalDirection.Magnitude() > maxSpeed) {
+			totalDirection = totalDirection.Normalize() * maxSpeed;
+		}
 
-		 my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, totalDirection));
-		 // Establecer la velocidad lineal del ogro hacia la posición del jugador
-		 my_rb->SetVelocityLinear(totalDirection);
-	
-
-
+		my_rb->Rotate(VeryReal::Vector3(0, 1, 0), RotationYBetween(myforward, totalDirection));
+		my_rb->SetVelocityLinear(totalDirection);
 		break;
 	default:
 		break;
 	}
+
 	// Actualizar la posición del efecto de humo
-	if (smoke) {
-		VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
+	if (my_smoke) {
+		VeryReal::TransformComponent* smoke_transform = my_smoke->GetComponent<VeryReal::TransformComponent>();
 		if (smoke_transform) {
-			smoke_transform->SetPosition(trans->GetPosition() - myforward * 0.5);
+			float randomX = static_cast<float>(rand() % 4);
+			float randomY = static_cast<float>(rand() % 4);
+			float randomZ = static_cast<float>(rand() % 4);
+			smoke_transform->SetPosition(VeryReal::Vector3(trans->GetPosition().GetX() + randomX, trans->GetPosition().GetY() - 5 + randomY, trans->GetPosition().GetZ() + randomZ) - myforward * 5);
 		}
 	}
 }
- void Ogreman::OgremanControllerComponent::RestartPatrol() {
+void Ogreman::OgremanControllerComponent::RestartPatrol() {
 	 if (current_states != patrol) {
 		 if (current_node->GetPatrol()) {
 			 current_states = patrol;

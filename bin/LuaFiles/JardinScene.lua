@@ -1052,6 +1052,11 @@ Entities={
                 parameters ={
                     
                 }
+            },            
+            {
+                name = "SmokeComponent",
+                parameters = {
+                }
             }         
         }
     },
